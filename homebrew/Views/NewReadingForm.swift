@@ -23,7 +23,7 @@ struct NewReadingForm: View {
                     Image(systemName: "xmark")
                 }
             }.padding()
-            TextField("Original gravity", text: $gravity)
+            TextField("Current Gravity", text: $gravity)
                 .keyboardType(.decimalPad)
                 .padding()
             DatePicker("Start date", selection: $date)
