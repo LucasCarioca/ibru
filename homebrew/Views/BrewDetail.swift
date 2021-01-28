@@ -39,12 +39,6 @@ struct BrewDetail: View {
                     .font(.title2)
                     .frame(maxWidth: .infinity, alignment: .leading)
                 Spacer()
-                Button(action: {
-                    popup = true
-                    showReadingForm = true
-                }){
-                    Image(systemName: "plus")
-                }.padding()
             }.padding()
             .sheet(isPresented: $popup) {
                 if showBottleForm {
@@ -61,10 +55,35 @@ struct BrewDetail: View {
                     }
                 }
             }
-            List {
-                ForEach(getReadingList(), id: \.self) { reading in
-                    GravityReading(date: reading.date ?? Date(), gravity: reading.gravity, originalGravity: brew.originalGravity)
-                }.onDelete(perform: deleteItems)
+            ZStack {
+                List {
+                    ForEach(getReadingList(), id: \.self) { reading in
+                        GravityReading(date: reading.date ?? Date(), gravity: reading.gravity, originalGravity: brew.originalGravity)
+                    }.onDelete(perform: deleteItems)
+                }
+                VStack {
+                    Spacer()
+                    HStack {
+                        Spacer()
+                        Button(action: {
+                            showReadingForm = true
+                            popup = true
+                        }){
+                            Text("+")
+                                .font(.system(.largeTitle))
+                                .frame(width: 67, height: 60)
+                                .foregroundColor(Color.white)
+                                .padding(.bottom, 7)
+                        }
+                            .background(Color.accentColor)
+                            .cornerRadius(38.5)
+                            .padding()
+                            .shadow(color: Color.black.opacity(0.3),
+                                    radius: 3,
+                                    x: 3,
+                                    y: 3)
+                    }
+                }
             }
         }
         .navigationTitle(brew.name ?? "Missing name")
