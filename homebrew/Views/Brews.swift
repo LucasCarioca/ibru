@@ -18,28 +18,47 @@ struct Brews: View {
     
     @State var showForm = false
     var body: some View {
-        List {
-            ForEach(brews) { brew in
-                NavigationLink(destination: BrewDetail(brew: brew)) {
-                    HStack {
-                        Text(brew.name ?? "Name missing")
-                        Spacer()
-                        Text("\(brew.startDate!, formatter: brewDateFormatter)")
+        ZStack {
+            List {
+                ForEach(brews) { brew in
+                    NavigationLink(destination: BrewDetail(brew: brew)) {
+                        HStack {
+                            Text(brew.name ?? "Name missing")
+                            Spacer()
+                            Text("\(brew.startDate!, formatter: brewDateFormatter)")
+                        }
                     }
+                }.onDelete(perform: deleteItems)
+            }.listStyle(PlainListStyle())
+            .sheet(isPresented: $showForm) {
+                NewBrewForm() {
+                    showForm = false
                 }
-            }.onDelete(perform: deleteItems)
-        }.listStyle(PlainListStyle())
-        .sheet(isPresented: $showForm) {
-            NewBrewForm() {
-                showForm = false
+            }
+            .navigationTitle("Brews")
+            VStack {
+                Spacer()
+                HStack {
+                    Spacer()
+                    Button(action: {
+                        showForm = true
+                    }){
+                        Text("+")
+                            .font(.system(.largeTitle))
+                            .frame(width: 67, height: 60)
+                            .foregroundColor(Color.white)
+                            .padding(.bottom, 7)
+                    }
+                        .background(Color.accentColor)
+                        .cornerRadius(38.5)
+                        .padding()
+                        .shadow(color: Color.black.opacity(0.3),
+                                radius: 3,
+                                x: 3,
+                                y: 3)
+                }
             }
         }
-        .navigationTitle("Brews")
-        .navigationBarItems(trailing: Button(action: {
-            showForm = true
-        }){
-            Image(systemName: "plus")
-        })
     }
     
     private func deleteItems(offsets: IndexSet) {

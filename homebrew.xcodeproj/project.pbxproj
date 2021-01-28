@@ -22,6 +22,8 @@
 		DF43B6ED25C0AE5000093ED2 /* NewReadingForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF43B6EC25C0AE5000093ED2 /* NewReadingForm.swift */; };
 		DF43B6F225C0D38F00093ED2 /* NewBottleRecordForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF43B6F125C0D38F00093ED2 /* NewBottleRecordForm.swift */; };
 		DF43B70225C0D9EA00093ED2 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF43B70125C0D9EA00093ED2 /* CloudKit.framework */; };
+		DFDE432F25C30DD50085D2BB /* UpdateBrewForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFDE432E25C30DD50085D2BB /* UpdateBrewForm.swift */; };
+		DFDE433425C33CA10085D2BB /* ABVCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFDE433325C33CA10085D2BB /* ABVCalculator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,6 +66,8 @@
 		DF43B6F125C0D38F00093ED2 /* NewBottleRecordForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewBottleRecordForm.swift; sourceTree = "<group>"; };
 		DF43B6FC25C0D97900093ED2 /* homebrew.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = homebrew.entitlements; sourceTree = "<group>"; };
 		DF43B70125C0D9EA00093ED2 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
+		DFDE432E25C30DD50085D2BB /* UpdateBrewForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateBrewForm.swift; sourceTree = "<group>"; };
+		DFDE433325C33CA10085D2BB /* ABVCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ABVCalculator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -164,6 +168,8 @@
 				DF43B6E225C0901C00093ED2 /* BrewDetail.swift */,
 				DF43B6EC25C0AE5000093ED2 /* NewReadingForm.swift */,
 				DF43B6F125C0D38F00093ED2 /* NewBottleRecordForm.swift */,
+				DFDE432E25C30DD50085D2BB /* UpdateBrewForm.swift */,
+				DFDE433325C33CA10085D2BB /* ABVCalculator.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -320,7 +326,9 @@
 				DF43B6F225C0D38F00093ED2 /* NewBottleRecordForm.swift in Sources */,
 				DF43B6ED25C0AE5000093ED2 /* NewReadingForm.swift in Sources */,
 				DF43B6A625C0694F00093ED2 /* ContentView.swift in Sources */,
+				DFDE432F25C30DD50085D2BB /* UpdateBrewForm.swift in Sources */,
 				DF43B6B025C0695100093ED2 /* homebrew.xcdatamodeld in Sources */,
+				DFDE433425C33CA10085D2BB /* ABVCalculator.swift in Sources */,
 				DF43B6A425C0694F00093ED2 /* homebrewApp.swift in Sources */,
 				DF43B6E825C0A92F00093ED2 /* GravityReading.swift in Sources */,
 			);
@@ -481,7 +489,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = homebrew/homebrew.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 4;
 				DEVELOPMENT_ASSET_PATHS = "\"homebrew/Preview Content\"";
 				DEVELOPMENT_TEAM = Y259ZT3SQK;
 				ENABLE_PREVIEWS = YES;
@@ -492,6 +500,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = lucasdesouza.homebrew;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTS_MACCATALYST = YES;
@@ -508,7 +517,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = homebrew/homebrew.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 4;
 				DEVELOPMENT_ASSET_PATHS = "\"homebrew/Preview Content\"";
 				DEVELOPMENT_TEAM = Y259ZT3SQK;
 				ENABLE_PREVIEWS = YES;
@@ -519,6 +528,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = lucasdesouza.homebrew;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTS_MACCATALYST = YES;
