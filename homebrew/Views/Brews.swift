@@ -30,11 +30,9 @@ struct Brews: View {
                     }
                 }.onDelete(perform: deleteItems)
             }.listStyle(PlainListStyle())
-            .sheet(isPresented: $showForm) {
-                NewBrewForm() {
-                    showForm = false
-                }
-            }
+            .overlay(NewBrewForm(shown: $showForm) {
+                showForm = false
+            })
             .navigationTitle("Brews")
             VStack {
                 Spacer()
