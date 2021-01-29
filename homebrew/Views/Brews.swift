@@ -43,11 +43,9 @@ struct Brews: View {
                     Button(action: {
                         showForm = true
                     }){
-                        Text("+")
+                        Image("carboy").colorInvert()
                             .font(.system(.largeTitle))
-                            .frame(width: 67, height: 60)
-                            .foregroundColor(Color.white)
-                            .padding(.bottom, 7)
+                            .frame(width: 67, height: 67)
                     }
                         .background(Color.accentColor)
                         .cornerRadius(38.5)

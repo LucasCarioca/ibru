@@ -7,7 +7,8 @@
 
 import SwiftUI
 
-struct GravityReading: View {
+struct GravityReading: View
+{
 
     var date: Date
     var gravity: Double
@@ -15,6 +16,7 @@ struct GravityReading: View {
 
     var body: some View {
         HStack {
+            Image("testtube").resizable().frame(width: 15, height: 10).padding()
             Text("\(date, formatter: brewDateFormatter)")
             Spacer()
             Text("\(gravity) (\((originalGravity-gravity)*131.25)%)")

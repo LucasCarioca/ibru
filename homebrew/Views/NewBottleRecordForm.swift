@@ -10,26 +10,32 @@ import SwiftUI
 struct NewBottleRecordForm: View {
     @State var gravity = ""
     @State var date = Date()
+    @Binding var shown: Bool
+    
     var brew: Brew
     var dismiss: () -> Void
     
     var body: some View {
-        Form {
-            HStack {
-                Text("Record Bottling")
-                    .font(.title)
-                Spacer()
-                Button(action: dismiss) {
-                    Image(systemName: "xmark")
+        Group {
+            if shown {
+                Form {
+                    HStack {
+                        Text("Record Bottling")
+                            .font(.title)
+                        Spacer()
+                        Button(action: dismiss) {
+                            Image(systemName: "xmark")
+                        }
+                    }.padding()
+                    TextField("Final gravity", text: $gravity)
+                        .keyboardType(.decimalPad)
+                        .padding()
+                    DatePicker("Bottle date", selection: $date)
+                        .datePickerStyle(GraphicalDatePickerStyle())
+                    Button("Finish", action: addBrew)
+                        .frame(minWidth: 0, maxWidth: .infinity, alignment: .center)
                 }
-            }.padding()
-            TextField("Final gravity", text: $gravity)
-                .keyboardType(.decimalPad)
-                .padding()
-            DatePicker("Bottle date", selection: $date)
-                .datePickerStyle(GraphicalDatePickerStyle())
-            Button("Finish", action: addBrew)
-                .frame(minWidth: 0, maxWidth: .infinity, alignment: .center)
+            }
         }
     }
     

@@ -9,39 +9,42 @@ import SwiftUI
 
 struct UpdateBrewForm: View {
     
-    @State private var name = ""
+    @State var name = ""
     @State var gravity = ""
     @State var date = Date()
+    @Binding var shown: Bool
     
-    var brew: Brew {
-        didSet {
-            self.name = brew.name!
-            self.gravity = "\(brew.originalGravity)"
-            self.date = brew.startDate!
-        }
-    }
+    var brew: Brew
     var dismiss: () -> Void
     
     var body: some View {
-        Form {
-            HStack {
-                Text("New Brew")
-                    .font(.title)
-                Spacer()
-                Button(action: dismiss) {
-                    Image(systemName: "xmark")
+        Group {
+            if shown {
+                Form {
+                    HStack {
+                        Text("Edit Brew")
+                            .font(.title)
+                        Spacer()
+                        Button(action: dismiss) {
+                            Image(systemName: "xmark")
+                        }
+                    }.padding()
+                    TextField("Name", text: $name)
+                        .padding()
+                    TextField("Original gravity", text: $gravity)
+                        .keyboardType(.decimalPad)
+                        .padding()
+                    DatePicker("Start date", selection: $date)
+                        .datePickerStyle(GraphicalDatePickerStyle())
+                    
+                    Button("Finish", action: updateBrew)
+                        .frame(minWidth: 0, maxWidth: .infinity, alignment: .center)
+                }.onAppear() {
+                    self.name = brew.name!
+                    self.gravity = "\(brew.originalGravity)"
+                    self.date = brew.startDate!
                 }
-            }.padding()
-            TextField("Name", text: $name)
-                .padding()
-            TextField("Original gravity", text: $gravity)
-                .keyboardType(.decimalPad)
-                .padding()
-            DatePicker("Start date", selection: $date)
-                .datePickerStyle(GraphicalDatePickerStyle())
-            
-            Button("Finish", action: updateBrew)
-                .frame(minWidth: 0, maxWidth: .infinity, alignment: .center)
+            }
         }
     }
     
