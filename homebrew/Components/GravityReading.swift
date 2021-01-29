@@ -16,7 +16,7 @@ struct GravityReading: View
 
     var body: some View {
         HStack {
-            Image("testtube").resizable().frame(width: 15, height: 10).padding()
+            Image("testtube").resizable().frame(width: 10, height: 35).padding()
             Text("\(date, formatter: brewDateFormatter)")
             Spacer()
             Text("\(gravity) (\((originalGravity-gravity)*131.25)%)")

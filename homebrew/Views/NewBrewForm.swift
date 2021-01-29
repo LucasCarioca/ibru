@@ -13,29 +13,35 @@ struct NewBrewForm: View {
     @State private var name = ""
     @State var gravity = ""
     @State var date = Date()
+    @Binding var shown: Bool
 
     var dismiss: () -> Void
     
     var body: some View {
-        Form {
-            HStack {
-                Text("New Brew")
-                    .font(.title)
-                Spacer()
-                Button(action: dismiss) {
-                    Image(systemName: "xmark")
+        Group {
+            if shown {
+                Form {
+                    HStack {
+                        Text("New Brew")
+                            .font(.title)
+                        Spacer()
+                        Button(action: dismiss) {
+                            Image(systemName: "xmark")
+         
+                        }
+                    }.padding()
+                    TextField("Name", text: $name)
+                        .padding()
+                    TextField("Original gravity", text: $gravity)
+                        .keyboardType(.decimalPad)
+                        .padding()
+                    DatePicker("Start date", selection: $date)
+                        .datePickerStyle(GraphicalDatePickerStyle())
+                    
+                    Button("Finish", action: addBrew)
+                        .frame(minWidth: 0, maxWidth: .infinity, alignment: .center)
                 }
-            }.padding()
-            TextField("Name", text: $name)
-                .padding()
-            TextField("Original gravity", text: $gravity)
-                .keyboardType(.decimalPad)
-                .padding()
-            DatePicker("Start date", selection: $date)
-                .datePickerStyle(GraphicalDatePickerStyle())
-            
-            Button("Finish", action: addBrew)
-                .frame(minWidth: 0, maxWidth: .infinity, alignment: .center)
+            }
         }
     }
     
