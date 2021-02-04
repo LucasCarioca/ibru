@@ -16,10 +16,6 @@ struct BrewDetail: View {
     @State var showBottleForm = false
     var body: some View {
         VStack {
-//            Text("Last updated: \(updated, formatter: brewDateFormatter)")
-//                .font(.callout)
-//                .frame(maxWidth: .infinity, alignment: .leading)
-//                .padding(.horizontal)
             HStack {
                 Image("carboy").padding()
                 VStack {
@@ -169,6 +165,7 @@ struct BrewDetail: View {
         }
         return AnyView(EmptyView())
     }
+    
     private func reset() {
         showReadingForm = false
         showEditForm = false
