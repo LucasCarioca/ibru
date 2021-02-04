@@ -32,6 +32,8 @@ struct BrewDetail: View {
                     Text("Brew start date: \(brew.startDate ?? Date(), formatter: brewDateFormatter)")
                         .font(.callout)
                         .frame(maxWidth: .infinity, alignment: .leading)
+                    showDaysSinceBrew().font(.callout)
+                        .frame(maxWidth: .infinity, alignment: .leading)
                 }
             }
             showBottlingInfo().padding(.vertical)
@@ -136,8 +138,17 @@ struct BrewDetail: View {
         }
     }
     
+    private func showDaysSinceBrew() -> AnyView {
+        if let _ = brew.bottles {
+            return AnyView(EmptyView())
+        }
+        let brewAge = Date().timeIntervalSince(brew.startDate ?? Date()) / 86400
+        return AnyView(Text("Fermenting for \(String(format: "%.1f", brewAge)) days"))
+    }
+    
     private func showBottlingInfo() -> AnyView {
         if let bottle = brew.bottles {
+            let bottleAge = Date().timeIntervalSince(bottle.date ?? Date()) / 86400
             return AnyView(HStack {
                 Image("bottle").padding().padding(.horizontal, 7)
                 VStack {
@@ -148,6 +159,9 @@ struct BrewDetail: View {
                         .font(.callout)
                         .frame(maxWidth: .infinity, alignment: .leading)
                     Text("Bottle date: \(bottle.date ?? Date(), formatter: brewDateFormatter)")
+                        .font(.callout)
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                    Text("\(String(format: "%.1f", bottleAge)) Days old")
                         .font(.callout)
                         .frame(maxWidth: .infinity, alignment: .leading)
                 }
