@@ -8,44 +8,30 @@
 import SwiftUI
 
 struct UpdateBrewForm: View {
-    
+    @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     @State var name = ""
     @State var gravity = ""
     @State var date = Date()
-    @Binding var shown: Bool
     
     var brew: Brew
-    var dismiss: () -> Void
     
     var body: some View {
-        Group {
-            if shown {
-                Form {
-                    HStack {
-                        Text("Edit Brew")
-                            .font(.title)
-                        Spacer()
-                        Button(action: dismiss) {
-                            Image(systemName: "xmark")
-                        }
-                    }.padding()
-                    TextField("Name", text: $name)
-                        .padding()
-                    TextField("Original gravity", text: $gravity)
-                        .keyboardType(.decimalPad)
-                        .padding()
-                    DatePicker("Start date", selection: $date)
-                        .datePickerStyle(GraphicalDatePickerStyle())
-                    
-                    Button("Finish", action: updateBrew)
-                        .frame(minWidth: 0, maxWidth: .infinity, alignment: .center)
-                }.onAppear() {
-                    self.name = brew.name!
-                    self.gravity = "\(brew.originalGravity)"
-                    self.date = brew.startDate!
-                }
-            }
-        }
+        Form {
+            TextField("Name", text: $name)
+                .padding()
+            TextField("Original gravity", text: $gravity)
+                .keyboardType(.decimalPad)
+                .padding()
+            DatePicker("Start date", selection: $date)
+                .datePickerStyle(GraphicalDatePickerStyle())
+            
+            Button("Finish", action: updateBrew)
+                .frame(minWidth: 0, maxWidth: .infinity, alignment: .center)
+        }.onAppear() {
+            self.name = brew.name!
+            self.gravity = "\(brew.originalGravity)"
+            self.date = brew.startDate!
+        }.navigationTitle("Update brew")
     }
     
     private func updateBrew() {
@@ -55,7 +41,7 @@ struct UpdateBrewForm: View {
             brew.originalGravity = Double(gravity) ?? 1.000
             do {
                 try brew.managedObjectContext!.save()
-                dismiss()
+                presentationMode.wrappedValue.dismiss()
             } catch {
                 let nsError = error as NSError
                 fatalError("Unresolved error \(nsError), \(nsError.userInfo)")

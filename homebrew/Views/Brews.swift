@@ -15,6 +15,7 @@ struct Brews: View {
         sortDescriptors: [NSSortDescriptor(keyPath: \Brew.startDate, ascending: false)],
         animation: .default)
     private var brews: FetchedResults<Brew>
+    @State var refreshId = UUID()
     
     @State var showForm = false
     var body: some View {
@@ -30,21 +31,17 @@ struct Brews: View {
                     }
                 }.onDelete(perform: deleteItems)
             }.listStyle(PlainListStyle())
-            .overlay(NewBrewForm(shown: $showForm) {
-                showForm = false
-            })
             .navigationTitle("Brews")
             VStack {
                 Spacer()
                 HStack {
                     Spacer()
-                    Button(action: {
-                        showForm = true
+                    NavigationLink(destination: NewBrewForm().onDisappear(){
+                        self.refreshId = UUID()
                     }){
                         Image("carboy").colorInvert()
                             .font(.system(.largeTitle))
                             .frame(width: 67, height: 67)
-                    }
                         .background(Color.accentColor)
                         .cornerRadius(38.5)
                         .padding()
@@ -52,9 +49,10 @@ struct Brews: View {
                                 radius: 3,
                                 x: 3,
                                 y: 3)
+                    }
                 }
             }
-        }
+        }.id(refreshId)
     }
     
     private func deleteItems(offsets: IndexSet) {
