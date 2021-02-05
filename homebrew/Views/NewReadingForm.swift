@@ -8,35 +8,22 @@
 import SwiftUI
 
 struct NewReadingForm: View {
+    @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     @State var gravity = ""
     @State var date = Date()
-    @Binding var shown: Bool
     
     var brew: Brew
-    var dismiss: () -> Void
     
     var body: some View {
-        Group {
-            if shown {
-                Form {
-                    HStack {
-                        Text("New Reading")
-                            .font(.title)
-                        Spacer()
-                        Button(action: dismiss) {
-                            Image(systemName: "xmark")
-                        }
-                    }.padding()
-                    TextField("Current Gravity", text: $gravity)
-                        .keyboardType(.decimalPad)
-                        .padding()
-                    DatePicker("Start date", selection: $date)
-                        .datePickerStyle(GraphicalDatePickerStyle())
-                    Button("Finish", action: addBrew)
-                        .frame(minWidth: 0, maxWidth: .infinity, alignment: .center)
-                }
-            }
-        }
+        Form {
+            TextField("Current Gravity", text: $gravity)
+                .keyboardType(.decimalPad)
+                .padding()
+            DatePicker("Start date", selection: $date)
+                .datePickerStyle(GraphicalDatePickerStyle())
+            Button("Finish", action: addBrew)
+                .frame(minWidth: 0, maxWidth: .infinity, alignment: .center)
+        }.navigationTitle("New reading")
     }
     
     private func addBrew() {
@@ -47,7 +34,7 @@ struct NewReadingForm: View {
             brew.addToReadings(newItem)
             do {
                 try brew.managedObjectContext!.save()
-                dismiss()
+                presentationMode.wrappedValue.dismiss()
             } catch {
                 let nsError = error as NSError
                 fatalError("Unresolved error \(nsError), \(nsError.userInfo)")

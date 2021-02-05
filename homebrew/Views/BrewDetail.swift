@@ -9,11 +9,7 @@ import SwiftUI
 
 struct BrewDetail: View {
     var brew: Brew
-    @State var updated = Date()
-    @State var popup = false
-    @State var showEditForm = false
-    @State var showReadingForm = false
-    @State var showBottleForm = false
+    @State private var refreshID = UUID()
     var body: some View {
         VStack {
             HStack {
@@ -50,66 +46,43 @@ struct BrewDetail: View {
                     Spacer()
                     HStack {
                         Spacer()
-                        Button(action: {
-                            reset()
-                            showBottleForm = true
-                            popup = true
-                        }){
+                        NavigationLink(destination: NewBottleRecordForm(brew: brew).onDisappear(perform: refresh)) {
                             Image("bottle").colorInvert()
                                 .font(.system(.largeTitle))
                                 .frame(width: 67, height: 67)
+                                .background(Color.accentColor)
+                                .cornerRadius(50)
+                                .padding(.vertical)
+                                .shadow(color: Color.black.opacity(0.3),
+                                        radius: 3,
+                                        x: 3,
+                                        y: 3)
                         }
-                        .background(Color.accentColor)
-                        .cornerRadius(50)
-                        .padding(.vertical)
-                        .shadow(color: Color.black.opacity(0.3),
-                                radius: 3,
-                                x: 3,
-                                y: 3)
-                        Button(action: {
-                            reset()
-                            showReadingForm = true
-                            popup = true
-                        }){
+                        NavigationLink(destination: NewReadingForm(brew: brew).onDisappear(perform: refresh)){
                             Image("testtube").colorInvert()
                                 .font(.system(.largeTitle))
                                 .frame(width: 67, height: 67)
+                                .background(Color.accentColor)
+                                .cornerRadius(50)
+                                .padding(.vertical)
+                                .padding(.trailing, 12)
+                                .shadow(color: Color.black.opacity(0.3),
+                                        radius: 3,
+                                        x: 3,
+                                        y: 3)
                         }
-                        .background(Color.accentColor)
-                        .cornerRadius(50)
-                        .padding(.vertical)
-                        .padding(.trailing, 12)
-                        .shadow(color: Color.black.opacity(0.3),
-                                radius: 3,
-                                x: 3,
-                                y: 3)
                     }
                 }
             }
         }
         .navigationTitle(brew.name ?? "Missing name")
-        .navigationBarItems(trailing: Button(action: {
-            reset()
-            showEditForm = true
-            popup = true
-        }){
+        .navigationBarItems(trailing: NavigationLink(destination: UpdateBrewForm(brew: brew)){
             HStack {
                 Image(systemName: "square.and.pencil")
                 Text("Edit")
             }
         })
-        .overlay(NewBottleRecordForm(shown: $showBottleForm, brew: brew) {
-            showBottleForm = false
-            updated = Date()
-        })
-        .overlay(NewReadingForm(shown: $showReadingForm, brew: brew) {
-            showReadingForm = false
-            updated = Date()
-        })
-        .overlay(UpdateBrewForm(shown: $showEditForm, brew: brew) {
-            showEditForm = false
-            updated = Date()
-        })
+        .id(refreshID)
     }
     
     private func getReadingList() -> [Reading] {
@@ -126,7 +99,7 @@ struct BrewDetail: View {
             offsets.map { readingList[$0] }.forEach(brew.managedObjectContext!.delete)
             do {
                 try brew.managedObjectContext!.save()
-                updated = Date()
+                refresh()
             } catch {
                 let nsError = error as NSError
                 fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
@@ -146,7 +119,7 @@ struct BrewDetail: View {
         if let bottle = brew.bottles {
             let bottleAge = Date().timeIntervalSince(bottle.date ?? Date()) / 86400
             return AnyView(HStack {
-                Image("bottle").padding().padding(.horizontal, 7)
+                Image("bottle").padding()
                 VStack {
                     Text("FInal gravity: \(bottle.finalGravity)")
                         .font(.callout)
@@ -166,10 +139,8 @@ struct BrewDetail: View {
         return AnyView(EmptyView())
     }
     
-    private func reset() {
-        showReadingForm = false
-        showEditForm = false
-        showBottleForm = false
+    private func refresh() {
+        refreshID = UUID()
     }
 }
 

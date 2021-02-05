@@ -8,41 +8,25 @@
 import SwiftUI
 
 struct NewBrewForm: View {
-
+    @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     @Environment(\.managedObjectContext) private var viewContext
     @State private var name = ""
     @State var gravity = ""
     @State var date = Date()
-    @Binding var shown: Bool
-
-    var dismiss: () -> Void
     
     var body: some View {
-        Group {
-            if shown {
-                Form {
-                    HStack {
-                        Text("New Brew")
-                            .font(.title)
-                        Spacer()
-                        Button(action: dismiss) {
-                            Image(systemName: "xmark")
-         
-                        }
-                    }.padding()
-                    TextField("Name", text: $name)
-                        .padding()
-                    TextField("Original gravity", text: $gravity)
-                        .keyboardType(.decimalPad)
-                        .padding()
-                    DatePicker("Start date", selection: $date)
-                        .datePickerStyle(GraphicalDatePickerStyle())
-                    
-                    Button("Finish", action: addBrew)
-                        .frame(minWidth: 0, maxWidth: .infinity, alignment: .center)
-                }
-            }
-        }
+        Form {
+            TextField("Name", text: $name)
+                .padding()
+            TextField("Original gravity", text: $gravity)
+                .keyboardType(.decimalPad)
+                .padding()
+            DatePicker("Start date", selection: $date)
+                .datePickerStyle(GraphicalDatePickerStyle())
+            
+            Button("Finish", action: addBrew)
+                .frame(minWidth: 0, maxWidth: .infinity, alignment: .center)
+        }.navigationTitle("New brew")
     }
     
     private func addBrew() {
@@ -53,7 +37,7 @@ struct NewBrewForm: View {
             newItem.originalGravity = Double(gravity) ?? 1.000
             do {
                 try viewContext.save()
-                dismiss()
+                presentationMode.wrappedValue.dismiss()
             } catch {
                 let nsError = error as NSError
                 fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
