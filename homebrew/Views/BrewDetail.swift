@@ -41,6 +41,7 @@ struct BrewDetail: View {
                     ForEach(getReadingList(), id: \.self) { reading in
                         GravityReading(date: reading.date ?? Date(), gravity: reading.gravity, originalGravity: brew.originalGravity)
                     }.onDelete(perform: deleteItems)
+                    Spacer().padding(.vertical, 50)
                 }
                 VStack {
                     Spacer()
