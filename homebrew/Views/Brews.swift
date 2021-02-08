@@ -16,8 +16,7 @@ struct Brews: View {
         animation: .default)
     private var brews: FetchedResults<Brew>
     @State var refreshId = UUID()
-    
-    @State var showForm = false
+
     var body: some View {
         ZStack {
             List {
