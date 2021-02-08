@@ -30,6 +30,7 @@ struct Brews: View {
                         }
                     }
                 }.onDelete(perform: deleteItems)
+                Spacer().padding(.vertical, 50)
             }.listStyle(PlainListStyle())
             .navigationTitle("Brews")
             VStack {

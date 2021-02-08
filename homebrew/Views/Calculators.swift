@@ -14,7 +14,6 @@ struct Calculators: View {
                 Text("Alcohol by volume")
             }
         }
-        
     }
 }
 
