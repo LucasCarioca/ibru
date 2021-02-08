@@ -43,37 +43,7 @@ struct BrewDetail: View {
                     }.onDelete(perform: deleteItems)
                     Spacer().padding(.vertical, 50)
                 }
-                VStack {
-                    Spacer()
-                    HStack {
-                        Spacer()
-                        NavigationLink(destination: NewBottleRecordForm(brew: brew).onDisappear(perform: refresh)) {
-                            Image("bottle").colorInvert()
-                                .font(.system(.largeTitle))
-                                .frame(width: 67, height: 67)
-                                .background(Color.accentColor)
-                                .cornerRadius(50)
-                                .padding(.vertical)
-                                .shadow(color: Color.black.opacity(0.3),
-                                        radius: 3,
-                                        x: 3,
-                                        y: 3)
-                        }
-                        NavigationLink(destination: NewReadingForm(brew: brew).onDisappear(perform: refresh)){
-                            Image("testtube").colorInvert()
-                                .font(.system(.largeTitle))
-                                .frame(width: 67, height: 67)
-                                .background(Color.accentColor)
-                                .cornerRadius(50)
-                                .padding(.vertical)
-                                .padding(.trailing, 12)
-                                .shadow(color: Color.black.opacity(0.3),
-                                        radius: 3,
-                                        x: 3,
-                                        y: 3)
-                        }
-                    }
-                }
+                showButtons()
             }
         }
         .navigationTitle(brew.name ?? "Missing name")
@@ -114,6 +84,43 @@ struct BrewDetail: View {
         }
         let brewAge = Date().timeIntervalSince(brew.startDate ?? Date()) / 86400
         return AnyView(Text("Fermenting for \(String(format: "%.1f", brewAge)) days"))
+    }
+    
+    private func showButtons() -> AnyView {
+        if let _ = brew.bottles {
+            return AnyView(EmptyView())
+        }
+        return AnyView(VStack {
+            Spacer()
+            HStack {
+                Spacer()
+                NavigationLink(destination: NewBottleRecordForm(brew: brew).onDisappear(perform: refresh)) {
+                    Image("bottle").colorInvert()
+                        .font(.system(.largeTitle))
+                        .frame(width: 67, height: 67)
+                        .background(Color.accentColor)
+                        .cornerRadius(50)
+                        .padding(.vertical)
+                        .shadow(color: Color.black.opacity(0.3),
+                                radius: 3,
+                                x: 3,
+                                y: 3)
+                }
+                NavigationLink(destination: NewReadingForm(brew: brew).onDisappear(perform: refresh)){
+                    Image("testtube").colorInvert()
+                        .font(.system(.largeTitle))
+                        .frame(width: 67, height: 67)
+                        .background(Color.accentColor)
+                        .cornerRadius(50)
+                        .padding(.vertical)
+                        .padding(.trailing, 12)
+                        .shadow(color: Color.black.opacity(0.3),
+                                radius: 3,
+                                x: 3,
+                                y: 3)
+                }
+            }
+        })
     }
     
     private func showBottlingInfo() -> AnyView {
