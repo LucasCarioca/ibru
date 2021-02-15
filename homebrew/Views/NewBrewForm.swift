@@ -10,7 +10,9 @@ import SwiftUI
 struct NewBrewForm: View {
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     @Environment(\.managedObjectContext) private var viewContext
-    @State private var name = ""
+    @State var name = ""
+    @State var comment = ""
+    @State var showDescriptionEditor = false
     @State var gravity = ""
     @State var date = Date()
     
@@ -18,14 +20,29 @@ struct NewBrewForm: View {
         Form {
             TextField("Name", text: $name)
                 .padding()
+            Button(action: {
+                    showDescriptionEditor = true
+            }) {
+                comment == "" ? Text("Description").foregroundColor(.gray) : Text(comment).foregroundColor(.primary)
+            }.padding()
             TextField("Original gravity", text: $gravity)
                 .keyboardType(.decimalPad)
                 .padding()
             DatePicker("Start date", selection: $date)
                 .datePickerStyle(GraphicalDatePickerStyle())
-            
             Button("Finish", action: addBrew)
                 .frame(minWidth: 0, maxWidth: .infinity, alignment: .center)
+        }.sheet(isPresented: $showDescriptionEditor) {
+            VStack {
+                TextEditor(text: self.$comment).padding()
+                Spacer()
+                Button(action: {
+                    self.showDescriptionEditor = false
+                }){
+                  Text("Save")
+                }.padding()
+            }
+            
         }.navigationTitle("New brew")
     }
     
@@ -34,6 +51,7 @@ struct NewBrewForm: View {
             let newItem = Brew(context: viewContext)
             newItem.startDate = date
             newItem.name = name
+            newItem.comment = comment
             newItem.originalGravity = Double(gravity) ?? 1.000
             do {
                 try viewContext.save()

@@ -12,6 +12,10 @@ struct BrewDetail: View {
     @State private var refreshID = UUID()
     var body: some View {
         VStack {
+            Text(brew.comment ?? "")
+                .font(.headline)
+                .padding()
+                .frame(maxWidth: .infinity, alignment: .leading)
             HStack {
                 Image("carboy").padding()
                 VStack {
@@ -39,7 +43,9 @@ struct BrewDetail: View {
             ZStack {
                 List {
                     ForEach(getReadingList(), id: \.self) { reading in
-                        GravityReading(date: reading.date ?? Date(), gravity: reading.gravity, originalGravity: brew.originalGravity)
+                        NavigationLink(destination: UpdateReadingForm(reading: reading).onDisappear(perform: refresh)){
+                            GravityReading(date: reading.date ?? Date(), gravity: reading.gravity, originalGravity: brew.originalGravity)
+                        }
                     }.onDelete(perform: deleteItems)
                     Spacer().padding(.vertical, 50)
                 }
@@ -47,7 +53,7 @@ struct BrewDetail: View {
             }
         }
         .navigationTitle(brew.name ?? "Missing name")
-        .navigationBarItems(trailing: NavigationLink(destination: UpdateBrewForm(brew: brew)){
+        .navigationBarItems(trailing: NavigationLink(destination: UpdateBrewForm(brew: brew).onDisappear(perform: refresh)){
             HStack {
                 Image(systemName: "square.and.pencil")
                 Text("Edit")
