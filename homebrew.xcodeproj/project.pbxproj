@@ -22,6 +22,7 @@
 		DF43B6ED25C0AE5000093ED2 /* NewReadingForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF43B6EC25C0AE5000093ED2 /* NewReadingForm.swift */; };
 		DF43B6F225C0D38F00093ED2 /* NewBottleRecordForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF43B6F125C0D38F00093ED2 /* NewBottleRecordForm.swift */; };
 		DF43B70225C0D9EA00093ED2 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF43B70125C0D9EA00093ED2 /* CloudKit.framework */; };
+		DF60C3D925D2D4FC004921F1 /* UpdateReadingForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF60C3D825D2D4FC004921F1 /* UpdateReadingForm.swift */; };
 		DFCDBF8125CDC4D9000CFBFF /* Calculators.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFCDBF8025CDC4D9000CFBFF /* Calculators.swift */; };
 		DFDE432F25C30DD50085D2BB /* UpdateBrewForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFDE432E25C30DD50085D2BB /* UpdateBrewForm.swift */; };
 		DFDE433425C33CA10085D2BB /* ABVCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFDE433325C33CA10085D2BB /* ABVCalculator.swift */; };
@@ -67,6 +68,7 @@
 		DF43B6F125C0D38F00093ED2 /* NewBottleRecordForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewBottleRecordForm.swift; sourceTree = "<group>"; };
 		DF43B6FC25C0D97900093ED2 /* homebrew.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = homebrew.entitlements; sourceTree = "<group>"; };
 		DF43B70125C0D9EA00093ED2 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
+		DF60C3D825D2D4FC004921F1 /* UpdateReadingForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateReadingForm.swift; sourceTree = "<group>"; };
 		DFCDBF8025CDC4D9000CFBFF /* Calculators.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Calculators.swift; sourceTree = "<group>"; };
 		DFDE432E25C30DD50085D2BB /* UpdateBrewForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateBrewForm.swift; sourceTree = "<group>"; };
 		DFDE433325C33CA10085D2BB /* ABVCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ABVCalculator.swift; sourceTree = "<group>"; };
@@ -169,6 +171,7 @@
 				DF43B6DD25C0815300093ED2 /* NewBrewForm.swift */,
 				DF43B6E225C0901C00093ED2 /* BrewDetail.swift */,
 				DF43B6EC25C0AE5000093ED2 /* NewReadingForm.swift */,
+				DF60C3D825D2D4FC004921F1 /* UpdateReadingForm.swift */,
 				DF43B6F125C0D38F00093ED2 /* NewBottleRecordForm.swift */,
 				DFDE432E25C30DD50085D2BB /* UpdateBrewForm.swift */,
 				DFDE433325C33CA10085D2BB /* ABVCalculator.swift */,
@@ -327,6 +330,7 @@
 				DF43B6D925C076D000093ED2 /* Brews.swift in Sources */,
 				DF43B6E325C0901C00093ED2 /* BrewDetail.swift in Sources */,
 				DF43B6F225C0D38F00093ED2 /* NewBottleRecordForm.swift in Sources */,
+				DF60C3D925D2D4FC004921F1 /* UpdateReadingForm.swift in Sources */,
 				DF43B6ED25C0AE5000093ED2 /* NewReadingForm.swift in Sources */,
 				DFCDBF8125CDC4D9000CFBFF /* Calculators.swift in Sources */,
 				DF43B6A625C0694F00093ED2 /* ContentView.swift in Sources */,
@@ -493,7 +497,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = homebrew/homebrew.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 7;
+				CURRENT_PROJECT_VERSION = 8;
 				DEVELOPMENT_ASSET_PATHS = "\"homebrew/Preview Content\"";
 				DEVELOPMENT_TEAM = Y259ZT3SQK;
 				ENABLE_PREVIEWS = YES;
@@ -504,7 +508,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.2.1;
+				MARKETING_VERSION = 1.3.0;
 				PRODUCT_BUNDLE_IDENTIFIER = lucasdesouza.homebrew;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTS_MACCATALYST = YES;
@@ -521,7 +525,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = homebrew/homebrew.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 7;
+				CURRENT_PROJECT_VERSION = 8;
 				DEVELOPMENT_ASSET_PATHS = "\"homebrew/Preview Content\"";
 				DEVELOPMENT_TEAM = Y259ZT3SQK;
 				ENABLE_PREVIEWS = YES;
@@ -532,7 +536,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.2.1;
+				MARKETING_VERSION = 1.3.0;
 				PRODUCT_BUNDLE_IDENTIFIER = lucasdesouza.homebrew;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTS_MACCATALYST = YES;
