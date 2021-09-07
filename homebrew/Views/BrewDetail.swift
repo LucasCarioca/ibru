@@ -28,7 +28,7 @@ struct BrewDetail: View {
                     Text("Brew start date: \(brew.startDate ?? Date(), formatter: brewDateFormatter)")
                         .font(.callout)
                         .frame(maxWidth: .infinity, alignment: .leading)
-                    showDaysSinceBrew().font(.callout)
+                    showAge().font(.callout)
                         .frame(maxWidth: .infinity, alignment: .leading)
                 }
             }
@@ -84,12 +84,18 @@ struct BrewDetail: View {
         }
     }
     
-    private func showDaysSinceBrew() -> AnyView {
-        if let _ = brew.bottles {
-            return AnyView(EmptyView())
+    private func showAge(fromBottlingDate: Bool = false) -> AnyView {
+        var from = brew.startDate
+        if fromBottlingDate {
+            from = brew.bottles?.date
         }
-        let brewAge = Date().timeIntervalSince(brew.startDate ?? Date()) / 86400
-        return AnyView(Text("Fermenting for \(String(format: "%.1f", brewAge)) days"))
+        var brewAge = Date().timeIntervalSince(from ?? Date()) / 86400
+        var label = "days"
+        if brewAge >= 30 {
+            label = "months"
+            brewAge = brewAge/30
+        }
+        return AnyView(Text("\(String(format: "%.1f", brewAge)) \(label)"))
     }
     
     private func showButtons() -> AnyView {
@@ -131,7 +137,6 @@ struct BrewDetail: View {
     
     private func showBottlingInfo() -> AnyView {
         if let bottle = brew.bottles {
-            let bottleAge = Date().timeIntervalSince(bottle.date ?? Date()) / 86400
             return AnyView(HStack {
                 Image("bottle").padding()
                 VStack {
@@ -144,8 +149,7 @@ struct BrewDetail: View {
                     Text("Bottle date: \(bottle.date ?? Date(), formatter: brewDateFormatter)")
                         .font(.callout)
                         .frame(maxWidth: .infinity, alignment: .leading)
-                    Text("\(String(format: "%.1f", bottleAge)) Days old")
-                        .font(.callout)
+                    showAge(fromBottlingDate: true).font(.callout)
                         .frame(maxWidth: .infinity, alignment: .leading)
                 }
             })
