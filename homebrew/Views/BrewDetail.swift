@@ -10,12 +10,16 @@ import SwiftUI
 struct BrewDetail: View {
     var brew: Brew
     @State private var refreshID = UUID()
+    @State private var showEditView = false
     var body: some View {
         VStack {
             Text(brew.comment ?? "")
                 .font(.headline)
                 .padding()
                 .frame(maxWidth: .infinity, alignment: .leading)
+            NavigationLink(
+                destination: UpdateBrewForm(brew: brew).onDisappear(perform: refresh),
+                isActive: $showEditView) { EmptyView() }
             HStack {
                 Image("carboy").padding()
                 VStack {
@@ -53,7 +57,7 @@ struct BrewDetail: View {
             }
         }
         .navigationTitle(brew.name ?? "Missing name")
-        .navigationBarItems(trailing: NavigationLink(destination: UpdateBrewForm(brew: brew).onDisappear(perform: refresh)){
+        .navigationBarItems(trailing: Button(action: {self.showEditView = true}) {
             HStack {
                 Image(systemName: "square.and.pencil")
                 Text("Edit")
