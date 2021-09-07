@@ -46,7 +46,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		DF43B6A025C0694F00093ED2 /* homebrew.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = homebrew.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		DF43B6A025C0694F00093ED2 /* iBru.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iBru.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DF43B6A325C0694F00093ED2 /* homebrewApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = homebrewApp.swift; sourceTree = "<group>"; };
 		DF43B6A525C0694F00093ED2 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		DF43B6A725C0695100093ED2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -54,10 +54,10 @@
 		DF43B6AC25C0695100093ED2 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		DF43B6AF25C0695100093ED2 /* homebrew.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = homebrew.xcdatamodel; sourceTree = "<group>"; };
 		DF43B6B125C0695100093ED2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		DF43B6B625C0695200093ED2 /* homebrewTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = homebrewTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		DF43B6B625C0695200093ED2 /* iBruTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iBruTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DF43B6BA25C0695200093ED2 /* homebrewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = homebrewTests.swift; sourceTree = "<group>"; };
 		DF43B6BC25C0695200093ED2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		DF43B6C125C0695200093ED2 /* homebrewUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = homebrewUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		DF43B6C125C0695200093ED2 /* iBruUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iBruUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DF43B6C525C0695200093ED2 /* homebrewUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = homebrewUITests.swift; sourceTree = "<group>"; };
 		DF43B6C725C0695200093ED2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DF43B6D825C076D000093ED2 /* Brews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Brews.swift; sourceTree = "<group>"; };
@@ -114,9 +114,9 @@
 		DF43B6A125C0694F00093ED2 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				DF43B6A025C0694F00093ED2 /* homebrew.app */,
-				DF43B6B625C0695200093ED2 /* homebrewTests.xctest */,
-				DF43B6C125C0695200093ED2 /* homebrewUITests.xctest */,
+				DF43B6A025C0694F00093ED2 /* iBru.app */,
+				DF43B6B625C0695200093ED2 /* iBruTests.xctest */,
+				DF43B6C125C0695200093ED2 /* iBruUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -199,9 +199,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		DF43B69F25C0694F00093ED2 /* homebrew */ = {
+		DF43B69F25C0694F00093ED2 /* iBru */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = DF43B6CA25C0695200093ED2 /* Build configuration list for PBXNativeTarget "homebrew" */;
+			buildConfigurationList = DF43B6CA25C0695200093ED2 /* Build configuration list for PBXNativeTarget "iBru" */;
 			buildPhases = (
 				DF43B69C25C0694F00093ED2 /* Sources */,
 				DF43B69D25C0694F00093ED2 /* Frameworks */,
@@ -211,14 +211,14 @@
 			);
 			dependencies = (
 			);
-			name = homebrew;
+			name = iBru;
 			productName = homebrew;
-			productReference = DF43B6A025C0694F00093ED2 /* homebrew.app */;
+			productReference = DF43B6A025C0694F00093ED2 /* iBru.app */;
 			productType = "com.apple.product-type.application";
 		};
-		DF43B6B525C0695200093ED2 /* homebrewTests */ = {
+		DF43B6B525C0695200093ED2 /* iBruTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = DF43B6CD25C0695200093ED2 /* Build configuration list for PBXNativeTarget "homebrewTests" */;
+			buildConfigurationList = DF43B6CD25C0695200093ED2 /* Build configuration list for PBXNativeTarget "iBruTests" */;
 			buildPhases = (
 				DF43B6B225C0695200093ED2 /* Sources */,
 				DF43B6B325C0695200093ED2 /* Frameworks */,
@@ -229,14 +229,14 @@
 			dependencies = (
 				DF43B6B825C0695200093ED2 /* PBXTargetDependency */,
 			);
-			name = homebrewTests;
+			name = iBruTests;
 			productName = homebrewTests;
-			productReference = DF43B6B625C0695200093ED2 /* homebrewTests.xctest */;
+			productReference = DF43B6B625C0695200093ED2 /* iBruTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		DF43B6C025C0695200093ED2 /* homebrewUITests */ = {
+		DF43B6C025C0695200093ED2 /* iBruUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = DF43B6D025C0695200093ED2 /* Build configuration list for PBXNativeTarget "homebrewUITests" */;
+			buildConfigurationList = DF43B6D025C0695200093ED2 /* Build configuration list for PBXNativeTarget "iBruUITests" */;
 			buildPhases = (
 				DF43B6BD25C0695200093ED2 /* Sources */,
 				DF43B6BE25C0695200093ED2 /* Frameworks */,
@@ -247,9 +247,9 @@
 			dependencies = (
 				DF43B6C325C0695200093ED2 /* PBXTargetDependency */,
 			);
-			name = homebrewUITests;
+			name = iBruUITests;
 			productName = homebrewUITests;
-			productReference = DF43B6C125C0695200093ED2 /* homebrewUITests.xctest */;
+			productReference = DF43B6C125C0695200093ED2 /* iBruUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
@@ -274,7 +274,7 @@
 					};
 				};
 			};
-			buildConfigurationList = DF43B69B25C0694F00093ED2 /* Build configuration list for PBXProject "homebrew" */;
+			buildConfigurationList = DF43B69B25C0694F00093ED2 /* Build configuration list for PBXProject "iBru" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -287,9 +287,9 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				DF43B69F25C0694F00093ED2 /* homebrew */,
-				DF43B6B525C0695200093ED2 /* homebrewTests */,
-				DF43B6C025C0695200093ED2 /* homebrewUITests */,
+				DF43B69F25C0694F00093ED2 /* iBru */,
+				DF43B6B525C0695200093ED2 /* iBruTests */,
+				DF43B6C025C0695200093ED2 /* iBruUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -363,12 +363,12 @@
 /* Begin PBXTargetDependency section */
 		DF43B6B825C0695200093ED2 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = DF43B69F25C0694F00093ED2 /* homebrew */;
+			target = DF43B69F25C0694F00093ED2 /* iBru */;
 			targetProxy = DF43B6B725C0695200093ED2 /* PBXContainerItemProxy */;
 		};
 		DF43B6C325C0695200093ED2 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = DF43B69F25C0694F00093ED2 /* homebrew */;
+			target = DF43B69F25C0694F00093ED2 /* iBru */;
 			targetProxy = DF43B6C225C0695200093ED2 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -497,7 +497,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = homebrew/homebrew.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 10;
 				DEVELOPMENT_ASSET_PATHS = "\"homebrew/Preview Content\"";
 				DEVELOPMENT_TEAM = Y259ZT3SQK;
 				ENABLE_PREVIEWS = YES;
@@ -525,7 +525,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = homebrew/homebrew.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 10;
 				DEVELOPMENT_ASSET_PATHS = "\"homebrew/Preview Content\"";
 				DEVELOPMENT_TEAM = Y259ZT3SQK;
 				ENABLE_PREVIEWS = YES;
@@ -564,7 +564,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/homebrew.app/homebrew";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/iBru.app/iBru";
 			};
 			name = Debug;
 		};
@@ -586,7 +586,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/homebrew.app/homebrew";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/iBru.app/iBru";
 			};
 			name = Release;
 		};
@@ -633,7 +633,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		DF43B69B25C0694F00093ED2 /* Build configuration list for PBXProject "homebrew" */ = {
+		DF43B69B25C0694F00093ED2 /* Build configuration list for PBXProject "iBru" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				DF43B6C825C0695200093ED2 /* Debug */,
@@ -642,7 +642,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		DF43B6CA25C0695200093ED2 /* Build configuration list for PBXNativeTarget "homebrew" */ = {
+		DF43B6CA25C0695200093ED2 /* Build configuration list for PBXNativeTarget "iBru" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				DF43B6CB25C0695200093ED2 /* Debug */,
@@ -651,7 +651,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		DF43B6CD25C0695200093ED2 /* Build configuration list for PBXNativeTarget "homebrewTests" */ = {
+		DF43B6CD25C0695200093ED2 /* Build configuration list for PBXNativeTarget "iBruTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				DF43B6CE25C0695200093ED2 /* Debug */,
@@ -660,7 +660,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		DF43B6D025C0695200093ED2 /* Build configuration list for PBXNativeTarget "homebrewUITests" */ = {
+		DF43B6D025C0695200093ED2 /* Build configuration list for PBXNativeTarget "iBruUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				DF43B6D125C0695200093ED2 /* Debug */,
