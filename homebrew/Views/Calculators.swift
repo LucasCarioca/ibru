@@ -13,6 +13,9 @@ struct Calculators: View {
             NavigationLink(destination: ABVCalculator()) {
                 Text("Alcohol by volume")
             }
+            NavigationLink(destination: SGCalculator()) {
+                Text("Gravity Estimator")
+            }
         }
     }
 }
