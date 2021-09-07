@@ -1,6 +1,6 @@
 .DS_Store
 **/.DS_Store
-
+.idea/
 
 # Created by https://www.toptal.com/developers/gitignore/api/swiftpackagemanager,swift,xcode,macos
 # Edit at https://www.toptal.com/developers/gitignore?templates=swiftpackagemanager,swift,xcode,macos
