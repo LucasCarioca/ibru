@@ -24,6 +24,7 @@
 		DF43B70225C0D9EA00093ED2 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF43B70125C0D9EA00093ED2 /* CloudKit.framework */; };
 		DF60C3D925D2D4FC004921F1 /* UpdateReadingForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF60C3D825D2D4FC004921F1 /* UpdateReadingForm.swift */; };
 		DF60F90F26E7B2FB00C93B35 /* SGCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF60F90E26E7B2FB00C93B35 /* SGCalculator.swift */; };
+		DFB0BD3E26EAA4CA008FDD3A /* NewSecondaryRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFB0BD3D26EAA4CA008FDD3A /* NewSecondaryRecord.swift */; };
 		DFCDBF8125CDC4D9000CFBFF /* Calculators.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFCDBF8025CDC4D9000CFBFF /* Calculators.swift */; };
 		DFDE432F25C30DD50085D2BB /* UpdateBrewForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFDE432E25C30DD50085D2BB /* UpdateBrewForm.swift */; };
 		DFDE433425C33CA10085D2BB /* ABVCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFDE433325C33CA10085D2BB /* ABVCalculator.swift */; };
@@ -71,6 +72,7 @@
 		DF43B70125C0D9EA00093ED2 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
 		DF60C3D825D2D4FC004921F1 /* UpdateReadingForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateReadingForm.swift; sourceTree = "<group>"; };
 		DF60F90E26E7B2FB00C93B35 /* SGCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SGCalculator.swift; sourceTree = "<group>"; };
+		DFB0BD3D26EAA4CA008FDD3A /* NewSecondaryRecord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewSecondaryRecord.swift; sourceTree = "<group>"; };
 		DFCDBF8025CDC4D9000CFBFF /* Calculators.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Calculators.swift; sourceTree = "<group>"; };
 		DFDE432E25C30DD50085D2BB /* UpdateBrewForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateBrewForm.swift; sourceTree = "<group>"; };
 		DFDE433325C33CA10085D2BB /* ABVCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ABVCalculator.swift; sourceTree = "<group>"; };
@@ -175,6 +177,7 @@
 				DF43B6EC25C0AE5000093ED2 /* NewReadingForm.swift */,
 				DF60C3D825D2D4FC004921F1 /* UpdateReadingForm.swift */,
 				DF43B6F125C0D38F00093ED2 /* NewBottleRecordForm.swift */,
+				DFB0BD3D26EAA4CA008FDD3A /* NewSecondaryRecord.swift */,
 				DFDE432E25C30DD50085D2BB /* UpdateBrewForm.swift */,
 				DFDE433325C33CA10085D2BB /* ABVCalculator.swift */,
 				DFCDBF8025CDC4D9000CFBFF /* Calculators.swift */,
@@ -332,6 +335,7 @@
 				DF60F90F26E7B2FB00C93B35 /* SGCalculator.swift in Sources */,
 				DF43B6AD25C0695100093ED2 /* Persistence.swift in Sources */,
 				DF43B6D925C076D000093ED2 /* Brews.swift in Sources */,
+				DFB0BD3E26EAA4CA008FDD3A /* NewSecondaryRecord.swift in Sources */,
 				DF43B6E325C0901C00093ED2 /* BrewDetail.swift in Sources */,
 				DF43B6F225C0D38F00093ED2 /* NewBottleRecordForm.swift in Sources */,
 				DF60C3D925D2D4FC004921F1 /* UpdateReadingForm.swift in Sources */,
@@ -501,7 +505,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = homebrew/homebrew.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 11;
+				CURRENT_PROJECT_VERSION = 13;
 				DEVELOPMENT_ASSET_PATHS = "\"homebrew/Preview Content\"";
 				DEVELOPMENT_TEAM = Y259ZT3SQK;
 				ENABLE_PREVIEWS = YES;
@@ -512,7 +516,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.5.0;
+				MARKETING_VERSION = 1.6.0;
 				PRODUCT_BUNDLE_IDENTIFIER = lucasdesouza.homebrew;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTS_MACCATALYST = YES;
@@ -529,7 +533,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = homebrew/homebrew.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 11;
+				CURRENT_PROJECT_VERSION = 13;
 				DEVELOPMENT_ASSET_PATHS = "\"homebrew/Preview Content\"";
 				DEVELOPMENT_TEAM = Y259ZT3SQK;
 				ENABLE_PREVIEWS = YES;
@@ -540,7 +544,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.5.0;
+				MARKETING_VERSION = 1.6.0;
 				PRODUCT_BUNDLE_IDENTIFIER = lucasdesouza.homebrew;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTS_MACCATALYST = YES;
