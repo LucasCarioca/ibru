@@ -121,30 +121,6 @@ struct BrewDetail: View {
             Spacer()
             HStack {
                 Spacer()
-                NavigationLink(destination: NewSecondaryRecord(brew: brew).onDisappear(perform: refresh)) {
-                    Image("carboy").colorInvert()
-                        .font(.system(.largeTitle))
-                        .frame(width: 67, height: 67)
-                        .background(Color.accentColor)
-                        .cornerRadius(50)
-                        .padding(.vertical)
-                        .shadow(color: Color.black.opacity(0.3),
-                                radius: 3,
-                                x: 3,
-                                y: 3)
-                }
-                NavigationLink(destination: NewBottleRecordForm(brew: brew).onDisappear(perform: refresh)) {
-                    Image("bottle").colorInvert()
-                        .font(.system(.largeTitle))
-                        .frame(width: 67, height: 67)
-                        .background(Color.accentColor)
-                        .cornerRadius(50)
-                        .padding(.vertical)
-                        .shadow(color: Color.black.opacity(0.3),
-                                radius: 3,
-                                x: 3,
-                                y: 3)
-                }
                 NavigationLink(destination: NewReadingForm(brew: brew).onDisappear(perform: refresh)){
                     Image("testtube").colorInvert()
                         .font(.system(.largeTitle))
@@ -183,7 +159,15 @@ struct BrewDetail: View {
                 }
             })
         }
-        return AnyView(EmptyView())
+        return AnyView(NavigationLink(destination: NewBottleRecordForm(brew: brew).onDisappear(perform: refresh)) {
+            HStack {
+                Image(systemName: "plus").padding(.leading)
+                Text("Bottling")
+                    .fontWeight(.bold)
+                    .padding(.trailing)
+                    .frame(maxWidth: .infinity, alignment: .leading)
+            }
+        })
     }
     
     private func showSecondaryInfo() -> AnyView {
@@ -191,6 +175,7 @@ struct BrewDetail: View {
             return AnyView(HStack {
                 Image("carboy").padding()
                 VStack {
+                    
                     Text("Secondary Fermentation").font(.headline)
                         .frame(maxWidth: .infinity, alignment: .leading)
                     Text("Current gravity: \(secondary.gravity)")
@@ -206,8 +191,18 @@ struct BrewDetail: View {
                         .frame(maxWidth: .infinity, alignment: .leading)
                 }
             })
+        } else if let _ = brew.bottles {
+            return AnyView(EmptyView())
         }
-        return AnyView(EmptyView())
+        return AnyView(NavigationLink(destination: NewSecondaryRecord(brew: brew).onDisappear(perform: refresh)) {
+            HStack {
+                Image(systemName: "plus").padding(.leading)
+                Text("Secondary")
+                    .fontWeight(.bold)
+                    .padding(.trailing)
+                    .frame(maxWidth: .infinity, alignment: .leading)
+            }
+        })
     }
     
     private func refresh() {
