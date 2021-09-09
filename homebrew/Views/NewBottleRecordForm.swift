@@ -23,7 +23,7 @@ struct NewBottleRecordForm: View {
                 .datePickerStyle(GraphicalDatePickerStyle())
             Button("Finish", action: addBrew)
                 .frame(minWidth: 0, maxWidth: .infinity, alignment: .center)
-        }.navigationTitle("Record bottling")
+        }.navigationTitle("Bottling")
     }
     
     private func addBrew() {

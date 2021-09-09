@@ -23,7 +23,7 @@ struct NewSecondaryRecord: View {
                 .datePickerStyle(GraphicalDatePickerStyle())
             Button("Finish", action: addSecondary)
                 .frame(minWidth: 0, maxWidth: .infinity, alignment: .center)
-        }.navigationTitle("Record secondary")
+        }.navigationTitle("Secondary")
     }
     
     private func addSecondary() {
