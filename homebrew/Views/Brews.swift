@@ -27,7 +27,7 @@ struct Brews: View {
                             Spacer()
                             Text("\(brew.startDate!, formatter: brewDateFormatter)")
                         }
-                    }.isDetailLink(false)
+                    }
                 }.onDelete(perform: deleteItems)
                 Spacer().padding(.vertical, 50)
             }.listStyle(PlainListStyle())
