@@ -16,6 +16,7 @@
         <attribute name="startDate" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <relationship name="bottles" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="Bottle" inverseName="brew" inverseEntity="Bottle"/>
         <relationship name="readings" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Reading" inverseName="brew" inverseEntity="Reading"/>
+        <relationship name="secondary" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Secondary" inverseName="brew" inverseEntity="Secondary"/>
     </entity>
     <entity name="Item" representedClassName="Item" syncable="YES" codeGenerationType="class">
         <attribute name="timestamp" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
@@ -25,10 +26,16 @@
         <attribute name="gravity" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
         <relationship name="brew" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Brew" inverseName="readings" inverseEntity="Brew"/>
     </entity>
+    <entity name="Secondary" representedClassName="Secondary" syncable="YES" codeGenerationType="class">
+        <attribute name="date" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="gravity" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <relationship name="brew" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Brew" inverseName="secondary" inverseEntity="Brew"/>
+    </entity>
     <elements>
         <element name="Bottle" positionX="17.59423828125" positionY="-37.134521484375" width="128" height="119"/>
-        <element name="Brew" positionX="-284.067626953125" positionY="-22.3470458984375" width="128" height="134"/>
+        <element name="Brew" positionX="-284.067626953125" positionY="-22.3470458984375" width="128" height="149"/>
         <element name="Item" positionX="-283.5322265625" positionY="-118.3923950195312" width="128" height="44"/>
         <element name="Reading" positionX="19.386474609375" positionY="151.8450317382812" width="128" height="73"/>
+        <element name="Secondary" positionX="-135" positionY="45" width="128" height="74"/>
     </elements>
 </model>
