@@ -15,11 +15,14 @@ struct homebrewApp: App {
         WindowGroup {
             NavigationView {
                 List {
-                    NavigationLink(destination: Brews(), tag: 0, selection: $selected){
-                        Label("Brews", image: "carboy")
+                    NavigationLink(destination: Dashboard(), tag: 0, selection: $selected){
+                        Label("Dashboard", systemImage: "chart.bar")
+                    }
+                    NavigationLink(destination: Brews(), tag: 1, selection: $selected){
+                        Label("Brew List", systemImage: "list.bullet.rectangle")
                     }
                     NavigationLink(destination: Calculators(), tag: 1, selection: $selected){
-                        Label("Calculators", image: "calculator")
+                        Label("Calculators", systemImage: "function")
                     }
 //                    NavigationLink("Guides", destination: Text("Coming soon"), tag: 2, selection: $selected)
 //                    NavigationLink("About", destination: Text("Coming soon"), tag: 3, selection: $selected)

@@ -23,10 +23,3 @@ struct GravityReading: View
         }
     }
 }
-
-private let brewDateFormatter: DateFormatter = {
-    let formatter = DateFormatter()
-    formatter.dateStyle = .short
-    formatter.timeStyle = .short
-    return formatter
-}()
