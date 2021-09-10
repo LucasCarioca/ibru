@@ -22,13 +22,13 @@ struct BrewDetail: View {
                 VStack {
                     Text("Primary Fermentation").font(.headline)
                         .frame(maxWidth: .infinity, alignment: .leading)
-                    Text("Original gravity: \(brew.originalGravity)")
+                    Text("OG: \(brew.originalGravity)")
                         .font(.callout)
                         .frame(maxWidth: .infinity, alignment: .leading)
                     Text("Potential ABV: \((brew.originalGravity-1)*131.25)%")
                         .font(.callout)
                         .frame(maxWidth: .infinity, alignment: .leading)
-                    Text("Brew start date: \(brew.startDate ?? Date(), formatter: brewDateFormatter)")
+                    Text("Start date: \(brew.startDate ?? Date(), formatter: brewDateFormatter)")
                         .font(.callout)
                         .frame(maxWidth: .infinity, alignment: .leading)
                     showAge().font(.callout)
@@ -88,23 +88,7 @@ struct BrewDetail: View {
     }
     
     private func showAge(fromBottlingDate: Bool = false, fromSecondary: Bool = false) -> AnyView {
-        var from = brew.startDate
-        var to = Date()
-        if fromBottlingDate {
-            from = brew.bottles?.date
-        } else if fromSecondary {
-            from = brew.secondary?.date
-            if let bottle = brew.bottles {
-                to = bottle.date ?? Date()
-            }
-        } else {
-            if let seconary = brew.secondary {
-                to = seconary.date ?? Date()
-            } else if let bottle = brew.bottles {
-                to = bottle.date ?? Date()
-            }
-        }
-        var brewAge = to.timeIntervalSince(from ?? Date()) / 86400
+        var brewAge = getAge(of: brew, fromBottlingDate: fromBottlingDate, fromSecondary: fromSecondary)
         var label = "days"
         if brewAge >= 30 {
             label = "months"
@@ -145,13 +129,13 @@ struct BrewDetail: View {
                 VStack {
                     Text("Bottled").bold().font(.headline)
                         .frame(maxWidth: .infinity, alignment: .leading)
-                    Text("FInal gravity: \(bottle.finalGravity)")
+                    Text("Final gravity: \(bottle.finalGravity)")
                         .font(.callout)
                         .frame(maxWidth: .infinity, alignment: .leading)
                     Text("Final ABV: \((brew.originalGravity-bottle.finalGravity)*131.25)%")
                         .font(.callout)
                         .frame(maxWidth: .infinity, alignment: .leading)
-                    Text("Bottle date: \(bottle.date ?? Date(), formatter: brewDateFormatter)")
+                    Text("End Date: \(bottle.date ?? Date(), formatter: brewDateFormatter)")
                         .font(.callout)
                         .frame(maxWidth: .infinity, alignment: .leading)
                     showAge(fromBottlingDate: true).font(.callout)
@@ -175,7 +159,6 @@ struct BrewDetail: View {
             return AnyView(HStack {
                 Image("carboy").padding()
                 VStack {
-                    
                     Text("Secondary Fermentation").font(.headline)
                         .frame(maxWidth: .infinity, alignment: .leading)
                     Text("Current gravity: \(secondary.gravity)")
@@ -184,7 +167,7 @@ struct BrewDetail: View {
                     Text("Current ABV: \((brew.originalGravity-secondary.gravity)*131.25)%")
                         .font(.callout)
                         .frame(maxWidth: .infinity, alignment: .leading)
-                    Text("Secondary start date: \(secondary.date ?? Date(), formatter: brewDateFormatter)")
+                    Text("Start date: \(secondary.date ?? Date(), formatter: brewDateFormatter)")
                         .font(.callout)
                         .frame(maxWidth: .infinity, alignment: .leading)
                     showAge(fromSecondary: true).font(.callout)
@@ -208,6 +191,42 @@ struct BrewDetail: View {
     private func refresh() {
         refreshID = UUID()
     }
+}
+
+func getAge(of brew: Brew, fromBottlingDate: Bool = false, fromSecondary: Bool = false) -> Double {
+    var from = brew.startDate
+    var to = Date()
+    if fromBottlingDate {
+        from = brew.bottles?.date
+    } else if fromSecondary {
+        from = brew.secondary?.date
+        if let bottle = brew.bottles {
+            to = bottle.date ?? Date()
+        }
+    } else {
+        if let seconary = brew.secondary {
+            to = seconary.date ?? Date()
+        } else if let bottle = brew.bottles {
+            to = bottle.date ?? Date()
+        }
+    }
+    let brewAge = to.timeIntervalSince(from ?? Date()) / 86400
+    return brewAge
+}
+
+enum BrewStage: String {
+    case primary = "Primary Fermentation"
+    case secondary = "Secondary Fermentation"
+    case bottled = "Bottled"
+}
+
+func getStage(of brew: Brew) -> BrewStage {
+    if brew.bottles != nil {
+        return .bottled
+    } else if brew.secondary != nil {
+        return .secondary
+    }
+    return .primary
 }
 
 private let brewDateFormatter: DateFormatter = {
