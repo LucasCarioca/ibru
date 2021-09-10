@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import CoreData
 
 struct Brews: View {
     @Environment(\.managedObjectContext) private var viewContext
@@ -27,38 +28,16 @@ struct Brews: View {
                             Text("\(brew.startDate!, formatter: brewDateFormatter)")
                         }
                     }
-                }.onDelete(perform: deleteItems)
+                }.onDelete(perform: { offsets in
+                    withAnimation {
+                        deleteBrew(offsets: offsets, brews: brews, context: viewContext)
+                    }
+                })
                 Spacer().padding(.vertical, 50)
             }.listStyle(PlainListStyle())
             .navigationTitle("Brews")
             .modifier(NewBrewButtonModifier(onDisappear: {
                 self.refreshId = UUID()
             }))
-    }
-    
-    private func deleteItems(offsets: IndexSet) {
-        withAnimation {
-            offsets.map { brews[$0] }.forEach(viewContext.delete)
-
-            do {
-                try viewContext.save()
-            } catch {
-                let nsError = error as NSError
-                fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
-            }
-        }
-    }
-}
-
-private let brewDateFormatter: DateFormatter = {
-    let formatter = DateFormatter()
-    formatter.dateStyle = .short
-    formatter.timeStyle = .none
-    return formatter
-}()
-
-struct Brews_Previews: PreviewProvider {
-    static var previews: some View {
-        Brews()
     }
 }
