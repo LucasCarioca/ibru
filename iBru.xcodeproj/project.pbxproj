@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -25,6 +25,14 @@
 		DF60C3D925D2D4FC004921F1 /* UpdateReadingForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF60C3D825D2D4FC004921F1 /* UpdateReadingForm.swift */; };
 		DF60F90F26E7B2FB00C93B35 /* SGCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF60F90E26E7B2FB00C93B35 /* SGCalculator.swift */; };
 		DFB0BD3E26EAA4CA008FDD3A /* NewSecondaryRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFB0BD3D26EAA4CA008FDD3A /* NewSecondaryRecord.swift */; };
+		DFB0BD4026EAFF98008FDD3A /* Dashboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFB0BD3F26EAFF98008FDD3A /* Dashboard.swift */; };
+		DFB0BD4526EB03A8008FDD3A /* PrimaryList.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFB0BD4426EB03A8008FDD3A /* PrimaryList.swift */; };
+		DFB0BD4726EB0409008FDD3A /* SecondaryList.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFB0BD4626EB0409008FDD3A /* SecondaryList.swift */; };
+		DFB0BD4A26EB0906008FDD3A /* QuickComponents in Frameworks */ = {isa = PBXBuildFile; productRef = DFB0BD4926EB0906008FDD3A /* QuickComponents */; };
+		DFB0BD4C26EB09FA008FDD3A /* BrewTile.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFB0BD4B26EB09FA008FDD3A /* BrewTile.swift */; };
+		DFB0BD4E26EB10C8008FDD3A /* BottledList.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFB0BD4D26EB10C8008FDD3A /* BottledList.swift */; };
+		DFB0BD5026EB112C008FDD3A /* BrewList.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFB0BD4F26EB112C008FDD3A /* BrewList.swift */; };
+		DFB0BD5226EBA465008FDD3A /* NewBrewButtonModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFB0BD5126EBA465008FDD3A /* NewBrewButtonModifier.swift */; };
 		DFCDBF8125CDC4D9000CFBFF /* Calculators.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFCDBF8025CDC4D9000CFBFF /* Calculators.swift */; };
 		DFDE432F25C30DD50085D2BB /* UpdateBrewForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFDE432E25C30DD50085D2BB /* UpdateBrewForm.swift */; };
 		DFDE433425C33CA10085D2BB /* ABVCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFDE433325C33CA10085D2BB /* ABVCalculator.swift */; };
@@ -73,6 +81,13 @@
 		DF60C3D825D2D4FC004921F1 /* UpdateReadingForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateReadingForm.swift; sourceTree = "<group>"; };
 		DF60F90E26E7B2FB00C93B35 /* SGCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SGCalculator.swift; sourceTree = "<group>"; };
 		DFB0BD3D26EAA4CA008FDD3A /* NewSecondaryRecord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewSecondaryRecord.swift; sourceTree = "<group>"; };
+		DFB0BD3F26EAFF98008FDD3A /* Dashboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dashboard.swift; sourceTree = "<group>"; };
+		DFB0BD4426EB03A8008FDD3A /* PrimaryList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimaryList.swift; sourceTree = "<group>"; };
+		DFB0BD4626EB0409008FDD3A /* SecondaryList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondaryList.swift; sourceTree = "<group>"; };
+		DFB0BD4B26EB09FA008FDD3A /* BrewTile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrewTile.swift; sourceTree = "<group>"; };
+		DFB0BD4D26EB10C8008FDD3A /* BottledList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottledList.swift; sourceTree = "<group>"; };
+		DFB0BD4F26EB112C008FDD3A /* BrewList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrewList.swift; sourceTree = "<group>"; };
+		DFB0BD5126EBA465008FDD3A /* NewBrewButtonModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewBrewButtonModifier.swift; sourceTree = "<group>"; };
 		DFCDBF8025CDC4D9000CFBFF /* Calculators.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Calculators.swift; sourceTree = "<group>"; };
 		DFDE432E25C30DD50085D2BB /* UpdateBrewForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateBrewForm.swift; sourceTree = "<group>"; };
 		DFDE433325C33CA10085D2BB /* ABVCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ABVCalculator.swift; sourceTree = "<group>"; };
@@ -83,6 +98,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DFB0BD4A26EB0906008FDD3A /* QuickComponents in Frameworks */,
 				DF43B70225C0D9EA00093ED2 /* CloudKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -128,6 +144,7 @@
 		DF43B6A225C0694F00093ED2 /* homebrew */ = {
 			isa = PBXGroup;
 			children = (
+				DFB0BD4126EB0068008FDD3A /* Filters */,
 				DF43B6FC25C0D97900093ED2 /* homebrew.entitlements */,
 				DF43B6D725C0761400093ED2 /* Components */,
 				DF43B6D625C0760700093ED2 /* Views */,
@@ -182,6 +199,7 @@
 				DFDE433325C33CA10085D2BB /* ABVCalculator.swift */,
 				DFCDBF8025CDC4D9000CFBFF /* Calculators.swift */,
 				DF60F90E26E7B2FB00C93B35 /* SGCalculator.swift */,
+				DFB0BD3F26EAFF98008FDD3A /* Dashboard.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -189,7 +207,13 @@
 		DF43B6D725C0761400093ED2 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				DFB0BD4626EB0409008FDD3A /* SecondaryList.swift */,
+				DFB0BD4426EB03A8008FDD3A /* PrimaryList.swift */,
+				DFB0BD4D26EB10C8008FDD3A /* BottledList.swift */,
+				DFB0BD4F26EB112C008FDD3A /* BrewList.swift */,
+				DFB0BD4B26EB09FA008FDD3A /* BrewTile.swift */,
 				DF43B6E725C0A92F00093ED2 /* GravityReading.swift */,
+				DFB0BD5126EBA465008FDD3A /* NewBrewButtonModifier.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -200,6 +224,13 @@
 				DF43B70125C0D9EA00093ED2 /* CloudKit.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		DFB0BD4126EB0068008FDD3A /* Filters */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Filters;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -218,6 +249,9 @@
 			dependencies = (
 			);
 			name = iBru;
+			packageProductDependencies = (
+				DFB0BD4926EB0906008FDD3A /* QuickComponents */,
+			);
 			productName = homebrew;
 			productReference = DF43B6A025C0694F00093ED2 /* iBru.app */;
 			productType = "com.apple.product-type.application";
@@ -289,6 +323,9 @@
 				Base,
 			);
 			mainGroup = DF43B69725C0694F00093ED2;
+			packageReferences = (
+				DFB0BD4826EB0906008FDD3A /* XCRemoteSwiftPackageReference "QuickComponents" */,
+			);
 			productRefGroup = DF43B6A125C0694F00093ED2 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -336,17 +373,24 @@
 				DF43B6AD25C0695100093ED2 /* Persistence.swift in Sources */,
 				DF43B6D925C076D000093ED2 /* Brews.swift in Sources */,
 				DFB0BD3E26EAA4CA008FDD3A /* NewSecondaryRecord.swift in Sources */,
+				DFB0BD5026EB112C008FDD3A /* BrewList.swift in Sources */,
 				DF43B6E325C0901C00093ED2 /* BrewDetail.swift in Sources */,
 				DF43B6F225C0D38F00093ED2 /* NewBottleRecordForm.swift in Sources */,
 				DF60C3D925D2D4FC004921F1 /* UpdateReadingForm.swift in Sources */,
 				DF43B6ED25C0AE5000093ED2 /* NewReadingForm.swift in Sources */,
 				DFCDBF8125CDC4D9000CFBFF /* Calculators.swift in Sources */,
+				DFB0BD5226EBA465008FDD3A /* NewBrewButtonModifier.swift in Sources */,
+				DFB0BD4526EB03A8008FDD3A /* PrimaryList.swift in Sources */,
 				DF43B6A625C0694F00093ED2 /* ContentView.swift in Sources */,
+				DFB0BD4726EB0409008FDD3A /* SecondaryList.swift in Sources */,
 				DFDE432F25C30DD50085D2BB /* UpdateBrewForm.swift in Sources */,
 				DF43B6B025C0695100093ED2 /* homebrew.xcdatamodeld in Sources */,
 				DFDE433425C33CA10085D2BB /* ABVCalculator.swift in Sources */,
 				DF43B6A425C0694F00093ED2 /* homebrewApp.swift in Sources */,
 				DF43B6E825C0A92F00093ED2 /* GravityReading.swift in Sources */,
+				DFB0BD4E26EB10C8008FDD3A /* BottledList.swift in Sources */,
+				DFB0BD4026EAFF98008FDD3A /* Dashboard.swift in Sources */,
+				DFB0BD4C26EB09FA008FDD3A /* BrewTile.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -505,7 +549,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = homebrew/homebrew.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 15;
+				CURRENT_PROJECT_VERSION = 17;
 				DEVELOPMENT_ASSET_PATHS = "\"homebrew/Preview Content\"";
 				DEVELOPMENT_TEAM = Y259ZT3SQK;
 				ENABLE_PREVIEWS = YES;
@@ -516,7 +560,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.6.0;
+				MARKETING_VERSION = 1.7.0;
 				PRODUCT_BUNDLE_IDENTIFIER = lucasdesouza.homebrew;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTS_MACCATALYST = YES;
@@ -533,7 +577,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = homebrew/homebrew.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 15;
+				CURRENT_PROJECT_VERSION = 17;
 				DEVELOPMENT_ASSET_PATHS = "\"homebrew/Preview Content\"";
 				DEVELOPMENT_TEAM = Y259ZT3SQK;
 				ENABLE_PREVIEWS = YES;
@@ -544,7 +588,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.6.0;
+				MARKETING_VERSION = 1.7.0;
 				PRODUCT_BUNDLE_IDENTIFIER = lucasdesouza.homebrew;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTS_MACCATALYST = YES;
@@ -678,6 +722,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		DFB0BD4826EB0906008FDD3A /* XCRemoteSwiftPackageReference "QuickComponents" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/LucasCarioca/QuickComponents";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.7.3;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		DFB0BD4926EB0906008FDD3A /* QuickComponents */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DFB0BD4826EB0906008FDD3A /* XCRemoteSwiftPackageReference "QuickComponents" */;
+			productName = QuickComponents;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		DF43B6AE25C0695100093ED2 /* homebrew.xcdatamodeld */ = {

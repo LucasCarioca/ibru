@@ -18,7 +18,6 @@ struct Brews: View {
     @State var refreshId = UUID()
 
     var body: some View {
-        ZStack {
             List {
                 ForEach(brews) { brew in
                     NavigationLink(destination: BrewDetail(brew: brew)) {
@@ -32,27 +31,9 @@ struct Brews: View {
                 Spacer().padding(.vertical, 50)
             }.listStyle(PlainListStyle())
             .navigationTitle("Brews")
-            VStack {
-                Spacer()
-                HStack {
-                    Spacer()
-                    NavigationLink(destination: NewBrewForm().onDisappear(){
-                        self.refreshId = UUID()
-                    }){
-                        Image("carboy").colorInvert()
-                            .font(.system(.largeTitle))
-                            .frame(width: 67, height: 67)
-                        .background(Color.accentColor)
-                        .cornerRadius(38.5)
-                        .padding()
-                        .shadow(color: Color.black.opacity(0.3),
-                                radius: 3,
-                                x: 3,
-                                y: 3)
-                    }
-                }
-            }
-        }.id(refreshId)
+            .modifier(NewBrewButtonModifier(onDisappear: {
+                self.refreshId = UUID()
+            }))
     }
     
     private func deleteItems(offsets: IndexSet) {
