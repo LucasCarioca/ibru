@@ -16,7 +16,7 @@ struct NewSecondaryRecord: View {
     
     var body: some View {
         Form {
-            TextField("Final gravity", text: $gravity)
+            TextField("Current gravity", text: $gravity)
                 .keyboardType(.decimalPad)
                 .padding()
             DatePicker("Bottle date", selection: $date)
