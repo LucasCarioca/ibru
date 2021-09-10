@@ -18,15 +18,15 @@ struct homebrewApp: App {
                     NavigationLink(destination: Dashboard(), tag: 0, selection: $selected){
                         Label("Dashboard", systemImage: "chart.bar")
                     }
-                    NavigationLink(destination: Brews(), tag: 1, selection: $selected){
+                    NavigationLink(destination: Collection(), tag: 1, selection: $selected){
+                        Label("Collection", systemImage: "square.grid.3x2")
+                    }
+                    NavigationLink(destination: Brews(), tag: 2, selection: $selected){
                         Label("Brew List", systemImage: "list.bullet.rectangle")
                     }
-                    NavigationLink(destination: Calculators(), tag: 1, selection: $selected){
+                    NavigationLink(destination: Calculators(), tag: 3, selection: $selected){
                         Label("Calculators", systemImage: "function")
                     }
-//                    NavigationLink("Guides", destination: Text("Coming soon"), tag: 2, selection: $selected)
-//                    NavigationLink("About", destination: Text("Coming soon"), tag: 3, selection: $selected)
-//                    NavigationLink("Support", destination: Text("Coming soon"), tag: 3, selection: $selected)
                 }.navigationTitle("Menu")
                 Brews()
             }.environment(\.managedObjectContext, persistenceController.container.viewContext)

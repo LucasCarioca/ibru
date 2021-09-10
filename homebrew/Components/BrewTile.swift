@@ -14,38 +14,33 @@ struct BrewTile: View {
             VStack{
                 HStack {
                     Text(brew.name ?? "missing name")
-                        .font(.headline)
+                        .font(.title3)
+                        .fontWeight(.heavy)
                     Spacer()
                 }
-                HStack {
-                    Text("Stage: ")
-                        .fontWeight(.bold)
-                    getStageText()
-                    Spacer()
-                }
-                HStack {
-                    Text("Elapsed Time: ")
-                        .fontWeight(.bold)
-                    getTimeText()
-                    Spacer()
-                }
+                InfoLabel(label: "Stage", value: getStage(of: brew).rawValue)
+                getBottleCount()
+                InfoLabel(label: "Elapsed Time", value: getTimeText())
             }
         }
     }
     
-    func getStageText() -> Text {
-        let brewStage = getStage(of: brew)
-        return Text(brewStage.rawValue)
-    }
-    
-    func getTimeText() -> Text {
-        
+    func getTimeText() -> String {
         var brewAge = getAge(of: brew)
         var label = "Days"
         if brewAge >= 30 {
             brewAge = brewAge / 30
             label = "Months"
         }
-        return Text("\(String(format: "%.1f", brewAge)) \(label)")
+        return "\(String(format: "%.1f", brewAge)) \(label)"
+    }
+    
+    func getBottleCount() -> AnyView {
+        if getStage(of: brew) == .bottled {
+            return AnyView(
+                InfoLabel(label: "Bottle Count", value: "\(brew.bottles?.count ?? 0)")
+            )
+        }
+        return AnyView(EmptyView())
     }
 }

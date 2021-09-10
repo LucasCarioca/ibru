@@ -10,6 +10,7 @@ import SwiftUI
 struct NewBottleRecordForm: View {
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     @State var gravity = ""
+    @State var bottleCount = ""
     @State var date = Date()
     
     var brew: Brew
@@ -17,6 +18,9 @@ struct NewBottleRecordForm: View {
     var body: some View {
         Form {
             TextField("Final gravity", text: $gravity)
+                .keyboardType(.decimalPad)
+                .padding()
+            TextField("Bottle count", text: $bottleCount)
                 .keyboardType(.decimalPad)
                 .padding()
             DatePicker("Bottle date", selection: $date)
@@ -31,6 +35,7 @@ struct NewBottleRecordForm: View {
             let newItem = Bottle(context: brew.managedObjectContext!)
             newItem.date = date
             newItem.finalGravity = Double(gravity) ?? 1.000
+            newItem.count   = Int16(bottleCount) ?? 1
             brew.bottles = newItem
             do {
                 try brew.managedObjectContext!.save()
