@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		DF43B6A425C0694F00093ED2 /* homebrewApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF43B6A325C0694F00093ED2 /* homebrewApp.swift */; };
-		DF43B6A625C0694F00093ED2 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF43B6A525C0694F00093ED2 /* ContentView.swift */; };
 		DF43B6A825C0695100093ED2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DF43B6A725C0695100093ED2 /* Assets.xcassets */; };
 		DF43B6AB25C0695100093ED2 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DF43B6AA25C0695100093ED2 /* Preview Assets.xcassets */; };
 		DF43B6AD25C0695100093ED2 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF43B6AC25C0695100093ED2 /* Persistence.swift */; };
@@ -61,7 +60,6 @@
 /* Begin PBXFileReference section */
 		DF43B6A025C0694F00093ED2 /* iBru.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iBru.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DF43B6A325C0694F00093ED2 /* homebrewApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = homebrewApp.swift; sourceTree = "<group>"; };
-		DF43B6A525C0694F00093ED2 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		DF43B6A725C0695100093ED2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DF43B6AA25C0695100093ED2 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		DF43B6AC25C0695100093ED2 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
@@ -156,7 +154,6 @@
 				DF43B6D725C0761400093ED2 /* Components */,
 				DF43B6D625C0760700093ED2 /* Views */,
 				DF43B6A325C0694F00093ED2 /* homebrewApp.swift */,
-				DF43B6A525C0694F00093ED2 /* ContentView.swift */,
 				DF43B6A725C0695100093ED2 /* Assets.xcassets */,
 				DF43B6AC25C0695100093ED2 /* Persistence.swift */,
 				DF43B6B125C0695100093ED2 /* Info.plist */,
@@ -424,7 +421,6 @@
 				DFCDBF8125CDC4D9000CFBFF /* Calculators.swift in Sources */,
 				DFB0BD5226EBA465008FDD3A /* NewBrewButtonModifier.swift in Sources */,
 				DFB0BD4526EB03A8008FDD3A /* PrimaryList.swift in Sources */,
-				DF43B6A625C0694F00093ED2 /* ContentView.swift in Sources */,
 				DFB0BD4726EB0409008FDD3A /* SecondaryList.swift in Sources */,
 				DFB0BD5526EBEE4B008FDD3A /* BrewFunctions.swift in Sources */,
 				DFDE432F25C30DD50085D2BB /* UpdateBrewForm.swift in Sources */,
