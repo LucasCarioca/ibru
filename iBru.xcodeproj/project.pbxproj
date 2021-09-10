@@ -195,18 +195,9 @@
 		DF43B6D625C0760700093ED2 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				DF43B6D825C076D000093ED2 /* Brews.swift */,
-				DF43B6DD25C0815300093ED2 /* NewBrewForm.swift */,
-				DF43B6E225C0901C00093ED2 /* BrewDetail.swift */,
-				DF43B6EC25C0AE5000093ED2 /* NewReadingForm.swift */,
-				DF60C3D825D2D4FC004921F1 /* UpdateReadingForm.swift */,
-				DF43B6F125C0D38F00093ED2 /* NewBottleRecordForm.swift */,
-				DFB0BD3D26EAA4CA008FDD3A /* NewSecondaryRecord.swift */,
-				DFDE432E25C30DD50085D2BB /* UpdateBrewForm.swift */,
-				DFDE433325C33CA10085D2BB /* ABVCalculator.swift */,
-				DFCDBF8025CDC4D9000CFBFF /* Calculators.swift */,
-				DF60F90E26E7B2FB00C93B35 /* SGCalculator.swift */,
-				DFB0BD3F26EAFF98008FDD3A /* Dashboard.swift */,
+				DFB0BD5C26EBF375008FDD3A /* Pages */,
+				DFB0BD5B26EBF369008FDD3A /* Calculators */,
+				DFB0BD5A26EBF35C008FDD3A /* Forms */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -248,6 +239,39 @@
 				DFB0BD5826EBF1E2008FDD3A /* BrewDateFormatter.swift */,
 			);
 			path = Common;
+			sourceTree = "<group>";
+		};
+		DFB0BD5A26EBF35C008FDD3A /* Forms */ = {
+			isa = PBXGroup;
+			children = (
+				DF43B6DD25C0815300093ED2 /* NewBrewForm.swift */,
+				DF43B6EC25C0AE5000093ED2 /* NewReadingForm.swift */,
+				DF60C3D825D2D4FC004921F1 /* UpdateReadingForm.swift */,
+				DF43B6F125C0D38F00093ED2 /* NewBottleRecordForm.swift */,
+				DFB0BD3D26EAA4CA008FDD3A /* NewSecondaryRecord.swift */,
+				DFDE432E25C30DD50085D2BB /* UpdateBrewForm.swift */,
+			);
+			path = Forms;
+			sourceTree = "<group>";
+		};
+		DFB0BD5B26EBF369008FDD3A /* Calculators */ = {
+			isa = PBXGroup;
+			children = (
+				DFDE433325C33CA10085D2BB /* ABVCalculator.swift */,
+				DF60F90E26E7B2FB00C93B35 /* SGCalculator.swift */,
+			);
+			path = Calculators;
+			sourceTree = "<group>";
+		};
+		DFB0BD5C26EBF375008FDD3A /* Pages */ = {
+			isa = PBXGroup;
+			children = (
+				DF43B6D825C076D000093ED2 /* Brews.swift */,
+				DF43B6E225C0901C00093ED2 /* BrewDetail.swift */,
+				DFCDBF8025CDC4D9000CFBFF /* Calculators.swift */,
+				DFB0BD3F26EAFF98008FDD3A /* Dashboard.swift */,
+			);
+			path = Pages;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
