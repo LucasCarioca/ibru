@@ -18,16 +18,23 @@ struct CollectionList: View {
         animation: .default)
     
     private var brews: FetchedResults<Brew>
+    @State private var refreshID = UUID()
     
     var body: some View {
-        List {
+        VStack{
+            Divider()
             ForEach(brews) { brew in
-                CollectionTile(brew: brew)
+                CollectionTile(brew: brew) {
+                    self.refreshID = UUID()
+                }
+                    .frame(height: 50)
+                    .padding()
             }.onDelete(perform: { offsets in
                 withAnimation {
                     deleteBrew(offsets: offsets, brews: brews, context: viewContext)
                 }
             })
-        }.listStyle(PlainListStyle())
+            Spacer()
+        }.id(refreshID)
     }
 }

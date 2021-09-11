@@ -9,28 +9,35 @@ import SwiftUI
 
 struct CollectionTile: View {
     var brew: Brew
+    var onChange: () -> Void
     var body: some View {
-        HStack {
-            VStack {
-                HStack {
-                    Text(brew.name ?? "missing name")
-                        .font(.title2)
-                        .fontWeight(.heavy)
-                        
-                    Spacer()
-                }.padding()
-                getBottleCount()
-                InfoLabel(label: "Age", value: getTimeText())
-            }
-            VStack {
-                Button(action: {print("adding"); addOrRemoveBottle(amount: 1)}) {
-                    Image(systemName: "plus.circle.fill")
+        VStack{
+            HStack {
+                VStack {
+                    HStack {
+                        Text(brew.name ?? "missing name")
+                            .font(.title2)
+                            .fontWeight(.heavy)
+                            
+                        Spacer()
+                    }.padding()
+                    getBottleCount()
+                    InfoLabel(label: "Age", value: getTimeText())
                 }
-//                Spacer()
-//                Button(action: {print("removing"); addOrRemoveBottle(amount: -1)}) {
-//                    Image(systemName: "minus.circle.fill")
-//                }
-            }.padding()
+                Spacer()
+                VStack {
+                    Button(action: {print("adding"); addOrRemoveBottle(amount: 1)}) {
+                        Image(systemName: "plus.circle.fill")
+                            .imageScale(.large)
+                    }.contentShape(Rectangle())
+                    Spacer()
+                    Button(action: {print("removing"); addOrRemoveBottle(amount: -1)}) {
+                        Image(systemName: "minus.circle.fill")
+                            .imageScale(.large)
+                    }.contentShape(Rectangle())
+                }.padding()
+            }
+            Divider()
         }
     }
     
@@ -59,6 +66,7 @@ struct CollectionTile: View {
             do {
                 try bottles.managedObjectContext!.save()
                 print("saved: \(bottles.count + amount)")
+                onChange()
             } catch {
                 let nsError = error as NSError
                 fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
