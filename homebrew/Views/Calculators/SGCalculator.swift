@@ -55,7 +55,7 @@ struct SGCalculator: View {
                 Text("Calculate")
             }
             .frame(minWidth: 0, maxWidth: .infinity, alignment: .center)
-        }.navigationTitle("ABV Calculator")
+        }.navigationTitle("Gravity Estimator")
     }
 
     private func calculate() {
