@@ -1,19 +1,19 @@
 //
-//  SwiftUIView.swift
-//  homebrew
+//  UpdateBottleRecord.swift
+//  iBru
 //
-//  Created by Lucas Desouza on 1/26/21.
+//  Created by Lucas Desouza on 9/11/21.
 //
 
 import SwiftUI
 
-struct NewBottleRecordForm: View {
+struct UpdateBottleRecord: View {
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     @State var gravity = ""
     @State var bottleCount = ""
     @State var date = Date()
     
-    var brew: Brew
+    var bottle: Bottle
     
     var body: some View {
         Form {
@@ -25,25 +25,30 @@ struct NewBottleRecordForm: View {
                 .padding()
             DatePicker("Bottle date", selection: $date)
                 .datePickerStyle(GraphicalDatePickerStyle())
-            Button("Finish", action: addBrew)
+            Button("Save", action: addBrew)
                 .frame(minWidth: 0, maxWidth: .infinity, alignment: .center)
-        }.navigationTitle("Bottling")
+        }
+            .onAppear() {
+                self.gravity = String(bottle.finalGravity)
+                self.bottleCount = String(bottle.count)
+                self.date = bottle.date ?? Date()
+            }
+            .navigationTitle("Bottling")
     }
     
     private func addBrew() {
         withAnimation {
-            let newItem = Bottle(context: brew.managedObjectContext!)
-            newItem.date = date
-            newItem.finalGravity = Double(gravity) ?? 1.000
-            newItem.count   = Int16(bottleCount) ?? 1
-            brew.bottles = newItem
+            bottle.date = date
+            bottle.finalGravity = Double(gravity) ?? 1.000
+            bottle.count = Int16(bottleCount) ?? 0
             do {
-                try brew.managedObjectContext!.save()
+                try bottle.managedObjectContext!.save()
                 presentationMode.wrappedValue.dismiss()
             } catch {
                 let nsError = error as NSError
                 fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
             }
+            
         }
     }
 }
