@@ -11,6 +11,7 @@ struct BrewDetail: View {
     var brew: Brew
     @State private var refreshID = UUID()
     @State private var showEditView = false
+    @State private var showEditBottlesView = false
     var body: some View {
         VStack {
             Text(brew.comment ?? "")
@@ -144,6 +145,11 @@ struct BrewDetail: View {
                     showAge(fromBottlingDate: true).font(.callout)
                         .frame(maxWidth: .infinity, alignment: .leading)
                 }
+                NavigationLink(
+                    destination: UpdateBottleRecord(bottle: bottle).onDisappear(perform: refresh),
+                    isActive: $showEditBottlesView) { Button(action: {self.showEditBottlesView = true}) {
+                    Image(systemName: "square.and.pencil").padding()
+                }}
             })
         }
         return AnyView(NavigationLink(destination: NewBottleRecordForm(brew: brew).onDisappear(perform: refresh)) {

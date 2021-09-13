@@ -22,19 +22,40 @@ struct CollectionList: View {
     
     var body: some View {
         VStack{
-            Divider()
-            ForEach(brews) { brew in
-                CollectionTile(brew: brew) {
-                    self.refreshID = UUID()
-                }
-                    .frame(height: 50)
-                    .padding()
-            }.onDelete(perform: { offsets in
-                withAnimation {
-                    deleteBrew(offsets: offsets, brews: brews, context: viewContext)
-                }
-            })
-            Spacer()
+            getTotalBottleCount()
+            List {
+                ForEach(brews) { brew in
+                    NavigationLink(destination: BrewDetail(brew: brew)) {
+                        CollectionTile(brew: brew) {
+                            self.refreshID = UUID()
+                        }
+                    }
+                }.onDelete(perform: { offsets in
+                    withAnimation {
+                        deleteBrew(offsets: offsets, brews: brews, context: viewContext)
+                    }
+                })
+            }
+                .listStyle(PlainListStyle())
+                
         }.id(refreshID)
+    }
+    
+    func getTotalBottleCount() -> AnyView {
+        var total: Int16 = 0
+        for brew in brews {
+            if let bottles = brew.bottles {
+                total = total + bottles.count
+            }
+        }
+        if total > 0 {
+            return AnyView(
+                VStack {
+                    InfoLabel(label: "Collection Size", value: "\(total)")
+                    Divider()
+                }.padding(.horizontal)
+            )
+        }
+        return AnyView(EmptyView())
     }
 }
