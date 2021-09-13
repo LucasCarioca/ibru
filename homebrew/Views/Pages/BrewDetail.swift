@@ -11,6 +11,7 @@ struct BrewDetail: View {
     var brew: Brew
     @State private var refreshID = UUID()
     @State private var showEditView = false
+    @State private var showEditBottlesView = false
     var body: some View {
         VStack {
             Text(brew.comment ?? "")
@@ -20,7 +21,7 @@ struct BrewDetail: View {
             HStack {
                 Image("carboy").padding()
                 VStack {
-                    Text("Primary Fermentation").font(.headline)
+                    Text("Primary Fermentation").bold().font(.title3)
                         .frame(maxWidth: .infinity, alignment: .leading)
                     Text("OG: \(brew.originalGravity)")
                         .font(.callout)
@@ -127,7 +128,10 @@ struct BrewDetail: View {
             return AnyView(HStack {
                 Image("bottle").padding()
                 VStack {
-                    Text("Bottled").bold().font(.headline)
+                    Text("Bottled").bold().font(.title3)
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                    Text("Bottle Count: \(bottle.count)")
+                        .font(.callout)
                         .frame(maxWidth: .infinity, alignment: .leading)
                     Text("Final gravity: \(bottle.finalGravity)")
                         .font(.callout)
@@ -141,6 +145,11 @@ struct BrewDetail: View {
                     showAge(fromBottlingDate: true).font(.callout)
                         .frame(maxWidth: .infinity, alignment: .leading)
                 }
+                NavigationLink(
+                    destination: UpdateBottleRecord(bottle: bottle).onDisappear(perform: refresh),
+                    isActive: $showEditBottlesView) { Button(action: {self.showEditBottlesView = true}) {
+                    Image(systemName: "square.and.pencil").padding()
+                }}
             })
         }
         return AnyView(NavigationLink(destination: NewBottleRecordForm(brew: brew).onDisappear(perform: refresh)) {
@@ -159,7 +168,7 @@ struct BrewDetail: View {
             return AnyView(HStack {
                 Image("carboy").padding()
                 VStack {
-                    Text("Secondary Fermentation").font(.headline)
+                    Text("Secondary Fermentation").font(.title3)
                         .frame(maxWidth: .infinity, alignment: .leading)
                     Text("Current gravity: \(secondary.gravity)")
                         .font(.callout)
