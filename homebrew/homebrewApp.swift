@@ -9,8 +9,20 @@ import SwiftUI
 
 @main
 struct homebrewApp: App {
-    let persistenceController = PersistenceController.shared
+    let persistenceController: PersistenceController
     @State var selected: Int? = 0
+    init() {
+        print("---------------------------------------------------")
+        print("                  Starting App                     ")
+        print("---------------------------------------------------")
+        print(CommandLine.arguments.contains("-test-data"))
+        print("---------------------------------------------------")
+        if CommandLine.arguments.contains("-test-data") {
+            persistenceController = PersistenceController.preview
+        } else {
+            persistenceController = PersistenceController.shared
+        }
+    }
     var body: some Scene {
         WindowGroup {
             NavigationView {
@@ -28,7 +40,7 @@ struct homebrewApp: App {
                         Label("Calculators", systemImage: "function")
                     }
                 }.navigationTitle("Menu")
-                Brews()
+                Dashboard()
             }.environment(\.managedObjectContext, persistenceController.container.viewContext)
         }
     }

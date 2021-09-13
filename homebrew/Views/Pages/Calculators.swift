@@ -16,7 +16,7 @@ struct Calculators: View {
             NavigationLink(destination: SGCalculator()) {
                 Text("Gravity Estimator")
             }
-        }
+        }.navigationTitle("Calculators")
     }
 }
 
