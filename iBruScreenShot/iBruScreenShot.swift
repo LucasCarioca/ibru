@@ -26,7 +26,7 @@ class iBruScreenShot: XCTestCase {
     
     
 
-    func testExample() throws {
+    func testTakeScreenShots() throws {
                 
         snapshot("00dashboard")
         app.navigationBars["Dashboard"].buttons["Menu"].tap()

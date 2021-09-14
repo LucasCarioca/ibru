@@ -13,7 +13,6 @@
 		DF43B6AD25C0695100093ED2 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF43B6AC25C0695100093ED2 /* Persistence.swift */; };
 		DF43B6B025C0695100093ED2 /* homebrew.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DF43B6AE25C0695100093ED2 /* homebrew.xcdatamodeld */; };
 		DF43B6BB25C0695200093ED2 /* homebrewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF43B6BA25C0695200093ED2 /* homebrewTests.swift */; };
-		DF43B6C625C0695200093ED2 /* homebrewUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF43B6C525C0695200093ED2 /* homebrewUITests.swift */; };
 		DF43B6D925C076D000093ED2 /* Brews.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF43B6D825C076D000093ED2 /* Brews.swift */; };
 		DF43B6DE25C0815300093ED2 /* NewBrewForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF43B6DD25C0815300093ED2 /* NewBrewForm.swift */; };
 		DF43B6E325C0901C00093ED2 /* BrewDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF43B6E225C0901C00093ED2 /* BrewDetail.swift */; };
@@ -43,6 +42,7 @@
 		DFCDBF8125CDC4D9000CFBFF /* Calculators.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFCDBF8025CDC4D9000CFBFF /* Calculators.swift */; };
 		DFD207AC26EFCB080065FB98 /* iBruScreenShot.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFD207AB26EFCB080065FB98 /* iBruScreenShot.swift */; };
 		DFD207B426EFCB650065FB98 /* SnapshotHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFD207B326EFCB650065FB98 /* SnapshotHelper.swift */; };
+		DFD207CC26F0EA4A0065FB98 /* BaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFD207CB26F0EA4A0065FB98 /* BaseTests.swift */; };
 		DFDE432F25C30DD50085D2BB /* UpdateBrewForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFDE432E25C30DD50085D2BB /* UpdateBrewForm.swift */; };
 		DFDE433425C33CA10085D2BB /* ABVCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFDE433325C33CA10085D2BB /* ABVCalculator.swift */; };
 /* End PBXBuildFile section */
@@ -55,14 +55,14 @@
 			remoteGlobalIDString = DF43B69F25C0694F00093ED2;
 			remoteInfo = homebrew;
 		};
-		DF43B6C225C0695200093ED2 /* PBXContainerItemProxy */ = {
+		DFD207AE26EFCB080065FB98 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = DF43B69825C0694F00093ED2 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = DF43B69F25C0694F00093ED2;
-			remoteInfo = homebrew;
+			remoteInfo = iBru;
 		};
-		DFD207AE26EFCB080065FB98 /* PBXContainerItemProxy */ = {
+		DFD207CE26F0EA4A0065FB98 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = DF43B69825C0694F00093ED2 /* Project object */;
 			proxyType = 1;
@@ -82,9 +82,6 @@
 		DF43B6B625C0695200093ED2 /* iBruTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iBruTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DF43B6BA25C0695200093ED2 /* homebrewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = homebrewTests.swift; sourceTree = "<group>"; };
 		DF43B6BC25C0695200093ED2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		DF43B6C125C0695200093ED2 /* iBruUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iBruUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		DF43B6C525C0695200093ED2 /* homebrewUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = homebrewUITests.swift; sourceTree = "<group>"; };
-		DF43B6C725C0695200093ED2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DF43B6D825C076D000093ED2 /* Brews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Brews.swift; sourceTree = "<group>"; };
 		DF43B6DD25C0815300093ED2 /* NewBrewForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewBrewForm.swift; sourceTree = "<group>"; };
 		DF43B6E225C0901C00093ED2 /* BrewDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrewDetail.swift; sourceTree = "<group>"; };
@@ -116,6 +113,9 @@
 		DFD207AB26EFCB080065FB98 /* iBruScreenShot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iBruScreenShot.swift; sourceTree = "<group>"; };
 		DFD207AD26EFCB080065FB98 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DFD207B326EFCB650065FB98 /* SnapshotHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SnapshotHelper.swift; path = fastlane/SnapshotHelper.swift; sourceTree = SOURCE_ROOT; };
+		DFD207C926F0EA4A0065FB98 /* iBruUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iBruUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		DFD207CB26F0EA4A0065FB98 /* BaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTests.swift; sourceTree = "<group>"; };
+		DFD207CD26F0EA4A0065FB98 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DFDE432E25C30DD50085D2BB /* UpdateBrewForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateBrewForm.swift; sourceTree = "<group>"; };
 		DFDE433325C33CA10085D2BB /* ABVCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ABVCalculator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -137,14 +137,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		DF43B6BE25C0695200093ED2 /* Frameworks */ = {
+		DFD207A626EFCB080065FB98 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		DFD207A626EFCB080065FB98 /* Frameworks */ = {
+		DFD207C626F0EA4A0065FB98 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -159,8 +159,8 @@
 			children = (
 				DF43B6A225C0694F00093ED2 /* homebrew */,
 				DF43B6B925C0695200093ED2 /* homebrewTests */,
-				DF43B6C425C0695200093ED2 /* homebrewUITests */,
 				DFD207AA26EFCB080065FB98 /* iBruScreenShot */,
+				DFD207CA26F0EA4A0065FB98 /* iBruUITests */,
 				DF43B6A125C0694F00093ED2 /* Products */,
 				DF43B70025C0D9EA00093ED2 /* Frameworks */,
 			);
@@ -171,8 +171,8 @@
 			children = (
 				DF43B6A025C0694F00093ED2 /* iBru.app */,
 				DF43B6B625C0695200093ED2 /* iBruTests.xctest */,
-				DF43B6C125C0695200093ED2 /* iBruUITests.xctest */,
 				DFD207A926EFCB080065FB98 /* iBruScreenShot.xctest */,
+				DFD207C926F0EA4A0065FB98 /* iBruUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -210,15 +210,6 @@
 				DF43B6BC25C0695200093ED2 /* Info.plist */,
 			);
 			path = homebrewTests;
-			sourceTree = "<group>";
-		};
-		DF43B6C425C0695200093ED2 /* homebrewUITests */ = {
-			isa = PBXGroup;
-			children = (
-				DF43B6C525C0695200093ED2 /* homebrewUITests.swift */,
-				DF43B6C725C0695200093ED2 /* Info.plist */,
-			);
-			path = homebrewUITests;
 			sourceTree = "<group>";
 		};
 		DF43B6D625C0760700093ED2 /* Views */ = {
@@ -318,6 +309,15 @@
 			path = iBruScreenShot;
 			sourceTree = "<group>";
 		};
+		DFD207CA26F0EA4A0065FB98 /* iBruUITests */ = {
+			isa = PBXGroup;
+			children = (
+				DFD207CB26F0EA4A0065FB98 /* BaseTests.swift */,
+				DFD207CD26F0EA4A0065FB98 /* Info.plist */,
+			);
+			path = iBruUITests;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -359,24 +359,6 @@
 			productReference = DF43B6B625C0695200093ED2 /* iBruTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		DF43B6C025C0695200093ED2 /* iBruUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = DF43B6D025C0695200093ED2 /* Build configuration list for PBXNativeTarget "iBruUITests" */;
-			buildPhases = (
-				DF43B6BD25C0695200093ED2 /* Sources */,
-				DF43B6BE25C0695200093ED2 /* Frameworks */,
-				DF43B6BF25C0695200093ED2 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				DF43B6C325C0695200093ED2 /* PBXTargetDependency */,
-			);
-			name = iBruUITests;
-			productName = homebrewUITests;
-			productReference = DF43B6C125C0695200093ED2 /* iBruUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 		DFD207A826EFCB080065FB98 /* iBruScreenShot */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = DFD207B226EFCB080065FB98 /* Build configuration list for PBXNativeTarget "iBruScreenShot" */;
@@ -395,6 +377,24 @@
 			productReference = DFD207A926EFCB080065FB98 /* iBruScreenShot.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
+		DFD207C826F0EA4A0065FB98 /* iBruUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DFD207D026F0EA4A0065FB98 /* Build configuration list for PBXNativeTarget "iBruUITests" */;
+			buildPhases = (
+				DFD207C526F0EA4A0065FB98 /* Sources */,
+				DFD207C626F0EA4A0065FB98 /* Frameworks */,
+				DFD207C726F0EA4A0065FB98 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				DFD207CF26F0EA4A0065FB98 /* PBXTargetDependency */,
+			);
+			name = iBruUITests;
+			productName = iBruUITests;
+			productReference = DFD207C926F0EA4A0065FB98 /* iBruUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -411,11 +411,11 @@
 						CreatedOnToolsVersion = 12.3;
 						TestTargetID = DF43B69F25C0694F00093ED2;
 					};
-					DF43B6C025C0695200093ED2 = {
-						CreatedOnToolsVersion = 12.3;
+					DFD207A826EFCB080065FB98 = {
+						CreatedOnToolsVersion = 12.5.1;
 						TestTargetID = DF43B69F25C0694F00093ED2;
 					};
-					DFD207A826EFCB080065FB98 = {
+					DFD207C826F0EA4A0065FB98 = {
 						CreatedOnToolsVersion = 12.5.1;
 						TestTargetID = DF43B69F25C0694F00093ED2;
 					};
@@ -439,8 +439,8 @@
 			targets = (
 				DF43B69F25C0694F00093ED2 /* iBru */,
 				DF43B6B525C0695200093ED2 /* iBruTests */,
-				DF43B6C025C0695200093ED2 /* iBruUITests */,
 				DFD207A826EFCB080065FB98 /* iBruScreenShot */,
+				DFD207C826F0EA4A0065FB98 /* iBruUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -462,14 +462,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		DF43B6BF25C0695200093ED2 /* Resources */ = {
+		DFD207A726EFCB080065FB98 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		DFD207A726EFCB080065FB98 /* Resources */ = {
+		DFD207C726F0EA4A0065FB98 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -524,20 +524,20 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		DF43B6BD25C0695200093ED2 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				DF43B6C625C0695200093ED2 /* homebrewUITests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		DFD207A526EFCB080065FB98 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				DFD207AC26EFCB080065FB98 /* iBruScreenShot.swift in Sources */,
 				DFD207B426EFCB650065FB98 /* SnapshotHelper.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DFD207C526F0EA4A0065FB98 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DFD207CC26F0EA4A0065FB98 /* BaseTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -549,15 +549,15 @@
 			target = DF43B69F25C0694F00093ED2 /* iBru */;
 			targetProxy = DF43B6B725C0695200093ED2 /* PBXContainerItemProxy */;
 		};
-		DF43B6C325C0695200093ED2 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = DF43B69F25C0694F00093ED2 /* iBru */;
-			targetProxy = DF43B6C225C0695200093ED2 /* PBXContainerItemProxy */;
-		};
 		DFD207AF26EFCB080065FB98 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = DF43B69F25C0694F00093ED2 /* iBru */;
 			targetProxy = DFD207AE26EFCB080065FB98 /* PBXContainerItemProxy */;
+		};
+		DFD207CF26F0EA4A0065FB98 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DF43B69F25C0694F00093ED2 /* iBru */;
+			targetProxy = DFD207CE26F0EA4A0065FB98 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -778,48 +778,6 @@
 			};
 			name = Release;
 		};
-		DF43B6D125C0695200093ED2 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = Y259ZT3SQK;
-				INFOPLIST_FILE = homebrewUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = lucasdesouza.homebrewUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = iBru;
-			};
-			name = Debug;
-		};
-		DF43B6D225C0695200093ED2 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = Y259ZT3SQK;
-				INFOPLIST_FILE = homebrewUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = lucasdesouza.homebrewUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = iBru;
-			};
-			name = Release;
-		};
 		DFD207B026EFCB080065FB98 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -860,6 +818,46 @@
 			};
 			name = Release;
 		};
+		DFD207D126F0EA4A0065FB98 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = Y259ZT3SQK;
+				INFOPLIST_FILE = iBruUITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = net.lucasdesouza.iBruUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = iBru;
+			};
+			name = Debug;
+		};
+		DFD207D226F0EA4A0065FB98 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = Y259ZT3SQK;
+				INFOPLIST_FILE = iBruUITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = net.lucasdesouza.iBruUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = iBru;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -890,20 +888,20 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		DF43B6D025C0695200093ED2 /* Build configuration list for PBXNativeTarget "iBruUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				DF43B6D125C0695200093ED2 /* Debug */,
-				DF43B6D225C0695200093ED2 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 		DFD207B226EFCB080065FB98 /* Build configuration list for PBXNativeTarget "iBruScreenShot" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				DFD207B026EFCB080065FB98 /* Debug */,
 				DFD207B126EFCB080065FB98 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DFD207D026F0EA4A0065FB98 /* Build configuration list for PBXNativeTarget "iBruUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DFD207D126F0EA4A0065FB98 /* Debug */,
+				DFD207D226F0EA4A0065FB98 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
