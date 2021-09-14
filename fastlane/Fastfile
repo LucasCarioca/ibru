@@ -19,7 +19,7 @@ platform :ios do
   desc "Push a new beta build to TestFlight"
   lane :beta do
     increment_build_number(xcodeproj: "iBru.xcodeproj")
-    build_app(scheme: "iBru")
+    build_app(scheme: "release")
     upload_to_testflight
   end
 
