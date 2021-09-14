@@ -6,7 +6,7 @@
 //
 
 import XCTest
-@testable import homebrew
+@testable import iBru
 
 class homebrewTests: XCTestCase {
 
