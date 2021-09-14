@@ -1,13 +1,13 @@
 //
-//  homebrewUITests.swift
-//  homebrewUITests
+//  iBruUITests.swift
+//  iBruUITests
 //
-//  Created by Lucas Desouza on 1/26/21.
+//  Created by Lucas Desouza on 9/14/21.
 //
 
 import XCTest
 
-class baseTests: XCTestCase {
+class BaseTests: XCTestCase {
     let app: XCUIApplication = XCUIApplication()
     
     override func setUpWithError() throws {
@@ -53,13 +53,5 @@ class baseTests: XCTestCase {
         tablesQuery/*@START_MENU_TOKEN@*/.buttons["Gravity Estimator"]/*[[".cells[\"Gravity Estimator\"].buttons[\"Gravity Estimator\"]",".buttons[\"Gravity Estimator\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
         XCTAssert(app.navigationBars["Gravity Estimator"].staticTexts["Gravity Estimator"].exists)
         
-    }
-
-    func testLaunchPerformance() throws {
-        if #available(macOS 10.15, iOS 13.0, tvOS 13.0, *) {
-            measure(metrics: [XCTApplicationLaunchMetric()]) {
-                XCUIApplication().launch()
-            }
-        }
     }
 }

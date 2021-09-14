@@ -1,0 +1,6 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<testsuites name='iBruUITests.xctest' tests='1' failures='0'>
+  <testsuite name='iBruUITests.BaseTests' tests='1' failures='0'>
+    <testcase classname='iBruUITests.BaseTests' name='testBasicNavigation' time='10.075'/>
+  </testsuite>
+</testsuites>

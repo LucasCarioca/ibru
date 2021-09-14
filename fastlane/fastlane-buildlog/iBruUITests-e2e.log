@@ -1,0 +1,332 @@
+Command line invocation:
+    /Applications/Xcode.app/Contents/Developer/usr/bin/xcodebuild -scheme e2e -project ./iBru.xcodeproj -derivedDataPath "~/Library/Developer/Xcode/DerivedData" -destination "platform=iOS Simulator,id=BBD89832-78C3-4838-81F0-0131CC37793A" build test
+
+User defaults from command line:
+    IDEDerivedDataPathOverride = /Users/lucasdesouza/Library/Developer/Xcode/DerivedData
+    IDEPackageSupportUseBuiltinSCM = YES
+
+Resolve Package Graph
+
+Resolved source packages:
+  QuickComponents: https://github.com/LucasCarioca/QuickComponents @ 0.7.3
+
+
+note: Using new build system
+note: Building targets in parallel
+note: Planning build
+note: Analyzing workspace
+note: Using build description from disk
+note: Build preparation complete
+ProcessProductPackaging "" /Users/lucasdesouza/Library/Developer/Xcode/DerivedData/Build/Intermediates.noindex/iBru.build/Debug-iphonesimulator/iBru.build/iBru.app.xcent (in target 'iBru' from project 'iBru')
+    cd /Users/lucasdesouza/projects/ibru
+    
+    Entitlements:
+    
+    {
+    "com.apple.security.get-task-allow" = 1;
+}
+    
+    builtin-productPackagingUtility -entitlements -format xml -o /Users/lucasdesouza/Library/Developer/Xcode/DerivedData/Build/Intermediates.noindex/iBru.build/Debug-iphonesimulator/iBru.build/iBru.app.xcent
+
+ProcessProductPackaging "" /Users/lucasdesouza/Library/Developer/Xcode/DerivedData/Build/Intermediates.noindex/iBru.build/Debug-iphonesimulator/iBru.build/iBru.app-Simulated.xcent (in target 'iBru' from project 'iBru')
+    cd /Users/lucasdesouza/projects/ibru
+    
+    Entitlements:
+    
+    {
+    "application-identifier" = "Y259ZT3SQK.lucasdesouza.homebrew";
+    "aps-environment" = development;
+    "com.apple.developer.icloud-container-identifiers" =     (
+        "iCloud.homebrew"
+    );
+    "com.apple.developer.icloud-services" =     (
+        CloudKit
+    );
+}
+    
+    builtin-productPackagingUtility -entitlements -format xml -o /Users/lucasdesouza/Library/Developer/Xcode/DerivedData/Build/Intermediates.noindex/iBru.build/Debug-iphonesimulator/iBru.build/iBru.app-Simulated.xcent
+
+Ld /Users/lucasdesouza/Library/Developer/Xcode/DerivedData/Build/Products/Debug-iphonesimulator/iBru.app/iBru normal (in target 'iBru' from project 'iBru')
+    cd /Users/lucasdesouza/projects/ibru
+    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -target x86_64-apple-ios14.0-simulator -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator14.5.sdk -L/Users/lucasdesouza/Library/Developer/Xcode/DerivedData/Build/Products/Debug-iphonesimulator -F/Users/lucasdesouza/Library/Developer/Xcode/DerivedData/Build/Products/Debug-iphonesimulator -filelist /Users/lucasdesouza/Library/Developer/Xcode/DerivedData/Build/Intermediates.noindex/iBru.build/Debug-iphonesimulator/iBru.build/Objects-normal/x86_64/iBru.LinkFileList -Xlinker -rpath -Xlinker @executable_path/Frameworks -dead_strip -Xlinker -object_path_lto -Xlinker /Users/lucasdesouza/Library/Developer/Xcode/DerivedData/Build/Intermediates.noindex/iBru.build/Debug-iphonesimulator/iBru.build/Objects-normal/x86_64/iBru_lto.o -Xlinker -export_dynamic -Xlinker -no_deduplicate -Xlinker -objc_abi_version -Xlinker 2 -fobjc-link-runtime -L/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator -L/usr/lib/swift -Xlinker -add_ast_path -Xlinker /Users/lucasdesouza/Library/Developer/Xcode/DerivedData/Build/Intermediates.noindex/iBru.build/Debug-iphonesimulator/iBru.build/Objects-normal/x86_64/iBru.swiftmodule -Xlinker -sectcreate -Xlinker __TEXT -Xlinker __entitlements -Xlinker /Users/lucasdesouza/Library/Developer/Xcode/DerivedData/Build/Intermediates.noindex/iBru.build/Debug-iphonesimulator/iBru.build/iBru.app-Simulated.xcent -framework CloudKit -Xlinker -no_adhoc_codesign -Xlinker -dependency_info -Xlinker /Users/lucasdesouza/Library/Developer/Xcode/DerivedData/Build/Intermediates.noindex/iBru.build/Debug-iphonesimulator/iBru.build/Objects-normal/x86_64/iBru_dependency_info.dat -o /Users/lucasdesouza/Library/Developer/Xcode/DerivedData/Build/Products/Debug-iphonesimulator/iBru.app/iBru -Xlinker -add_ast_path -Xlinker /Users/lucasdesouza/Library/Developer/Xcode/DerivedData/Build/Intermediates.noindex/QuickComponents.build/Debug-iphonesimulator/QuickComponents.build/Objects-normal/x86_64/QuickComponents.swiftmodule
+
+CopySwiftLibs /Users/lucasdesouza/Library/Developer/Xcode/DerivedData/Build/Products/Debug-iphonesimulator/iBru.app (in target 'iBru' from project 'iBru')
+    cd /Users/lucasdesouza/projects/ibru
+    export CODESIGN_ALLOCATE\=/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/codesign_allocate
+    export DEVELOPER_DIR\=/Applications/Xcode.app/Contents/Developer
+    export SDKROOT\=/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator14.5.sdk
+    builtin-swiftStdLibTool --copy --verbose --sign - --scan-executable /Users/lucasdesouza/Library/Developer/Xcode/DerivedData/Build/Products/Debug-iphonesimulator/iBru.app/iBru --scan-folder /Users/lucasdesouza/Library/Developer/Xcode/DerivedData/Build/Products/Debug-iphonesimulator/iBru.app/Frameworks --scan-folder /Users/lucasdesouza/Library/Developer/Xcode/DerivedData/Build/Products/Debug-iphonesimulator/iBru.app/PlugIns --scan-folder /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator14.5.sdk/System/Library/Frameworks/CloudKit.framework --platform iphonesimulator --toolchain /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain --destination /Users/lucasdesouza/Library/Developer/Xcode/DerivedData/Build/Products/Debug-iphonesimulator/iBru.app/Frameworks --strip-bitcode --strip-bitcode-tool /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/bitcode_strip --emit-dependency-info /Users/lucasdesouza/Library/Developer/Xcode/DerivedData/Build/Intermediates.noindex/iBru.build/Debug-iphonesimulator/iBru.build/SwiftStdLibToolInputDependencies.dep --filter-for-swift-os
+
+CodeSign /Users/lucasdesouza/Library/Developer/Xcode/DerivedData/Build/Products/Debug-iphonesimulator/iBru.app (in target 'iBru' from project 'iBru')
+    cd /Users/lucasdesouza/projects/ibru
+    export CODESIGN_ALLOCATE\=/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/codesign_allocate
+    
+    Signing Identity:     "-"
+    
+    /usr/bin/codesign --force --sign - --entitlements /Users/lucasdesouza/Library/Developer/Xcode/DerivedData/Build/Intermediates.noindex/iBru.build/Debug-iphonesimulator/iBru.build/iBru.app.xcent --timestamp\=none /Users/lucasdesouza/Library/Developer/Xcode/DerivedData/Build/Products/Debug-iphonesimulator/iBru.app
+
+ProcessProductPackaging "" /Users/lucasdesouza/Library/Developer/Xcode/DerivedData/Build/Intermediates.noindex/iBru.build/Debug-iphonesimulator/iBruUITests.build/iBruUITests.xctest-Simulated.xcent (in target 'iBruUITests' from project 'iBru')
+    cd /Users/lucasdesouza/projects/ibru
+    
+    Entitlements:
+    
+    {
+    "application-identifier" = "Y259ZT3SQK.net.lucasdesouza.iBruUITests.xctrunner";
+    "com.apple.security.get-task-allow" = 1;
+    "keychain-access-groups" =     (
+        "Y259ZT3SQK.net.lucasdesouza.iBruUITests.xctrunner"
+    );
+}
+    
+    builtin-productPackagingUtility -entitlements -format xml -o /Users/lucasdesouza/Library/Developer/Xcode/DerivedData/Build/Intermediates.noindex/iBru.build/Debug-iphonesimulator/iBruUITests.build/iBruUITests.xctest-Simulated.xcent
+
+CompileSwiftSources normal x86_64 com.apple.xcode.tools.swift.compiler (in target 'iBruUITests' from project 'iBru')
+    cd /Users/lucasdesouza/projects/ibru
+    export DEVELOPER_DIR\=/Applications/Xcode.app/Contents/Developer
+    export SDKROOT\=/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator14.5.sdk
+    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc -incremental -module-name iBruUITests -Onone -enable-batch-mode -enforce-exclusivity\=checked @/Users/lucasdesouza/Library/Developer/Xcode/DerivedData/Build/Intermediates.noindex/iBru.build/Debug-iphonesimulator/iBruUITests.build/Objects-normal/x86_64/iBruUITests.SwiftFileList -DDEBUG -sdk /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator14.5.sdk -target x86_64-apple-ios14.5-simulator -g -module-cache-path /Users/lucasdesouza/Library/Developer/Xcode/DerivedData/ModuleCache.noindex -Xfrontend -serialize-debugging-options -enable-testing -index-store-path /Users/lucasdesouza/Library/Developer/Xcode/DerivedData/Index/DataStore -swift-version 5 -I /Users/lucasdesouza/Library/Developer/Xcode/DerivedData/Build/Products/Debug-iphonesimulator -I /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/lib -F /Users/lucasdesouza/Library/Developer/Xcode/DerivedData/Build/Products/Debug-iphonesimulator -F /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/Library/Frameworks -F /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator14.5.sdk/Developer/Library/Frameworks -parse-as-library -c -j12 -output-file-map /Users/lucasdesouza/Library/Developer/Xcode/DerivedData/Build/Intermediates.noindex/iBru.build/Debug-iphonesimulator/iBruUITests.build/Objects-normal/x86_64/iBruUITests-OutputFileMap.json -parseable-output -serialize-diagnostics -emit-dependencies -emit-module -emit-module-path /Users/lucasdesouza/Library/Developer/Xcode/DerivedData/Build/Intermediates.noindex/iBru.build/Debug-iphonesimulator/iBruUITests.build/Objects-normal/x86_64/iBruUITests.swiftmodule -Xcc -I/Users/lucasdesouza/Library/Developer/Xcode/DerivedData/Build/Intermediates.noindex/iBru.build/Debug-iphonesimulator/iBruUITests.build/swift-overrides.hmap -Xcc -iquote -Xcc /Users/lucasdesouza/Library/Developer/Xcode/DerivedData/Build/Intermediates.noindex/iBru.build/Debug-iphonesimulator/iBruUITests.build/iBruUITests-generated-files.hmap -Xcc -I/Users/lucasdesouza/Library/Developer/Xcode/DerivedData/Build/Intermediates.noindex/iBru.build/Debug-iphonesimulator/iBruUITests.build/iBruUITests-own-target-headers.hmap -Xcc -I/Users/lucasdesouza/Library/Developer/Xcode/DerivedData/Build/Intermediates.noindex/iBru.build/Debug-iphonesimulator/iBruUITests.build/iBruUITests-all-non-framework-target-headers.hmap -Xcc -ivfsoverlay -Xcc /Users/lucasdesouza/Library/Developer/Xcode/DerivedData/Build/Intermediates.noindex/iBru.build/Debug-iphonesimulator/iBruUITests.build/all-product-headers.yaml -Xcc -iquote -Xcc /Users/lucasdesouza/Library/Developer/Xcode/DerivedData/Build/Intermediates.noindex/iBru.build/Debug-iphonesimulator/iBruUITests.build/iBruUITests-project-headers.hmap -Xcc -I/Users/lucasdesouza/Library/Developer/Xcode/DerivedData/Build/Products/Debug-iphonesimulator/include -Xcc -I/Users/lucasdesouza/Library/Developer/Xcode/DerivedData/Build/Intermediates.noindex/iBru.build/Debug-iphonesimulator/iBruUITests.build/DerivedSources-normal/x86_64 -Xcc -I/Users/lucasdesouza/Library/Developer/Xcode/DerivedData/Build/Intermediates.noindex/iBru.build/Debug-iphonesimulator/iBruUITests.build/DerivedSources/x86_64 -Xcc -I/Users/lucasdesouza/Library/Developer/Xcode/DerivedData/Build/Intermediates.noindex/iBru.build/Debug-iphonesimulator/iBruUITests.build/DerivedSources -Xcc -DDEBUG\=1 -emit-objc-header -emit-objc-header-path /Users/lucasdesouza/Library/Developer/Xcode/DerivedData/Build/Intermediates.noindex/iBru.build/Debug-iphonesimulator/iBruUITests.build/Objects-normal/x86_64/iBruUITests-Swift.h -working-directory /Users/lucasdesouza/projects/ibru -Xfrontend -serialize-debugging-options
+
+CompileSwift normal x86_64 /Users/lucasdesouza/projects/ibru/iBruUITests/BaseTests.swift (in target 'iBruUITests' from project 'iBru')
+    cd /Users/lucasdesouza/projects/ibru
+    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swift-frontend -frontend -c -primary-file /Users/lucasdesouza/projects/ibru/iBruUITests/BaseTests.swift -emit-module-path /Users/lucasdesouza/Library/Developer/Xcode/DerivedData/Build/Intermediates.noindex/iBru.build/Debug-iphonesimulator/iBruUITests.build/Objects-normal/x86_64/BaseTests\~partial.swiftmodule -emit-module-doc-path /Users/lucasdesouza/Library/Developer/Xcode/DerivedData/Build/Intermediates.noindex/iBru.build/Debug-iphonesimulator/iBruUITests.build/Objects-normal/x86_64/BaseTests\~partial.swiftdoc -emit-module-source-info-path /Users/lucasdesouza/Library/Developer/Xcode/DerivedData/Build/Intermediates.noindex/iBru.build/Debug-iphonesimulator/iBruUITests.build/Objects-normal/x86_64/BaseTests\~partial.swiftsourceinfo -serialize-diagnostics-path /Users/lucasdesouza/Library/Developer/Xcode/DerivedData/Build/Intermediates.noindex/iBru.build/Debug-iphonesimulator/iBruUITests.build/Objects-normal/x86_64/BaseTests.dia -emit-dependencies-path /Users/lucasdesouza/Library/Developer/Xcode/DerivedData/Build/Intermediates.noindex/iBru.build/Debug-iphonesimulator/iBruUITests.build/Objects-normal/x86_64/BaseTests.d -emit-reference-dependencies-path /Users/lucasdesouza/Library/Developer/Xcode/DerivedData/Build/Intermediates.noindex/iBru.build/Debug-iphonesimulator/iBruUITests.build/Objects-normal/x86_64/BaseTests.swiftdeps -target x86_64-apple-ios14.5-simulator -enable-objc-interop -sdk /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator14.5.sdk -I /Users/lucasdesouza/Library/Developer/Xcode/DerivedData/Build/Products/Debug-iphonesimulator -I /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/lib -F /Users/lucasdesouza/Library/Developer/Xcode/DerivedData/Build/Products/Debug-iphonesimulator -F /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/Library/Frameworks -F /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator14.5.sdk/Developer/Library/Frameworks -enable-testing -g -module-cache-path /Users/lucasdesouza/Library/Developer/Xcode/DerivedData/ModuleCache.noindex -swift-version 5 -enforce-exclusivity\=checked -Onone -D DEBUG -serialize-debugging-options -serialize-debugging-options -Xcc -working-directory -Xcc /Users/lucasdesouza/projects/ibru -enable-anonymous-context-mangled-names -Xcc -I/Users/lucasdesouza/Library/Developer/Xcode/DerivedData/Build/Intermediates.noindex/iBru.build/Debug-iphonesimulator/iBruUITests.build/swift-overrides.hmap -Xcc -iquote -Xcc /Users/lucasdesouza/Library/Developer/Xcode/DerivedData/Build/Intermediates.noindex/iBru.build/Debug-iphonesimulator/iBruUITests.build/iBruUITests-generated-files.hmap -Xcc -I/Users/lucasdesouza/Library/Developer/Xcode/DerivedData/Build/Intermediates.noindex/iBru.build/Debug-iphonesimulator/iBruUITests.build/iBruUITests-own-target-headers.hmap -Xcc -I/Users/lucasdesouza/Library/Developer/Xcode/DerivedData/Build/Intermediates.noindex/iBru.build/Debug-iphonesimulator/iBruUITests.build/iBruUITests-all-non-framework-target-headers.hmap -Xcc -ivfsoverlay -Xcc /Users/lucasdesouza/Library/Developer/Xcode/DerivedData/Build/Intermediates.noindex/iBru.build/Debug-iphonesimulator/iBruUITests.build/all-product-headers.yaml -Xcc -iquote -Xcc /Users/lucasdesouza/Library/Developer/Xcode/DerivedData/Build/Intermediates.noindex/iBru.build/Debug-iphonesimulator/iBruUITests.build/iBruUITests-project-headers.hmap -Xcc -I/Users/lucasdesouza/Library/Developer/Xcode/DerivedData/Build/Products/Debug-iphonesimulator/include -Xcc -I/Users/lucasdesouza/Library/Developer/Xcode/DerivedData/Build/Intermediates.noindex/iBru.build/Debug-iphonesimulator/iBruUITests.build/DerivedSources-normal/x86_64 -Xcc -I/Users/lucasdesouza/Library/Developer/Xcode/DerivedData/Build/Intermediates.noindex/iBru.build/Debug-iphonesimulator/iBruUITests.build/DerivedSources/x86_64 -Xcc -I/Users/lucasdesouza/Library/Developer/Xcode/DerivedData/Build/Intermediates.noindex/iBru.build/Debug-iphonesimulator/iBruUITests.build/DerivedSources -Xcc -DDEBUG\=1 -target-sdk-version 14.5 -parse-as-library -module-name iBruUITests -o /Users/lucasdesouza/Library/Developer/Xcode/DerivedData/Build/Intermediates.noindex/iBru.build/Debug-iphonesimulator/iBruUITests.build/Objects-normal/x86_64/BaseTests.o -index-store-path /Users/lucasdesouza/Library/Developer/Xcode/DerivedData/Index/DataStore -index-system-modules
+
+MergeSwiftModule normal x86_64 (in target 'iBruUITests' from project 'iBru')
+    cd /Users/lucasdesouza/projects/ibru
+    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swift-frontend -frontend -merge-modules -emit-module /Users/lucasdesouza/Library/Developer/Xcode/DerivedData/Build/Intermediates.noindex/iBru.build/Debug-iphonesimulator/iBruUITests.build/Objects-normal/x86_64/BaseTests\~partial.swiftmodule -parse-as-library -disable-diagnostic-passes -disable-sil-perf-optzns -target x86_64-apple-ios14.5-simulator -enable-objc-interop -sdk /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator14.5.sdk -I /Users/lucasdesouza/Library/Developer/Xcode/DerivedData/Build/Products/Debug-iphonesimulator -I /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/lib -F /Users/lucasdesouza/Library/Developer/Xcode/DerivedData/Build/Products/Debug-iphonesimulator -F /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/Library/Frameworks -F /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator14.5.sdk/Developer/Library/Frameworks -enable-testing -g -module-cache-path /Users/lucasdesouza/Library/Developer/Xcode/DerivedData/ModuleCache.noindex -swift-version 5 -enforce-exclusivity\=checked -Onone -D DEBUG -serialize-debugging-options -serialize-debugging-options -Xcc -working-directory -Xcc /Users/lucasdesouza/projects/ibru -enable-anonymous-context-mangled-names -Xcc -I/Users/lucasdesouza/Library/Developer/Xcode/DerivedData/Build/Intermediates.noindex/iBru.build/Debug-iphonesimulator/iBruUITests.build/swift-overrides.hmap -Xcc -iquote -Xcc /Users/lucasdesouza/Library/Developer/Xcode/DerivedData/Build/Intermediates.noindex/iBru.build/Debug-iphonesimulator/iBruUITests.build/iBruUITests-generated-files.hmap -Xcc -I/Users/lucasdesouza/Library/Developer/Xcode/DerivedData/Build/Intermediates.noindex/iBru.build/Debug-iphonesimulator/iBruUITests.build/iBruUITests-own-target-headers.hmap -Xcc -I/Users/lucasdesouza/Library/Developer/Xcode/DerivedData/Build/Intermediates.noindex/iBru.build/Debug-iphonesimulator/iBruUITests.build/iBruUITests-all-non-framework-target-headers.hmap -Xcc -ivfsoverlay -Xcc /Users/lucasdesouza/Library/Developer/Xcode/DerivedData/Build/Intermediates.noindex/iBru.build/Debug-iphonesimulator/iBruUITests.build/all-product-headers.yaml -Xcc -iquote -Xcc /Users/lucasdesouza/Library/Developer/Xcode/DerivedData/Build/Intermediates.noindex/iBru.build/Debug-iphonesimulator/iBruUITests.build/iBruUITests-project-headers.hmap -Xcc -I/Users/lucasdesouza/Library/Developer/Xcode/DerivedData/Build/Products/Debug-iphonesimulator/include -Xcc -I/Users/lucasdesouza/Library/Developer/Xcode/DerivedData/Build/Intermediates.noindex/iBru.build/Debug-iphonesimulator/iBruUITests.build/DerivedSources-normal/x86_64 -Xcc -I/Users/lucasdesouza/Library/Developer/Xcode/DerivedData/Build/Intermediates.noindex/iBru.build/Debug-iphonesimulator/iBruUITests.build/DerivedSources/x86_64 -Xcc -I/Users/lucasdesouza/Library/Developer/Xcode/DerivedData/Build/Intermediates.noindex/iBru.build/Debug-iphonesimulator/iBruUITests.build/DerivedSources -Xcc -DDEBUG\=1 -target-sdk-version 14.5 -emit-module-doc-path /Users/lucasdesouza/Library/Developer/Xcode/DerivedData/Build/Intermediates.noindex/iBru.build/Debug-iphonesimulator/iBruUITests.build/Objects-normal/x86_64/iBruUITests.swiftdoc -emit-module-source-info-path /Users/lucasdesouza/Library/Developer/Xcode/DerivedData/Build/Intermediates.noindex/iBru.build/Debug-iphonesimulator/iBruUITests.build/Objects-normal/x86_64/iBruUITests.swiftsourceinfo -emit-objc-header-path /Users/lucasdesouza/Library/Developer/Xcode/DerivedData/Build/Intermediates.noindex/iBru.build/Debug-iphonesimulator/iBruUITests.build/Objects-normal/x86_64/iBruUITests-Swift.h -module-name iBruUITests -o /Users/lucasdesouza/Library/Developer/Xcode/DerivedData/Build/Intermediates.noindex/iBru.build/Debug-iphonesimulator/iBruUITests.build/Objects-normal/x86_64/iBruUITests.swiftmodule
+
+Ld /Users/lucasdesouza/Library/Developer/Xcode/DerivedData/Build/Products/Debug-iphonesimulator/iBruUITests-Runner.app/PlugIns/iBruUITests.xctest/iBruUITests normal (in target 'iBruUITests' from project 'iBru')
+    cd /Users/lucasdesouza/projects/ibru
+    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -target x86_64-apple-ios14.5-simulator -bundle -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator14.5.sdk -L/Users/lucasdesouza/Library/Developer/Xcode/DerivedData/Build/Products/Debug-iphonesimulator -L/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/lib -F/Users/lucasdesouza/Library/Developer/Xcode/DerivedData/Build/Products/Debug-iphonesimulator -iframework /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/Library/Frameworks -iframework /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator14.5.sdk/Developer/Library/Frameworks -filelist /Users/lucasdesouza/Library/Developer/Xcode/DerivedData/Build/Intermediates.noindex/iBru.build/Debug-iphonesimulator/iBruUITests.build/Objects-normal/x86_64/iBruUITests.LinkFileList -Xlinker -rpath -Xlinker @loader_path/Frameworks -Xlinker -rpath -Xlinker @executable_path/Frameworks -Xlinker -rpath -Xlinker @loader_path/Frameworks -dead_strip -Xlinker -object_path_lto -Xlinker /Users/lucasdesouza/Library/Developer/Xcode/DerivedData/Build/Intermediates.noindex/iBru.build/Debug-iphonesimulator/iBruUITests.build/Objects-normal/x86_64/iBruUITests_lto.o -Xlinker -export_dynamic -Xlinker -no_deduplicate -Xlinker -objc_abi_version -Xlinker 2 -fobjc-link-runtime -L/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator -L/usr/lib/swift -Xlinker -add_ast_path -Xlinker /Users/lucasdesouza/Library/Developer/Xcode/DerivedData/Build/Intermediates.noindex/iBru.build/Debug-iphonesimulator/iBruUITests.build/Objects-normal/x86_64/iBruUITests.swiftmodule -framework XCTest -Xlinker -sectcreate -Xlinker __TEXT -Xlinker __entitlements -Xlinker /Users/lucasdesouza/Library/Developer/Xcode/DerivedData/Build/Intermediates.noindex/iBru.build/Debug-iphonesimulator/iBruUITests.build/iBruUITests.xctest-Simulated.xcent -Xlinker -no_adhoc_codesign -Xlinker -dependency_info -Xlinker /Users/lucasdesouza/Library/Developer/Xcode/DerivedData/Build/Intermediates.noindex/iBru.build/Debug-iphonesimulator/iBruUITests.build/Objects-normal/x86_64/iBruUITests_dependency_info.dat -o /Users/lucasdesouza/Library/Developer/Xcode/DerivedData/Build/Products/Debug-iphonesimulator/iBruUITests-Runner.app/PlugIns/iBruUITests.xctest/iBruUITests
+
+Ditto /Users/lucasdesouza/Library/Developer/Xcode/DerivedData/Build/Products/Debug-iphonesimulator/iBruUITests.swiftmodule/x86_64-apple-ios-simulator.swiftmodule /Users/lucasdesouza/Library/Developer/Xcode/DerivedData/Build/Intermediates.noindex/iBru.build/Debug-iphonesimulator/iBruUITests.build/Objects-normal/x86_64/iBruUITests.swiftmodule (in target 'iBruUITests' from project 'iBru')
+    cd /Users/lucasdesouza/projects/ibru
+    /usr/bin/ditto -rsrc /Users/lucasdesouza/Library/Developer/Xcode/DerivedData/Build/Intermediates.noindex/iBru.build/Debug-iphonesimulator/iBruUITests.build/Objects-normal/x86_64/iBruUITests.swiftmodule /Users/lucasdesouza/Library/Developer/Xcode/DerivedData/Build/Products/Debug-iphonesimulator/iBruUITests.swiftmodule/x86_64-apple-ios-simulator.swiftmodule
+
+Ditto /Users/lucasdesouza/Library/Developer/Xcode/DerivedData/Build/Products/Debug-iphonesimulator/iBruUITests.swiftmodule/Project/x86_64.swiftsourceinfo /Users/lucasdesouza/Library/Developer/Xcode/DerivedData/Build/Intermediates.noindex/iBru.build/Debug-iphonesimulator/iBruUITests.build/Objects-normal/x86_64/iBruUITests.swiftsourceinfo (in target 'iBruUITests' from project 'iBru')
+    cd /Users/lucasdesouza/projects/ibru
+    /usr/bin/ditto -rsrc /Users/lucasdesouza/Library/Developer/Xcode/DerivedData/Build/Intermediates.noindex/iBru.build/Debug-iphonesimulator/iBruUITests.build/Objects-normal/x86_64/iBruUITests.swiftsourceinfo /Users/lucasdesouza/Library/Developer/Xcode/DerivedData/Build/Products/Debug-iphonesimulator/iBruUITests.swiftmodule/Project/x86_64.swiftsourceinfo
+
+Ditto /Users/lucasdesouza/Library/Developer/Xcode/DerivedData/Build/Products/Debug-iphonesimulator/iBruUITests.swiftmodule/x86_64.swiftmodule /Users/lucasdesouza/Library/Developer/Xcode/DerivedData/Build/Intermediates.noindex/iBru.build/Debug-iphonesimulator/iBruUITests.build/Objects-normal/x86_64/iBruUITests.swiftmodule (in target 'iBruUITests' from project 'iBru')
+    cd /Users/lucasdesouza/projects/ibru
+    /usr/bin/ditto -rsrc /Users/lucasdesouza/Library/Developer/Xcode/DerivedData/Build/Intermediates.noindex/iBru.build/Debug-iphonesimulator/iBruUITests.build/Objects-normal/x86_64/iBruUITests.swiftmodule /Users/lucasdesouza/Library/Developer/Xcode/DerivedData/Build/Products/Debug-iphonesimulator/iBruUITests.swiftmodule/x86_64.swiftmodule
+
+Ditto /Users/lucasdesouza/Library/Developer/Xcode/DerivedData/Build/Products/Debug-iphonesimulator/iBruUITests.swiftmodule/Project/x86_64-apple-ios-simulator.swiftsourceinfo /Users/lucasdesouza/Library/Developer/Xcode/DerivedData/Build/Intermediates.noindex/iBru.build/Debug-iphonesimulator/iBruUITests.build/Objects-normal/x86_64/iBruUITests.swiftsourceinfo (in target 'iBruUITests' from project 'iBru')
+    cd /Users/lucasdesouza/projects/ibru
+    /usr/bin/ditto -rsrc /Users/lucasdesouza/Library/Developer/Xcode/DerivedData/Build/Intermediates.noindex/iBru.build/Debug-iphonesimulator/iBruUITests.build/Objects-normal/x86_64/iBruUITests.swiftsourceinfo /Users/lucasdesouza/Library/Developer/Xcode/DerivedData/Build/Products/Debug-iphonesimulator/iBruUITests.swiftmodule/Project/x86_64-apple-ios-simulator.swiftsourceinfo
+
+CopySwiftLibs /Users/lucasdesouza/Library/Developer/Xcode/DerivedData/Build/Products/Debug-iphonesimulator/iBruUITests-Runner.app/PlugIns/iBruUITests.xctest (in target 'iBruUITests' from project 'iBru')
+    cd /Users/lucasdesouza/projects/ibru
+    export CODESIGN_ALLOCATE\=/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/codesign_allocate
+    export DEVELOPER_DIR\=/Applications/Xcode.app/Contents/Developer
+    export SDKROOT\=/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator14.5.sdk
+    builtin-swiftStdLibTool --copy --verbose --sign - --scan-executable /Users/lucasdesouza/Library/Developer/Xcode/DerivedData/Build/Products/Debug-iphonesimulator/iBruUITests-Runner.app/PlugIns/iBruUITests.xctest/iBruUITests --scan-folder /Users/lucasdesouza/Library/Developer/Xcode/DerivedData/Build/Products/Debug-iphonesimulator/iBruUITests-Runner.app/PlugIns/iBruUITests.xctest/Frameworks --scan-folder /Users/lucasdesouza/Library/Developer/Xcode/DerivedData/Build/Products/Debug-iphonesimulator/iBruUITests-Runner.app/PlugIns/iBruUITests.xctest/PlugIns --platform iphonesimulator --toolchain /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain --destination /Users/lucasdesouza/Library/Developer/Xcode/DerivedData/Build/Products/Debug-iphonesimulator/iBruUITests-Runner.app/PlugIns/iBruUITests.xctest/Frameworks --strip-bitcode --scan-executable /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/lib/libXCTestSwiftSupport.dylib --strip-bitcode-tool /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/bitcode_strip --emit-dependency-info /Users/lucasdesouza/Library/Developer/Xcode/DerivedData/Build/Intermediates.noindex/iBru.build/Debug-iphonesimulator/iBruUITests.build/SwiftStdLibToolInputDependencies.dep --filter-for-swift-os
+
+CodeSign /Users/lucasdesouza/Library/Developer/Xcode/DerivedData/Build/Products/Debug-iphonesimulator/iBruUITests-Runner.app/PlugIns/iBruUITests.xctest (in target 'iBruUITests' from project 'iBru')
+    cd /Users/lucasdesouza/projects/ibru
+    export CODESIGN_ALLOCATE\=/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/codesign_allocate
+    
+    Signing Identity:     "-"
+    
+    /usr/bin/codesign --force --sign - --timestamp\=none /Users/lucasdesouza/Library/Developer/Xcode/DerivedData/Build/Products/Debug-iphonesimulator/iBruUITests-Runner.app/PlugIns/iBruUITests.xctest
+
+CodeSign /Users/lucasdesouza/Library/Developer/Xcode/DerivedData/Build/Products/Debug-iphonesimulator/iBruUITests-Runner.app (in target 'iBruUITests' from project 'iBru')
+    cd /Users/lucasdesouza/projects/ibru
+    export CODESIGN_ALLOCATE\=/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/codesign_allocate
+    
+    Signing Identity:     "-"
+    
+    /usr/bin/codesign --force --sign - --timestamp\=none /Users/lucasdesouza/Library/Developer/Xcode/DerivedData/Build/Products/Debug-iphonesimulator/iBruUITests-Runner.app
+/Users/lucasdesouza/Library/Developer/Xcode/DerivedData/Build/Products/Debug-iphonesimulator/iBruUITests-Runner.app: replacing existing signature
+
+** BUILD SUCCEEDED **
+
+note: Using new build system
+note: Building targets in parallel
+note: Planning build
+note: Analyzing workspace
+note: Using build description from disk
+note: Build preparation complete
+ProcessProductPackaging "" /Users/lucasdesouza/Library/Developer/Xcode/DerivedData/Build/Intermediates.noindex/iBru.build/Debug-iphonesimulator/iBru.build/iBru.app.xcent (in target 'iBru' from project 'iBru')
+    cd /Users/lucasdesouza/projects/ibru
+    
+    Entitlements:
+    
+    {
+    "com.apple.security.get-task-allow" = 1;
+}
+    
+    builtin-productPackagingUtility -entitlements -format xml -o /Users/lucasdesouza/Library/Developer/Xcode/DerivedData/Build/Intermediates.noindex/iBru.build/Debug-iphonesimulator/iBru.build/iBru.app.xcent
+
+ProcessProductPackaging "" /Users/lucasdesouza/Library/Developer/Xcode/DerivedData/Build/Intermediates.noindex/iBru.build/Debug-iphonesimulator/iBru.build/iBru.app-Simulated.xcent (in target 'iBru' from project 'iBru')
+    cd /Users/lucasdesouza/projects/ibru
+    
+    Entitlements:
+    
+    {
+    "application-identifier" = "Y259ZT3SQK.lucasdesouza.homebrew";
+    "aps-environment" = development;
+    "com.apple.developer.icloud-container-identifiers" =     (
+        "iCloud.homebrew"
+    );
+    "com.apple.developer.icloud-services" =     (
+        CloudKit
+    );
+}
+    
+    builtin-productPackagingUtility -entitlements -format xml -o /Users/lucasdesouza/Library/Developer/Xcode/DerivedData/Build/Intermediates.noindex/iBru.build/Debug-iphonesimulator/iBru.build/iBru.app-Simulated.xcent
+
+Ld /Users/lucasdesouza/Library/Developer/Xcode/DerivedData/Build/Products/Debug-iphonesimulator/iBru.app/iBru normal (in target 'iBru' from project 'iBru')
+    cd /Users/lucasdesouza/projects/ibru
+    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -target x86_64-apple-ios14.0-simulator -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator14.5.sdk -L/Users/lucasdesouza/Library/Developer/Xcode/DerivedData/Build/Products/Debug-iphonesimulator -F/Users/lucasdesouza/Library/Developer/Xcode/DerivedData/Build/Products/Debug-iphonesimulator -filelist /Users/lucasdesouza/Library/Developer/Xcode/DerivedData/Build/Intermediates.noindex/iBru.build/Debug-iphonesimulator/iBru.build/Objects-normal/x86_64/iBru.LinkFileList -Xlinker -rpath -Xlinker @executable_path/Frameworks -dead_strip -Xlinker -object_path_lto -Xlinker /Users/lucasdesouza/Library/Developer/Xcode/DerivedData/Build/Intermediates.noindex/iBru.build/Debug-iphonesimulator/iBru.build/Objects-normal/x86_64/iBru_lto.o -Xlinker -export_dynamic -Xlinker -no_deduplicate -Xlinker -objc_abi_version -Xlinker 2 -fobjc-link-runtime -L/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator -L/usr/lib/swift -Xlinker -add_ast_path -Xlinker /Users/lucasdesouza/Library/Developer/Xcode/DerivedData/Build/Intermediates.noindex/iBru.build/Debug-iphonesimulator/iBru.build/Objects-normal/x86_64/iBru.swiftmodule -Xlinker -sectcreate -Xlinker __TEXT -Xlinker __entitlements -Xlinker /Users/lucasdesouza/Library/Developer/Xcode/DerivedData/Build/Intermediates.noindex/iBru.build/Debug-iphonesimulator/iBru.build/iBru.app-Simulated.xcent -framework CloudKit -Xlinker -no_adhoc_codesign -Xlinker -dependency_info -Xlinker /Users/lucasdesouza/Library/Developer/Xcode/DerivedData/Build/Intermediates.noindex/iBru.build/Debug-iphonesimulator/iBru.build/Objects-normal/x86_64/iBru_dependency_info.dat -o /Users/lucasdesouza/Library/Developer/Xcode/DerivedData/Build/Products/Debug-iphonesimulator/iBru.app/iBru -Xlinker -add_ast_path -Xlinker /Users/lucasdesouza/Library/Developer/Xcode/DerivedData/Build/Intermediates.noindex/QuickComponents.build/Debug-iphonesimulator/QuickComponents.build/Objects-normal/x86_64/QuickComponents.swiftmodule
+
+CopySwiftLibs /Users/lucasdesouza/Library/Developer/Xcode/DerivedData/Build/Products/Debug-iphonesimulator/iBru.app (in target 'iBru' from project 'iBru')
+    cd /Users/lucasdesouza/projects/ibru
+    export CODESIGN_ALLOCATE\=/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/codesign_allocate
+    export DEVELOPER_DIR\=/Applications/Xcode.app/Contents/Developer
+    export SDKROOT\=/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator14.5.sdk
+    builtin-swiftStdLibTool --copy --verbose --sign - --scan-executable /Users/lucasdesouza/Library/Developer/Xcode/DerivedData/Build/Products/Debug-iphonesimulator/iBru.app/iBru --scan-folder /Users/lucasdesouza/Library/Developer/Xcode/DerivedData/Build/Products/Debug-iphonesimulator/iBru.app/Frameworks --scan-folder /Users/lucasdesouza/Library/Developer/Xcode/DerivedData/Build/Products/Debug-iphonesimulator/iBru.app/PlugIns --scan-folder /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator14.5.sdk/System/Library/Frameworks/CloudKit.framework --platform iphonesimulator --toolchain /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain --destination /Users/lucasdesouza/Library/Developer/Xcode/DerivedData/Build/Products/Debug-iphonesimulator/iBru.app/Frameworks --strip-bitcode --strip-bitcode-tool /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/bitcode_strip --emit-dependency-info /Users/lucasdesouza/Library/Developer/Xcode/DerivedData/Build/Intermediates.noindex/iBru.build/Debug-iphonesimulator/iBru.build/SwiftStdLibToolInputDependencies.dep --filter-for-swift-os
+
+CodeSign /Users/lucasdesouza/Library/Developer/Xcode/DerivedData/Build/Products/Debug-iphonesimulator/iBru.app (in target 'iBru' from project 'iBru')
+    cd /Users/lucasdesouza/projects/ibru
+    export CODESIGN_ALLOCATE\=/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/codesign_allocate
+    
+    Signing Identity:     "-"
+    
+    /usr/bin/codesign --force --sign - --entitlements /Users/lucasdesouza/Library/Developer/Xcode/DerivedData/Build/Intermediates.noindex/iBru.build/Debug-iphonesimulator/iBru.build/iBru.app.xcent --timestamp\=none /Users/lucasdesouza/Library/Developer/Xcode/DerivedData/Build/Products/Debug-iphonesimulator/iBru.app
+
+ProcessProductPackaging "" /Users/lucasdesouza/Library/Developer/Xcode/DerivedData/Build/Intermediates.noindex/iBru.build/Debug-iphonesimulator/iBruUITests.build/iBruUITests.xctest-Simulated.xcent (in target 'iBruUITests' from project 'iBru')
+    cd /Users/lucasdesouza/projects/ibru
+    
+    Entitlements:
+    
+    {
+    "application-identifier" = "Y259ZT3SQK.net.lucasdesouza.iBruUITests.xctrunner";
+    "com.apple.security.get-task-allow" = 1;
+    "keychain-access-groups" =     (
+        "Y259ZT3SQK.net.lucasdesouza.iBruUITests.xctrunner"
+    );
+}
+    
+    builtin-productPackagingUtility -entitlements -format xml -o /Users/lucasdesouza/Library/Developer/Xcode/DerivedData/Build/Intermediates.noindex/iBru.build/Debug-iphonesimulator/iBruUITests.build/iBruUITests.xctest-Simulated.xcent
+
+Ld /Users/lucasdesouza/Library/Developer/Xcode/DerivedData/Build/Products/Debug-iphonesimulator/iBruUITests-Runner.app/PlugIns/iBruUITests.xctest/iBruUITests normal (in target 'iBruUITests' from project 'iBru')
+    cd /Users/lucasdesouza/projects/ibru
+    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -target x86_64-apple-ios14.5-simulator -bundle -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator14.5.sdk -L/Users/lucasdesouza/Library/Developer/Xcode/DerivedData/Build/Products/Debug-iphonesimulator -L/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/lib -F/Users/lucasdesouza/Library/Developer/Xcode/DerivedData/Build/Products/Debug-iphonesimulator -iframework /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/Library/Frameworks -iframework /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator14.5.sdk/Developer/Library/Frameworks -filelist /Users/lucasdesouza/Library/Developer/Xcode/DerivedData/Build/Intermediates.noindex/iBru.build/Debug-iphonesimulator/iBruUITests.build/Objects-normal/x86_64/iBruUITests.LinkFileList -Xlinker -rpath -Xlinker @loader_path/Frameworks -Xlinker -rpath -Xlinker @executable_path/Frameworks -Xlinker -rpath -Xlinker @loader_path/Frameworks -dead_strip -Xlinker -object_path_lto -Xlinker /Users/lucasdesouza/Library/Developer/Xcode/DerivedData/Build/Intermediates.noindex/iBru.build/Debug-iphonesimulator/iBruUITests.build/Objects-normal/x86_64/iBruUITests_lto.o -Xlinker -export_dynamic -Xlinker -no_deduplicate -Xlinker -objc_abi_version -Xlinker 2 -fobjc-link-runtime -L/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator -L/usr/lib/swift -Xlinker -add_ast_path -Xlinker /Users/lucasdesouza/Library/Developer/Xcode/DerivedData/Build/Intermediates.noindex/iBru.build/Debug-iphonesimulator/iBruUITests.build/Objects-normal/x86_64/iBruUITests.swiftmodule -framework XCTest -Xlinker -sectcreate -Xlinker __TEXT -Xlinker __entitlements -Xlinker /Users/lucasdesouza/Library/Developer/Xcode/DerivedData/Build/Intermediates.noindex/iBru.build/Debug-iphonesimulator/iBruUITests.build/iBruUITests.xctest-Simulated.xcent -Xlinker -no_adhoc_codesign -Xlinker -dependency_info -Xlinker /Users/lucasdesouza/Library/Developer/Xcode/DerivedData/Build/Intermediates.noindex/iBru.build/Debug-iphonesimulator/iBruUITests.build/Objects-normal/x86_64/iBruUITests_dependency_info.dat -o /Users/lucasdesouza/Library/Developer/Xcode/DerivedData/Build/Products/Debug-iphonesimulator/iBruUITests-Runner.app/PlugIns/iBruUITests.xctest/iBruUITests
+
+CopySwiftLibs /Users/lucasdesouza/Library/Developer/Xcode/DerivedData/Build/Products/Debug-iphonesimulator/iBruUITests-Runner.app/PlugIns/iBruUITests.xctest (in target 'iBruUITests' from project 'iBru')
+    cd /Users/lucasdesouza/projects/ibru
+    export CODESIGN_ALLOCATE\=/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/codesign_allocate
+    export DEVELOPER_DIR\=/Applications/Xcode.app/Contents/Developer
+    export SDKROOT\=/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator14.5.sdk
+    builtin-swiftStdLibTool --copy --verbose --sign - --scan-executable /Users/lucasdesouza/Library/Developer/Xcode/DerivedData/Build/Products/Debug-iphonesimulator/iBruUITests-Runner.app/PlugIns/iBruUITests.xctest/iBruUITests --scan-folder /Users/lucasdesouza/Library/Developer/Xcode/DerivedData/Build/Products/Debug-iphonesimulator/iBruUITests-Runner.app/PlugIns/iBruUITests.xctest/Frameworks --scan-folder /Users/lucasdesouza/Library/Developer/Xcode/DerivedData/Build/Products/Debug-iphonesimulator/iBruUITests-Runner.app/PlugIns/iBruUITests.xctest/PlugIns --platform iphonesimulator --toolchain /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain --destination /Users/lucasdesouza/Library/Developer/Xcode/DerivedData/Build/Products/Debug-iphonesimulator/iBruUITests-Runner.app/PlugIns/iBruUITests.xctest/Frameworks --strip-bitcode --scan-executable /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/lib/libXCTestSwiftSupport.dylib --strip-bitcode-tool /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/bitcode_strip --emit-dependency-info /Users/lucasdesouza/Library/Developer/Xcode/DerivedData/Build/Intermediates.noindex/iBru.build/Debug-iphonesimulator/iBruUITests.build/SwiftStdLibToolInputDependencies.dep --filter-for-swift-os
+
+CodeSign /Users/lucasdesouza/Library/Developer/Xcode/DerivedData/Build/Products/Debug-iphonesimulator/iBruUITests-Runner.app/PlugIns/iBruUITests.xctest (in target 'iBruUITests' from project 'iBru')
+    cd /Users/lucasdesouza/projects/ibru
+    export CODESIGN_ALLOCATE\=/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/codesign_allocate
+    
+    Signing Identity:     "-"
+    
+    /usr/bin/codesign --force --sign - --timestamp\=none /Users/lucasdesouza/Library/Developer/Xcode/DerivedData/Build/Products/Debug-iphonesimulator/iBruUITests-Runner.app/PlugIns/iBruUITests.xctest
+
+Testing started
+2021-09-14 09:38:38.670067-0500 iBruUITests-Runner[55559:4222188] Running tests...
+Test Suite 'All tests' started at 2021-09-14 09:38:39.224
+Test Suite 'iBruUITests.xctest' started at 2021-09-14 09:38:39.225
+Test Suite 'BaseTests' started at 2021-09-14 09:38:39.225
+Test Case '-[iBruUITests.BaseTests testBasicNavigation]' started.
+    t =     0.00s Start Test at 2021-09-14 09:38:39.227
+    t =     0.04s Set Up
+    t =     0.05s     Open lucasdesouza.homebrew
+    t =     0.09s         Launch lucasdesouza.homebrew
+    t =     0.70s             Setting up automation session
+    t =     1.02s             Wait for lucasdesouza.homebrew to idle
+    t =     2.21s Checking existence of `"Dashboard" StaticText`
+    t =     2.30s Tap "Menu" Button
+    t =     2.30s     Wait for lucasdesouza.homebrew to idle
+    t =     2.34s     Find the "Menu" Button
+    t =     2.36s     Check for interrupting elements affecting "Menu" Button
+    t =     2.38s     Synthesize event
+    t =     2.48s     Wait for lucasdesouza.homebrew to idle
+    t =     3.03s Checking existence of `"Menu" StaticText`
+    t =     3.07s Tap "Collection" Button
+    t =     3.07s     Wait for lucasdesouza.homebrew to idle
+    t =     3.10s     Find the "Collection" Button
+    t =     3.12s     Check for interrupting elements affecting "Collection" Button
+    t =     3.13s     Synthesize event
+    t =     3.22s     Wait for lucasdesouza.homebrew to idle
+    t =     3.33s Checking existence of `"Collection" StaticText`
+    t =     3.37s Tap "IPA Beer, Bottle Count: , 50, Age: , 2.5 Months" Button
+    t =     3.37s     Wait for lucasdesouza.homebrew to idle
+    t =     3.82s     Find the "IPA Beer, Bottle Count: , 50, Age: , 2.5 Months" Button
+    t =     3.86s     Check for interrupting elements affecting "IPA Beer, Bottle Count: , 50, Age: , 2.5 Months" Button
+    t =     3.87s     Synthesize event
+    t =     3.98s     Wait for lucasdesouza.homebrew to idle
+    t =     4.06s Checking existence of `"IPA Beer" StaticText`
+    t =     4.09s Checking existence of `"Primary Fermentation" StaticText`
+    t =     4.13s Checking existence of `"Bottled" StaticText`
+    t =     4.16s Tap "Collection" Button
+    t =     4.16s     Wait for lucasdesouza.homebrew to idle
+    t =     4.55s     Find the "Collection" Button
+    t =     4.61s     Check for interrupting elements affecting "Collection" Button
+    t =     4.63s     Synthesize event
+    t =     4.73s     Wait for lucasdesouza.homebrew to idle
+    t =     5.26s Tap "Menu" Button
+    t =     5.26s     Wait for lucasdesouza.homebrew to idle
+    t =     5.29s     Find the "Menu" Button
+    t =     5.31s     Check for interrupting elements affecting "Menu" Button
+    t =     5.33s     Synthesize event
+    t =     5.42s     Wait for lucasdesouza.homebrew to idle
+    t =     5.95s Tap Other
+    t =     5.95s     Wait for lucasdesouza.homebrew to idle
+    t =     5.98s     Find the Other
+    t =     6.01s     Check for interrupting elements affecting Other
+    t =     6.02s     Synthesize event
+    t =     6.12s     Wait for lucasdesouza.homebrew to idle
+    t =     6.22s Checking existence of `"Brews" StaticText`
+    t =     6.26s Tap "Menu" Button
+    t =     6.26s     Wait for lucasdesouza.homebrew to idle
+    t =     6.71s     Find the "Menu" Button
+    t =     6.76s     Check for interrupting elements affecting "Menu" Button
+    t =     6.78s     Synthesize event
+    t =     6.87s     Wait for lucasdesouza.homebrew to idle
+    t =     7.40s Tap "Calculators" Button
+    t =     7.40s     Wait for lucasdesouza.homebrew to idle
+    t =     7.43s     Find the "Calculators" Button
+    t =     7.46s     Check for interrupting elements affecting "Calculators" Button
+    t =     7.47s     Synthesize event
+    t =     7.56s     Wait for lucasdesouza.homebrew to idle
+    t =     7.62s Checking existence of `"Calculators" StaticText`
+    t =     7.65s Tap Other
+    t =     7.65s     Wait for lucasdesouza.homebrew to idle
+    t =     8.12s     Find the Other
+    t =     8.15s     Check for interrupting elements affecting Other
+    t =     8.16s     Synthesize event
+    t =     8.26s     Wait for lucasdesouza.homebrew to idle
+    t =     8.35s Checking existence of `"ABV Calculator" StaticText`
+    t =     8.39s Tap "Calculators" Button
+    t =     8.39s     Wait for lucasdesouza.homebrew to idle
+    t =     8.85s     Find the "Calculators" Button
+    t =     8.93s     Check for interrupting elements affecting "Calculators" Button
+    t =     8.95s     Synthesize event
+    t =     9.04s     Wait for lucasdesouza.homebrew to idle
+    t =     9.58s Tap "Gravity Estimator" Button
+    t =     9.58s     Wait for lucasdesouza.homebrew to idle
+    t =     9.62s     Find the "Gravity Estimator" Button
+    t =     9.64s     Check for interrupting elements affecting "Gravity Estimator" Button
+    t =     9.65s     Synthesize event
+    t =     9.75s     Wait for lucasdesouza.homebrew to idle
+    t =     9.84s Checking existence of `"Gravity Estimator" StaticText`
+    t =     9.87s Tear Down
+Test Case '-[iBruUITests.BaseTests testBasicNavigation]' passed (10.075 seconds).
+Test Suite 'BaseTests' passed at 2021-09-14 09:38:49.301.
+	 Executed 1 test, with 0 failures (0 unexpected) in 10.075 (10.076) seconds
+Test Suite 'iBruUITests.xctest' passed at 2021-09-14 09:38:49.303.
+	 Executed 1 test, with 0 failures (0 unexpected) in 10.075 (10.078) seconds
+Test Suite 'All tests' passed at 2021-09-14 09:38:49.304.
+	 Executed 1 test, with 0 failures (0 unexpected) in 10.075 (10.080) seconds
+
+Test session results, code coverage, and logs:
+	/Users/lucasdesouza/Library/Developer/Xcode/DerivedData/Logs/Test/Run-e2e-2021.09.14_09-38-34--0500.xcresult
+
+** TEST SUCCEEDED **
+

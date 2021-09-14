@@ -22,4 +22,14 @@ platform :ios do
     build_app(scheme: "iBru")
     upload_to_testflight
   end
+
+  desc "Run all tests"
+  lane :tests do
+    run_tests(
+      devices: ["iPhone 12"],
+      buildlog_path: "./fastlane/fastlane-buildlog",
+      derived_data_path: "~/Library/Developer/Xcode/DerivedData",
+      output_directory: "./test_results",
+      scheme: "e2e")
+  end
 end
