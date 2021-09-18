@@ -43,6 +43,12 @@
 		DFD207AC26EFCB080065FB98 /* iBruScreenShot.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFD207AB26EFCB080065FB98 /* iBruScreenShot.swift */; };
 		DFD207B426EFCB650065FB98 /* SnapshotHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFD207B326EFCB650065FB98 /* SnapshotHelper.swift */; };
 		DFD207CC26F0EA4A0065FB98 /* BaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFD207CB26F0EA4A0065FB98 /* BaseTests.swift */; };
+		DFD207D426F4DE530065FB98 /* ProFeatures.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFD207D326F4DE530065FB98 /* ProFeatures.swift */; };
+		DFD207D626F4DF7A0065FB98 /* DevTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFD207D526F4DF7A0065FB98 /* DevTools.swift */; };
+		DFD207D826F4E1210065FB98 /* ProFeatureProtect.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFD207D726F4E1210065FB98 /* ProFeatureProtect.swift */; };
+		DFD207DB26F4E2300065FB98 /* ProStatusControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFD207DA26F4E2300065FB98 /* ProStatusControl.swift */; };
+		DFD207DD26F4E54E0065FB98 /* StoreManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFD207DC26F4E54E0065FB98 /* StoreManager.swift */; };
+		DFD207DF26F57DA10065FB98 /* ProHidden.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFD207DE26F57DA10065FB98 /* ProHidden.swift */; };
 		DFDE432F25C30DD50085D2BB /* UpdateBrewForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFDE432E25C30DD50085D2BB /* UpdateBrewForm.swift */; };
 		DFDE433425C33CA10085D2BB /* ABVCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFDE433325C33CA10085D2BB /* ABVCalculator.swift */; };
 /* End PBXBuildFile section */
@@ -116,6 +122,12 @@
 		DFD207C926F0EA4A0065FB98 /* iBruUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iBruUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DFD207CB26F0EA4A0065FB98 /* BaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTests.swift; sourceTree = "<group>"; };
 		DFD207CD26F0EA4A0065FB98 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DFD207D326F4DE530065FB98 /* ProFeatures.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProFeatures.swift; sourceTree = "<group>"; };
+		DFD207D526F4DF7A0065FB98 /* DevTools.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DevTools.swift; sourceTree = "<group>"; };
+		DFD207D726F4E1210065FB98 /* ProFeatureProtect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProFeatureProtect.swift; sourceTree = "<group>"; };
+		DFD207DA26F4E2300065FB98 /* ProStatusControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProStatusControl.swift; sourceTree = "<group>"; };
+		DFD207DC26F4E54E0065FB98 /* StoreManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreManager.swift; sourceTree = "<group>"; };
+		DFD207DE26F57DA10065FB98 /* ProHidden.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProHidden.swift; sourceTree = "<group>"; };
 		DFDE432E25C30DD50085D2BB /* UpdateBrewForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateBrewForm.swift; sourceTree = "<group>"; };
 		DFDE433325C33CA10085D2BB /* ABVCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ABVCalculator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -180,6 +192,7 @@
 		DF43B6A225C0694F00093ED2 /* homebrew */ = {
 			isa = PBXGroup;
 			children = (
+				DFD207D926F4E1F20065FB98 /* Pro */,
 				DFB0BD5326EBEE1C008FDD3A /* Common */,
 				DFB0BD4126EB0068008FDD3A /* Filters */,
 				DF43B6FC25C0D97900093ED2 /* homebrew.entitlements */,
@@ -295,6 +308,8 @@
 				DFCDBF8025CDC4D9000CFBFF /* Calculators.swift */,
 				DFB0BD3F26EAFF98008FDD3A /* Dashboard.swift */,
 				DFB0BD5F26EC0AC8008FDD3A /* Collection.swift */,
+				DFD207D326F4DE530065FB98 /* ProFeatures.swift */,
+				DFD207D526F4DF7A0065FB98 /* DevTools.swift */,
 			);
 			path = Pages;
 			sourceTree = "<group>";
@@ -316,6 +331,17 @@
 				DFD207CD26F0EA4A0065FB98 /* Info.plist */,
 			);
 			path = iBruUITests;
+			sourceTree = "<group>";
+		};
+		DFD207D926F4E1F20065FB98 /* Pro */ = {
+			isa = PBXGroup;
+			children = (
+				DFD207D726F4E1210065FB98 /* ProFeatureProtect.swift */,
+				DFD207DE26F57DA10065FB98 /* ProHidden.swift */,
+				DFD207DA26F4E2300065FB98 /* ProStatusControl.swift */,
+				DFD207DC26F4E54E0065FB98 /* StoreManager.swift */,
+			);
+			path = Pro;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -495,8 +521,10 @@
 				DF43B6F225C0D38F00093ED2 /* NewBottleRecordForm.swift in Sources */,
 				DF60C3D925D2D4FC004921F1 /* UpdateReadingForm.swift in Sources */,
 				DF43B6ED25C0AE5000093ED2 /* NewReadingForm.swift in Sources */,
+				DFD207DB26F4E2300065FB98 /* ProStatusControl.swift in Sources */,
 				DFCDBF8125CDC4D9000CFBFF /* Calculators.swift in Sources */,
 				DFB0BD5226EBA465008FDD3A /* NewBrewButtonModifier.swift in Sources */,
+				DFD207DF26F57DA10065FB98 /* ProHidden.swift in Sources */,
 				DFB0BD5E26EC0850008FDD3A /* InfoLabel.swift in Sources */,
 				DFB0BD6426EC0C2C008FDD3A /* CollectionTile.swift in Sources */,
 				DFB0BD4526EB03A8008FDD3A /* PrimaryList.swift in Sources */,
@@ -505,9 +533,13 @@
 				DFB0BD6626ED1200008FDD3A /* UpdateBottleRecord.swift in Sources */,
 				DFB0BD6026EC0AC8008FDD3A /* Collection.swift in Sources */,
 				DFDE432F25C30DD50085D2BB /* UpdateBrewForm.swift in Sources */,
+				DFD207D426F4DE530065FB98 /* ProFeatures.swift in Sources */,
 				DF43B6B025C0695100093ED2 /* homebrew.xcdatamodeld in Sources */,
 				DFDE433425C33CA10085D2BB /* ABVCalculator.swift in Sources */,
+				DFD207DD26F4E54E0065FB98 /* StoreManager.swift in Sources */,
+				DFD207D626F4DF7A0065FB98 /* DevTools.swift in Sources */,
 				DF43B6A425C0694F00093ED2 /* homebrewApp.swift in Sources */,
+				DFD207D826F4E1210065FB98 /* ProFeatureProtect.swift in Sources */,
 				DF43B6E825C0A92F00093ED2 /* GravityReading.swift in Sources */,
 				DFB0BD4E26EB10C8008FDD3A /* BottledList.swift in Sources */,
 				DFB0BD4026EAFF98008FDD3A /* Dashboard.swift in Sources */,
