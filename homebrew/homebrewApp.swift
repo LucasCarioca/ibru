@@ -53,6 +53,9 @@ struct homebrewApp: App {
                 .environment(\.managedObjectContext, persistenceController.container.viewContext)
                 .environmentObject(proStatusControl)
                 .environmentObject(storeManager)
+            .onAppear(perform: {
+                storeManager.getProducts(productIDs: ["0001"])
+            })
         }
     }
 }
