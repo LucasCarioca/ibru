@@ -8,22 +8,14 @@
 import SwiftUI
 
 struct DevTools: View {
-    @EnvironmentObject var proStatusControl: ProStatusControl
     var body: some View {
         List {
-            Button(action: toggleProFeatures) {
+            Button(action: {}) {
                 Text("Toggle Pro Features")
             }
         }.navigationTitle("Upgrade to Pro")
     }
     
-    func toggleProFeatures() {
-        if proStatusControl.isPro {
-            ProStatusControl.notPurchased()
-        } else {
-            ProStatusControl.purchased()
-        }
-    }
 }
 
 struct DevTools_Previews: PreviewProvider {

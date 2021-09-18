@@ -13,6 +13,7 @@ class StoreManager:  NSObject, ObservableObject, SKProductsRequestDelegate, SKPa
     @Published var myProducts = [SKProduct]()
     @Published var transactionState: SKPaymentTransactionState?
     var request: SKProductsRequest!
+    static let productKey = "0001"
     
     func paymentQueue(_ queue: SKPaymentQueue, updatedTransactions transactions: [SKPaymentTransaction]) {
         for transaction in transactions {
@@ -20,11 +21,11 @@ class StoreManager:  NSObject, ObservableObject, SKProductsRequestDelegate, SKPa
             case .purchasing:
                 transactionState = .purchasing
             case .purchased:
-                ProStatusControl.purchased()
+                UserDefaults.standard.setValue(true, forKey: StoreManager.productKey)
                 queue.finishTransaction(transaction)
                 transactionState = .purchased
             case .restored:
-                ProStatusControl.purchased()
+                UserDefaults.standard.setValue(true, forKey: StoreManager.productKey)
                 queue.finishTransaction(transaction)
                 transactionState = .restored
             case .failed, .deferred:

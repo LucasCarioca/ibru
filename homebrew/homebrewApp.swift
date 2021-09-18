@@ -6,15 +6,15 @@
 //
 
 import SwiftUI
+import StoreKit
 
 @main
 struct homebrewApp: App {
     let persistenceController: PersistenceController
-    let proStatusControl = ProStatusControl()
-    let storeManager = StoreManager()
+    @StateObject var storeManager = StoreManager()
     @State var selected: Int? = 2
     init() {
-        if proStatusControl.isPro {
+        if UserDefaults.standard.bool(forKey: StoreManager.productKey) {
             selected = 0
         }
         if CommandLine.arguments.contains("-test-data") {
@@ -27,33 +27,40 @@ struct homebrewApp: App {
         WindowGroup {
             NavigationView {
                 List {
-                    NavigationLink(destination: Dashboard(), tag: 0, selection: $selected){
-                        Label("Dashboard", systemImage: "chart.bar")
-                    }.modifier(ProFeatureProtect())
-                    NavigationLink(destination: Collection(), tag: 1, selection: $selected){
-                        Label("Collection", systemImage: "square.grid.3x2")
-                    }.modifier(ProFeatureProtect())
+                    if UserDefaults.standard.bool(forKey: StoreManager.productKey) {
+                        NavigationLink(destination: Dashboard(), tag: 0, selection: $selected){
+                            Label("Dashboard", systemImage: "chart.bar")
+                        }
+                    }
+                    if UserDefaults.standard.bool(forKey: StoreManager.productKey) {
+                        NavigationLink(destination: Collection(), tag: 1, selection: $selected){
+                            Label("Collection", systemImage: "square.grid.3x2")
+                        }
+                    }
                     NavigationLink(destination: Brews(), tag: 2, selection: $selected){
                         Label("Brew List", systemImage: "list.bullet.rectangle")
                     }
                     NavigationLink(destination: Calculators(), tag: 3, selection: $selected){
                         Label("Calculators", systemImage: "function")
                     }
-                    NavigationLink(destination: ProFeatures(), tag: 4, selection: $selected){
-                        Label("Upgrade to Pro", systemImage: "star")
-                    }.modifier(ProHidden())
+                    if !UserDefaults.standard.bool(forKey: StoreManager.productKey) {
+                        NavigationLink(destination: ProFeatures(storeManager: storeManager), tag: 4, selection: $selected){
+                            Label("Upgrade to Pro", systemImage: "star")
+                        }
+                    }
                     #if DEBUG
                     NavigationLink(destination: DevTools(), tag: 5, selection: $selected){
                         Label("Dev Tools", systemImage: "chevron.left.slash.chevron.right")
                     }
                     #endif
+                    UserDefaults.standard.bool(forKey: StoreManager.productKey) ? Text("iBru Pro User") : nil
+                    
                 }.navigationTitle("Menu")
                 Dashboard()
             }
                 .environment(\.managedObjectContext, persistenceController.container.viewContext)
-                .environmentObject(proStatusControl)
-                .environmentObject(storeManager)
             .onAppear(perform: {
+                SKPaymentQueue.default().add(storeManager)
                 storeManager.getProducts(productIDs: ["0001"])
             })
         }
