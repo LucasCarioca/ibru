@@ -12,11 +12,8 @@ import StoreKit
 struct homebrewApp: App {
     let persistenceController: PersistenceController
     @StateObject var storeManager = StoreManager()
-    @State var selected: Int? = 2
+    @State var selected: Int?
     init() {
-        if UserDefaults.standard.bool(forKey: StoreManager.productKey) {
-            selected = 0
-        }
         if CommandLine.arguments.contains("-test-data") {
             persistenceController = PersistenceController.preview
         } else {
