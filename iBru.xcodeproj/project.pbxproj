@@ -33,6 +33,7 @@
 		DF8662F026F7AEF800E3B534 /* payment-confirmation.json in Resources */ = {isa = PBXBuildFile; fileRef = DF8662ED26F7AEF700E3B534 /* payment-confirmation.json */; };
 		DF8662F126F7AEF800E3B534 /* payment-error.json in Resources */ = {isa = PBXBuildFile; fileRef = DF8662EE26F7AEF700E3B534 /* payment-error.json */; };
 		DF8662F226F7AEF800E3B534 /* payment-loading.json in Resources */ = {isa = PBXBuildFile; fileRef = DF8662EF26F7AEF800E3B534 /* payment-loading.json */; };
+		DF8662F426F7B64900E3B534 /* empty.json in Resources */ = {isa = PBXBuildFile; fileRef = DF8662F326F7B64900E3B534 /* empty.json */; };
 		DFB0BD3E26EAA4CA008FDD3A /* NewSecondaryRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFB0BD3D26EAA4CA008FDD3A /* NewSecondaryRecord.swift */; };
 		DFB0BD4026EAFF98008FDD3A /* Dashboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFB0BD3F26EAFF98008FDD3A /* Dashboard.swift */; };
 		DFB0BD4526EB03A8008FDD3A /* PrimaryList.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFB0BD4426EB03A8008FDD3A /* PrimaryList.swift */; };
@@ -120,6 +121,7 @@
 		DF8662ED26F7AEF700E3B534 /* payment-confirmation.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = "payment-confirmation.json"; path = "../../../../Downloads/47964-payment-confirmation/payment-confirmation.json"; sourceTree = "<group>"; };
 		DF8662EE26F7AEF700E3B534 /* payment-error.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = "payment-error.json"; path = "../../../../Downloads/47980-payment-error/payment-error.json"; sourceTree = "<group>"; };
 		DF8662EF26F7AEF800E3B534 /* payment-loading.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = "payment-loading.json"; path = "../../../../Downloads/47985-payment-loading-2/payment-loading.json"; sourceTree = "<group>"; };
+		DF8662F326F7B64900E3B534 /* empty.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = empty.json; path = ../../../../Downloads/empty.json; sourceTree = "<group>"; };
 		DFB0BD3D26EAA4CA008FDD3A /* NewSecondaryRecord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewSecondaryRecord.swift; sourceTree = "<group>"; };
 		DFB0BD3F26EAFF98008FDD3A /* Dashboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dashboard.swift; sourceTree = "<group>"; };
 		DFB0BD4426EB03A8008FDD3A /* PrimaryList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimaryList.swift; sourceTree = "<group>"; };
@@ -287,6 +289,7 @@
 		DF8662DC26F7A5D200E3B534 /* animations */ = {
 			isa = PBXGroup;
 			children = (
+				DF8662F326F7B64900E3B534 /* empty.json */,
 				DF8662ED26F7AEF700E3B534 /* payment-confirmation.json */,
 				DF8662EE26F7AEF700E3B534 /* payment-error.json */,
 				DF8662EF26F7AEF800E3B534 /* payment-loading.json */,
@@ -525,6 +528,7 @@
 				DF8662F226F7AEF800E3B534 /* payment-loading.json in Resources */,
 				DF8662E726F7A9B200E3B534 /* progress.json in Resources */,
 				DF8662F026F7AEF800E3B534 /* payment-confirmation.json in Resources */,
+				DF8662F426F7B64900E3B534 /* empty.json in Resources */,
 				DF43B6A825C0695100093ED2 /* Assets.xcassets in Resources */,
 				DF8662E826F7A9B200E3B534 /* wine.json in Resources */,
 				DF8662DF26F7A5DF00E3B534 /* box.json in Resources */,
@@ -769,7 +773,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = homebrew/homebrew.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 32;
+				CURRENT_PROJECT_VERSION = 33;
 				DEVELOPMENT_ASSET_PATHS = "\"homebrew/Preview Content\"";
 				DEVELOPMENT_TEAM = Y259ZT3SQK;
 				ENABLE_PREVIEWS = YES;
@@ -797,7 +801,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = homebrew/homebrew.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 32;
+				CURRENT_PROJECT_VERSION = 33;
 				DEVELOPMENT_ASSET_PATHS = "\"homebrew/Preview Content\"";
 				DEVELOPMENT_TEAM = Y259ZT3SQK;
 				ENABLE_PREVIEWS = YES;
