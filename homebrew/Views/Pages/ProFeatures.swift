@@ -71,7 +71,7 @@ struct ProFeatures: View {
                 }
                 VStack {
                     Text("Upgrade to Pro").Heading(align: .center, size: .H1)
-                    Text("Get these existing and any future pro features.").Paragraph(align: .center, size: .MD)
+                    Text("Get all current pro features and any future pro features by upgrading. Pro membership is valid across all apple devices with a single purchase.").Paragraph(align: .center, size: .MD)
                     Spacer()
                     LottieView(filename: "rocket")
                     Spacer()
