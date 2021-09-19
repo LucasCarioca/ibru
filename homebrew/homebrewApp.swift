@@ -44,7 +44,11 @@ struct homebrewApp: App {
                         Label("Settings", systemImage: "gear")
                     }
                 }.navigationTitle("Menu")
-                Dashboard()
+                if UserDefaults.standard.bool(forKey: StoreManager.productKey) {
+                    Dashboard()
+                } else {
+                    Brews()
+                }
             }
                 .environment(\.managedObjectContext, persistenceController.container.viewContext)
                 .environmentObject(storeManager)
