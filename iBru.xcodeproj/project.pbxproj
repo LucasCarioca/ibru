@@ -22,6 +22,17 @@
 		DF43B70225C0D9EA00093ED2 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF43B70125C0D9EA00093ED2 /* CloudKit.framework */; };
 		DF60C3D925D2D4FC004921F1 /* UpdateReadingForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF60C3D825D2D4FC004921F1 /* UpdateReadingForm.swift */; };
 		DF60F90F26E7B2FB00C93B35 /* SGCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF60F90E26E7B2FB00C93B35 /* SGCalculator.swift */; };
+		DF8662DF26F7A5DF00E3B534 /* box.json in Resources */ = {isa = PBXBuildFile; fileRef = DF8662DD26F7A5DF00E3B534 /* box.json */; };
+		DF8662E026F7A5DF00E3B534 /* rocket.json in Resources */ = {isa = PBXBuildFile; fileRef = DF8662DE26F7A5DF00E3B534 /* rocket.json */; };
+		DF8662E526F7A9B200E3B534 /* barrel.json in Resources */ = {isa = PBXBuildFile; fileRef = DF8662E126F7A9B200E3B534 /* barrel.json */; };
+		DF8662E626F7A9B200E3B534 /* filling.json in Resources */ = {isa = PBXBuildFile; fileRef = DF8662E226F7A9B200E3B534 /* filling.json */; };
+		DF8662E726F7A9B200E3B534 /* progress.json in Resources */ = {isa = PBXBuildFile; fileRef = DF8662E326F7A9B200E3B534 /* progress.json */; };
+		DF8662E826F7A9B200E3B534 /* wine.json in Resources */ = {isa = PBXBuildFile; fileRef = DF8662E426F7A9B200E3B534 /* wine.json */; };
+		DF8662EB26F7ABE600E3B534 /* wine-loading.json in Resources */ = {isa = PBXBuildFile; fileRef = DF8662E926F7ABE600E3B534 /* wine-loading.json */; };
+		DF8662EC26F7ABE600E3B534 /* preparing.json in Resources */ = {isa = PBXBuildFile; fileRef = DF8662EA26F7ABE600E3B534 /* preparing.json */; };
+		DF8662F026F7AEF800E3B534 /* payment-confirmation.json in Resources */ = {isa = PBXBuildFile; fileRef = DF8662ED26F7AEF700E3B534 /* payment-confirmation.json */; };
+		DF8662F126F7AEF800E3B534 /* payment-error.json in Resources */ = {isa = PBXBuildFile; fileRef = DF8662EE26F7AEF700E3B534 /* payment-error.json */; };
+		DF8662F226F7AEF800E3B534 /* payment-loading.json in Resources */ = {isa = PBXBuildFile; fileRef = DF8662EF26F7AEF800E3B534 /* payment-loading.json */; };
 		DFB0BD3E26EAA4CA008FDD3A /* NewSecondaryRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFB0BD3D26EAA4CA008FDD3A /* NewSecondaryRecord.swift */; };
 		DFB0BD4026EAFF98008FDD3A /* Dashboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFB0BD3F26EAFF98008FDD3A /* Dashboard.swift */; };
 		DFB0BD4526EB03A8008FDD3A /* PrimaryList.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFB0BD4426EB03A8008FDD3A /* PrimaryList.swift */; };
@@ -46,6 +57,9 @@
 		DFD207D426F4DE530065FB98 /* ProFeatures.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFD207D326F4DE530065FB98 /* ProFeatures.swift */; };
 		DFD207D626F4DF7A0065FB98 /* DevTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFD207D526F4DF7A0065FB98 /* DevTools.swift */; };
 		DFD207DD26F4E54E0065FB98 /* StoreManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFD207DC26F4E54E0065FB98 /* StoreManager.swift */; };
+		DFD2080626F7A08C0065FB98 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFD2080526F7A08C0065FB98 /* Settings.swift */; };
+		DFD2080926F7A53A0065FB98 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = DFD2080826F7A53A0065FB98 /* Lottie */; };
+		DFD2080B26F7A5590065FB98 /* LottieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFD2080A26F7A5590065FB98 /* LottieView.swift */; };
 		DFDE432F25C30DD50085D2BB /* UpdateBrewForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFDE432E25C30DD50085D2BB /* UpdateBrewForm.swift */; };
 		DFDE433425C33CA10085D2BB /* ABVCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFDE433325C33CA10085D2BB /* ABVCalculator.swift */; };
 /* End PBXBuildFile section */
@@ -95,6 +109,17 @@
 		DF43B70125C0D9EA00093ED2 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
 		DF60C3D825D2D4FC004921F1 /* UpdateReadingForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateReadingForm.swift; sourceTree = "<group>"; };
 		DF60F90E26E7B2FB00C93B35 /* SGCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SGCalculator.swift; sourceTree = "<group>"; };
+		DF8662DD26F7A5DF00E3B534 /* box.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = box.json; path = "../../../breath-ios/Count my breaths/animations/box.json"; sourceTree = "<group>"; };
+		DF8662DE26F7A5DF00E3B534 /* rocket.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = rocket.json; path = "../../../breath-ios/Count my breaths/animations/rocket.json"; sourceTree = "<group>"; };
+		DF8662E126F7A9B200E3B534 /* barrel.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = barrel.json; path = ../../../../Downloads/barrel.json; sourceTree = "<group>"; };
+		DF8662E226F7A9B200E3B534 /* filling.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = filling.json; path = ../../../../Downloads/filling.json; sourceTree = "<group>"; };
+		DF8662E326F7A9B200E3B534 /* progress.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = progress.json; path = ../../../../Downloads/progress.json; sourceTree = "<group>"; };
+		DF8662E426F7A9B200E3B534 /* wine.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = wine.json; path = ../../../../Downloads/wine.json; sourceTree = "<group>"; };
+		DF8662E926F7ABE600E3B534 /* wine-loading.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = "wine-loading.json"; path = "../../../../Downloads/19397-wine-loaderwine-filling/wine-loading.json"; sourceTree = "<group>"; };
+		DF8662EA26F7ABE600E3B534 /* preparing.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = preparing.json; path = "../../../../Downloads/13471-preparing-food/preparing.json"; sourceTree = "<group>"; };
+		DF8662ED26F7AEF700E3B534 /* payment-confirmation.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = "payment-confirmation.json"; path = "../../../../Downloads/47964-payment-confirmation/payment-confirmation.json"; sourceTree = "<group>"; };
+		DF8662EE26F7AEF700E3B534 /* payment-error.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = "payment-error.json"; path = "../../../../Downloads/47980-payment-error/payment-error.json"; sourceTree = "<group>"; };
+		DF8662EF26F7AEF800E3B534 /* payment-loading.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = "payment-loading.json"; path = "../../../../Downloads/47985-payment-loading-2/payment-loading.json"; sourceTree = "<group>"; };
 		DFB0BD3D26EAA4CA008FDD3A /* NewSecondaryRecord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewSecondaryRecord.swift; sourceTree = "<group>"; };
 		DFB0BD3F26EAFF98008FDD3A /* Dashboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dashboard.swift; sourceTree = "<group>"; };
 		DFB0BD4426EB03A8008FDD3A /* PrimaryList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimaryList.swift; sourceTree = "<group>"; };
@@ -122,6 +147,8 @@
 		DFD207D326F4DE530065FB98 /* ProFeatures.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProFeatures.swift; sourceTree = "<group>"; };
 		DFD207D526F4DF7A0065FB98 /* DevTools.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DevTools.swift; sourceTree = "<group>"; };
 		DFD207DC26F4E54E0065FB98 /* StoreManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreManager.swift; sourceTree = "<group>"; };
+		DFD2080526F7A08C0065FB98 /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
+		DFD2080A26F7A5590065FB98 /* LottieView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottieView.swift; sourceTree = "<group>"; };
 		DFDE432E25C30DD50085D2BB /* UpdateBrewForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateBrewForm.swift; sourceTree = "<group>"; };
 		DFDE433325C33CA10085D2BB /* ABVCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ABVCalculator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -133,6 +160,7 @@
 			files = (
 				DFB0BD4A26EB0906008FDD3A /* QuickComponents in Frameworks */,
 				DF43B70225C0D9EA00093ED2 /* CloudKit.framework in Frameworks */,
+				DFD2080926F7A53A0065FB98 /* Lottie in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -186,6 +214,7 @@
 		DF43B6A225C0694F00093ED2 /* homebrew */ = {
 			isa = PBXGroup;
 			children = (
+				DF8662DC26F7A5D200E3B534 /* animations */,
 				DFD207D926F4E1F20065FB98 /* Pro */,
 				DFB0BD5326EBEE1C008FDD3A /* Common */,
 				DFB0BD4126EB0068008FDD3A /* Filters */,
@@ -242,6 +271,7 @@
 				DFB0BD5126EBA465008FDD3A /* NewBrewButtonModifier.swift */,
 				DFB0BD5D26EC0850008FDD3A /* InfoLabel.swift */,
 				DFB0BD6126EC0BC0008FDD3A /* CollectionList.swift */,
+				DFD2080A26F7A5590065FB98 /* LottieView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -252,6 +282,24 @@
 				DF43B70125C0D9EA00093ED2 /* CloudKit.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		DF8662DC26F7A5D200E3B534 /* animations */ = {
+			isa = PBXGroup;
+			children = (
+				DF8662ED26F7AEF700E3B534 /* payment-confirmation.json */,
+				DF8662EE26F7AEF700E3B534 /* payment-error.json */,
+				DF8662EF26F7AEF800E3B534 /* payment-loading.json */,
+				DF8662E126F7A9B200E3B534 /* barrel.json */,
+				DF8662EA26F7ABE600E3B534 /* preparing.json */,
+				DF8662E926F7ABE600E3B534 /* wine-loading.json */,
+				DF8662E226F7A9B200E3B534 /* filling.json */,
+				DF8662E326F7A9B200E3B534 /* progress.json */,
+				DF8662E426F7A9B200E3B534 /* wine.json */,
+				DF8662DD26F7A5DF00E3B534 /* box.json */,
+				DF8662DE26F7A5DF00E3B534 /* rocket.json */,
+			);
+			path = animations;
 			sourceTree = "<group>";
 		};
 		DFB0BD4126EB0068008FDD3A /* Filters */ = {
@@ -304,6 +352,7 @@
 				DFB0BD5F26EC0AC8008FDD3A /* Collection.swift */,
 				DFD207D326F4DE530065FB98 /* ProFeatures.swift */,
 				DFD207D526F4DF7A0065FB98 /* DevTools.swift */,
+				DFD2080526F7A08C0065FB98 /* Settings.swift */,
 			);
 			path = Pages;
 			sourceTree = "<group>";
@@ -353,6 +402,7 @@
 			name = iBru;
 			packageProductDependencies = (
 				DFB0BD4926EB0906008FDD3A /* QuickComponents */,
+				DFD2080826F7A53A0065FB98 /* Lottie */,
 			);
 			productName = homebrew;
 			productReference = DF43B6A025C0694F00093ED2 /* iBru.app */;
@@ -449,6 +499,7 @@
 			mainGroup = DF43B69725C0694F00093ED2;
 			packageReferences = (
 				DFB0BD4826EB0906008FDD3A /* XCRemoteSwiftPackageReference "QuickComponents" */,
+				DFD2080726F7A53A0065FB98 /* XCRemoteSwiftPackageReference "lottie-ios" */,
 			);
 			productRefGroup = DF43B6A125C0694F00093ED2 /* Products */;
 			projectDirPath = "";
@@ -468,7 +519,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				DF43B6AB25C0695100093ED2 /* Preview Assets.xcassets in Resources */,
+				DF8662EB26F7ABE600E3B534 /* wine-loading.json in Resources */,
+				DF8662EC26F7ABE600E3B534 /* preparing.json in Resources */,
+				DF8662E626F7A9B200E3B534 /* filling.json in Resources */,
+				DF8662F226F7AEF800E3B534 /* payment-loading.json in Resources */,
+				DF8662E726F7A9B200E3B534 /* progress.json in Resources */,
+				DF8662F026F7AEF800E3B534 /* payment-confirmation.json in Resources */,
 				DF43B6A825C0695100093ED2 /* Assets.xcassets in Resources */,
+				DF8662E826F7A9B200E3B534 /* wine.json in Resources */,
+				DF8662DF26F7A5DF00E3B534 /* box.json in Resources */,
+				DF8662E526F7A9B200E3B534 /* barrel.json in Resources */,
+				DF8662E026F7A5DF00E3B534 /* rocket.json in Resources */,
+				DF8662F126F7AEF800E3B534 /* payment-error.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -520,6 +582,7 @@
 				DFB0BD4726EB0409008FDD3A /* SecondaryList.swift in Sources */,
 				DFB0BD5526EBEE4B008FDD3A /* BrewFunctions.swift in Sources */,
 				DFB0BD6626ED1200008FDD3A /* UpdateBottleRecord.swift in Sources */,
+				DFD2080626F7A08C0065FB98 /* Settings.swift in Sources */,
 				DFB0BD6026EC0AC8008FDD3A /* Collection.swift in Sources */,
 				DFDE432F25C30DD50085D2BB /* UpdateBrewForm.swift in Sources */,
 				DFD207D426F4DE530065FB98 /* ProFeatures.swift in Sources */,
@@ -531,6 +594,7 @@
 				DF43B6E825C0A92F00093ED2 /* GravityReading.swift in Sources */,
 				DFB0BD4E26EB10C8008FDD3A /* BottledList.swift in Sources */,
 				DFB0BD4026EAFF98008FDD3A /* Dashboard.swift in Sources */,
+				DFD2080B26F7A5590065FB98 /* LottieView.swift in Sources */,
 				DFB0BD4C26EB09FA008FDD3A /* BrewTile.swift in Sources */,
 				DFB0BD6226EC0BC0008FDD3A /* CollectionList.swift in Sources */,
 			);
@@ -937,6 +1001,14 @@
 				minimumVersion = 0.7.3;
 			};
 		};
+		DFD2080726F7A53A0065FB98 /* XCRemoteSwiftPackageReference "lottie-ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/airbnb/lottie-ios.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.2.3;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -944,6 +1016,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = DFB0BD4826EB0906008FDD3A /* XCRemoteSwiftPackageReference "QuickComponents" */;
 			productName = QuickComponents;
+		};
+		DFD2080826F7A53A0065FB98 /* Lottie */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DFD2080726F7A53A0065FB98 /* XCRemoteSwiftPackageReference "lottie-ios" */;
+			productName = Lottie;
 		};
 /* End XCSwiftPackageProductDependency section */
 
