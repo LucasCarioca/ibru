@@ -19,6 +19,16 @@ struct BottledList: View {
     private var brews: FetchedResults<Brew>
     
     var body: some View {
-        BrewList(brews: brews)
+        BrewList(brews: brews, onEmpty: EmptyBottledList())
+    }
+}
+
+struct EmptyBottledList: View {
+    var body: some View {
+        VStack {
+            Text("Looks like you don't have any brews currently bottled.").Paragraph(align: .center, size: .MD)
+            LottieView(filename: "empty")
+            Spacer()
+        }
     }
 }

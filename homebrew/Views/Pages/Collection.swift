@@ -14,9 +14,3 @@ struct Collection: View {
         }.navigationTitle("Collection")
     }
 }
-
-struct Collection_Previews: PreviewProvider {
-    static var previews: some View {
-        Collection()
-    }
-}
