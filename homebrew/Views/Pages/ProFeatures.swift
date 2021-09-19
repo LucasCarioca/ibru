@@ -54,35 +54,15 @@ struct ProFeatures: View {
                 }
             }
         } else {
-            TabView{
-                VStack {
-                    Text("Manage your brew stages").Heading(align: .center, size: .H4)
-                    Text("Add support for multi stage brews and a new views to track batches at different stages").Paragraph(align: .center, size: .MD)
-                    Spacer()
-                    LottieView(filename: "preparing")
-                    Spacer()
-                }
-                VStack {
-                    Text("Track your collection").Heading(align: .center, size: .H4)
-                    Text("Adds functionality to track bottles and manage a inventory of your collection through the Collection view.").Paragraph(align: .center, size: .MD)
-                    Spacer()
-                    LottieView(filename: "wine-loading")
-                    Spacer()
-                }
-                VStack {
-                    Text("Upgrade to Pro").Heading(align: .center, size: .H1)
-                    Text("Get all current pro features and any future pro features by upgrading. Pro membership is valid across all apple devices with a single purchase.").Paragraph(align: .center, size: .MD)
-                    Spacer()
-                    LottieView(filename: "rocket")
-                    Spacer()
-                    Button(action: initiatePurchase) {
-                        Text("Upgrade Now")
-                    }
-                        .buttonStyle(PrimaryButton(variant: .contained))
-                        .frame(width: 150, height: 75)
-                        .padding(.bottom, 50)
-                }
-            }.tabViewStyle(PageTabViewStyle())
+            #if os(OSX)
+                ProFeaturesMacOSTabView(action: initiatePurchase)
+            #elseif os(iOS)
+                #if targetEnvironment(macCatalyst)
+                    ProFeaturesMacOSTabView(action: initiatePurchase)
+                #else
+                    ProFeaturesiOSTabView(action: initiatePurchase)
+                #endif
+            #endif
         }
     }
     
@@ -92,3 +72,93 @@ struct ProFeatures: View {
     }
 }
 
+struct ProFeaturesiOSTabView: View {
+    var action: () -> Void
+    var body: some View {
+        TabView{
+            ProFeaturesPage(
+                title: "Manage your brew stages",
+                text: "Add support for multi stage brews and a new views to track batches at different stages",
+                lottieAnimation: "preparing")
+            ProFeaturesPage(
+                title: "Track your collection",
+                text: "Adds functionality to track bottles and manage a inventory of your collection through the Collection view.",
+                lottieAnimation: "wine-loading")
+            ProFeaturesCallToAction(action: action)
+        }.tabViewStyle(PageTabViewStyle())
+        .indexViewStyle(PageIndexViewStyle(backgroundDisplayMode: .always))
+    }
+}
+
+struct ProFeaturesMacOSTabView: View {
+    var action: () -> Void
+    @State var page = 0
+    var body: some View {
+        VStack {
+            if page == 0 {
+                ProFeaturesPage(
+                    title: "Manage your brew stages",
+                    text: "Add support for multi stage brews and a new views to track batches at different stages",
+                    lottieAnimation: "preparing")
+            } else if page == 1 {
+                ProFeaturesPage(
+                    title: "Track your collection",
+                    text: "Adds functionality to track bottles and manage a inventory of your collection through the Collection view.",
+                    lottieAnimation: "wine-loading")
+            } else if page == 2 {
+                ProFeaturesCallToAction(action: action)
+            }
+            
+            HStack {
+                if page > 0  {
+                    Button(action: {page-=1}){
+                        Image(systemName: "chevron.backward")
+                    }
+                        .buttonStyle(PrimaryButton())
+                        .frame(width: 50, height: 50)
+                }
+                if page < 2 {
+                    Button(action: {page+=1}){
+                        Image(systemName: "chevron.forward")
+                    }
+                        .buttonStyle(PrimaryButton())
+                        .frame(width: 50, height: 50)
+                }
+            }.padding(.bottom, 50)
+        }
+    }
+}
+
+struct ProFeaturesPage: View {
+    var title: String
+    var text: String
+    var lottieAnimation: String
+    var body: some View {
+        VStack {
+            Text(title).Heading(align: .center, size: .H4)
+            Text(text).Paragraph(align: .center, size: .MD)
+            Spacer()
+            LottieView(filename: lottieAnimation)
+            Spacer()
+        }
+    }
+}
+
+struct ProFeaturesCallToAction: View {
+    var action: () -> Void
+    var body: some View {
+        VStack {
+            Text("Upgrade to Pro").Heading(align: .center, size: .H1)
+            Text("Get all current pro features and any future pro features by upgrading. Pro membership is valid across all apple devices with a single purchase.").Paragraph(align: .center, size: .MD)
+            Spacer()
+            LottieView(filename: "rocket")
+            Spacer()
+            Button(action: action) {
+                Text("Upgrade Now")
+            }
+                .buttonStyle(PrimaryButton(variant: .contained))
+                .frame(width: 150, height: 75)
+                .padding(.bottom, 50)
+        }
+    }
+}
