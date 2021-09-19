@@ -56,19 +56,22 @@ struct ProFeatures: View {
         } else {
             TabView{
                 VStack {
-                    Text("Manage your current brews").Heading(align: .center, size: .H4)
+                    Text("Manage your brew stages").Heading(align: .center, size: .H4)
+                    Text("Add support for multi stage brews and a new views to track batches at different stages").Paragraph(align: .center, size: .MD)
                     Spacer()
                     LottieView(filename: "preparing")
                     Spacer()
                 }
                 VStack {
                     Text("Track your collection").Heading(align: .center, size: .H4)
+                    Text("Adds functionality to track bottles and manage a inventory of your collection through the Collection view.").Paragraph(align: .center, size: .MD)
                     Spacer()
                     LottieView(filename: "wine-loading")
                     Spacer()
                 }
                 VStack {
                     Text("Upgrade to Pro").Heading(align: .center, size: .H1)
+                    Text("Get these existing and any future pro features.").Paragraph(align: .center, size: .MD)
                     Spacer()
                     LottieView(filename: "rocket")
                     Spacer()
