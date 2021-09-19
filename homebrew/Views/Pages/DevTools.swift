@@ -10,8 +10,15 @@ import SwiftUI
 struct DevTools: View {
     var body: some View {
         List {
-            Button(action: {}) {
-                Text("Toggle Pro Features")
+            Button(action: {
+                UserDefaults.standard.setValue(true, forKey: StoreManager.productKey)
+            }) {
+                Text("Enable Pro Features")
+            }
+            Button(action: {
+                UserDefaults.standard.setValue(false, forKey: StoreManager.productKey)
+            }) {
+                Text("Reset Pro Status")
             }
         }.navigationTitle("Upgrade to Pro")
     }

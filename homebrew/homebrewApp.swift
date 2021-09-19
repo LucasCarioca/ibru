@@ -43,26 +43,18 @@ struct homebrewApp: App {
                     NavigationLink(destination: Calculators(), tag: 3, selection: $selected){
                         Label("Calculators", systemImage: "function")
                     }
-                    if !UserDefaults.standard.bool(forKey: StoreManager.productKey) {
-                        NavigationLink(destination: ProFeatures(storeManager: storeManager), tag: 4, selection: $selected){
-                            Label("Upgrade to Pro", systemImage: "star")
-                        }
+                    NavigationLink(destination: Settings(storeManager: storeManager), tag: 4, selection: $selected){
+                        Label("Settings", systemImage: "gear")
                     }
-                    #if DEBUG
-                    NavigationLink(destination: DevTools(), tag: 5, selection: $selected){
-                        Label("Dev Tools", systemImage: "chevron.left.slash.chevron.right")
-                    }
-                    #endif
-                    UserDefaults.standard.bool(forKey: StoreManager.productKey) ? Text("iBru Pro User") : nil
-                    
                 }.navigationTitle("Menu")
                 Dashboard()
             }
                 .environment(\.managedObjectContext, persistenceController.container.viewContext)
-            .onAppear(perform: {
-                SKPaymentQueue.default().add(storeManager)
-                storeManager.getProducts(productIDs: ["0001"])
-            })
+                .environmentObject(storeManager)
+                .onAppear(perform: {
+                    SKPaymentQueue.default().add(storeManager)
+                    storeManager.getProducts(productIDs: ["0001"])
+                })
         }
     }
 }
