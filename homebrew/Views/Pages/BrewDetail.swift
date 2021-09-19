@@ -41,7 +41,9 @@ struct BrewDetail: View {
                     Image(systemName: "square.and.pencil").padding()
                 }}
             }
-            showSecondaryInfo().padding(.vertical)
+            if UserDefaults.standard.bool(forKey: StoreManager.productKey) {
+                showSecondaryInfo().padding(.vertical)
+            }
             showBottlingInfo().padding(.vertical)
             Spacer()
             HStack {
@@ -130,9 +132,11 @@ struct BrewDetail: View {
                 VStack {
                     Text("Bottled").bold().font(.title3)
                         .frame(maxWidth: .infinity, alignment: .leading)
-                    Text("Bottle Count: \(bottle.count)")
-                        .font(.callout)
-                        .frame(maxWidth: .infinity, alignment: .leading)
+                    if UserDefaults.standard.bool(forKey: StoreManager.productKey) {
+                        Text("Bottle Count: \(bottle.count)")
+                            .font(.callout)
+                            .frame(maxWidth: .infinity, alignment: .leading)
+                    }
                     Text("Final gravity: \(bottle.finalGravity)")
                         .font(.callout)
                         .frame(maxWidth: .infinity, alignment: .leading)
