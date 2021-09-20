@@ -19,7 +19,7 @@ struct GravityReading: View
             Image("testtube").resizable().frame(width: 25, height: 25).padding()
             Text("\(date, formatter: brewDateFormatter)")
             Spacer()
-            Text("\(gravity) (\((originalGravity-gravity)*131.25)%)")
+            Text("\(String(format: "%.3f", gravity)) (\(String(format: "%.2f", (originalGravity-gravity)*131.25))%)")
         }
     }
 }

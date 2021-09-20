@@ -41,4 +41,31 @@ func getAge(of brew: Brew, fromBottlingDate: Bool = false, fromSecondary: Bool =
     return brewAge
 }
 
+func getCurrentABV(of brew: Brew) -> Double {
+    if let reading = getLatestReading(of: brew) {
+        let og = Double(brew.originalGravity)
+        let fg = Double(reading.gravity)
+        return (og - fg) * 131.25
+    }
+    return 0.00
+}
+
+func getCurrentGravity(of brew: Brew) -> Double {
+    if let reading = getLatestReading(of: brew) {
+        return reading.gravity
+    }
+    return brew.originalGravity
+}
+
+func getLatestReading(of brew: Brew) -> Reading? {
+    if let readings = brew.readings {
+        var readingsList = readings.allObjects as! [Reading]
+        readingsList.sort(by: { $0.date!.compare($1.date!) == .orderedDescending })
+        if readingsList.count > 0 {
+            return readingsList[0]
+        }
+    }
+    return nil
+}
+
 
