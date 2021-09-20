@@ -27,15 +27,17 @@ class iBruScreenShot: XCTestCase {
     
 
     func testTakeScreenShots() throws {
-                
-        snapshot("00dashboard")
-        app.navigationBars["Dashboard"].buttons["Menu"].tap()
-        if UIDevice.current.userInterfaceIdiom == .pad {
-            app.navigationBars["Dashboard"].buttons["Menu"].tap()
-        }
-        snapshot("01menu")
         
+        snapshot("00menu")
         let tablesQuery = app.tables
+        app.tables.buttons["Dashboard"].tap()
+        snapshot("01dashboard")
+        app.navigationBars["Dashboard"].buttons["Menu"].tap()
+//        if UIDevice.current.userInterfaceIdiom == .pad {
+//            app.navigationBars["Dashboard"].buttons["Menu"].tap()
+//        }
+        
+        
         app.tables/*@START_MENU_TOKEN@*/.buttons["Collection"]/*[[".cells[\"Collection\"].buttons[\"Collection\"]",".buttons[\"Collection\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
         snapshot("02collection")
         
@@ -61,14 +63,6 @@ class iBruScreenShot: XCTestCase {
         snapshot("07gravityest")
         app.navigationBars["Gravity Estimator"].buttons["Calculators"].tap()
         app.navigationBars["Calculators"].buttons["Menu"].tap()
-//
-//
-//        app.navigationBars["_TtGC7SwiftUIP10$10ce6d65428DestinationHosting"].buttons["Menu"].tap()
-//        tablesQuery/*@START_MENU_TOKEN@*/.buttons["Dashboard"]/*[[".cells[\"Dashboard\"].buttons[\"Dashboard\"]",".buttons[\"Dashboard\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
-//        app.navigationBars["New brew"].buttons["Dashboard"].tap()
-//        app/*@START_MENU_TOKEN@*/.buttons["Primary"]/*[[".segmentedControls.buttons[\"Primary\"]",".buttons[\"Primary\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
-//        tablesQuery/*@START_MENU_TOKEN@*/.buttons["New, Stage: , Primary Fermentation, Elapsed Time: , 3.1 Days"]/*[[".cells[\"New, Stage: , Primary Fermentation, Elapsed Time: , 3.1 Days\"].buttons[\"New, Stage: , Primary Fermentation, Elapsed Time: , 3.1 Days\"]",".buttons[\"New, Stage: , Primary Fermentation, Elapsed Time: , 3.1 Days\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
-//        snapshot("07brew")
                                 
     }
 }
