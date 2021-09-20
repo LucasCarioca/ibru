@@ -62,7 +62,10 @@ struct BrewTile: View {
         if stage == .primary {
             let change = brew.originalGravity - getCurrentGravity(of: brew)
             let percentComplete = (100 * change) / (brew.originalGravity - 1)
-            return AnyView(BarView(percent: CGFloat(percentComplete), showLabel: false, color: .accentColor))
+            return AnyView(
+                BarView(percent: CGFloat(percentComplete), showLabel: false, color: .accentColor)
+                    .padding(.bottom)
+            )
         }
         return AnyView(EmptyView())
     }

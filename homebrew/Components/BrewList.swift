@@ -29,6 +29,7 @@ struct BrewList: View {
                         deleteBrew(offsets: offsets, brews: brews, context: viewContext)
                     }
                 })
+                Spacer().padding(.vertical, 50)
             }.listStyle(PlainListStyle())
             .modifier(NewBrewButtonModifier())
         }
