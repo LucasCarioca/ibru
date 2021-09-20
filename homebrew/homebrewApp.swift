@@ -15,6 +15,9 @@ struct homebrewApp: App {
     @State var selected: Int?
     init() {
         if CommandLine.arguments.contains("-test-data") {
+            UserDefaults.standard.register(defaults: [
+                "0001": true
+            ])
             persistenceController = PersistenceController.preview
         } else {
             persistenceController = PersistenceController.shared
