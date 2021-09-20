@@ -3,8 +3,8 @@
 beta: 
 	bundle exec fastlane beta
 
-screenshots:
-	bundle exec fastlane screenshots
+snapshots:
+	bundle exec fastlane snapshot
 
 test:
 	bundle exec fastlane test
