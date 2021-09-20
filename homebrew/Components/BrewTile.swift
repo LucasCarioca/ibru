@@ -28,7 +28,10 @@ struct BrewTile: View {
     }
     
     func getTimeText() -> String {
-        var brewAge = getAge(of: brew)
+        let stage = getStage(of: brew)
+        var brewAge = getAge(of: brew,
+                             fromBottlingDate: (stage == .bottled),
+                             fromSecondary: (stage == .secondary))
         var label = "Days"
         if brewAge >= 30 {
             brewAge = brewAge / 30

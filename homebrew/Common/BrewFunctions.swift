@@ -31,8 +31,8 @@ func getAge(of brew: Brew, fromBottlingDate: Bool = false, fromSecondary: Bool =
             to = bottle.date ?? Date()
         }
     } else {
-        if let seconary = brew.secondary {
-            to = seconary.date ?? Date()
+        if let secondary = brew.secondary {
+            to = secondary.date ?? Date()
         } else if let bottle = brew.bottles {
             to = bottle.date ?? Date()
         }
@@ -42,16 +42,17 @@ func getAge(of brew: Brew, fromBottlingDate: Bool = false, fromSecondary: Bool =
 }
 
 func getCurrentABV(of brew: Brew) -> Double {
-    if let reading = getLatestReading(of: brew) {
-        let og = Double(brew.originalGravity)
-        let fg = Double(reading.gravity)
-        return (og - fg) * 131.25
-    }
-    return 0.00
+    let fg = getCurrentGravity(of: brew)
+    let og = brew.originalGravity
+    return (og - fg) * 131.25
 }
 
 func getCurrentGravity(of brew: Brew) -> Double {
-    if let reading = getLatestReading(of: brew) {
+    if let bottles = brew.bottles {
+        return bottles.finalGravity
+    } else if let secondary = brew.secondary{
+        return secondary.gravity
+    } else if let reading = getLatestReading(of: brew) {
         return reading.gravity
     }
     return brew.originalGravity
