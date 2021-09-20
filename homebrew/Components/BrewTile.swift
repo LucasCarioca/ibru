@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import QuickComponents
 
 struct BrewTile: View {
     var brew: Brew
@@ -18,9 +19,10 @@ struct BrewTile: View {
                         .fontWeight(.heavy)
                     Spacer()
                 }
-                InfoLabel(label: "Stage", value: getStage(of: brew).rawValue)
-                getBottleCount()
+                getBottleCountView()
                 InfoLabel(label: "Elapsed Time", value: getTimeText())
+                getCurrentABVView()
+                getProgressBarView()
             }
         }
     }
@@ -35,7 +37,18 @@ struct BrewTile: View {
         return "\(String(format: "%.1f", brewAge)) \(label)"
     }
     
-    func getBottleCount() -> AnyView {
+    func getCurrentABVView() -> AnyView {
+        let stage = getStage(of: brew)
+        if stage == .primary || stage == .secondary {
+            let abv = getCurrentABV(of: brew)
+            return AnyView(
+                InfoLabel(label: "Current ABV", value: "\(String(format: "%.2f", abv))%")
+            )
+        }
+        return AnyView(EmptyView())
+    }
+    
+    func getBottleCountView() -> AnyView {
         if getStage(of: brew) == .bottled {
             return AnyView(
                 InfoLabel(label: "Bottle Count", value: "\(brew.bottles?.count ?? 0)")
@@ -43,4 +56,15 @@ struct BrewTile: View {
         }
         return AnyView(EmptyView())
     }
+    
+    func getProgressBarView() -> AnyView {
+        let stage = getStage(of: brew)
+        if stage == .primary {
+            let change = brew.originalGravity - getCurrentGravity(of: brew)
+            let percentComplete = (100 * change) / (brew.originalGravity - 1)
+            return AnyView(BarView(percent: CGFloat(percentComplete), showLabel: false, color: .accentColor))
+        }
+        return AnyView(EmptyView())
+    }
 }
+
