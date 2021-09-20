@@ -17,6 +17,7 @@ struct Brews: View {
         sortDescriptors: [NSSortDescriptor(keyPath: \Brew.startDate, ascending: false)],
         animation: .default)
     private var brews: FetchedResults<Brew>
+    
     @State var refreshId = UUID()
 
     var body: some View {

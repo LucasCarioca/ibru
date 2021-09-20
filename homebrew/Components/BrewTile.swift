@@ -10,8 +10,9 @@ import QuickComponents
 
 struct BrewTile: View {
     var brew: Brew
+    @State var refreshId = UUID()
     var body: some View {
-        NavigationLink(destination: BrewDetail(brew: brew)) {
+        NavigationLink(destination: BrewDetail(brew: brew).onDisappear(){refreshId = UUID()}) {
             VStack{
                 HStack {
                     Text(brew.name ?? "missing name")
@@ -24,7 +25,7 @@ struct BrewTile: View {
                 getCurrentABVView()
                 getProgressBarView()
             }
-        }
+        }.id(refreshId)
     }
     
     func getTimeText() -> String {
