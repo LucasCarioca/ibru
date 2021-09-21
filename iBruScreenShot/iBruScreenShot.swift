@@ -27,15 +27,17 @@ class iBruScreenShot: XCTestCase {
     
 
     func testTakeScreenShots() throws {
-        
-        snapshot("00menu")
         let tablesQuery = app.tables
-        app.tables.buttons["Dashboard"].tap()
-        snapshot("01dashboard")
-        app.navigationBars["Dashboard"].buttons["Menu"].tap()
-//        if UIDevice.current.userInterfaceIdiom == .pad {
-//            app.navigationBars["Dashboard"].buttons["Menu"].tap()
-//        }
+        if UIDevice.current.userInterfaceIdiom == .pad {
+            snapshot("01dashboard")
+            app.navigationBars["Dashboard"].buttons["BackButton"].tap()
+            snapshot("00menu")
+        } else {
+            snapshot("00menu")
+            app.tables.buttons["Dashboard"].tap()
+            snapshot("01dashboard")
+            app.navigationBars["Dashboard"].buttons["Menu"].tap()
+        }
         
         
         app.tables/*@START_MENU_TOKEN@*/.buttons["Collection"]/*[[".cells[\"Collection\"].buttons[\"Collection\"]",".buttons[\"Collection\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
