@@ -66,14 +66,18 @@ struct ProFeatures: View {
         }
     }
     
-    func initiatePurchase() {
-        let product = storeManager.myProducts[0]
-        storeManager.purchaseProduct(product: product)
+    func initiatePurchase(restore: Bool = false) {
+        if restore {
+            storeManager.restoreProduct()
+        } else {
+            let product = storeManager.myProducts[0]
+            storeManager.purchaseProduct(product: product)
+        }
     }
 }
 
 struct ProFeaturesiOSTabView: View {
-    var action: () -> Void
+    var action: (Bool) -> Void
     var body: some View {
         TabView{
             ProFeaturesPage(
@@ -91,7 +95,7 @@ struct ProFeaturesiOSTabView: View {
 }
 
 struct ProFeaturesMacOSTabView: View {
-    var action: () -> Void
+    var action: (Bool) -> Void
     @State var page = 0
     var body: some View {
         VStack {
@@ -145,7 +149,7 @@ struct ProFeaturesPage: View {
 }
 
 struct ProFeaturesCallToAction: View {
-    var action: () -> Void
+    var action: (Bool) -> Void
     var body: some View {
         VStack {
             Text("Upgrade to Pro").Heading(align: .center, size: .H1)
@@ -153,12 +157,22 @@ struct ProFeaturesCallToAction: View {
             Spacer()
             LottieView(filename: "rocket")
             Spacer()
-            Button(action: action) {
+            Button(action: {
+                action(false)
+            }) {
                 Text("Upgrade Now")
             }
                 .buttonStyle(PrimaryButton(variant: .contained))
                 .frame(width: 150, height: 75)
+            Button(action: {
+                action(true)
+            }) {
+                Text("Restore previous purchase")
+            }
+                .buttonStyle(PrimaryButton())
+                .frame(width: .infinity, height: 75)
                 .padding(.bottom, 50)
+            
         }
     }
 }

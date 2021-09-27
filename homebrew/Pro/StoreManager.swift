@@ -47,6 +47,14 @@ class StoreManager:  NSObject, ObservableObject, SKProductsRequestDelegate, SKPa
         }
     }
     
+    func restoreProduct() {
+        if SKPaymentQueue.canMakePayments() {
+            SKPaymentQueue.default().restoreCompletedTransactions()
+        } else {
+            print("User can't make payment.")
+        }
+    }
+    
     func productsRequest(_ request: SKProductsRequest, didReceive response: SKProductsResponse) {
         print("Did receive response")
            
