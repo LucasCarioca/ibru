@@ -1,0 +1,43 @@
+name: VersionUpdate
+on:
+  create
+jobs:
+  publish:
+    timeout-minutes: 20
+    name: SEMVER
+    runs-on: macos-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v1
+      - uses: maxim-lobanov/setup-xcode@v1
+        with:
+          xcode-version: latest-stable
+      - name: Setup environment
+        env: 
+          GITHUB_REF: ${{ secrets.GITHUB_REF }}
+          GITHUB_ACTOR: ${{ secrets.GITHUB_ACTOR }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          /usr/bin/xcodebuild -version
+          sh -x ./env.sh
+      - name: Install dependencies
+        run: bundle update --bundler
+      - name: Setup provisioning profile
+        env:
+          IOS_KEYS: ${{ secrets.IOS_KEYS }}
+        run: sh -x ./.github/secrets/decrypt_secrets.sh
+      - name: patch
+        if: ${{ contains(github.ref, 'refs/heads/fix/')}}
+        env:
+          FASTLANE_XCODEBUILD_SETTINGS_TIMEOUT: 600
+        run: bundle exec fastlane bump_patch
+      - name: minor
+        if: ${{ contains(github.ref, 'refs/heads/feat/')}}
+        env:
+          FASTLANE_XCODEBUILD_SETTINGS_TIMEOUT: 600
+        run: bundle exec fastlane bump_minor
+      - name: major
+        if: ${{ contains(github.ref, 'refs/heads/breaking/')}}
+        env:
+          FASTLANE_XCODEBUILD_SETTINGS_TIMEOUT: 600
+        run: bundle exec fastlane bump_major
