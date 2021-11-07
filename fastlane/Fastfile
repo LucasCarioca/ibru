@@ -32,4 +32,47 @@ platform :ios do
       output_directory: "./test_results",
       scheme: "e2e")
   end
+
+  lane :bump_major do
+    version = get_version_number()
+    increment_version_number(version_number: version)
+    increment_version_number(bump_type: "major")
+    increment_build_number(
+        build_number: 1,
+        xcodeproj: "Count my breaths.xcodeproj"
+    )
+    commit_version_bump(xcodeproj: "iBru.xcodeproj", force: true)
+    push_to_git_remote
+  end
+
+  lane :bump_minor do
+    version = get_version_number()
+    increment_version_number(version_number: version)
+    increment_version_number(bump_type: "minor")
+    increment_build_number(
+        build_number: 1,
+        xcodeproj: "Count my breaths.xcodeproj"
+    )
+    commit_version_bump(xcodeproj: "iBru.xcodeproj", force: true)
+    push_to_git_remote
+  end
+
+  lane :bump_patch do
+    version = get_version_number()
+    increment_version_number(version_number: version)
+    increment_version_number(bump_type: "patch")
+    increment_build_number(
+        build_number: 1,
+        xcodeproj: "Count my breaths.xcodeproj"
+    )
+    commit_version_bump(xcodeproj: "iBru.xcodeproj", force: true)
+    push_to_git_remote
+  end
+
+  lane :bump_build do
+    increment_build_number(xcodeproj: "iBru.xcodeproj")
+    commit_version_bump(xcodeproj: "iBru.xcodeproj", force: true)
+    push_to_git_remote
+  end
+
 end
