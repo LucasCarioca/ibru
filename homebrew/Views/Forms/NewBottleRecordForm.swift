@@ -25,12 +25,12 @@ struct NewBottleRecordForm: View {
                 .padding()
             DatePicker("Bottle date", selection: $date)
                 .datePickerStyle(GraphicalDatePickerStyle())
-            Button("Finish", action: addBrew)
+            Button("Finish", action: addBottle)
                 .frame(minWidth: 0, maxWidth: .infinity, alignment: .center)
         }.navigationTitle("Bottling")
     }
     
-    private func addBrew() {
+    private func addBottle() {
         withAnimation {
             let newItem = Bottle(context: brew.managedObjectContext!)
             newItem.date = date
