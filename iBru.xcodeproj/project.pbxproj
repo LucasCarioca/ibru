@@ -22,18 +22,13 @@
 		DF43B70225C0D9EA00093ED2 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF43B70125C0D9EA00093ED2 /* CloudKit.framework */; };
 		DF60C3D925D2D4FC004921F1 /* UpdateReadingForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF60C3D825D2D4FC004921F1 /* UpdateReadingForm.swift */; };
 		DF60F90F26E7B2FB00C93B35 /* SGCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF60F90E26E7B2FB00C93B35 /* SGCalculator.swift */; };
-		DF8662DF26F7A5DF00E3B534 /* box.json in Resources */ = {isa = PBXBuildFile; fileRef = DF8662DD26F7A5DF00E3B534 /* box.json */; };
-		DF8662E026F7A5DF00E3B534 /* rocket.json in Resources */ = {isa = PBXBuildFile; fileRef = DF8662DE26F7A5DF00E3B534 /* rocket.json */; };
-		DF8662E526F7A9B200E3B534 /* barrel.json in Resources */ = {isa = PBXBuildFile; fileRef = DF8662E126F7A9B200E3B534 /* barrel.json */; };
-		DF8662E626F7A9B200E3B534 /* filling.json in Resources */ = {isa = PBXBuildFile; fileRef = DF8662E226F7A9B200E3B534 /* filling.json */; };
-		DF8662E726F7A9B200E3B534 /* progress.json in Resources */ = {isa = PBXBuildFile; fileRef = DF8662E326F7A9B200E3B534 /* progress.json */; };
-		DF8662E826F7A9B200E3B534 /* wine.json in Resources */ = {isa = PBXBuildFile; fileRef = DF8662E426F7A9B200E3B534 /* wine.json */; };
-		DF8662EB26F7ABE600E3B534 /* wine-loading.json in Resources */ = {isa = PBXBuildFile; fileRef = DF8662E926F7ABE600E3B534 /* wine-loading.json */; };
-		DF8662EC26F7ABE600E3B534 /* preparing.json in Resources */ = {isa = PBXBuildFile; fileRef = DF8662EA26F7ABE600E3B534 /* preparing.json */; };
-		DF8662F026F7AEF800E3B534 /* payment-confirmation.json in Resources */ = {isa = PBXBuildFile; fileRef = DF8662ED26F7AEF700E3B534 /* payment-confirmation.json */; };
-		DF8662F126F7AEF800E3B534 /* payment-error.json in Resources */ = {isa = PBXBuildFile; fileRef = DF8662EE26F7AEF700E3B534 /* payment-error.json */; };
-		DF8662F226F7AEF800E3B534 /* payment-loading.json in Resources */ = {isa = PBXBuildFile; fileRef = DF8662EF26F7AEF800E3B534 /* payment-loading.json */; };
-		DF8662F426F7B64900E3B534 /* empty.json in Resources */ = {isa = PBXBuildFile; fileRef = DF8662F326F7B64900E3B534 /* empty.json */; };
+		DF78B67E2747F24300AE91D9 /* payment-error.json in Resources */ = {isa = PBXBuildFile; fileRef = DF78B6782747F24300AE91D9 /* payment-error.json */; };
+		DF78B67F2747F24300AE91D9 /* payment-confirmation.json in Resources */ = {isa = PBXBuildFile; fileRef = DF78B6792747F24300AE91D9 /* payment-confirmation.json */; };
+		DF78B6802747F24300AE91D9 /* preparing.json in Resources */ = {isa = PBXBuildFile; fileRef = DF78B67A2747F24300AE91D9 /* preparing.json */; };
+		DF78B6812747F24300AE91D9 /* wine-loading.json in Resources */ = {isa = PBXBuildFile; fileRef = DF78B67B2747F24300AE91D9 /* wine-loading.json */; };
+		DF78B6822747F24300AE91D9 /* payment-loading.json in Resources */ = {isa = PBXBuildFile; fileRef = DF78B67C2747F24300AE91D9 /* payment-loading.json */; };
+		DF78B6832747F24300AE91D9 /* empty.json in Resources */ = {isa = PBXBuildFile; fileRef = DF78B67D2747F24300AE91D9 /* empty.json */; };
+		DF78B6852747F2EC00AE91D9 /* rocket.json in Resources */ = {isa = PBXBuildFile; fileRef = DF78B6842747F2EC00AE91D9 /* rocket.json */; };
 		DFB0BD3E26EAA4CA008FDD3A /* NewSecondaryRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFB0BD3D26EAA4CA008FDD3A /* NewSecondaryRecord.swift */; };
 		DFB0BD4026EAFF98008FDD3A /* Dashboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFB0BD3F26EAFF98008FDD3A /* Dashboard.swift */; };
 		DFB0BD4526EB03A8008FDD3A /* PrimaryList.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFB0BD4426EB03A8008FDD3A /* PrimaryList.swift */; };
@@ -110,18 +105,13 @@
 		DF43B70125C0D9EA00093ED2 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
 		DF60C3D825D2D4FC004921F1 /* UpdateReadingForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateReadingForm.swift; sourceTree = "<group>"; };
 		DF60F90E26E7B2FB00C93B35 /* SGCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SGCalculator.swift; sourceTree = "<group>"; };
-		DF8662DD26F7A5DF00E3B534 /* box.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = box.json; path = "../../../breath-ios/Count my breaths/animations/box.json"; sourceTree = "<group>"; };
-		DF8662DE26F7A5DF00E3B534 /* rocket.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = rocket.json; path = "../../../breath-ios/Count my breaths/animations/rocket.json"; sourceTree = "<group>"; };
-		DF8662E126F7A9B200E3B534 /* barrel.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = barrel.json; path = ../../../../Downloads/barrel.json; sourceTree = "<group>"; };
-		DF8662E226F7A9B200E3B534 /* filling.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = filling.json; path = ../../../../Downloads/filling.json; sourceTree = "<group>"; };
-		DF8662E326F7A9B200E3B534 /* progress.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = progress.json; path = ../../../../Downloads/progress.json; sourceTree = "<group>"; };
-		DF8662E426F7A9B200E3B534 /* wine.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = wine.json; path = ../../../../Downloads/wine.json; sourceTree = "<group>"; };
-		DF8662E926F7ABE600E3B534 /* wine-loading.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = "wine-loading.json"; path = "../../../../Downloads/19397-wine-loaderwine-filling/wine-loading.json"; sourceTree = "<group>"; };
-		DF8662EA26F7ABE600E3B534 /* preparing.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = preparing.json; path = "../../../../Downloads/13471-preparing-food/preparing.json"; sourceTree = "<group>"; };
-		DF8662ED26F7AEF700E3B534 /* payment-confirmation.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = "payment-confirmation.json"; path = "../../../../Downloads/47964-payment-confirmation/payment-confirmation.json"; sourceTree = "<group>"; };
-		DF8662EE26F7AEF700E3B534 /* payment-error.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = "payment-error.json"; path = "../../../../Downloads/47980-payment-error/payment-error.json"; sourceTree = "<group>"; };
-		DF8662EF26F7AEF800E3B534 /* payment-loading.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = "payment-loading.json"; path = "../../../../Downloads/47985-payment-loading-2/payment-loading.json"; sourceTree = "<group>"; };
-		DF8662F326F7B64900E3B534 /* empty.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = empty.json; path = ../../../../Downloads/empty.json; sourceTree = "<group>"; };
+		DF78B6782747F24300AE91D9 /* payment-error.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "payment-error.json"; sourceTree = "<group>"; };
+		DF78B6792747F24300AE91D9 /* payment-confirmation.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "payment-confirmation.json"; sourceTree = "<group>"; };
+		DF78B67A2747F24300AE91D9 /* preparing.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = preparing.json; sourceTree = "<group>"; };
+		DF78B67B2747F24300AE91D9 /* wine-loading.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "wine-loading.json"; sourceTree = "<group>"; };
+		DF78B67C2747F24300AE91D9 /* payment-loading.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "payment-loading.json"; sourceTree = "<group>"; };
+		DF78B67D2747F24300AE91D9 /* empty.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = empty.json; sourceTree = "<group>"; };
+		DF78B6842747F2EC00AE91D9 /* rocket.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = rocket.json; sourceTree = "<group>"; };
 		DFB0BD3D26EAA4CA008FDD3A /* NewSecondaryRecord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewSecondaryRecord.swift; sourceTree = "<group>"; };
 		DFB0BD3F26EAFF98008FDD3A /* Dashboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dashboard.swift; sourceTree = "<group>"; };
 		DFB0BD4426EB03A8008FDD3A /* PrimaryList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimaryList.swift; sourceTree = "<group>"; };
@@ -289,18 +279,13 @@
 		DF8662DC26F7A5D200E3B534 /* animations */ = {
 			isa = PBXGroup;
 			children = (
-				DF8662F326F7B64900E3B534 /* empty.json */,
-				DF8662ED26F7AEF700E3B534 /* payment-confirmation.json */,
-				DF8662EE26F7AEF700E3B534 /* payment-error.json */,
-				DF8662EF26F7AEF800E3B534 /* payment-loading.json */,
-				DF8662E126F7A9B200E3B534 /* barrel.json */,
-				DF8662EA26F7ABE600E3B534 /* preparing.json */,
-				DF8662E926F7ABE600E3B534 /* wine-loading.json */,
-				DF8662E226F7A9B200E3B534 /* filling.json */,
-				DF8662E326F7A9B200E3B534 /* progress.json */,
-				DF8662E426F7A9B200E3B534 /* wine.json */,
-				DF8662DD26F7A5DF00E3B534 /* box.json */,
-				DF8662DE26F7A5DF00E3B534 /* rocket.json */,
+				DF78B67D2747F24300AE91D9 /* empty.json */,
+				DF78B6792747F24300AE91D9 /* payment-confirmation.json */,
+				DF78B6782747F24300AE91D9 /* payment-error.json */,
+				DF78B67C2747F24300AE91D9 /* payment-loading.json */,
+				DF78B67A2747F24300AE91D9 /* preparing.json */,
+				DF78B67B2747F24300AE91D9 /* wine-loading.json */,
+				DF78B6842747F2EC00AE91D9 /* rocket.json */,
 			);
 			path = animations;
 			sourceTree = "<group>";
@@ -522,19 +507,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				DF43B6AB25C0695100093ED2 /* Preview Assets.xcassets in Resources */,
-				DF8662EB26F7ABE600E3B534 /* wine-loading.json in Resources */,
-				DF8662EC26F7ABE600E3B534 /* preparing.json in Resources */,
-				DF8662E626F7A9B200E3B534 /* filling.json in Resources */,
-				DF8662F226F7AEF800E3B534 /* payment-loading.json in Resources */,
-				DF8662E726F7A9B200E3B534 /* progress.json in Resources */,
-				DF8662F026F7AEF800E3B534 /* payment-confirmation.json in Resources */,
-				DF8662F426F7B64900E3B534 /* empty.json in Resources */,
+				DF78B6832747F24300AE91D9 /* empty.json in Resources */,
+				DF78B6812747F24300AE91D9 /* wine-loading.json in Resources */,
+				DF78B67F2747F24300AE91D9 /* payment-confirmation.json in Resources */,
+				DF78B6822747F24300AE91D9 /* payment-loading.json in Resources */,
 				DF43B6A825C0695100093ED2 /* Assets.xcassets in Resources */,
-				DF8662E826F7A9B200E3B534 /* wine.json in Resources */,
-				DF8662DF26F7A5DF00E3B534 /* box.json in Resources */,
-				DF8662E526F7A9B200E3B534 /* barrel.json in Resources */,
-				DF8662E026F7A5DF00E3B534 /* rocket.json in Resources */,
-				DF8662F126F7AEF800E3B534 /* payment-error.json in Resources */,
+				DF78B6852747F2EC00AE91D9 /* rocket.json in Resources */,
+				DF78B6802747F24300AE91D9 /* preparing.json in Resources */,
+				DF78B67E2747F24300AE91D9 /* payment-error.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
