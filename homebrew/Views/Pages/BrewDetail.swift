@@ -77,7 +77,6 @@ struct BrewDetail: View {
     
     private func deleteItems(offsets: IndexSet) {
         withAnimation {
-            print(offsets)
             let readingList = getReadingList()
             offsets.map { readingList[$0] }.forEach(brew.managedObjectContext!.delete)
             do {

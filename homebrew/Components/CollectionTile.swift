@@ -27,14 +27,14 @@ struct CollectionTile: View {
             }
             Spacer()
             VStack {
-                Button(action: {print("adding"); addOrRemoveBottle(amount: 1)}) {
+                Button(action: {addBottle(amount: 1)}) {
                     Image(systemName: "plus.circle.fill")
                         .imageScale(.large)
                 }
                     .buttonStyle(BorderlessButtonStyle())
                     .contentShape(Rectangle())
                 Spacer()
-                Button(action: {print("removing"); addOrRemoveBottle(amount: -1)}) {
+                Button(action: {removeBottle(amount: 1)}) {
                     Image(systemName: "minus.circle.fill")
                         .imageScale(.large)
                 }
@@ -73,12 +73,27 @@ struct CollectionTile: View {
         return AnyView(EmptyView())
     }
     
-    func addOrRemoveBottle(amount: Int16 ) {
+    func removeBottle(amount: Int16) {
+        if let bottles = brew.bottles {
+            if bottles.count <= 0 {
+                return
+            }
+            bottles.count = bottles.count - amount
+            do {
+                try bottles.managedObjectContext!.save()
+                onChange()
+            } catch {
+                let nsError = error as NSError
+                fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
+            }
+        }
+    }
+    
+    func addBottle(amount: Int16) {
         if let bottles = brew.bottles {
             bottles.count = bottles.count + amount
             do {
                 try bottles.managedObjectContext!.save()
-                print("saved: \(bottles.count + amount)")
                 onChange()
             } catch {
                 let nsError = error as NSError
