@@ -12,19 +12,18 @@ struct CollectionList: View {
     @Environment(\.managedObjectContext) private var viewContext
 
     @FetchRequest(
-        entity: Brew.entity(),
-        sortDescriptors: [NSSortDescriptor(keyPath: \Brew.startDate, ascending: false)],
-        predicate: NSPredicate(format: "bottles != nil and bottles.count > 0"),
-        animation: .default)
-    
+            entity: Brew.entity(),
+            sortDescriptors: [NSSortDescriptor(keyPath: \Brew.startDate, ascending: false)],
+            predicate: NSPredicate(format: "bottles != nil and bottles.count > 0"),
+            animation: .default)
     private var brews: FetchedResults<Brew>
     @State private var refreshID = UUID()
-    
+
     var body: some View {
         if brews.count <= 0 {
             EmptyCollectionList()
         } else {
-            VStack{
+            VStack {
                 getTotalBottleCount()
                 List {
                     ForEach(brews) { brew in
@@ -39,12 +38,12 @@ struct CollectionList: View {
                         }
                     })
                 }
-                    .listStyle(PlainListStyle())
-                    
+                        .listStyle(PlainListStyle())
+
             }.id(refreshID)
         }
     }
-    
+
     func getTotalBottleCount() -> AnyView {
         var total: Int16 = 0
         for brew in brews {
@@ -54,10 +53,10 @@ struct CollectionList: View {
         }
         if total > 0 {
             return AnyView(
-                VStack {
-                    InfoLabel(label: "Collection Size", value: "\(total)")
-                    Divider()
-                }.padding(.horizontal)
+                    VStack {
+                        InfoLabel(label: "Collection Size", value: "\(total)")
+                        Divider()
+                    }.padding(.horizontal)
             )
         }
         return AnyView(EmptyView())

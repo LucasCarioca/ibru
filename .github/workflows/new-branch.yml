@@ -13,7 +13,7 @@ jobs:
         with:
           xcode-version: latest-stable
       - name: Setup environment
-        env: 
+        env:
           GITHUB_REF: ${{ secrets.GITHUB_REF }}
           GITHUB_ACTOR: ${{ secrets.GITHUB_ACTOR }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

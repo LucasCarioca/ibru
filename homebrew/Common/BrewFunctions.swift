@@ -10,7 +10,9 @@ import CoreData
 import SwiftUI
 
 func deleteBrew(offsets: IndexSet, brews: FetchedResults<Brew>, context: NSManagedObjectContext) {
-    offsets.map { brews[$0] }.forEach(context.delete)
+    offsets.map {
+        brews[$0]
+    }.forEach(context.delete)
 
     do {
         try context.save()
@@ -50,7 +52,7 @@ func getCurrentABV(of brew: Brew) -> Double {
 func getCurrentGravity(of brew: Brew) -> Double {
     if let bottles = brew.bottles {
         return bottles.finalGravity
-    } else if let secondary = brew.secondary{
+    } else if let secondary = brew.secondary {
         return secondary.gravity
     } else if let reading = getLatestReading(of: brew) {
         return reading.gravity

@@ -12,30 +12,30 @@ struct UpdateBottleRecord: View {
     @State var gravity = ""
     @State var bottleCount = ""
     @State var date = Date()
-    
+
     var bottle: Bottle
-    
+
     var body: some View {
         Form {
             TextField("Final gravity", text: $gravity)
-                .keyboardType(.decimalPad)
-                .padding()
+                    .keyboardType(.decimalPad)
+                    .padding()
             TextField("Bottle count", text: $bottleCount)
-                .keyboardType(.decimalPad)
-                .padding()
+                    .keyboardType(.decimalPad)
+                    .padding()
             DatePicker("Bottle date", selection: $date)
-                .datePickerStyle(GraphicalDatePickerStyle())
+                    .datePickerStyle(GraphicalDatePickerStyle())
             Button("Save", action: addBrew)
-                .frame(minWidth: 0, maxWidth: .infinity, alignment: .center)
+                    .frame(minWidth: 0, maxWidth: .infinity, alignment: .center)
         }
-            .onAppear() {
-                self.gravity = String(bottle.finalGravity)
-                self.bottleCount = String(bottle.count)
-                self.date = bottle.date ?? Date()
-            }
-            .navigationTitle("Bottling")
+                .onAppear() {
+                    self.gravity = String(bottle.finalGravity)
+                    self.bottleCount = String(bottle.count)
+                    self.date = bottle.date ?? Date()
+                }
+                .navigationTitle("Bottling")
     }
-    
+
     private func addBrew() {
         withAnimation {
             bottle.date = date
@@ -48,7 +48,7 @@ struct UpdateBottleRecord: View {
                 let nsError = error as NSError
                 fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
             }
-            
+
         }
     }
 }

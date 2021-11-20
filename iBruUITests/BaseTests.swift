@@ -9,17 +9,18 @@ import XCTest
 
 class BaseTests: XCTestCase {
     let app: XCUIApplication = XCUIApplication()
-    
+
     override func setUpWithError() throws {
         app.launchArguments = ["-test-data"]
         app.launch()
         continueAfterFailure = false
     }
 
-    override func tearDownWithError() throws {}
+    override func tearDownWithError() throws {
+    }
 
     func testBasicNavigation() throws {
-        
+
         let dashboardNavigationBar = app.navigationBars["Dashboard"]
         XCTAssert(dashboardNavigationBar.staticTexts["Dashboard"].exists)
         dashboardNavigationBar.buttons["Menu"].tap()
@@ -36,22 +37,22 @@ class BaseTests: XCTestCase {
         XCTAssert(app.staticTexts["Bottled"].exists)
         beerIpaNavigationBar.buttons["Collection"].tap()
         app.navigationBars["Collection"].buttons["Menu"].tap()
-        
-        
-        tablesQuery.cells["Brew List"].otherElements.containing(.button, identifier:"Brew List").element.tap()
+
+
+        tablesQuery.cells["Brew List"].otherElements.containing(.button, identifier: "Brew List").element.tap()
         let brewsNavigationBar = app.navigationBars["Brews"]
         XCTAssert(brewsNavigationBar.staticTexts["Brews"].exists)
         brewsNavigationBar.buttons["Menu"].tap()
-        
-    
+
+
         tablesQuery/*@START_MENU_TOKEN@*/.buttons["Calculators"]/*[[".cells[\"Calculators\"].buttons[\"Calculators\"]",".buttons[\"Calculators\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
         XCTAssert(app.navigationBars["Calculators"].staticTexts["Calculators"].exists)
-        tablesQuery.cells["Alcohol by volume"].otherElements.containing(.button, identifier:"Alcohol by volume").element.tap()
+        tablesQuery.cells["Alcohol by volume"].otherElements.containing(.button, identifier: "Alcohol by volume").element.tap()
         let abvCalculatorNavigationBar = app.navigationBars["ABV Calculator"]
         XCTAssert(abvCalculatorNavigationBar.staticTexts["ABV Calculator"].exists)
         abvCalculatorNavigationBar.buttons["Calculators"].tap()
         tablesQuery/*@START_MENU_TOKEN@*/.buttons["Gravity Estimator"]/*[[".cells[\"Gravity Estimator\"].buttons[\"Gravity Estimator\"]",".buttons[\"Gravity Estimator\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
         XCTAssert(app.navigationBars["Gravity Estimator"].staticTexts["Gravity Estimator"].exists)
-        
+
     }
 }

@@ -13,7 +13,7 @@ struct InfoLabel: View {
     var body: some View {
         HStack {
             Text("\(label): ")
-                .fontWeight(.bold)
+                    .fontWeight(.bold)
             Text(value)
             Spacer()
         }

@@ -12,8 +12,8 @@ struct ContentView: View {
     @Environment(\.managedObjectContext) private var viewContext
 
     @FetchRequest(
-        sortDescriptors: [NSSortDescriptor(keyPath: \Item.timestamp, ascending: true)],
-        animation: .default)
+            sortDescriptors: [NSSortDescriptor(keyPath: \Item.timestamp, ascending: true)],
+            animation: .default)
     private var items: FetchedResults<Item>
 
     var body: some View {
@@ -21,17 +21,17 @@ struct ContentView: View {
             ForEach(items) { item in
                 Text("Item at \(item.timestamp!, formatter: itemFormatter)")
             }
-            .onDelete(perform: deleteItems)
+                    .onDelete(perform: deleteItems)
         }
-        .toolbar {
-            #if os(iOS)
-            EditButton()
-            #endif
+                .toolbar {
+                    #if os(iOS)
+                    EditButton()
+                    #endif
 
-            Button(action: addItem) {
-                Label("Add Item", systemImage: "plus")
-            }
-        }
+                    Button(action: addItem) {
+                        Label("Add Item", systemImage: "plus")
+                    }
+                }
     }
 
     private func addItem() {
@@ -52,7 +52,9 @@ struct ContentView: View {
 
     private func deleteItems(offsets: IndexSet) {
         withAnimation {
-            offsets.map { items[$0] }.forEach(viewContext.delete)
+            offsets.map {
+                items[$0]
+            }.forEach(viewContext.delete)
 
             do {
                 try viewContext.save()

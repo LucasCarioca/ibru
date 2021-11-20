@@ -11,21 +11,21 @@ struct NewReadingForm: View {
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     @State var gravity = ""
     @State var date = Date()
-    
+
     var brew: Brew
-    
+
     var body: some View {
         Form {
             TextField("Current Gravity", text: $gravity)
-                .keyboardType(.decimalPad)
-                .padding()
+                    .keyboardType(.decimalPad)
+                    .padding()
             DatePicker("Start date", selection: $date)
-                .datePickerStyle(GraphicalDatePickerStyle())
+                    .datePickerStyle(GraphicalDatePickerStyle())
             Button("Finish", action: addBrew)
-                .frame(minWidth: 0, maxWidth: .infinity, alignment: .center)
+                    .frame(minWidth: 0, maxWidth: .infinity, alignment: .center)
         }.navigationTitle("New reading")
     }
-    
+
     private func addBrew() {
         withAnimation {
             let newItem = Reading(context: brew.managedObjectContext!)

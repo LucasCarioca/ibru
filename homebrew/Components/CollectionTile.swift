@@ -16,9 +16,9 @@ struct CollectionTile: View {
             VStack {
                 HStack {
                     Text(brew.name ?? "missing name")
-                        .font(.title2)
-                        .fontWeight(.heavy)
-                        
+                            .font(.title2)
+                            .fontWeight(.heavy)
+
                     Spacer()
                 }.padding()
                 getBottleCount()
@@ -27,23 +27,23 @@ struct CollectionTile: View {
             }
             Spacer()
             VStack {
-                Button(action: {addBottle(amount: 1)}) {
+                Button(action: { addBottle(amount: 1) }) {
                     Image(systemName: "plus.circle.fill")
-                        .imageScale(.large)
+                            .imageScale(.large)
                 }
-                    .buttonStyle(BorderlessButtonStyle())
-                    .contentShape(Rectangle())
+                        .buttonStyle(BorderlessButtonStyle())
+                        .contentShape(Rectangle())
                 Spacer()
-                Button(action: {removeBottle(amount: 1)}) {
+                Button(action: { removeBottle(amount: 1) }) {
                     Image(systemName: "minus.circle.fill")
-                        .imageScale(.large)
+                            .imageScale(.large)
                 }
-                    .buttonStyle(BorderlessButtonStyle())
-                    .contentShape(Rectangle())
+                        .buttonStyle(BorderlessButtonStyle())
+                        .contentShape(Rectangle())
             }.padding()
         }
     }
-    
+
     func getTimeText() -> String {
         var brewAge = getAge(of: brew, fromBottlingDate: true)
         var label = "Days"
@@ -53,7 +53,7 @@ struct CollectionTile: View {
         }
         return "\(String(format: "%.1f", brewAge)) \(label)"
     }
-    
+
     func getProgressBar() -> BarView {
         var age = getAge(of: brew, fromBottlingDate: true)
         if age < 30 {
@@ -63,16 +63,16 @@ struct CollectionTile: View {
         }
         return BarView(value: CGFloat(age), max: 365, showLabel: nil, color: .accentColor)
     }
-    
+
     func getBottleCount() -> AnyView {
         if getStage(of: brew) == .bottled {
             return AnyView(
-                InfoLabel(label: "Bottle Count", value: "\(brew.bottles?.count ?? 0)")
+                    InfoLabel(label: "Bottle Count", value: "\(brew.bottles?.count ?? 0)")
             )
         }
         return AnyView(EmptyView())
     }
-    
+
     func removeBottle(amount: Int16) {
         if let bottles = brew.bottles {
             if bottles.count <= 0 {
@@ -88,7 +88,7 @@ struct CollectionTile: View {
             }
         }
     }
-    
+
     func addBottle(amount: Int16) {
         if let bottles = brew.bottles {
             bottles.count = bottles.count + amount

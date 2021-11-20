@@ -11,21 +11,21 @@ struct NewSecondaryRecord: View {
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     @State var gravity = ""
     @State var date = Date()
-    
+
     var brew: Brew
-    
+
     var body: some View {
         Form {
             TextField("Current gravity", text: $gravity)
-                .keyboardType(.decimalPad)
-                .padding()
+                    .keyboardType(.decimalPad)
+                    .padding()
             DatePicker("Bottle date", selection: $date)
-                .datePickerStyle(GraphicalDatePickerStyle())
+                    .datePickerStyle(GraphicalDatePickerStyle())
             Button("Finish", action: addSecondary)
-                .frame(minWidth: 0, maxWidth: .infinity, alignment: .center)
+                    .frame(minWidth: 0, maxWidth: .infinity, alignment: .center)
         }.navigationTitle("Secondary")
     }
-    
+
     private func addSecondary() {
         withAnimation {
             let newItem = Secondary(context: brew.managedObjectContext!)
