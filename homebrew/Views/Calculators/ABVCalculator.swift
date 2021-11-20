@@ -14,28 +14,28 @@ struct ABVCalculator: View {
     var body: some View {
         Form {
             Text("\(result)")
-                .font(.largeTitle)
-                .frame(minWidth: 0, maxWidth: .infinity, alignment: .center)
+                    .font(.largeTitle)
+                    .frame(minWidth: 0, maxWidth: .infinity, alignment: .center)
 
             HStack {
                 TextField("Original Gravity", text: $og)
-                    .keyboardType(.decimalPad)
-                    .frame(minWidth: 0, maxWidth: .infinity, alignment: .center)
+                        .keyboardType(.decimalPad)
+                        .frame(minWidth: 0, maxWidth: .infinity, alignment: .center)
                 Spacer()
                 Image(systemName: "arrow.forward")
-                    .frame(minWidth: 0, maxWidth: .infinity, alignment: .center)
+                        .frame(minWidth: 0, maxWidth: .infinity, alignment: .center)
                 Spacer()
                 TextField("Final Gravity", text: $fg)
-                    .keyboardType(.decimalPad)
-                    .frame(minWidth: 0, maxWidth: .infinity, alignment: .center)
+                        .keyboardType(.decimalPad)
+                        .frame(minWidth: 0, maxWidth: .infinity, alignment: .center)
             }
-            Button(action: calculate){
+            Button(action: calculate) {
                 Text("Calculate")
             }
-            .frame(minWidth: 0, maxWidth: .infinity, alignment: .center)
+                    .frame(minWidth: 0, maxWidth: .infinity, alignment: .center)
         }.navigationTitle("ABV Calculator")
     }
-    
+
     private func calculate() {
         let ogConverted = Double(og) ?? 0.00
         let fgConverted = Double(fg) ?? 0.00

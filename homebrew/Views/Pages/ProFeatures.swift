@@ -10,7 +10,7 @@ import QuickComponents
 
 struct ProFeatures: View {
     @StateObject var storeManager: StoreManager
-    
+
     var body: some View {
         if let transactionState = storeManager.transactionState {
             switch transactionState {
@@ -40,12 +40,12 @@ struct ProFeatures: View {
                     Text("Something went wrong while processing your payment. Please try again.").Paragraph(align: .center, size: .MD)
                     LottieView(filename: "payment-error")
                     Spacer()
-                    Button(action: {storeManager.transactionState = nil}) {
+                    Button(action: { storeManager.transactionState = nil }) {
                         Text("Try again")
                     }
-                        .buttonStyle(SecondaryButton(variant: .contained))
-                        .frame(width: 150, height: 75)
-                        .padding(.bottom, 50)
+                            .buttonStyle(SecondaryButton(variant: .contained))
+                            .frame(width: 150, height: 75)
+                            .padding(.bottom, 50)
                 }
             default:
                 VStack {
@@ -55,17 +55,17 @@ struct ProFeatures: View {
             }
         } else {
             #if os(OSX)
-                ProFeaturesMacOSTabView(action: initiatePurchase)
+            ProFeaturesMacOSTabView(action: initiatePurchase)
             #elseif os(iOS)
-                #if targetEnvironment(macCatalyst)
-                    ProFeaturesMacOSTabView(action: initiatePurchase)
-                #else
-                    ProFeaturesiOSTabView(action: initiatePurchase)
-                #endif
+            #if targetEnvironment(macCatalyst)
+            ProFeaturesMacOSTabView(action: initiatePurchase)
+            #else
+            ProFeaturesiOSTabView(action: initiatePurchase)
+            #endif
             #endif
         }
     }
-    
+
     func initiatePurchase(restore: Bool = false) {
         if restore {
             storeManager.restoreProduct()
@@ -79,18 +79,18 @@ struct ProFeatures: View {
 struct ProFeaturesiOSTabView: View {
     var action: (Bool) -> Void
     var body: some View {
-        TabView{
+        TabView {
             ProFeaturesPage(
-                title: "Manage your brew stages",
-                text: "Add support for multi stage brews and a new views to track batches at different stages",
-                lottieAnimation: "preparing")
+                    title: "Manage your brew stages",
+                    text: "Add support for multi stage brews and a new views to track batches at different stages",
+                    lottieAnimation: "preparing")
             ProFeaturesPage(
-                title: "Track your collection",
-                text: "Adds functionality to track bottles and manage a inventory of your collection through the Collection view.",
-                lottieAnimation: "wine-loading")
+                    title: "Track your collection",
+                    text: "Adds functionality to track bottles and manage a inventory of your collection through the Collection view.",
+                    lottieAnimation: "wine-loading")
             ProFeaturesCallToAction(action: action)
         }.tabViewStyle(PageTabViewStyle())
-        .indexViewStyle(PageIndexViewStyle(backgroundDisplayMode: .always))
+                .indexViewStyle(PageIndexViewStyle(backgroundDisplayMode: .always))
     }
 }
 
@@ -101,32 +101,32 @@ struct ProFeaturesMacOSTabView: View {
         VStack {
             if page == 0 {
                 ProFeaturesPage(
-                    title: "Manage your brew stages",
-                    text: "Add support for multi stage brews and a new views to track batches at different stages",
-                    lottieAnimation: "preparing")
+                        title: "Manage your brew stages",
+                        text: "Add support for multi stage brews and a new views to track batches at different stages",
+                        lottieAnimation: "preparing")
             } else if page == 1 {
                 ProFeaturesPage(
-                    title: "Track your collection",
-                    text: "Adds functionality to track bottles and manage a inventory of your collection through the Collection view.",
-                    lottieAnimation: "wine-loading")
+                        title: "Track your collection",
+                        text: "Adds functionality to track bottles and manage a inventory of your collection through the Collection view.",
+                        lottieAnimation: "wine-loading")
             } else if page == 2 {
                 ProFeaturesCallToAction(action: action)
             }
-            
+
             HStack {
-                if page > 0  {
-                    Button(action: {page-=1}){
+                if page > 0 {
+                    Button(action: { page -= 1 }) {
                         Image(systemName: "chevron.backward")
                     }
-                        .buttonStyle(PrimaryButton())
-                        .frame(width: 50, height: 50)
+                            .buttonStyle(PrimaryButton())
+                            .frame(width: 50, height: 50)
                 }
                 if page < 2 {
-                    Button(action: {page+=1}){
+                    Button(action: { page += 1 }) {
                         Image(systemName: "chevron.forward")
                     }
-                        .buttonStyle(PrimaryButton())
-                        .frame(width: 50, height: 50)
+                            .buttonStyle(PrimaryButton())
+                            .frame(width: 50, height: 50)
                 }
             }.padding(.bottom, 50)
         }
@@ -162,17 +162,17 @@ struct ProFeaturesCallToAction: View {
             }) {
                 Text("Upgrade Now")
             }
-                .buttonStyle(PrimaryButton(variant: .contained))
-                .frame(width: 150, height: 75)
+                    .buttonStyle(PrimaryButton(variant: .contained))
+                    .frame(width: 150, height: 75)
             Button(action: {
                 action(true)
             }) {
                 Text("Restore previous purchase")
             }
-                .buttonStyle(PrimaryButton())
-                .frame(width: .infinity, height: 75)
-                .padding(.bottom, 50)
-            
+                    .buttonStyle(PrimaryButton())
+                    .frame(width: .infinity, height: 75)
+                    .padding(.bottom, 50)
+
         }
     }
 }

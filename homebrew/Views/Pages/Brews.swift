@@ -13,11 +13,11 @@ struct Brews: View {
     @Environment(\.managedObjectContext) private var viewContext
 
     @FetchRequest(
-        entity: Brew.entity(),
-        sortDescriptors: [NSSortDescriptor(keyPath: \Brew.startDate, ascending: false)],
-        animation: .default)
+            entity: Brew.entity(),
+            sortDescriptors: [NSSortDescriptor(keyPath: \Brew.startDate, ascending: false)],
+            animation: .default)
     private var brews: FetchedResults<Brew>
-    
+
     @State var refreshId = UUID()
 
     var body: some View {
@@ -40,10 +40,10 @@ struct Brews: View {
                 })
                 Spacer().padding(.vertical, 50)
             }.listStyle(PlainListStyle())
-            .navigationTitle("Brews")
-            .modifier(NewBrewButtonModifier(onDisappear: {
-                self.refreshId = UUID()
-            }))
+                    .navigationTitle("Brews")
+                    .modifier(NewBrewButtonModifier(onDisappear: {
+                        self.refreshId = UUID()
+                    }))
         }
     }
 }
@@ -54,12 +54,12 @@ struct EmptyList: View {
             Text("Looks like you don't have any brews yet. Get some started now!").Paragraph(align: .center, size: .MD)
             LottieView(filename: "empty")
             Spacer()
-            NavigationLink(destination: NewBrewForm()){
+            NavigationLink(destination: NewBrewForm()) {
                 Text("Start brewing")
             }
-                .buttonStyle(PrimaryButton(variant: .contained))
-                .frame(width: 150, height: 75)
-                .padding(.bottom, 50)
+                    .buttonStyle(PrimaryButton(variant: .contained))
+                    .frame(width: 150, height: 75)
+                    .padding(.bottom, 50)
         }
     }
 }

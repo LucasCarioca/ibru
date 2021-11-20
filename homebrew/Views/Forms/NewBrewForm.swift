@@ -15,37 +15,37 @@ struct NewBrewForm: View {
     @State var showDescriptionEditor = false
     @State var gravity = ""
     @State var date = Date()
-    
+
     var body: some View {
         Form {
             TextField("Name", text: $name)
-                .padding()
+                    .padding()
             Button(action: {
-                    showDescriptionEditor = true
+                showDescriptionEditor = true
             }) {
                 comment == "" ? Text("Description").foregroundColor(.gray) : Text(comment).foregroundColor(.primary)
             }.padding()
             TextField("Original gravity", text: $gravity)
-                .keyboardType(.decimalPad)
-                .padding()
+                    .keyboardType(.decimalPad)
+                    .padding()
             DatePicker("Start date", selection: $date)
-                .datePickerStyle(GraphicalDatePickerStyle())
+                    .datePickerStyle(GraphicalDatePickerStyle())
             Button("Finish", action: addBrew)
-                .frame(minWidth: 0, maxWidth: .infinity, alignment: .center)
+                    .frame(minWidth: 0, maxWidth: .infinity, alignment: .center)
         }.sheet(isPresented: $showDescriptionEditor) {
             VStack {
                 TextEditor(text: self.$comment).padding()
                 Spacer()
                 Button(action: {
                     self.showDescriptionEditor = false
-                }){
-                  Text("Save")
+                }) {
+                    Text("Save")
                 }.padding()
             }
-            
+
         }.navigationTitle("New brew")
     }
-    
+
     private func addBrew() {
         withAnimation {
             let newItem = Brew(context: viewContext)

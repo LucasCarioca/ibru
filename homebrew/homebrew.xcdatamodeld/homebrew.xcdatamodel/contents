@@ -1,12 +1,18 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="18154" systemVersion="20D91" minimumToolsVersion="Automatic" sourceLanguage="Swift" usedWithCloudKit="YES" userDefinedModelVersionIdentifier="">
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="18154"
+       systemVersion="20D91" minimumToolsVersion="Automatic" sourceLanguage="Swift" usedWithCloudKit="YES"
+       userDefinedModelVersionIdentifier="">
     <entity name="Bottle" representedClassName="Bottle" syncable="YES" codeGenerationType="class">
         <attribute name="aging" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
-        <attribute name="count" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="count" optional="YES" attributeType="Integer 16" defaultValueString="0"
+                   usesScalarValueType="YES"/>
         <attribute name="date" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
-        <attribute name="finalGravity" optional="YES" attributeType="Double" defaultValueString="0" usesScalarValueType="YES"/>
-        <attribute name="size" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
-        <relationship name="brew" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Brew" inverseName="bottles" inverseEntity="Brew"/>
+        <attribute name="finalGravity" optional="YES" attributeType="Double" defaultValueString="0"
+                   usesScalarValueType="YES"/>
+        <attribute name="size" optional="YES" attributeType="Integer 16" defaultValueString="0"
+                   usesScalarValueType="YES"/>
+        <relationship name="brew" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Brew"
+                      inverseName="bottles" inverseEntity="Brew"/>
     </entity>
     <entity name="Brew" representedClassName="Brew" syncable="YES" codeGenerationType="class">
         <attribute name="comment" optional="YES" attributeType="String"/>
@@ -14,22 +20,29 @@
         <attribute name="originalGravity" optional="YES" attributeType="Double" usesScalarValueType="YES"/>
         <attribute name="recipe" optional="YES" attributeType="String"/>
         <attribute name="startDate" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
-        <relationship name="bottles" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="Bottle" inverseName="brew" inverseEntity="Bottle"/>
-        <relationship name="readings" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Reading" inverseName="brew" inverseEntity="Reading"/>
-        <relationship name="secondary" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Secondary" inverseName="brew" inverseEntity="Secondary"/>
+        <relationship name="bottles" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="Bottle"
+                      inverseName="brew" inverseEntity="Bottle"/>
+        <relationship name="readings" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Reading"
+                      inverseName="brew" inverseEntity="Reading"/>
+        <relationship name="secondary" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Secondary"
+                      inverseName="brew" inverseEntity="Secondary"/>
     </entity>
     <entity name="Item" representedClassName="Item" syncable="YES" codeGenerationType="class">
         <attribute name="timestamp" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
     </entity>
     <entity name="Reading" representedClassName="Reading" syncable="YES" codeGenerationType="class">
         <attribute name="date" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
-        <attribute name="gravity" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
-        <relationship name="brew" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Brew" inverseName="readings" inverseEntity="Brew"/>
+        <attribute name="gravity" optional="YES" attributeType="Double" defaultValueString="0.0"
+                   usesScalarValueType="YES"/>
+        <relationship name="brew" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Brew"
+                      inverseName="readings" inverseEntity="Brew"/>
     </entity>
     <entity name="Secondary" representedClassName="Secondary" syncable="YES" codeGenerationType="class">
         <attribute name="date" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
-        <attribute name="gravity" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
-        <relationship name="brew" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Brew" inverseName="secondary" inverseEntity="Brew"/>
+        <attribute name="gravity" optional="YES" attributeType="Double" defaultValueString="0.0"
+                   usesScalarValueType="YES"/>
+        <relationship name="brew" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Brew"
+                      inverseName="secondary" inverseEntity="Brew"/>
     </entity>
     <elements>
         <element name="Bottle" positionX="17.59423828125" positionY="-37.134521484375" width="128" height="119"/>

@@ -12,6 +12,7 @@ import Lottie
 struct LottieView: UIViewRepresentable {
     let animationView = AnimationView()
     var filename = "rocket"
+
     func makeUIView(context: UIViewRepresentableContext<LottieView>) -> UIView {
         let view = UIView()
         view.addSubview(animationView)
@@ -26,7 +27,7 @@ struct LottieView: UIViewRepresentable {
         ])
         return view
     }
-    
+
     func updateUIView(_ uiView: UIView, context: UIViewRepresentableContext<LottieView>) {
     }
 }

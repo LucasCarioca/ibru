@@ -18,7 +18,7 @@ struct Dashboard: View {
             ]).padding()
             Spacer()
         }
-        .navigationTitle("Dashboard")
+                .navigationTitle("Dashboard")
     }
 }
 

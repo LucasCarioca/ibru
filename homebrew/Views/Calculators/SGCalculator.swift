@@ -8,7 +8,6 @@
 import SwiftUI
 
 
-
 struct SugarType: Hashable {
     var name: String
     var points: Double
@@ -37,24 +36,24 @@ struct SGCalculator: View {
     var body: some View {
         Form {
             Text("\(result)")
-                .font(.largeTitle)
-                .frame(minWidth: 0, maxWidth: .infinity, alignment: .center)
+                    .font(.largeTitle)
+                    .frame(minWidth: 0, maxWidth: .infinity, alignment: .center)
             Picker(selection: $sugar, label: Text("Sugar source")) {
                 Text("None").tag(nil as Int?)
-                ForEach(0 ..< sugars.count) {
+                ForEach(0..<sugars.count) {
                     Text(self.sugars[$0].name).tag($0 as Int?)
                 }
             }.frame(minWidth: 0, maxWidth: .infinity, alignment: .center)
             TextField("Sugar Quantity (pounds)", text: $quantity)
-                .keyboardType(.decimalPad)
-                .frame(minWidth: 0, maxWidth: .infinity, alignment: .center)
+                    .keyboardType(.decimalPad)
+                    .frame(minWidth: 0, maxWidth: .infinity, alignment: .center)
             TextField("Batch size (gallons)", text: $batchSize)
-                .keyboardType(.decimalPad)
-                .frame(minWidth: 0, maxWidth: .infinity, alignment: .center)
-            Button(action: calculate){
+                    .keyboardType(.decimalPad)
+                    .frame(minWidth: 0, maxWidth: .infinity, alignment: .center)
+            Button(action: calculate) {
                 Text("Calculate")
             }
-            .frame(minWidth: 0, maxWidth: .infinity, alignment: .center)
+                    .frame(minWidth: 0, maxWidth: .infinity, alignment: .center)
         }.navigationTitle("Gravity Estimator")
     }
 

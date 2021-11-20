@@ -14,26 +14,26 @@ struct UpdateBrewForm: View {
     @State var showDescriptionEditor = false
     @State var gravity = ""
     @State var date = Date()
-    
+
     var brew: Brew
-    
+
     var body: some View {
         Form {
             TextField("Name", text: $name)
-                .padding()
+                    .padding()
             Button(action: {
-                    showDescriptionEditor = true
+                showDescriptionEditor = true
             }) {
                 comment == "" ? Text("Description").foregroundColor(.gray) : Text(comment).foregroundColor(.primary)
             }.padding()
             TextField("Original gravity", text: $gravity)
-                .keyboardType(.decimalPad)
-                .padding()
+                    .keyboardType(.decimalPad)
+                    .padding()
             DatePicker("Start date", selection: $date)
-                .datePickerStyle(GraphicalDatePickerStyle())
-            
+                    .datePickerStyle(GraphicalDatePickerStyle())
+
             Button("Finish", action: updateBrew)
-                .frame(minWidth: 0, maxWidth: .infinity, alignment: .center)
+                    .frame(minWidth: 0, maxWidth: .infinity, alignment: .center)
         }.onAppear() {
             self.name = brew.name!
             self.comment = brew.comment ?? ""
@@ -45,13 +45,13 @@ struct UpdateBrewForm: View {
                 Spacer()
                 Button(action: {
                     self.showDescriptionEditor = false
-                }){
-                  Text("Save")
+                }) {
+                    Text("Save")
                 }.padding()
-            } 
+            }
         }.navigationTitle("Update brew")
     }
-    
+
     private func updateBrew() {
         withAnimation {
             brew.startDate = date

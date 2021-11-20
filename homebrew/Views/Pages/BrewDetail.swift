@@ -15,31 +15,33 @@ struct BrewDetail: View {
     var body: some View {
         VStack {
             Text(brew.comment ?? "")
-                .font(.headline)
-                .padding()
-                .frame(maxWidth: .infinity, alignment: .leading)
+                    .font(.headline)
+                    .padding()
+                    .frame(maxWidth: .infinity, alignment: .leading)
             HStack {
                 Image("carboy").padding()
                 VStack {
                     Text("Primary Fermentation").bold().font(.title3)
-                        .frame(maxWidth: .infinity, alignment: .leading)
+                            .frame(maxWidth: .infinity, alignment: .leading)
                     Text("OG: \(String(format: "%.3f", brew.originalGravity))")
-                        .font(.callout)
-                        .frame(maxWidth: .infinity, alignment: .leading)
-                    Text("Potential ABV: \(String(format: "%.2f", (brew.originalGravity-1)*131.25))%")
-                        .font(.callout)
-                        .frame(maxWidth: .infinity, alignment: .leading)
+                            .font(.callout)
+                            .frame(maxWidth: .infinity, alignment: .leading)
+                    Text("Potential ABV: \(String(format: "%.2f", (brew.originalGravity - 1) * 131.25))%")
+                            .font(.callout)
+                            .frame(maxWidth: .infinity, alignment: .leading)
                     Text("Start date: \(brew.startDate ?? Date(), formatter: brewDateFormatter)")
-                        .font(.callout)
-                        .frame(maxWidth: .infinity, alignment: .leading)
+                            .font(.callout)
+                            .frame(maxWidth: .infinity, alignment: .leading)
                     showAge().font(.callout)
-                        .frame(maxWidth: .infinity, alignment: .leading)
+                            .frame(maxWidth: .infinity, alignment: .leading)
                 }
                 NavigationLink(
-                    destination: UpdateBrewForm(brew: brew).onDisappear(perform: refresh),
-                    isActive: $showEditView) { Button(action: {self.showEditView = true}) {
-                    Image(systemName: "square.and.pencil").padding()
-                }}
+                        destination: UpdateBrewForm(brew: brew).onDisappear(perform: refresh),
+                        isActive: $showEditView) {
+                    Button(action: { self.showEditView = true }) {
+                        Image(systemName: "square.and.pencil").padding()
+                    }
+                }
             }
             if UserDefaults.standard.bool(forKey: StoreManager.productKey) {
                 showSecondaryInfo().padding(.vertical)
@@ -49,87 +51,89 @@ struct BrewDetail: View {
                 HStack {
                     Image(systemName: "square.and.pencil").padding(.leading)
                     Text("Readings")
-                        .fontWeight(.bold)
-                        .padding(.trailing)
-                        .frame(maxWidth: .infinity, alignment: .leading)
+                            .fontWeight(.bold)
+                            .padding(.trailing)
+                            .frame(maxWidth: .infinity, alignment: .leading)
                 }.padding(.vertical)
             }
             Spacer()
         }
-        .navigationTitle(brew.name ?? "Missing name")
-        .id(refreshID)
+                .navigationTitle(brew.name ?? "Missing name")
+                .id(refreshID)
     }
-    
+
     private func showAge(fromBottlingDate: Bool = false, fromSecondary: Bool = false) -> AnyView {
         var brewAge = getAge(of: brew, fromBottlingDate: fromBottlingDate, fromSecondary: fromSecondary)
         var label = "days"
         if brewAge >= 30 {
             label = "months"
-            brewAge = brewAge/30
+            brewAge = brewAge / 30
         }
         return AnyView(Text("\(String(format: "%.1f", brewAge)) \(label)"))
     }
-    
+
     private func showBottlingInfo() -> AnyView {
         if let bottle = brew.bottles {
             return AnyView(HStack {
                 Image("bottle").padding()
                 VStack {
                     Text("Bottled").bold().font(.title3)
-                        .frame(maxWidth: .infinity, alignment: .leading)
+                            .frame(maxWidth: .infinity, alignment: .leading)
                     if UserDefaults.standard.bool(forKey: StoreManager.productKey) {
                         Text("Bottle Count: \(bottle.count)")
-                            .font(.callout)
-                            .frame(maxWidth: .infinity, alignment: .leading)
+                                .font(.callout)
+                                .frame(maxWidth: .infinity, alignment: .leading)
                     }
                     Text("Final gravity: \(String(format: "%.3f", bottle.finalGravity))")
-                        .font(.callout)
-                        .frame(maxWidth: .infinity, alignment: .leading)
-                    Text("Final ABV: \(String(format: "%.2f", (brew.originalGravity-bottle.finalGravity)*131.25))%")
-                        .font(.callout)
-                        .frame(maxWidth: .infinity, alignment: .leading)
+                            .font(.callout)
+                            .frame(maxWidth: .infinity, alignment: .leading)
+                    Text("Final ABV: \(String(format: "%.2f", (brew.originalGravity - bottle.finalGravity) * 131.25))%")
+                            .font(.callout)
+                            .frame(maxWidth: .infinity, alignment: .leading)
                     Text("End Date: \(bottle.date ?? Date(), formatter: brewDateFormatter)")
-                        .font(.callout)
-                        .frame(maxWidth: .infinity, alignment: .leading)
+                            .font(.callout)
+                            .frame(maxWidth: .infinity, alignment: .leading)
                     showAge(fromBottlingDate: true).font(.callout)
-                        .frame(maxWidth: .infinity, alignment: .leading)
+                            .frame(maxWidth: .infinity, alignment: .leading)
                 }
                 NavigationLink(
-                    destination: UpdateBottleRecord(bottle: bottle).onDisappear(perform: refresh),
-                    isActive: $showEditBottlesView) { Button(action: {self.showEditBottlesView = true}) {
-                    Image(systemName: "square.and.pencil").padding()
-                }}
+                        destination: UpdateBottleRecord(bottle: bottle).onDisappear(perform: refresh),
+                        isActive: $showEditBottlesView) {
+                    Button(action: { self.showEditBottlesView = true }) {
+                        Image(systemName: "square.and.pencil").padding()
+                    }
+                }
             })
         }
         return AnyView(NavigationLink(destination: NewBottleRecordForm(brew: brew).onDisappear(perform: refresh)) {
             HStack {
                 Image(systemName: "plus").padding(.leading)
                 Text("Bottling")
-                    .fontWeight(.bold)
-                    .padding(.trailing)
-                    .frame(maxWidth: .infinity, alignment: .leading)
+                        .fontWeight(.bold)
+                        .padding(.trailing)
+                        .frame(maxWidth: .infinity, alignment: .leading)
             }
         })
     }
-    
+
     private func showSecondaryInfo() -> AnyView {
         if let secondary = brew.secondary {
             return AnyView(HStack {
                 Image("carboy").padding()
                 VStack {
                     Text("Secondary Fermentation").font(.title3)
-                        .frame(maxWidth: .infinity, alignment: .leading)
+                            .frame(maxWidth: .infinity, alignment: .leading)
                     Text("Current gravity: \(String(format: "%.3f", secondary.gravity))")
-                        .font(.callout)
-                        .frame(maxWidth: .infinity, alignment: .leading)
-                    Text("Current ABV: \(String(format: "%.2f", (brew.originalGravity-secondary.gravity)*131.25))%")
-                        .font(.callout)
-                        .frame(maxWidth: .infinity, alignment: .leading)
+                            .font(.callout)
+                            .frame(maxWidth: .infinity, alignment: .leading)
+                    Text("Current ABV: \(String(format: "%.2f", (brew.originalGravity - secondary.gravity) * 131.25))%")
+                            .font(.callout)
+                            .frame(maxWidth: .infinity, alignment: .leading)
                     Text("Start date: \(secondary.date ?? Date(), formatter: brewDateFormatter)")
-                        .font(.callout)
-                        .frame(maxWidth: .infinity, alignment: .leading)
+                            .font(.callout)
+                            .frame(maxWidth: .infinity, alignment: .leading)
                     showAge(fromSecondary: true).font(.callout)
-                        .frame(maxWidth: .infinity, alignment: .leading)
+                            .frame(maxWidth: .infinity, alignment: .leading)
                 }
             })
         } else if let _ = brew.bottles {
@@ -139,13 +143,13 @@ struct BrewDetail: View {
             HStack {
                 Image(systemName: "plus").padding(.leading)
                 Text("Secondary")
-                    .fontWeight(.bold)
-                    .padding(.trailing)
-                    .frame(maxWidth: .infinity, alignment: .leading)
+                        .fontWeight(.bold)
+                        .padding(.trailing)
+                        .frame(maxWidth: .infinity, alignment: .leading)
             }
         })
     }
-    
+
     private func refresh() {
         refreshID = UUID()
     }

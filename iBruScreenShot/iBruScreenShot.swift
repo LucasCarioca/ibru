@@ -9,6 +9,7 @@ import XCTest
 
 class iBruScreenShot: XCTestCase {
     let app: XCUIApplication = XCUIApplication()
+
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.
         setupSnapshot(app)
@@ -23,8 +24,7 @@ class iBruScreenShot: XCTestCase {
     override func tearDownWithError() throws {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
-    
-    
+
 
     func testTakeScreenShots() throws {
         let tablesQuery = app.tables
@@ -38,11 +38,11 @@ class iBruScreenShot: XCTestCase {
             snapshot("01dashboard")
             app.navigationBars["Dashboard"].buttons["Menu"].tap()
         }
-        
-        
+
+
         app.tables/*@START_MENU_TOKEN@*/.buttons["Collection"]/*[[".cells[\"Collection\"].buttons[\"Collection\"]",".buttons[\"Collection\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
         snapshot("02collection")
-        
+
         app.navigationBars["Collection"].buttons["Menu"].tap()
 
 
@@ -55,7 +55,7 @@ class iBruScreenShot: XCTestCase {
         snapshot("04newbrew")
         app.navigationBars["New brew"].buttons["Brews"].tap()
         app.navigationBars["Brews"].buttons["Menu"].tap()
-        
+
         tablesQuery.buttons["Calculators"].tap()
         snapshot("05calculators")
         tablesQuery/*@START_MENU_TOKEN@*/.buttons["Alcohol by volume"]/*[[".cells[\"Alcohol by volume\"].buttons[\"Alcohol by volume\"]",".buttons[\"Alcohol by volume\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
@@ -65,6 +65,6 @@ class iBruScreenShot: XCTestCase {
         snapshot("07gravityest")
         app.navigationBars["Gravity Estimator"].buttons["Calculators"].tap()
         app.navigationBars["Calculators"].buttons["Menu"].tap()
-                                
+
     }
 }

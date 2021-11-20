@@ -22,7 +22,7 @@ struct DevTools: View {
             }
         }.navigationTitle("Upgrade to Pro")
     }
-    
+
 }
 
 struct DevTools_Previews: PreviewProvider {

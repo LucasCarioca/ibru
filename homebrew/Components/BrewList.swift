@@ -11,12 +11,12 @@ struct BrewList: View {
     @Environment(\.managedObjectContext) private var viewContext
     var brews: FetchedResults<Brew>
     var onEmpty: AnyView
-    
-    public init<V>(brews: FetchedResults<Brew>, onEmpty: V) where V : View {
+
+    public init<V>(brews: FetchedResults<Brew>, onEmpty: V) where V: View {
         self.brews = brews
         self.onEmpty = AnyView(onEmpty)
     }
-    
+
     var body: some View {
         if brews.count <= 0 {
             onEmpty
@@ -31,7 +31,7 @@ struct BrewList: View {
                 })
                 Spacer().padding(.vertical, 50)
             }.listStyle(PlainListStyle())
-            .modifier(NewBrewButtonModifier())
+                    .modifier(NewBrewButtonModifier())
         }
     }
 }
