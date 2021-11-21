@@ -121,7 +121,7 @@ struct BrewDetail: View {
             return AnyView(HStack {
                 Image("carboy").padding().frame(width: 50)
                 VStack {
-                    Text("Secondary Fermentation").font(.title3)
+                    Text("Secondary Fermentation").bold().font(.title3)
                             .frame(maxWidth: .infinity, alignment: .leading)
                     Text("Current gravity: \(String(format: "%.3f", secondary.gravity))")
                             .font(.callout)
