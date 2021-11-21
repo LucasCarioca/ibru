@@ -19,7 +19,7 @@ struct BrewDetail: View {
                     .padding()
                     .frame(maxWidth: .infinity, alignment: .leading)
             HStack {
-                Image("carboy").padding()
+                Image("carboy").padding().frame(width: 50)
                 VStack {
                     Text("Primary Fermentation").bold().font(.title3)
                             .frame(maxWidth: .infinity, alignment: .leading)
@@ -75,7 +75,7 @@ struct BrewDetail: View {
     private func showBottlingInfo() -> AnyView {
         if let bottle = brew.bottles {
             return AnyView(HStack {
-                Image("bottle").padding()
+                Image("bottle").padding().frame(width: 50)
                 VStack {
                     Text("Bottled").bold().font(.title3)
                             .frame(maxWidth: .infinity, alignment: .leading)
@@ -119,7 +119,7 @@ struct BrewDetail: View {
     private func showSecondaryInfo() -> AnyView {
         if let secondary = brew.secondary {
             return AnyView(HStack {
-                Image("carboy").padding()
+                Image("carboy").padding().frame(width: 50)
                 VStack {
                     Text("Secondary Fermentation").font(.title3)
                             .frame(maxWidth: .infinity, alignment: .leading)
