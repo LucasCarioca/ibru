@@ -22,6 +22,7 @@ struct homebrewApp: App {
             persistenceController = PersistenceController.preview
         } else {
             persistenceController = PersistenceController.shared
+            persistenceController.container.viewContext.automaticallyMergesChangesFromParent = true
         }
     }
 

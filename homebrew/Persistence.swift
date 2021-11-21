@@ -66,7 +66,6 @@ struct PersistenceController {
 class BrewBuilder {
     var brew: Brew
 
-
     init(context: NSManagedObjectContext) {
         brew = Brew(context: context)
     }
