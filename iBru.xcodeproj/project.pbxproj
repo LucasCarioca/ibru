@@ -10,7 +10,6 @@
 		DF43B6A425C0694F00093ED2 /* homebrewApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF43B6A325C0694F00093ED2 /* homebrewApp.swift */; };
 		DF43B6A825C0695100093ED2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DF43B6A725C0695100093ED2 /* Assets.xcassets */; };
 		DF43B6AB25C0695100093ED2 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DF43B6AA25C0695100093ED2 /* Preview Assets.xcassets */; };
-		DF43B6AD25C0695100093ED2 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF43B6AC25C0695100093ED2 /* Persistence.swift */; };
 		DF43B6B025C0695100093ED2 /* homebrew.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DF43B6AE25C0695100093ED2 /* homebrew.xcdatamodeld */; };
 		DF43B6BB25C0695200093ED2 /* homebrewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF43B6BA25C0695200093ED2 /* homebrewTests.swift */; };
 		DF43B6D925C076D000093ED2 /* Brews.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF43B6D825C076D000093ED2 /* Brews.swift */; };
@@ -22,6 +21,7 @@
 		DF43B70225C0D9EA00093ED2 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF43B70125C0D9EA00093ED2 /* CloudKit.framework */; };
 		DF60C3D925D2D4FC004921F1 /* UpdateReadingForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF60C3D825D2D4FC004921F1 /* UpdateReadingForm.swift */; };
 		DF60F90F26E7B2FB00C93B35 /* SGCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF60F90E26E7B2FB00C93B35 /* SGCalculator.swift */; };
+		DF61D47E274C2E15004A8D09 /* Datasource.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF61D47D274C2E15004A8D09 /* Datasource.swift */; };
 		DF78B67E2747F24300AE91D9 /* payment-error.json in Resources */ = {isa = PBXBuildFile; fileRef = DF78B6782747F24300AE91D9 /* payment-error.json */; };
 		DF78B67F2747F24300AE91D9 /* payment-confirmation.json in Resources */ = {isa = PBXBuildFile; fileRef = DF78B6792747F24300AE91D9 /* payment-confirmation.json */; };
 		DF78B6802747F24300AE91D9 /* preparing.json in Resources */ = {isa = PBXBuildFile; fileRef = DF78B67A2747F24300AE91D9 /* preparing.json */; };
@@ -59,6 +59,7 @@
 		DFD2080B26F7A5590065FB98 /* LottieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFD2080A26F7A5590065FB98 /* LottieView.swift */; };
 		DFDE432F25C30DD50085D2BB /* UpdateBrewForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFDE432E25C30DD50085D2BB /* UpdateBrewForm.swift */; };
 		DFDE433425C33CA10085D2BB /* ABVCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFDE433325C33CA10085D2BB /* ABVCalculator.swift */; };
+		F8C4DF486A097609074ED5DA /* BrewBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8C4DE486E0164CDBB5A2355 /* BrewBuilder.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -90,7 +91,6 @@
 		DF43B6A325C0694F00093ED2 /* homebrewApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = homebrewApp.swift; sourceTree = "<group>"; };
 		DF43B6A725C0695100093ED2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DF43B6AA25C0695100093ED2 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		DF43B6AC25C0695100093ED2 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		DF43B6AF25C0695100093ED2 /* homebrew.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = homebrew.xcdatamodel; sourceTree = "<group>"; };
 		DF43B6B125C0695100093ED2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DF43B6B625C0695200093ED2 /* iBruTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iBruTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -106,6 +106,7 @@
 		DF43B70125C0D9EA00093ED2 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
 		DF60C3D825D2D4FC004921F1 /* UpdateReadingForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateReadingForm.swift; sourceTree = "<group>"; };
 		DF60F90E26E7B2FB00C93B35 /* SGCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SGCalculator.swift; sourceTree = "<group>"; };
+		DF61D47D274C2E15004A8D09 /* Datasource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Datasource.swift; sourceTree = "<group>"; };
 		DF78B6782747F24300AE91D9 /* payment-error.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "payment-error.json"; sourceTree = "<group>"; };
 		DF78B6792747F24300AE91D9 /* payment-confirmation.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "payment-confirmation.json"; sourceTree = "<group>"; };
 		DF78B67A2747F24300AE91D9 /* preparing.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = preparing.json; sourceTree = "<group>"; };
@@ -145,6 +146,7 @@
 		DFD2080A26F7A5590065FB98 /* LottieView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottieView.swift; sourceTree = "<group>"; };
 		DFDE432E25C30DD50085D2BB /* UpdateBrewForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateBrewForm.swift; sourceTree = "<group>"; };
 		DFDE433325C33CA10085D2BB /* ABVCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ABVCalculator.swift; sourceTree = "<group>"; };
+		F8C4DE486E0164CDBB5A2355 /* BrewBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BrewBuilder.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -217,7 +219,7 @@
 				DF43B6D625C0760700093ED2 /* Views */,
 				DF43B6A325C0694F00093ED2 /* homebrewApp.swift */,
 				DF43B6A725C0695100093ED2 /* Assets.xcassets */,
-				DF43B6AC25C0695100093ED2 /* Persistence.swift */,
+				DF61D47D274C2E15004A8D09 /* Datasource.swift */,
 				DF43B6B125C0695100093ED2 /* Info.plist */,
 				DF43B6AE25C0695100093ED2 /* homebrew.xcdatamodeld */,
 				DF43B6A925C0695100093ED2 /* Preview Content */,
@@ -305,6 +307,7 @@
 				DFB0BD5426EBEE4B008FDD3A /* BrewFunctions.swift */,
 				DFB0BD5626EBF1A1008FDD3A /* BrewStage.swift */,
 				DFB0BD5826EBF1E2008FDD3A /* BrewDateFormatter.swift */,
+				F8C4DE486E0164CDBB5A2355 /* BrewBuilder.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -490,7 +493,7 @@
 			mainGroup = DF43B69725C0694F00093ED2;
 			packageReferences = (
 				DFB0BD4826EB0906008FDD3A /* XCRemoteSwiftPackageReference "QuickComponents" */,
-				DFD2080726F7A53A0065FB98 /* XCRemoteSwiftPackageReference "lottie-ios" */,
+				DFD2080726F7A53A0065FB98 /* XCRemoteSwiftPackageReference "lottie-ios.git" */,
 			);
 			productRefGroup = DF43B6A125C0694F00093ED2 /* Products */;
 			projectDirPath = "";
@@ -552,12 +555,12 @@
 				DF43B6DE25C0815300093ED2 /* NewBrewForm.swift in Sources */,
 				DF60F90F26E7B2FB00C93B35 /* SGCalculator.swift in Sources */,
 				DFB0BD5926EBF1E2008FDD3A /* BrewDateFormatter.swift in Sources */,
-				DF43B6AD25C0695100093ED2 /* Persistence.swift in Sources */,
 				DF43B6D925C076D000093ED2 /* Brews.swift in Sources */,
 				DFB0BD3E26EAA4CA008FDD3A /* NewSecondaryRecord.swift in Sources */,
 				DFB0BD5726EBF1A1008FDD3A /* BrewStage.swift in Sources */,
 				DFB0BD5026EB112C008FDD3A /* BrewList.swift in Sources */,
 				DF43B6E325C0901C00093ED2 /* BrewDetail.swift in Sources */,
+				DF61D47E274C2E15004A8D09 /* Datasource.swift in Sources */,
 				DF43B6F225C0D38F00093ED2 /* NewBottleRecordForm.swift in Sources */,
 				DF60C3D925D2D4FC004921F1 /* UpdateReadingForm.swift in Sources */,
 				DF43B6ED25C0AE5000093ED2 /* NewReadingForm.swift in Sources */,
@@ -585,6 +588,7 @@
 				DFD2080B26F7A5590065FB98 /* LottieView.swift in Sources */,
 				DFB0BD4C26EB09FA008FDD3A /* BrewTile.swift in Sources */,
 				DFB0BD6226EC0BC0008FDD3A /* CollectionList.swift in Sources */,
+				F8C4DF486A097609074ED5DA /* BrewBuilder.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -991,7 +995,7 @@
 				minimumVersion = 0.7.3;
 			};
 		};
-		DFD2080726F7A53A0065FB98 /* XCRemoteSwiftPackageReference "lottie-ios" */ = {
+		DFD2080726F7A53A0065FB98 /* XCRemoteSwiftPackageReference "lottie-ios.git" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/airbnb/lottie-ios.git";
 			requirement = {
@@ -1009,7 +1013,7 @@
 		};
 		DFD2080826F7A53A0065FB98 /* Lottie */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = DFD2080726F7A53A0065FB98 /* XCRemoteSwiftPackageReference "lottie-ios" */;
+			package = DFD2080726F7A53A0065FB98 /* XCRemoteSwiftPackageReference "lottie-ios.git" */;
 			productName = Lottie;
 		};
 /* End XCSwiftPackageProductDependency section */
