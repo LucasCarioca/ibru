@@ -12,22 +12,18 @@ struct BrewTile: View {
     var brew: Brew
     @State var refreshId = UUID()
     var body: some View {
-        NavigationLink(destination: BrewDetail(brew: brew).onDisappear() {
-            refreshId = UUID()
-        }) {
-            VStack {
-                HStack {
-                    Text(brew.name ?? "missing name")
-                            .font(.title3)
-                            .fontWeight(.heavy)
-                    Spacer()
-                }
-                getBottleCountView()
-                InfoLabel(label: "Elapsed Time", value: getTimeText())
-                getCurrentABVView()
-                getProgressBarView()
+        VStack {
+            HStack {
+                Text(brew.name ?? "missing name")
+                        .font(.title3)
+                        .fontWeight(.heavy)
+                Spacer()
             }
-        }.id(refreshId)
+            getBottleCountView()
+            InfoLabel(label: "Elapsed Time", value: getTimeText())
+            getCurrentABVView()
+            getProgressBarView()
+        }
     }
 
     func getTimeText() -> String {
