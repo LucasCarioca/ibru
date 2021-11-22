@@ -10,7 +10,7 @@ import StoreKit
 
 @main
 struct homebrewApp: App {
-    let persistenceController: PersistenceController
+    let dataSource: Datasource
     @StateObject var storeManager = StoreManager()
     @State var selected: Int?
 
@@ -19,10 +19,9 @@ struct homebrewApp: App {
             UserDefaults.standard.register(defaults: [
                 "0001": true
             ])
-            persistenceController = PersistenceController.preview
+            dataSource = Datasource(inMemory: true)
         } else {
-            persistenceController = PersistenceController.shared
-            persistenceController.container.viewContext.automaticallyMergesChangesFromParent = true
+            dataSource = Datasource(inMemory: false)
         }
     }
 
@@ -56,7 +55,7 @@ struct homebrewApp: App {
                     Brews()
                 }
             }
-                    .environment(\.managedObjectContext, persistenceController.container.viewContext)
+                    .environment(\.managedObjectContext, dataSource.getContainer().viewContext)
                     .environmentObject(storeManager)
                     .onAppear(perform: {
                         SKPaymentQueue.default().add(storeManager)
