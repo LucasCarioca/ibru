@@ -42,7 +42,7 @@ class Datasource {
             }
         })
         let viewContext = container.viewContext
-        let brew1 = BrewBuilder(context: viewContext)
+        let _ = BrewBuilder(context: viewContext)
                 .withDetails(name: "Traditional Mead", date: "01/17/2020", og: 1.11)
                 .withSecondary(date: "03/01/2020", gravity: 1.00)
                 .withBottle(date: "04/18/2020", fg: 1.00, count: 20)
