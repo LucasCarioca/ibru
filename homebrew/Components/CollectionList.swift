@@ -55,7 +55,6 @@ struct CollectionList: View {
             return AnyView(
                     VStack {
                         InfoLabel(label: "Collection Size", value: "\(total)")
-                        Divider()
                     }.padding(.horizontal)
             )
         }
