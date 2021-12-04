@@ -21,8 +21,6 @@ struct Settings: View {
                     }
                 }
             }
-
-
             #if DEBUG
             Spacer()
             Section(header: Text("Hidden Settings")) {
