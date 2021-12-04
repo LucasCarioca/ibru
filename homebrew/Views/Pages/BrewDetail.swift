@@ -11,63 +11,99 @@ struct BrewDetail: View {
     var brew: Brew
     @State private var refreshID = UUID()
     @State private var showEditView = false
+    @State private var editNotes = false
     @State private var showEditBottlesView = false
+    @State private var notes = ""
+
     var body: some View {
-        VStack {
-            Text(brew.comment ?? "")
-                    .font(.headline)
-                    .padding()
-                    .frame(maxWidth: .infinity, alignment: .leading)
-            HStack {
-                Image("carboy").padding().frame(width: 50)
-                VStack {
-                    Text("Primary Fermentation").bold().font(.title3)
-                            .frame(maxWidth: .infinity, alignment: .leading)
-                    Text("OG: \(String(format: "%.3f", brew.originalGravity))")
-                            .font(.callout)
-                            .frame(maxWidth: .infinity, alignment: .leading)
-                    Text("Potential ABV: \(String(format: "%.2f", (brew.originalGravity - 1) * 131.25))%")
-                            .font(.callout)
-                            .frame(maxWidth: .infinity, alignment: .leading)
-                    Text("Start date: \(brew.startDate ?? Date(), formatter: brewDateFormatter)")
-                            .font(.callout)
-                            .frame(maxWidth: .infinity, alignment: .leading)
-                    showAge().font(.callout)
-                            .frame(maxWidth: .infinity, alignment: .leading)
-                }
-                NavigationLink(
-                        destination: UpdateBrewForm(brew: brew).onDisappear(perform: refresh),
-                        isActive: $showEditView) {
-                    Button(action: { self.showEditView = true }) {
-                        Image(systemName: "square.and.pencil").padding()
+        ScrollView {
+            VStack {
+                Text(brew.comment ?? "")
+                        .font(.headline)
+                        .padding()
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                HStack {
+                    Image("carboy").padding().frame(width: 50)
+                    VStack {
+                        Text("Primary Fermentation").bold().font(.title3)
+                                .frame(maxWidth: .infinity, alignment: .leading)
+                        Text("OG: \(String(format: "%.3f", brew.originalGravity))")
+                                .font(.callout)
+                                .frame(maxWidth: .infinity, alignment: .leading)
+                        Text("Potential ABV: \(String(format: "%.2f", (brew.originalGravity - 1) * 131.25))%")
+                                .font(.callout)
+                                .frame(maxWidth: .infinity, alignment: .leading)
+                        Text("Start date: \(brew.startDate ?? Date(), formatter: brewDateFormatter)")
+                                .font(.callout)
+                                .frame(maxWidth: .infinity, alignment: .leading)
+                        showAge().font(.callout)
+                                .frame(maxWidth: .infinity, alignment: .leading)
+                    }
+                    NavigationLink(
+                            destination: UpdateBrewForm(brew: brew).onDisappear(perform: refresh),
+                            isActive: $showEditView) {
+                        Button(action: { self.showEditView = true }) {
+                            Image(systemName: "square.and.pencil").padding()
+                        }
                     }
                 }
+                if UserDefaults.standard.bool(forKey: StoreManager.productKey) {
+                    showSecondaryInfo().padding(.vertical)
+                }
+                showBottlingInfo().padding(.vertical)
+                NavigationLink(destination: Readings(brew: brew).onDisappear(perform: refresh)) {
+                    HStack {
+                        Image(systemName: "square.and.pencil").padding(.leading)
+                        Text("Readings")
+                                .fontWeight(.bold)
+                                .frame(alignment: .leading)
+                        Text("\(brew.readings?.count ?? 0)")
+                                .fontWeight(.bold)
+                                .foregroundColor(Color(UIColor.systemBackground))
+                                .padding(2)
+                                .padding(.horizontal, 5)
+                                .frame(alignment: .leading)
+                                .background(Color.accentColor)
+                                .cornerRadius(100)
+                        Spacer()
+                    }.padding(.vertical)
+                }
+                if UserDefaults.standard.bool(forKey: StoreManager.productKey) {
+                    Button(action: { self.editNotes = true }) {
+                        HStack {
+                            Image(systemName: "square.and.pencil")
+                                    .padding(.leading)
+                            Text("Notes")
+                                    .fontWeight(.bold)
+                                    .frame(alignment: .leading)
+                            Spacer()
+                        }.padding(.vertical)
+                    }
+
+                    Text(brew.notes ?? "")
+                            .font(.headline)
+                            .padding()
+                            .frame(maxWidth: .infinity, alignment: .leading)
+                }
+                Spacer()
             }
-            if UserDefaults.standard.bool(forKey: StoreManager.productKey) {
-                showSecondaryInfo().padding(.vertical)
-            }
-            showBottlingInfo().padding(.vertical)
-            NavigationLink(destination: Readings(brew: brew).onDisappear(perform: refresh)) {
-                HStack {
-                    Image(systemName: "square.and.pencil").padding(.leading)
-                    Text("Readings")
-                            .fontWeight(.bold)
-                            .frame(alignment: .leading)
-                    Text("\(brew.readings?.count ?? 0)")
-                            .fontWeight(.bold)
-                            .foregroundColor(Color(UIColor.systemBackground))
-                            .padding(2)
-                            .padding(.horizontal, 5)
-                            .frame(alignment: .leading)
-                            .background(Color.accentColor)
-                            .cornerRadius(100)
-                    Spacer()
-                }.padding(.vertical)
-            }
-            Spacer()
+                    .sheet(isPresented: $editNotes) {
+                        BrewNotesEditor(notes: brew.notes ?? "", onSave: updateNotes)
+                    }
+                    .navigationTitle(brew.name ?? "Missing name")
+                    .id(refreshID)
         }
-                .navigationTitle(brew.name ?? "Missing name")
-                .id(refreshID)
+    }
+
+    private func updateNotes(notes: String) {
+        brew.notes = notes
+        editNotes = false
+        do {
+            try brew.managedObjectContext?.save()
+        } catch {
+            let nsError = error as NSError
+            fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
+        }
     }
 
     private func showAge(fromBottlingDate: Bool = false, fromSecondary: Bool = false) -> AnyView {

@@ -59,6 +59,7 @@
 		DFD2080B26F7A5590065FB98 /* LottieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFD2080A26F7A5590065FB98 /* LottieView.swift */; };
 		DFDE432F25C30DD50085D2BB /* UpdateBrewForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFDE432E25C30DD50085D2BB /* UpdateBrewForm.swift */; };
 		DFDE433425C33CA10085D2BB /* ABVCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFDE433325C33CA10085D2BB /* ABVCalculator.swift */; };
+		F8C4DE81B9C8C950BD9F5004 /* BrewNotesEditor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8C4DE9333A4637831ADC633 /* BrewNotesEditor.swift */; };
 		F8C4DF486A097609074ED5DA /* BrewBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8C4DE486E0164CDBB5A2355 /* BrewBuilder.swift */; };
 /* End PBXBuildFile section */
 
@@ -147,6 +148,7 @@
 		DFDE432E25C30DD50085D2BB /* UpdateBrewForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateBrewForm.swift; sourceTree = "<group>"; };
 		DFDE433325C33CA10085D2BB /* ABVCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ABVCalculator.swift; sourceTree = "<group>"; };
 		F8C4DE486E0164CDBB5A2355 /* BrewBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BrewBuilder.swift; sourceTree = "<group>"; };
+		F8C4DE9333A4637831ADC633 /* BrewNotesEditor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BrewNotesEditor.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -322,6 +324,7 @@
 				DFB0BD3D26EAA4CA008FDD3A /* NewSecondaryRecord.swift */,
 				DFDE432E25C30DD50085D2BB /* UpdateBrewForm.swift */,
 				DFB0BD6526ED1200008FDD3A /* UpdateBottleRecord.swift */,
+				F8C4DE9333A4637831ADC633 /* BrewNotesEditor.swift */,
 			);
 			path = Forms;
 			sourceTree = "<group>";
@@ -493,7 +496,7 @@
 			mainGroup = DF43B69725C0694F00093ED2;
 			packageReferences = (
 				DFB0BD4826EB0906008FDD3A /* XCRemoteSwiftPackageReference "QuickComponents" */,
-				DFD2080726F7A53A0065FB98 /* XCRemoteSwiftPackageReference "lottie-ios" */,
+				DFD2080726F7A53A0065FB98 /* XCRemoteSwiftPackageReference "lottie-ios.git" */,
 			);
 			productRefGroup = DF43B6A125C0694F00093ED2 /* Products */;
 			projectDirPath = "";
@@ -589,6 +592,7 @@
 				DFB0BD4C26EB09FA008FDD3A /* BrewTile.swift in Sources */,
 				DFB0BD6226EC0BC0008FDD3A /* CollectionList.swift in Sources */,
 				F8C4DF486A097609074ED5DA /* BrewBuilder.swift in Sources */,
+				F8C4DE81B9C8C950BD9F5004 /* BrewNotesEditor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -775,7 +779,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 2.0.2;
+				MARKETING_VERSION = 2.1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = lucasdesouza.homebrew;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTS_MACCATALYST = YES;
@@ -804,7 +808,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 2.0.2;
+				MARKETING_VERSION = 2.1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = lucasdesouza.homebrew;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTS_MACCATALYST = YES;
@@ -997,7 +1001,7 @@
 				minimumVersion = 0.7.3;
 			};
 		};
-		DFD2080726F7A53A0065FB98 /* XCRemoteSwiftPackageReference "lottie-ios" */ = {
+		DFD2080726F7A53A0065FB98 /* XCRemoteSwiftPackageReference "lottie-ios.git" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/airbnb/lottie-ios.git";
 			requirement = {
@@ -1015,7 +1019,7 @@
 		};
 		DFD2080826F7A53A0065FB98 /* Lottie */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = DFD2080726F7A53A0065FB98 /* XCRemoteSwiftPackageReference "lottie-ios" */;
+			package = DFD2080726F7A53A0065FB98 /* XCRemoteSwiftPackageReference "lottie-ios.git" */;
 			productName = Lottie;
 		};
 /* End XCSwiftPackageProductDependency section */
