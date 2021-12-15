@@ -13,18 +13,12 @@ struct SugarType: Hashable {
     var points: Double
 }
 
-let sugars = [
-    SugarType(name: "Honey", points: 0.035),
-    SugarType(name: "Sugar", points: 0.042)
-]
-
 struct SGCalculator: View {
     var sugars = [
         SugarType(name: "Dry Malt Extract", points: 0.044),
         SugarType(name: "Honey", points: 0.035),
         SugarType(name: "Liquid Malt Extract", points: 0.036),
         SugarType(name: "Molasses", points: 0.036),
-        SugarType(name: "Honey", points: 0.046),
         SugarType(name: "Wheat Malt", points: 0.029),
         SugarType(name: "Wheat Torrefied", points: 0.027),
         SugarType(name: "2-Row Pale Malt", points: 0.027),
