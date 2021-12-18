@@ -1,0 +1,25 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "Lottie",
+        "repositoryURL": "https://github.com/airbnb/lottie-ios.git",
+        "state": {
+          "branch": null,
+          "revision": "79a0b70547f7c40ea54c67487f935fa2f2eaaadc",
+          "version": "3.2.3"
+        }
+      },
+      {
+        "package": "QuickComponents",
+        "repositoryURL": "https://github.com/LucasCarioca/QuickComponents",
+        "state": {
+          "branch": null,
+          "revision": "e6e4e4544de96b1e89e71d90ae4db12f3faa0b90",
+          "version": "0.7.3"
+        }
+      }
+    ]
+  },
+  "version": 1
+}
