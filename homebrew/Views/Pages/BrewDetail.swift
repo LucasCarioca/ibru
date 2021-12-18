@@ -16,34 +16,27 @@ struct BrewDetail: View {
     @State private var notes = ""
 
     var body: some View {
-        ScrollView {
-            VStack {
-                Text(brew.comment ?? "")
-                        .font(.headline)
-                        .padding()
-                        .frame(maxWidth: .infinity, alignment: .leading)
+        List {
+            Section("Stages") {
                 HStack {
                     Image("carboy").padding().frame(width: 50)
-                    VStack {
-                        Text("Primary Fermentation").bold().font(.title3)
-                                .frame(maxWidth: .infinity, alignment: .leading)
-                        Text("OG: \(String(format: "%.3f", brew.originalGravity))")
-                                .font(.callout)
-                                .frame(maxWidth: .infinity, alignment: .leading)
-                        Text("Potential ABV: \(String(format: "%.2f", (brew.originalGravity - 1) * 131.25))%")
-                                .font(.callout)
-                                .frame(maxWidth: .infinity, alignment: .leading)
-                        Text("Start date: \(brew.startDate ?? Date(), formatter: brewDateFormatter)")
-                                .font(.callout)
-                                .frame(maxWidth: .infinity, alignment: .leading)
-                        showAge().font(.callout)
-                                .frame(maxWidth: .infinity, alignment: .leading)
-                    }
                     NavigationLink(
                             destination: UpdateBrewForm(brew: brew).onDisappear(perform: refresh),
                             isActive: $showEditView) {
-                        Button(action: { self.showEditView = true }) {
-                            Image(systemName: "square.and.pencil").padding()
+                        VStack {
+                            Text("Primary Fermentation").bold().font(.title3)
+                                    .frame(maxWidth: .infinity, alignment: .leading)
+                            Text("OG: \(String(format: "%.3f", brew.originalGravity))")
+                                    .font(.callout)
+                                    .frame(maxWidth: .infinity, alignment: .leading)
+                            Text("Potential ABV: \(String(format: "%.2f", (brew.originalGravity - 1) * 131.25))%")
+                                    .font(.callout)
+                                    .frame(maxWidth: .infinity, alignment: .leading)
+                            Text("Start date: \(brew.startDate ?? Date(), formatter: brewDateFormatter)")
+                                    .font(.callout)
+                                    .frame(maxWidth: .infinity, alignment: .leading)
+                            showAge().font(.callout)
+                                    .frame(maxWidth: .infinity, alignment: .leading)
                         }
                     }
                 }
@@ -51,48 +44,54 @@ struct BrewDetail: View {
                     showSecondaryInfo().padding(.vertical)
                 }
                 showBottlingInfo().padding(.vertical)
+            }
+            Section("Other") {
+                brew.comment != nil ? Text(brew.comment ?? "")
+                        .font(.headline)
+                        .padding()
+                        .frame(maxWidth: .infinity, alignment: .leading) : nil
                 NavigationLink(destination: Readings(brew: brew).onDisappear(perform: refresh)) {
                     HStack {
                         Image(systemName: "square.and.pencil").padding(.leading)
                         Text("Readings")
                                 .fontWeight(.bold)
                                 .frame(alignment: .leading)
-                        Text("\(brew.readings?.count ?? 0)")
-                                .fontWeight(.bold)
-                                .foregroundColor(Color(UIColor.systemBackground))
-                                .padding(2)
-                                .padding(.horizontal, 5)
-                                .frame(alignment: .leading)
-                                .background(Color.accentColor)
-                                .cornerRadius(100)
                         Spacer()
-                    }.padding(.vertical)
+                    }.padding(.vertical).badge(brew.readings?.count ?? 0)
                 }
                 if UserDefaults.standard.bool(forKey: StoreManager.productKey) {
-                    Button(action: { self.editNotes = true }) {
-                        HStack {
+                    NavigationLink(destination: BrewNotesEditor(notes: brew.notes ?? "", onSave: updateNotes)) {
+                        brew.notes != nil ? AnyView(VStack {
+                            HStack {
+                                Image(systemName: "square.and.pencil")
+                                        .padding(.leading)
+                                Text("Notes")
+                                        .fontWeight(.bold)
+                                        .frame(alignment: .leading)
+                                Spacer()
+                            }.padding(.vertical)
+                            Text(brew.notes ?? "")
+                                .font(.headline)
+                                .padding()
+                                .frame(maxWidth: .infinity, alignment: .leading)
+                        }) : AnyView(HStack {
                             Image(systemName: "square.and.pencil")
                                     .padding(.leading)
                             Text("Notes")
                                     .fontWeight(.bold)
                                     .frame(alignment: .leading)
                             Spacer()
-                        }.padding(.vertical)
-                    }
-
-                    Text(brew.notes ?? "")
-                            .font(.headline)
-                            .padding()
-                            .frame(maxWidth: .infinity, alignment: .leading)
+                        }.padding(.vertical))
+                    }.buttonStyle(.plain)
                 }
-                Spacer()
             }
-                    .sheet(isPresented: $editNotes) {
-                        BrewNotesEditor(notes: brew.notes ?? "", onSave: updateNotes)
-                    }
-                    .navigationTitle(brew.name ?? "Missing name")
-                    .id(refreshID)
         }
+                .sheet(isPresented: $editNotes) {
+                    BrewNotesEditor(notes: brew.notes ?? "", onSave: updateNotes)
+                }
+                .navigationTitle(brew.name ?? "Missing name")
+                .id(refreshID)
+
     }
 
     private func updateNotes(notes: String) {
@@ -118,34 +117,34 @@ struct BrewDetail: View {
 
     private func showBottlingInfo() -> AnyView {
         if let bottle = brew.bottles {
-            return AnyView(HStack {
-                Image("bottle").padding().frame(width: 50)
-                VStack {
-                    Text("Bottled").bold().font(.title3)
-                            .frame(maxWidth: .infinity, alignment: .leading)
-                    if UserDefaults.standard.bool(forKey: StoreManager.productKey) {
-                        Text("Bottle Count: \(bottle.count)")
+            return AnyView(NavigationLink(
+                    destination: UpdateBottleRecord(bottle: bottle).onDisappear(perform: refresh),
+                    isActive: $showEditBottlesView) {
+                HStack {
+
+                    Image("bottle").padding().frame(width: 50)
+                    VStack {
+                        Text("Bottled").bold().font(.title3)
+                                .frame(maxWidth: .infinity, alignment: .leading)
+                        if UserDefaults.standard.bool(forKey: StoreManager.productKey) {
+                            Text("Bottle Count: \(bottle.count)")
+                                    .font(.callout)
+                                    .frame(maxWidth: .infinity, alignment: .leading)
+                        }
+                        Text("Final gravity: \(String(format: "%.3f", bottle.finalGravity))")
                                 .font(.callout)
                                 .frame(maxWidth: .infinity, alignment: .leading)
+                        Text("Final ABV: \(String(format: "%.2f", (brew.originalGravity - bottle.finalGravity) * 131.25))%")
+                                .font(.callout)
+                                .frame(maxWidth: .infinity, alignment: .leading)
+                        Text("End Date: \(bottle.date ?? Date(), formatter: brewDateFormatter)")
+                                .font(.callout)
+                                .frame(maxWidth: .infinity, alignment: .leading)
+                        showAge(fromBottlingDate: true).font(.callout)
+                                .frame(maxWidth: .infinity, alignment: .leading)
                     }
-                    Text("Final gravity: \(String(format: "%.3f", bottle.finalGravity))")
-                            .font(.callout)
-                            .frame(maxWidth: .infinity, alignment: .leading)
-                    Text("Final ABV: \(String(format: "%.2f", (brew.originalGravity - bottle.finalGravity) * 131.25))%")
-                            .font(.callout)
-                            .frame(maxWidth: .infinity, alignment: .leading)
-                    Text("End Date: \(bottle.date ?? Date(), formatter: brewDateFormatter)")
-                            .font(.callout)
-                            .frame(maxWidth: .infinity, alignment: .leading)
-                    showAge(fromBottlingDate: true).font(.callout)
-                            .frame(maxWidth: .infinity, alignment: .leading)
-                }
-                NavigationLink(
-                        destination: UpdateBottleRecord(bottle: bottle).onDisappear(perform: refresh),
-                        isActive: $showEditBottlesView) {
-                    Button(action: { self.showEditBottlesView = true }) {
-                        Image(systemName: "square.and.pencil").padding()
-                    }
+
+
                 }
             })
         }

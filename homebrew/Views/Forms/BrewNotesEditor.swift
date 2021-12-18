@@ -6,6 +6,7 @@ import Foundation
 import SwiftUI
 
 struct BrewNotesEditor: View {
+    @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     @State var notes: String
     var onSave: (String) -> Void
     var body: some View {
@@ -15,10 +16,11 @@ struct BrewNotesEditor: View {
             Button(action: save) {
                 Text("Save")
             }.padding()
-        }
+        }.navigationTitle("Notes")
     }
 
     func save() {
         onSave(notes)
+        presentationMode.wrappedValue.dismiss()
     }
 }
