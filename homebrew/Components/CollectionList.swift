@@ -23,9 +23,11 @@ struct CollectionList: View {
         if brews.count <= 0 {
             EmptyCollectionList()
         } else {
-            VStack {
-                getTotalBottleCount()
-                List {
+            List {
+                Section {
+                    getTotalBottleCount()
+                }
+                Section {
                     ForEach(brews) { brew in
                         NavigationLink(destination: BrewDetail(brew: brew)) {
                             CollectionTile(brew: brew) {
@@ -38,8 +40,6 @@ struct CollectionList: View {
                         }
                     })
                 }
-                        .listStyle(PlainListStyle())
-
             }.id(refreshID)
         }
     }
