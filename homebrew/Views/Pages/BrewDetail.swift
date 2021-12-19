@@ -71,9 +71,9 @@ struct BrewDetail: View {
                                 Spacer()
                             }.padding(.vertical)
                             Text(brew.notes ?? "")
-                                .font(.headline)
-                                .padding()
-                                .frame(maxWidth: .infinity, alignment: .leading)
+                                    .font(.headline)
+                                    .padding()
+                                    .frame(maxWidth: .infinity, alignment: .leading)
                         }) : AnyView(HStack {
                             Image(systemName: "square.and.pencil")
                                     .padding(.leading)
@@ -161,22 +161,24 @@ struct BrewDetail: View {
 
     private func showSecondaryInfo() -> AnyView {
         if let secondary = brew.secondary {
-            return AnyView(HStack {
-                Image("carboy").padding().frame(width: 50)
-                VStack {
-                    Text("Secondary Fermentation").bold().font(.title3)
-                            .frame(maxWidth: .infinity, alignment: .leading)
-                    Text("Current gravity: \(String(format: "%.3f", secondary.gravity))")
-                            .font(.callout)
-                            .frame(maxWidth: .infinity, alignment: .leading)
-                    Text("Current ABV: \(String(format: "%.2f", (brew.originalGravity - secondary.gravity) * 131.25))%")
-                            .font(.callout)
-                            .frame(maxWidth: .infinity, alignment: .leading)
-                    Text("Start date: \(secondary.date ?? Date(), formatter: brewDateFormatter)")
-                            .font(.callout)
-                            .frame(maxWidth: .infinity, alignment: .leading)
-                    showAge(fromSecondary: true).font(.callout)
-                            .frame(maxWidth: .infinity, alignment: .leading)
+            return AnyView(NavigationLink(destination: UpdateSecondaryRecord(secondary: secondary).onDisappear(perform: refresh)) {
+                HStack {
+                    Image("carboy").padding().frame(width: 50)
+                    VStack {
+                        Text("Secondary Fermentation").bold().font(.title3)
+                                .frame(maxWidth: .infinity, alignment: .leading)
+                        Text("Current gravity: \(String(format: "%.3f", secondary.gravity))")
+                                .font(.callout)
+                                .frame(maxWidth: .infinity, alignment: .leading)
+                        Text("Current ABV: \(String(format: "%.2f", (brew.originalGravity - secondary.gravity) * 131.25))%")
+                                .font(.callout)
+                                .frame(maxWidth: .infinity, alignment: .leading)
+                        Text("Start date: \(secondary.date ?? Date(), formatter: brewDateFormatter)")
+                                .font(.callout)
+                                .frame(maxWidth: .infinity, alignment: .leading)
+                        showAge(fromSecondary: true).font(.callout)
+                                .frame(maxWidth: .infinity, alignment: .leading)
+                    }
                 }
             })
         } else if let _ = brew.bottles {
