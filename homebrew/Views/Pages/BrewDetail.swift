@@ -59,12 +59,12 @@ struct BrewDetail: View {
             }
 
             Section {
-                NavigationLink(destination: BrewTextEditor(title: "Comments", text: brew.comment ?? "", onSave: updateComment)) {
+                NavigationLink(destination: BrewTextEditor(title: "Description", text: brew.comment ?? "", onSave: updateComment)) {
                     brew.comment != nil ? AnyView(VStack {
                         HStack {
                             Image(systemName: "square.and.pencil")
                                     .padding(.leading)
-                            Text("Comments")
+                            Text("Description")
                                     .fontWeight(.bold)
                                     .frame(alignment: .leading)
                             Spacer()
@@ -76,7 +76,7 @@ struct BrewDetail: View {
                     }) : AnyView(HStack {
                         Image(systemName: "square.and.pencil")
                                 .padding(.leading)
-                        Text("Comments")
+                        Text("Description")
                                 .fontWeight(.bold)
                                 .frame(alignment: .leading)
                         Spacer()
