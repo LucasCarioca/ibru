@@ -54,13 +54,12 @@
 		DFD207D426F4DE530065FB98 /* ProFeatures.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFD207D326F4DE530065FB98 /* ProFeatures.swift */; };
 		DFD207D626F4DF7A0065FB98 /* DevTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFD207D526F4DF7A0065FB98 /* DevTools.swift */; };
 		DFD207DD26F4E54E0065FB98 /* StoreManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFD207DC26F4E54E0065FB98 /* StoreManager.swift */; };
-		DFD2080626F7A08C0065FB98 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFD2080526F7A08C0065FB98 /* Settings.swift */; };
 		DFD2080926F7A53A0065FB98 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = DFD2080826F7A53A0065FB98 /* Lottie */; };
 		DFD2080B26F7A5590065FB98 /* LottieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFD2080A26F7A5590065FB98 /* LottieView.swift */; };
 		DFDE432F25C30DD50085D2BB /* UpdateBrewForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFDE432E25C30DD50085D2BB /* UpdateBrewForm.swift */; };
 		DFDE433425C33CA10085D2BB /* ABVCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFDE433325C33CA10085D2BB /* ABVCalculator.swift */; };
 		F8C4D8D5DC0E898F2666141E /* UpdateSecondaryRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8C4D058E7CDAA282F0F4E3C /* UpdateSecondaryRecord.swift */; };
-		F8C4DE81B9C8C950BD9F5004 /* BrewNotesEditor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8C4DE9333A4637831ADC633 /* BrewNotesEditor.swift */; };
+		F8C4DE81B9C8C950BD9F5004 /* BrewTextEditor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8C4DE9333A4637831ADC633 /* BrewTextEditor.swift */; };
 		F8C4DF486A097609074ED5DA /* BrewBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8C4DE486E0164CDBB5A2355 /* BrewBuilder.swift */; };
 /* End PBXBuildFile section */
 
@@ -144,13 +143,12 @@
 		DFD207D326F4DE530065FB98 /* ProFeatures.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProFeatures.swift; sourceTree = "<group>"; };
 		DFD207D526F4DF7A0065FB98 /* DevTools.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DevTools.swift; sourceTree = "<group>"; };
 		DFD207DC26F4E54E0065FB98 /* StoreManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreManager.swift; sourceTree = "<group>"; };
-		DFD2080526F7A08C0065FB98 /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		DFD2080A26F7A5590065FB98 /* LottieView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottieView.swift; sourceTree = "<group>"; };
 		DFDE432E25C30DD50085D2BB /* UpdateBrewForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateBrewForm.swift; sourceTree = "<group>"; };
 		DFDE433325C33CA10085D2BB /* ABVCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ABVCalculator.swift; sourceTree = "<group>"; };
 		F8C4D058E7CDAA282F0F4E3C /* UpdateSecondaryRecord.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UpdateSecondaryRecord.swift; sourceTree = "<group>"; };
 		F8C4DE486E0164CDBB5A2355 /* BrewBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BrewBuilder.swift; sourceTree = "<group>"; };
-		F8C4DE9333A4637831ADC633 /* BrewNotesEditor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BrewNotesEditor.swift; sourceTree = "<group>"; };
+		F8C4DE9333A4637831ADC633 /* BrewTextEditor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BrewTextEditor.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -326,7 +324,7 @@
 				DFB0BD3D26EAA4CA008FDD3A /* NewSecondaryRecord.swift */,
 				DFDE432E25C30DD50085D2BB /* UpdateBrewForm.swift */,
 				DFB0BD6526ED1200008FDD3A /* UpdateBottleRecord.swift */,
-				F8C4DE9333A4637831ADC633 /* BrewNotesEditor.swift */,
+				F8C4DE9333A4637831ADC633 /* BrewTextEditor.swift */,
 				F8C4D058E7CDAA282F0F4E3C /* UpdateSecondaryRecord.swift */,
 			);
 			path = Forms;
@@ -351,7 +349,6 @@
 				DFB0BD5F26EC0AC8008FDD3A /* Collection.swift */,
 				DFD207D326F4DE530065FB98 /* ProFeatures.swift */,
 				DFD207D526F4DF7A0065FB98 /* DevTools.swift */,
-				DFD2080526F7A08C0065FB98 /* Settings.swift */,
 				DFC79B70274820C600D4214E /* Readings.swift */,
 			);
 			path = Pages;
@@ -578,7 +575,6 @@
 				DFB0BD4726EB0409008FDD3A /* SecondaryList.swift in Sources */,
 				DFB0BD5526EBEE4B008FDD3A /* BrewFunctions.swift in Sources */,
 				DFB0BD6626ED1200008FDD3A /* UpdateBottleRecord.swift in Sources */,
-				DFD2080626F7A08C0065FB98 /* Settings.swift in Sources */,
 				DFB0BD6026EC0AC8008FDD3A /* Collection.swift in Sources */,
 				DFDE432F25C30DD50085D2BB /* UpdateBrewForm.swift in Sources */,
 				DFD207D426F4DE530065FB98 /* ProFeatures.swift in Sources */,
@@ -595,7 +591,7 @@
 				DFB0BD4C26EB09FA008FDD3A /* BrewTile.swift in Sources */,
 				DFB0BD6226EC0BC0008FDD3A /* CollectionList.swift in Sources */,
 				F8C4DF486A097609074ED5DA /* BrewBuilder.swift in Sources */,
-				F8C4DE81B9C8C950BD9F5004 /* BrewNotesEditor.swift in Sources */,
+				F8C4DE81B9C8C950BD9F5004 /* BrewTextEditor.swift in Sources */,
 				F8C4D8D5DC0E898F2666141E /* UpdateSecondaryRecord.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -778,12 +774,11 @@
 				GCC_OPTIMIZATION_LEVEL = 0;
 				INFOPLIST_FILE = homebrew/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
-				"IPHONEOS_DEPLOYMENT_TARGET[sdk=macosx*]" = 14.3;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 2.1.1;
+				MARKETING_VERSION = 2.1.2;
 				PRODUCT_BUNDLE_IDENTIFIER = lucasdesouza.homebrew;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTS_MACCATALYST = YES;
@@ -807,12 +802,11 @@
 				GCC_OPTIMIZATION_LEVEL = s;
 				INFOPLIST_FILE = homebrew/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
-				"IPHONEOS_DEPLOYMENT_TARGET[sdk=macosx*]" = 14.3;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 2.1.1;
+				MARKETING_VERSION = 2.1.2;
 				PRODUCT_BUNDLE_IDENTIFIER = lucasdesouza.homebrew;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTS_MACCATALYST = YES;

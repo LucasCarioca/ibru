@@ -17,7 +17,7 @@ struct BrewDetail: View {
 
     var body: some View {
         List {
-            Section("Stages") {
+            Section {
                 HStack {
                     Image("carboy").padding().frame(width: 50)
                     NavigationLink(
@@ -45,11 +45,8 @@ struct BrewDetail: View {
                 }
                 showBottlingInfo().padding(.vertical)
             }
-            Section("Other") {
-                brew.comment != nil ? Text(brew.comment ?? "")
-                        .font(.headline)
-                        .padding()
-                        .frame(maxWidth: .infinity, alignment: .leading) : nil
+
+            Section {
                 NavigationLink(destination: Readings(brew: brew).onDisappear(perform: refresh)) {
                     HStack {
                         Image(systemName: "square.and.pencil").padding(.leading)
@@ -59,8 +56,34 @@ struct BrewDetail: View {
                         Spacer()
                     }.padding(.vertical).badge(brew.readings?.count ?? 0)
                 }
+            }
+
+            Section {
+                NavigationLink(destination: BrewTextEditor(title: "Comments", text: brew.comment ?? "", onSave: updateComment)) {
+                    brew.comment != nil ? AnyView(VStack {
+                        HStack {
+                            Image(systemName: "square.and.pencil")
+                                    .padding(.leading)
+                            Text("Comments")
+                                    .fontWeight(.bold)
+                                    .frame(alignment: .leading)
+                            Spacer()
+                        }.padding(.vertical)
+                        Text(brew.comment ?? "")
+                                .font(.headline)
+                                .padding()
+                                .frame(maxWidth: .infinity, alignment: .leading)
+                    }) : AnyView(HStack {
+                        Image(systemName: "square.and.pencil")
+                                .padding(.leading)
+                        Text("Comments")
+                                .fontWeight(.bold)
+                                .frame(alignment: .leading)
+                        Spacer()
+                    }.padding(.vertical))
+                }.buttonStyle(.plain)
                 if UserDefaults.standard.bool(forKey: StoreManager.productKey) {
-                    NavigationLink(destination: BrewNotesEditor(notes: brew.notes ?? "", onSave: updateNotes)) {
+                    NavigationLink(destination: BrewTextEditor(title: "Notes", text: brew.notes ?? "", onSave: updateNotes)) {
                         brew.notes != nil ? AnyView(VStack {
                             HStack {
                                 Image(systemName: "square.and.pencil")
@@ -86,9 +109,6 @@ struct BrewDetail: View {
                 }
             }
         }
-                .sheet(isPresented: $editNotes) {
-                    BrewNotesEditor(notes: brew.notes ?? "", onSave: updateNotes)
-                }
                 .navigationTitle(brew.name ?? "Missing name")
                 .id(refreshID)
 
@@ -96,7 +116,16 @@ struct BrewDetail: View {
 
     private func updateNotes(notes: String) {
         brew.notes = notes
-        editNotes = false
+        do {
+            try brew.managedObjectContext?.save()
+        } catch {
+            let nsError = error as NSError
+            fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
+        }
+    }
+
+    private func updateComment(comment: String) {
+        brew.comment = comment
         do {
             try brew.managedObjectContext?.save()
         } catch {

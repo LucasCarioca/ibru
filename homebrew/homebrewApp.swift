@@ -12,7 +12,6 @@ import StoreKit
 struct homebrewApp: App {
     let dataSource: Datasource
     @StateObject var storeManager = StoreManager()
-    @State var selected: Int?
 
     init() {
         if CommandLine.arguments.contains("-test-data") {
@@ -29,25 +28,45 @@ struct homebrewApp: App {
         WindowGroup {
             NavigationView {
                 List {
-                    if UserDefaults.standard.bool(forKey: StoreManager.productKey) {
-                        NavigationLink(destination: Dashboard(), tag: 0, selection: $selected) {
-                            Label("Dashboard", systemImage: "chart.bar")
+                    Section {
+                        if UserDefaults.standard.bool(forKey: StoreManager.productKey) {
+                            NavigationLink(destination: Dashboard()) {
+                                Label("Dashboard", systemImage: "chart.bar")
+                            }
+                            NavigationLink(destination: Collection()) {
+                                Label("Collection", systemImage: "square.grid.3x2")
+                            }
+                        } else {
+                            NavigationLink(destination: ProFeatures(storeManager: storeManager)) {
+                                Label("Dashboard", systemImage: "lock.fill")
+                            }
+                            NavigationLink(destination: ProFeatures(storeManager: storeManager)) {
+                                Label("Collection", systemImage: "lock.fill")
+                            }
+                        }
+                        NavigationLink(destination: Brews()) {
+                            Label("Brew List", systemImage: "list.bullet.rectangle")
                         }
                     }
-                    if UserDefaults.standard.bool(forKey: StoreManager.productKey) {
-                        NavigationLink(destination: Collection(), tag: 1, selection: $selected) {
-                            Label("Collection", systemImage: "square.grid.3x2")
+                    Section {
+                        NavigationLink(destination: Calculators()) {
+                            Label("Calculators", systemImage: "function")
                         }
                     }
-                    NavigationLink(destination: Brews(), tag: 2, selection: $selected) {
-                        Label("Brew List", systemImage: "list.bullet.rectangle")
+                    if !UserDefaults.standard.bool(forKey: StoreManager.productKey) {
+                        Section {
+                            NavigationLink(destination: ProFeatures(storeManager: storeManager)) {
+                                Label("Upgrade to Pro", systemImage: "star.fill")
+                            }
+                        }
                     }
-                    NavigationLink(destination: Calculators(), tag: 3, selection: $selected) {
-                        Label("Calculators", systemImage: "function")
+                    #if DEBUG
+                    Section {
+                        NavigationLink(destination: DevTools()) {
+                            Label("Dev Tools", systemImage: "chevron.left.slash.chevron.right")
+                        }
                     }
-                    NavigationLink(destination: Settings(storeManager: storeManager), tag: 4, selection: $selected) {
-                        Label("Settings", systemImage: "gear")
-                    }
+                    #endif
                 }.navigationTitle("Menu")
                 if UserDefaults.standard.bool(forKey: StoreManager.productKey) {
                     Dashboard()
