@@ -5,22 +5,23 @@
 import Foundation
 import SwiftUI
 
-struct BrewNotesEditor: View {
+struct BrewTextEditor: View {
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
-    @State var notes: String
+    var title: String
+    @State var text: String
     var onSave: (String) -> Void
     var body: some View {
         VStack {
-            TextEditor(text: self.$notes).padding()
+            TextEditor(text: self.$text).padding()
             Spacer()
             Button(action: save) {
                 Text("Save")
             }.padding()
-        }.navigationTitle("Notes")
+        }.navigationTitle(title)
     }
 
     func save() {
-        onSave(notes)
+        onSave(text)
         presentationMode.wrappedValue.dismiss()
     }
 }

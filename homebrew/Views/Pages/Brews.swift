@@ -38,12 +38,16 @@ struct Brews: View {
                         deleteBrew(offsets: offsets, brews: brews, context: viewContext)
                     }
                 })
-                Spacer().padding(.vertical, 50)
-            }.listStyle(PlainListStyle())
+            }
+                    .toolbar {
+                        NavigationLink(destination: NewBrewForm()) {
+                            HStack{
+                                Image(systemName: "plus")
+                                Text("New Brew")
+                            }
+                        }
+                    }
                     .navigationTitle("Brews")
-                    .modifier(NewBrewButtonModifier(onDisappear: {
-                        self.refreshId = UUID()
-                    }))
         }
     }
 }

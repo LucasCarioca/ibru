@@ -10,14 +10,25 @@ import QuickComponents
 
 struct Dashboard: View {
     var body: some View {
-        VStack {
-            SwitcherView(pages: [
-                SwitcherPage(label: "Primary", view: PrimaryList()),
-                SwitcherPage(label: "Secondary", view: SecondaryList()),
-                SwitcherPage(label: "Bottled", view: BottledList())
-            ]).padding()
-            Spacer()
+        TabView {
+            PrimaryList().tabItem {
+                Label("Primary", systemImage: "1.circle.fill")
+            }
+            SecondaryList().tabItem {
+                Label("Secondary", systemImage: "2.circle.fill")
+            }
+            BottledList().tabItem {
+                Label("Bottled", systemImage: "circle.fill")
+            }
         }
+                .toolbar {
+                    NavigationLink(destination: NewBrewForm()) {
+                        HStack{
+                            Image(systemName: "plus")
+                            Text("New Brew")
+                        }
+                    }
+                }
                 .navigationTitle("Dashboard")
     }
 }
