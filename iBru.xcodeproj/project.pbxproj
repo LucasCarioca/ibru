@@ -59,6 +59,8 @@
 		DFDE432F25C30DD50085D2BB /* UpdateBrewForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFDE432E25C30DD50085D2BB /* UpdateBrewForm.swift */; };
 		DFDE433425C33CA10085D2BB /* ABVCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFDE433325C33CA10085D2BB /* ABVCalculator.swift */; };
 		F8C4D8D5DC0E898F2666141E /* UpdateSecondaryRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8C4D058E7CDAA282F0F4E3C /* UpdateSecondaryRecord.swift */; };
+		F8C4D95D98D36F6BDB0AE09D /* SugarService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8C4D74A158CFAA37E161251 /* SugarService.swift */; };
+		F8C4DA4A8C9A7D285C881130 /* Sugar.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8C4DD2119E07A6290208C21 /* Sugar.swift */; };
 		F8C4DE81B9C8C950BD9F5004 /* BrewTextEditor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8C4DE9333A4637831ADC633 /* BrewTextEditor.swift */; };
 		F8C4DF486A097609074ED5DA /* BrewBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8C4DE486E0164CDBB5A2355 /* BrewBuilder.swift */; };
 /* End PBXBuildFile section */
@@ -147,6 +149,8 @@
 		DFDE432E25C30DD50085D2BB /* UpdateBrewForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateBrewForm.swift; sourceTree = "<group>"; };
 		DFDE433325C33CA10085D2BB /* ABVCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ABVCalculator.swift; sourceTree = "<group>"; };
 		F8C4D058E7CDAA282F0F4E3C /* UpdateSecondaryRecord.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UpdateSecondaryRecord.swift; sourceTree = "<group>"; };
+		F8C4D74A158CFAA37E161251 /* SugarService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SugarService.swift; sourceTree = "<group>"; };
+		F8C4DD2119E07A6290208C21 /* Sugar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Sugar.swift; sourceTree = "<group>"; };
 		F8C4DE486E0164CDBB5A2355 /* BrewBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BrewBuilder.swift; sourceTree = "<group>"; };
 		F8C4DE9333A4637831ADC633 /* BrewTextEditor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BrewTextEditor.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -225,6 +229,8 @@
 				DF43B6B125C0695100093ED2 /* Info.plist */,
 				DF43B6AE25C0695100093ED2 /* homebrew.xcdatamodeld */,
 				DF43B6A925C0695100093ED2 /* Preview Content */,
+				F8C4DE0B3BC7AF1F94D41051 /* services */,
+				F8C4D577BA0A50C2B26AB33F /* models */,
 			);
 			path = homebrew;
 			sourceTree = "<group>";
@@ -381,6 +387,22 @@
 			path = Pro;
 			sourceTree = "<group>";
 		};
+		F8C4D577BA0A50C2B26AB33F /* models */ = {
+			isa = PBXGroup;
+			children = (
+				F8C4DD2119E07A6290208C21 /* Sugar.swift */,
+			);
+			path = models;
+			sourceTree = "<group>";
+		};
+		F8C4DE0B3BC7AF1F94D41051 /* services */ = {
+			isa = PBXGroup;
+			children = (
+				F8C4D74A158CFAA37E161251 /* SugarService.swift */,
+			);
+			path = services;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -496,7 +518,7 @@
 			mainGroup = DF43B69725C0694F00093ED2;
 			packageReferences = (
 				DFB0BD4826EB0906008FDD3A /* XCRemoteSwiftPackageReference "QuickComponents" */,
-				DFD2080726F7A53A0065FB98 /* XCRemoteSwiftPackageReference "lottie-ios" */,
+				DFD2080726F7A53A0065FB98 /* XCRemoteSwiftPackageReference "lottie-ios.git" */,
 			);
 			productRefGroup = DF43B6A125C0694F00093ED2 /* Products */;
 			projectDirPath = "";
@@ -593,6 +615,8 @@
 				F8C4DF486A097609074ED5DA /* BrewBuilder.swift in Sources */,
 				F8C4DE81B9C8C950BD9F5004 /* BrewTextEditor.swift in Sources */,
 				F8C4D8D5DC0E898F2666141E /* UpdateSecondaryRecord.swift in Sources */,
+				F8C4D95D98D36F6BDB0AE09D /* SugarService.swift in Sources */,
+				F8C4DA4A8C9A7D285C881130 /* Sugar.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -999,7 +1023,7 @@
 				minimumVersion = 0.7.3;
 			};
 		};
-		DFD2080726F7A53A0065FB98 /* XCRemoteSwiftPackageReference "lottie-ios" */ = {
+		DFD2080726F7A53A0065FB98 /* XCRemoteSwiftPackageReference "lottie-ios.git" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/airbnb/lottie-ios.git";
 			requirement = {
@@ -1017,7 +1041,7 @@
 		};
 		DFD2080826F7A53A0065FB98 /* Lottie */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = DFD2080726F7A53A0065FB98 /* XCRemoteSwiftPackageReference "lottie-ios" */;
+			package = DFD2080726F7A53A0065FB98 /* XCRemoteSwiftPackageReference "lottie-ios.git" */;
 			productName = Lottie;
 		};
 /* End XCSwiftPackageProductDependency section */

@@ -7,22 +7,9 @@
 
 import SwiftUI
 
-
-struct SugarType: Hashable {
-    var name: String
-    var points: Double
-}
-
 struct SGCalculator: View {
-    var sugars = [
-        SugarType(name: "Dry Malt Extract", points: 0.044),
-        SugarType(name: "Honey", points: 0.035),
-        SugarType(name: "Liquid Malt Extract", points: 0.036),
-        SugarType(name: "Molasses", points: 0.036),
-        SugarType(name: "Wheat Malt", points: 0.029),
-        SugarType(name: "Wheat Torrefied", points: 0.027),
-        SugarType(name: "2-Row Pale Malt", points: 0.027),
-    ]
+    @Environment(\.sugarService) var sugarService: SugarService
+    @State var sugars = [Sugar]()
     @State var sugar: Int? = nil
     @State var quantity = ""
     @State var batchSize = ""
@@ -34,8 +21,8 @@ struct SGCalculator: View {
                     .frame(minWidth: 0, maxWidth: .infinity, alignment: .center)
             Picker(selection: $sugar, label: Text("Sugar source")) {
                 Text("None").tag(nil as Int?)
-                ForEach(0..<sugars.count) {
-                    Text(self.sugars[$0].name).tag($0 as Int?)
+                ForEach(0..<sugars.count, id: \.self) {
+                    Text(sugars[$0].name).tag($0 as Int?)
                 }
             }.frame(minWidth: 0, maxWidth: .infinity, alignment: .center)
             TextField("Sugar Quantity (pounds)", text: $quantity)
@@ -48,16 +35,25 @@ struct SGCalculator: View {
                 Text("Calculate")
             }
                     .frame(minWidth: 0, maxWidth: .infinity, alignment: .center)
-        }.navigationTitle("Gravity Estimator")
+        }
+                .task {
+                    await loadSugars()
+                }
+                .navigationTitle("Gravity Estimator")
     }
 
     private func calculate() {
-        if let sugar = self.sugar {
+        if let sugar = sugar {
             let quantityConverted = Double(quantity) ?? 0.00
             let batchSizeConverted = Double(batchSize) ?? 0.00
-            result = quantityConverted * (sugars[sugar].points / batchSizeConverted)
+            result = quantityConverted * (sugars[sugar].gravityPerPound / batchSizeConverted)
         }
     }
+
+    func loadSugars() async {
+        sugars = await sugarService.getSugars()
+    }
+
 }
 
 struct SGCalculator_Previews: PreviewProvider {

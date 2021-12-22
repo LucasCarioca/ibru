@@ -76,6 +76,7 @@ struct homebrewApp: App {
             }
                     .environment(\.managedObjectContext, dataSource.getContainer().viewContext)
                     .environmentObject(storeManager)
+                    .environment(\.sugarService, SugarService())
                     .onAppear(perform: {
                         SKPaymentQueue.default().add(storeManager)
                         storeManager.getProducts(productIDs: ["0001"])
