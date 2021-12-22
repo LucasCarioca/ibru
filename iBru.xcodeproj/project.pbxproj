@@ -58,6 +58,7 @@
 		DFD2080B26F7A5590065FB98 /* LottieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFD2080A26F7A5590065FB98 /* LottieView.swift */; };
 		DFDE432F25C30DD50085D2BB /* UpdateBrewForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFDE432E25C30DD50085D2BB /* UpdateBrewForm.swift */; };
 		DFDE433425C33CA10085D2BB /* ABVCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFDE433325C33CA10085D2BB /* ABVCalculator.swift */; };
+		F8C4D300AE0350BABFAD11ED /* RequestReview.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8C4D9FF84FA14A6D3765283 /* RequestReview.swift */; };
 		F8C4D8D5DC0E898F2666141E /* UpdateSecondaryRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8C4D058E7CDAA282F0F4E3C /* UpdateSecondaryRecord.swift */; };
 		F8C4DE81B9C8C950BD9F5004 /* BrewTextEditor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8C4DE9333A4637831ADC633 /* BrewTextEditor.swift */; };
 		F8C4DF486A097609074ED5DA /* BrewBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8C4DE486E0164CDBB5A2355 /* BrewBuilder.swift */; };
@@ -147,6 +148,7 @@
 		DFDE432E25C30DD50085D2BB /* UpdateBrewForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateBrewForm.swift; sourceTree = "<group>"; };
 		DFDE433325C33CA10085D2BB /* ABVCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ABVCalculator.swift; sourceTree = "<group>"; };
 		F8C4D058E7CDAA282F0F4E3C /* UpdateSecondaryRecord.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UpdateSecondaryRecord.swift; sourceTree = "<group>"; };
+		F8C4D9FF84FA14A6D3765283 /* RequestReview.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestReview.swift; sourceTree = "<group>"; };
 		F8C4DE486E0164CDBB5A2355 /* BrewBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BrewBuilder.swift; sourceTree = "<group>"; };
 		F8C4DE9333A4637831ADC633 /* BrewTextEditor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BrewTextEditor.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -310,6 +312,7 @@
 				DFB0BD5626EBF1A1008FDD3A /* BrewStage.swift */,
 				DFB0BD5826EBF1E2008FDD3A /* BrewDateFormatter.swift */,
 				F8C4DE486E0164CDBB5A2355 /* BrewBuilder.swift */,
+				F8C4D9FF84FA14A6D3765283 /* RequestReview.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -593,6 +596,7 @@
 				F8C4DF486A097609074ED5DA /* BrewBuilder.swift in Sources */,
 				F8C4DE81B9C8C950BD9F5004 /* BrewTextEditor.swift in Sources */,
 				F8C4D8D5DC0E898F2666141E /* UpdateSecondaryRecord.swift in Sources */,
+				F8C4D300AE0350BABFAD11ED /* RequestReview.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -767,7 +771,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = homebrew/homebrew.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 5;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"homebrew/Preview Content\"";
 				DEVELOPMENT_TEAM = Y259ZT3SQK;
 				ENABLE_PREVIEWS = YES;
@@ -778,7 +782,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 2.1.2;
+				MARKETING_VERSION = 2.1.3;
 				PRODUCT_BUNDLE_IDENTIFIER = lucasdesouza.homebrew;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTS_MACCATALYST = YES;
@@ -795,7 +799,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = homebrew/homebrew.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 5;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"homebrew/Preview Content\"";
 				DEVELOPMENT_TEAM = Y259ZT3SQK;
 				ENABLE_PREVIEWS = YES;
@@ -806,7 +810,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 2.1.2;
+				MARKETING_VERSION = 2.1.3;
 				PRODUCT_BUNDLE_IDENTIFIER = lucasdesouza.homebrew;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTS_MACCATALYST = YES;
