@@ -79,8 +79,6 @@ struct homebrewApp: App {
                     .onAppear(perform: {
                         if let scene = UIApplication.shared.connectedScenes.first as? UIWindowScene {
                             requestReview(in: scene)
-                        } else {
-                            print("no scene found")
                         }
                         SKPaymentQueue.default().add(storeManager)
                         storeManager.getProducts(productIDs: ["0001"])
