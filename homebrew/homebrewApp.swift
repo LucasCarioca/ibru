@@ -12,6 +12,8 @@ import StoreKit
 struct homebrewApp: App {
     let dataSource: Datasource
     @StateObject var storeManager = StoreManager()
+    @State var version = ""
+    @State var build = ""
 
     init() {
         if CommandLine.arguments.contains("-test-data") {
@@ -60,13 +62,18 @@ struct homebrewApp: App {
                             }
                         }
                     }
-                    #if DEBUG
                     Section {
+                    #if DEBUG
                         NavigationLink(destination: DevTools()) {
                             Label("Dev Tools", systemImage: "chevron.left.slash.chevron.right")
                         }
-                    }
                     #endif
+                        HStack {
+                            Text("Current version")
+                            Spacer()
+                            Text("v\(version) (\(build))")
+                        }
+                    }
                 }.navigationTitle("Menu")
                 if UserDefaults.standard.bool(forKey: StoreManager.productKey) {
                     Dashboard()
@@ -79,6 +86,7 @@ struct homebrewApp: App {
                     .onAppear(perform: {
                         if let scene = UIApplication.shared.connectedScenes.first as? UIWindowScene {
                             requestReview(in: scene)
+                            (version, build) = getVersion()
                         }
                         SKPaymentQueue.default().add(storeManager)
                         storeManager.getProducts(productIDs: ["0001"])
