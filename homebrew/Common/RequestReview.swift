@@ -13,7 +13,8 @@ func requestReview(in scene: UIWindowScene) {
     let currentVersion = "\(version) (\(build))"
     if count >= 4 && currentVersion != lastVersionPromptedForReview {
         SKStoreReviewController.requestReview(in: scene)
-        UserDefaults.standard.set(currentVersion, forKey: "lastVersionPromptedForReviewKey")
+        setLastVersionPrompted(currentVersion)
+        setSessionCount(0)
     }
 }
 
@@ -31,4 +32,8 @@ func getSessionCount() -> (count: Int, version: String) {
 
 func setSessionCount(_ count: Int) {
     UserDefaults.standard.set(count, forKey: "processCompletedCountKey")
+}
+
+func setLastVersionPrompted(_ version: String) {
+    UserDefaults.standard.set(version, forKey: "lastVersionPromptedForReviewKey")
 }

@@ -14,6 +14,8 @@ struct homebrewApp: App {
     @StateObject var storeManager = StoreManager()
     @State var version = ""
     @State var build = ""
+    @State var count = 0
+    @State var lastVersionPrompted = ""
 
     init() {
         if CommandLine.arguments.contains("-test-data") {
@@ -67,6 +69,16 @@ struct homebrewApp: App {
                         NavigationLink(destination: DevTools()) {
                             Label("Dev Tools", systemImage: "chevron.left.slash.chevron.right")
                         }
+                        HStack {
+                            Text("Current count")
+                            Spacer()
+                            Text(String(count))
+                        }
+                        HStack {
+                            Text("Last version prompted")
+                            Spacer()
+                            Text("v\(lastVersionPrompted)")
+                        }
                     #endif
                         HStack {
                             Text("Current version")
@@ -87,6 +99,7 @@ struct homebrewApp: App {
                         if let scene = UIApplication.shared.connectedScenes.first as? UIWindowScene {
                             requestReview(in: scene)
                             (version, build) = getVersion()
+                            (count, lastVersionPrompted) = getSessionCount()
                         }
                         SKPaymentQueue.default().add(storeManager)
                         storeManager.getProducts(productIDs: ["0001"])
