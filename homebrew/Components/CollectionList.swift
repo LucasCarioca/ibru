@@ -25,6 +25,7 @@ struct CollectionList: View {
         } else {
             List {
                 Section {
+                    getBrewCount()
                     getTotalBottleCount()
                 }
                 Section {
@@ -53,9 +54,16 @@ struct CollectionList: View {
         }
         if total > 0 {
             return AnyView(
-                    VStack {
-                        InfoLabel(label: "Collection Size", value: "\(total)")
-                    }.padding(.horizontal)
+                        Text("Total bottles").badge(Int(total))
+            )
+        }
+        return AnyView(EmptyView())
+    }
+    func getBrewCount() -> AnyView {
+        var total = brews.count
+        if total > 0 {
+            return AnyView(
+                    Text("Brews").badge(total)
             )
         }
         return AnyView(EmptyView())
