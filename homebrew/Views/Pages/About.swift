@@ -13,11 +13,12 @@ struct About: View {
     @State var count = 0
     @State var lastVersionPrompted = ""
     @State var tapVersion = 0
+    @State var devMode = false
 
     var body: some View {
         List {
 
-            if UserDefaults.standard.bool(forKey: "DevMode") {
+            if devMode {
                 Section {
                     HStack {
                         Text("Current count")
@@ -49,6 +50,7 @@ struct About: View {
         }
                 .navigationBarTitle("About")
                 .onAppear(perform: {
+                    devMode =  UserDefaults.standard.bool(forKey: "DevMode")
                     (version, build) = getVersion()
                     (count, lastVersionPrompted) = getSessionCount()
                 })
@@ -56,13 +58,14 @@ struct About: View {
 
     func onTapVersion() {
         tapVersion += 1
-        print("tapped \(tapVersion)")
         if tapVersion >= 15 {
             UserDefaults.standard.set(true, forKey: "DevMode")
+            devMode = true
         }
     }
 
     func devModeOff() {
         UserDefaults.standard.set(false, forKey: "DevMode")
+        devMode = false
     }
 }
