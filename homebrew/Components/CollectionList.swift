@@ -60,7 +60,7 @@ struct CollectionList: View {
         return AnyView(EmptyView())
     }
     func getBrewCount() -> AnyView {
-        var total = brews.count
+        let total = brews.count
         if total > 0 {
             return AnyView(
                     Text("Brews").badge(total)
