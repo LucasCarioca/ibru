@@ -57,33 +57,14 @@ struct homebrewApp: App {
                             Label("Calculators", systemImage: "function")
                         }
                     }
-                    if !UserDefaults.standard.bool(forKey: StoreManager.productKey) {
-                        Section {
+                    Section {
+                        if !UserDefaults.standard.bool(forKey: StoreManager.productKey) {
                             NavigationLink(destination: ProFeatures(storeManager: storeManager)) {
                                 Label("Upgrade to Pro", systemImage: "star.fill")
                             }
                         }
-                    }
-                    Section {
-                    #if DEBUG
-                        NavigationLink(destination: DevTools()) {
-                            Label("Dev Tools", systemImage: "chevron.left.slash.chevron.right")
-                        }
-                        HStack {
-                            Text("Current count")
-                            Spacer()
-                            Text(String(count))
-                        }
-                        HStack {
-                            Text("Last version prompted")
-                            Spacer()
-                            Text("v\(lastVersionPrompted)")
-                        }
-                    #endif
-                        HStack {
-                            Text("Current version")
-                            Spacer()
-                            Text("v\(version) (\(build))")
+                        NavigationLink(destination: About()) {
+                            Label("About", systemImage: "info.circle.fill")
                         }
                     }
                 }.navigationTitle("Menu")
