@@ -17,7 +17,6 @@ struct About: View {
 
     var body: some View {
         List {
-
             if devMode {
                 Section {
                     HStack {

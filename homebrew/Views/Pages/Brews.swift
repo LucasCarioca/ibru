@@ -27,10 +27,16 @@ struct Brews: View {
             List {
                 ForEach(brews) { brew in
                     NavigationLink(destination: BrewDetail(brew: brew)) {
-                        HStack {
-                            Text(brew.name ?? "Name missing")
-                            Spacer()
-                            Text("\(brew.startDate!, formatter: brewDateFormatter)")
+                        VStack {
+                            HStack {
+                                Text(brew.name ?? "Name missing")
+                                        .fontWeight(.heavy)
+                                Spacer()
+                                Text("\(brew.startDate!, formatter: brewDateFormatter)")
+                            }
+                            if let category = brew.category {
+                                category.count > 0 ? InfoLabel(label: "Category", value: category): nil
+                            }
                         }
                     }
                 }.onDelete(perform: { offsets in

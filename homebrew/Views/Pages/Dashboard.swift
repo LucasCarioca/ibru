@@ -9,23 +9,26 @@ import SwiftUI
 import QuickComponents
 
 struct Dashboard: View {
+    @State var category: BrewCategory = .ALL
     var body: some View {
         TabView {
-            PrimaryList().tabItem {
+            PrimaryList(category: category).tabItem {
                 Label("Primary", systemImage: "1.circle.fill")
             }
-            SecondaryList().tabItem {
+            SecondaryList(category: category).tabItem {
                 Label("Secondary", systemImage: "2.circle.fill")
             }
-            BottledList().tabItem {
+            BottledList(category: category).tabItem {
                 Label("Bottled", systemImage: "circle.fill")
             }
         }
                 .toolbar {
-                    NavigationLink(destination: NewBrewForm()) {
-                        HStack{
+                    HStack {
+                        NavigationLink(destination: NewBrewForm()) {
                             Image(systemName: "plus")
-                            Text("New Brew")
+                        }
+                        NavigationLink(destination: BrewCategoryFilter(filterCategory: $category)) {
+                            Image(systemName: "line.3.horizontal.decrease")
                         }
                     }
                 }

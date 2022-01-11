@@ -22,6 +22,7 @@
 		DF60C3D925D2D4FC004921F1 /* UpdateReadingForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF60C3D825D2D4FC004921F1 /* UpdateReadingForm.swift */; };
 		DF60F90F26E7B2FB00C93B35 /* SGCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF60F90E26E7B2FB00C93B35 /* SGCalculator.swift */; };
 		DF61D47E274C2E15004A8D09 /* Datasource.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF61D47D274C2E15004A8D09 /* Datasource.swift */; };
+		DF67C803278D19E900DD60C0 /* categories.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF67C802278D19E900DD60C0 /* categories.swift */; };
 		DF78B67E2747F24300AE91D9 /* payment-error.json in Resources */ = {isa = PBXBuildFile; fileRef = DF78B6782747F24300AE91D9 /* payment-error.json */; };
 		DF78B67F2747F24300AE91D9 /* payment-confirmation.json in Resources */ = {isa = PBXBuildFile; fileRef = DF78B6792747F24300AE91D9 /* payment-confirmation.json */; };
 		DF78B6802747F24300AE91D9 /* preparing.json in Resources */ = {isa = PBXBuildFile; fileRef = DF78B67A2747F24300AE91D9 /* preparing.json */; };
@@ -58,6 +59,7 @@
 		DFD2080B26F7A5590065FB98 /* LottieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFD2080A26F7A5590065FB98 /* LottieView.swift */; };
 		DFDE432F25C30DD50085D2BB /* UpdateBrewForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFDE432E25C30DD50085D2BB /* UpdateBrewForm.swift */; };
 		DFDE433425C33CA10085D2BB /* ABVCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFDE433325C33CA10085D2BB /* ABVCalculator.swift */; };
+		F8C4D012208CDA6F5C03ED3C /* BrewCategoryFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8C4D981C73DBC36CC818165 /* BrewCategoryFilter.swift */; };
 		F8C4D300AE0350BABFAD11ED /* RequestReview.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8C4D9FF84FA14A6D3765283 /* RequestReview.swift */; };
 		F8C4D8D5DC0E898F2666141E /* UpdateSecondaryRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8C4D058E7CDAA282F0F4E3C /* UpdateSecondaryRecord.swift */; };
 		F8C4DCE71977E164EEB0D078 /* About.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8C4D239619E2D1B87A44D7E /* About.swift */; };
@@ -110,6 +112,7 @@
 		DF60C3D825D2D4FC004921F1 /* UpdateReadingForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateReadingForm.swift; sourceTree = "<group>"; };
 		DF60F90E26E7B2FB00C93B35 /* SGCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SGCalculator.swift; sourceTree = "<group>"; };
 		DF61D47D274C2E15004A8D09 /* Datasource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Datasource.swift; sourceTree = "<group>"; };
+		DF67C802278D19E900DD60C0 /* categories.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = categories.swift; sourceTree = "<group>"; };
 		DF78B6782747F24300AE91D9 /* payment-error.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "payment-error.json"; sourceTree = "<group>"; };
 		DF78B6792747F24300AE91D9 /* payment-confirmation.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "payment-confirmation.json"; sourceTree = "<group>"; };
 		DF78B67A2747F24300AE91D9 /* preparing.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = preparing.json; sourceTree = "<group>"; };
@@ -150,6 +153,7 @@
 		DFDE433325C33CA10085D2BB /* ABVCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ABVCalculator.swift; sourceTree = "<group>"; };
 		F8C4D058E7CDAA282F0F4E3C /* UpdateSecondaryRecord.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UpdateSecondaryRecord.swift; sourceTree = "<group>"; };
 		F8C4D239619E2D1B87A44D7E /* About.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = About.swift; sourceTree = "<group>"; };
+		F8C4D981C73DBC36CC818165 /* BrewCategoryFilter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BrewCategoryFilter.swift; sourceTree = "<group>"; };
 		F8C4D9FF84FA14A6D3765283 /* RequestReview.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestReview.swift; sourceTree = "<group>"; };
 		F8C4DE486E0164CDBB5A2355 /* BrewBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BrewBuilder.swift; sourceTree = "<group>"; };
 		F8C4DE9333A4637831ADC633 /* BrewTextEditor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BrewTextEditor.swift; sourceTree = "<group>"; };
@@ -274,6 +278,7 @@
 				DFB0BD5D26EC0850008FDD3A /* InfoLabel.swift */,
 				DFB0BD6126EC0BC0008FDD3A /* CollectionList.swift */,
 				DFD2080A26F7A5590065FB98 /* LottieView.swift */,
+				F8C4D981C73DBC36CC818165 /* BrewCategoryFilter.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -315,6 +320,7 @@
 				DFB0BD5826EBF1E2008FDD3A /* BrewDateFormatter.swift */,
 				F8C4DE486E0164CDBB5A2355 /* BrewBuilder.swift */,
 				F8C4D9FF84FA14A6D3765283 /* RequestReview.swift */,
+				DF67C802278D19E900DD60C0 /* categories.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -502,7 +508,7 @@
 			mainGroup = DF43B69725C0694F00093ED2;
 			packageReferences = (
 				DFB0BD4826EB0906008FDD3A /* XCRemoteSwiftPackageReference "QuickComponents" */,
-				DFD2080726F7A53A0065FB98 /* XCRemoteSwiftPackageReference "lottie-ios" */,
+				DFD2080726F7A53A0065FB98 /* XCRemoteSwiftPackageReference "lottie-ios.git" */,
 			);
 			productRefGroup = DF43B6A125C0694F00093ED2 /* Products */;
 			projectDirPath = "";
@@ -588,6 +594,7 @@
 				DFDE433425C33CA10085D2BB /* ABVCalculator.swift in Sources */,
 				DFD207DD26F4E54E0065FB98 /* StoreManager.swift in Sources */,
 				DFD207D626F4DF7A0065FB98 /* DevTools.swift in Sources */,
+				DF67C803278D19E900DD60C0 /* categories.swift in Sources */,
 				DF43B6A425C0694F00093ED2 /* homebrewApp.swift in Sources */,
 				DF43B6E825C0A92F00093ED2 /* GravityReading.swift in Sources */,
 				DFC79B71274820C600D4214E /* Readings.swift in Sources */,
@@ -601,6 +608,7 @@
 				F8C4D8D5DC0E898F2666141E /* UpdateSecondaryRecord.swift in Sources */,
 				F8C4D300AE0350BABFAD11ED /* RequestReview.swift in Sources */,
 				F8C4DCE71977E164EEB0D078 /* About.swift in Sources */,
+				F8C4D012208CDA6F5C03ED3C /* BrewCategoryFilter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -775,7 +783,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = homebrew/homebrew.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 4;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"homebrew/Preview Content\"";
 				DEVELOPMENT_TEAM = Y259ZT3SQK;
 				ENABLE_PREVIEWS = YES;
@@ -786,7 +794,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 2.1.3;
+				MARKETING_VERSION = 2.2.0;
 				PRODUCT_BUNDLE_IDENTIFIER = lucasdesouza.homebrew;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTS_MACCATALYST = YES;
@@ -803,7 +811,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = homebrew/homebrew.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 4;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"homebrew/Preview Content\"";
 				DEVELOPMENT_TEAM = Y259ZT3SQK;
 				ENABLE_PREVIEWS = YES;
@@ -814,7 +822,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 2.1.3;
+				MARKETING_VERSION = 2.2.0;
 				PRODUCT_BUNDLE_IDENTIFIER = lucasdesouza.homebrew;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTS_MACCATALYST = YES;
@@ -1007,7 +1015,7 @@
 				minimumVersion = 0.7.3;
 			};
 		};
-		DFD2080726F7A53A0065FB98 /* XCRemoteSwiftPackageReference "lottie-ios" */ = {
+		DFD2080726F7A53A0065FB98 /* XCRemoteSwiftPackageReference "lottie-ios.git" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/airbnb/lottie-ios.git";
 			requirement = {
@@ -1025,7 +1033,7 @@
 		};
 		DFD2080826F7A53A0065FB98 /* Lottie */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = DFD2080726F7A53A0065FB98 /* XCRemoteSwiftPackageReference "lottie-ios" */;
+			package = DFD2080726F7A53A0065FB98 /* XCRemoteSwiftPackageReference "lottie-ios.git" */;
 			productName = Lottie;
 		};
 /* End XCSwiftPackageProductDependency section */

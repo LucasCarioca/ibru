@@ -12,10 +12,11 @@ class BrewBuilder {
         brew = Brew(context: context)
     }
 
-    func withDetails(name: String, date: String, og: Double) -> BrewBuilder {
+    func withDetails(name: String, date: String, og: Double, category: BrewCategory) -> BrewBuilder {
         brew.startDate = brewDateFormatter.date(from: date)
         brew.name = name
         brew.originalGravity = og
+        brew.category = category.rawValue
         return self
     }
 

@@ -9,10 +9,10 @@ import SwiftUI
 
 struct BrewList: View {
     @Environment(\.managedObjectContext) private var viewContext
-    var brews: FetchedResults<Brew>
+    var brews: [Brew]
     var onEmpty: AnyView
 
-    public init<V>(brews: FetchedResults<Brew>, onEmpty: V) where V: View {
+    public init<V>(brews: [Brew], onEmpty: V) where V: View {
         self.brews = brews
         self.onEmpty = AnyView(onEmpty)
     }

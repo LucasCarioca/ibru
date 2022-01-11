@@ -19,6 +19,12 @@ struct BrewTile: View {
                         .fontWeight(.heavy)
                 Spacer()
             }
+            if let category = brew.category {
+                category.count > 0 ? HStack {
+                    InfoLabel(label: "Category", value: category)
+                    Spacer()
+                }: nil
+            }
             getBottleCountView()
             InfoLabel(label: "Elapsed Time", value: getTimeText())
             getCurrentABVView()

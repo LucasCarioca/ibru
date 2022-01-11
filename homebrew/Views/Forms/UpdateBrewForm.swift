@@ -13,6 +13,7 @@ struct UpdateBrewForm: View {
     @State var comment = ""
     @State var showDescriptionEditor = false
     @State var gravity = ""
+    @State var category = ""
     @State var date = Date()
 
     var brew: Brew
@@ -29,6 +30,14 @@ struct UpdateBrewForm: View {
             TextField("Original gravity", text: $gravity)
                     .keyboardType(.decimalPad)
                     .padding()
+            if UserDefaults.standard.bool(forKey: StoreManager.productKey) {
+                Picker(selection: $category, label: Text("Category")) {
+                    Text("None").tag(nil as String?)
+                    ForEach(BrewCategory.allValues, id: \.self) { category in
+                        Text(category.rawValue).tag(category.rawValue)
+                    }
+                }.frame(minWidth: 0, maxWidth: .infinity, alignment: .center)
+            }
             DatePicker("Start date", selection: $date)
                     .datePickerStyle(GraphicalDatePickerStyle())
 
@@ -37,6 +46,9 @@ struct UpdateBrewForm: View {
         }.onAppear() {
             self.name = brew.name!
             self.comment = brew.comment ?? ""
+            if let category = brew.category {
+                self.category = category
+            }
             self.gravity = "\(brew.originalGravity)"
             self.date = brew.startDate!
         }.sheet(isPresented: $showDescriptionEditor) {
@@ -57,6 +69,8 @@ struct UpdateBrewForm: View {
             brew.startDate = date
             brew.name = name
             brew.comment = comment
+            brew.category = category
+            print(category)
             brew.originalGravity = Double(gravity) ?? 1.000
             do {
                 try brew.managedObjectContext!.save()

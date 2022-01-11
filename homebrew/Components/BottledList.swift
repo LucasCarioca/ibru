@@ -16,9 +16,9 @@ struct BottledList: View {
             predicate: NSPredicate(format: "bottles != nil"),
             animation: .default)
     private var brews: FetchedResults<Brew>
-
+    var category: BrewCategory
     var body: some View {
-        BrewList(brews: brews, onEmpty: EmptyBottledList())
+        BrewList(brews: filterBrewList(brews, by: category), onEmpty: EmptyBottledList())
     }
 }
 

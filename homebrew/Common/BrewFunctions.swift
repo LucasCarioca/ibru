@@ -22,6 +22,19 @@ func deleteBrew(offsets: IndexSet, brews: FetchedResults<Brew>, context: NSManag
     }
 }
 
+func deleteBrew(offsets: IndexSet, brews: [Brew], context: NSManagedObjectContext) {
+    offsets.map {
+        brews[$0]
+    }.forEach(context.delete)
+
+    do {
+        try context.save()
+    } catch {
+        let nsError = error as NSError
+        fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
+    }
+}
+
 func getAge(of brew: Brew, fromBottlingDate: Bool = false, fromSecondary: Bool = false) -> Double {
     var from = brew.startDate
     var to = Date()

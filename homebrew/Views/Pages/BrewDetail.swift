@@ -17,6 +17,9 @@ struct BrewDetail: View {
 
     var body: some View {
         List {
+            if let category = brew.category {
+                category.count > 0 ? Text("Category").badge(category): nil
+            }
             Section {
                 HStack {
                     Image("carboy").padding().frame(width: 50)
@@ -108,7 +111,9 @@ struct BrewDetail: View {
                     }.buttonStyle(.plain)
                 }
             }
-        }
+        }.onAppear {
+                    print(brew.category ?? "")
+                }
                 .navigationTitle(brew.name ?? "Missing name")
                 .id(refreshID)
 
