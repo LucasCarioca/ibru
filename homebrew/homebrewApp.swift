@@ -53,8 +53,14 @@ struct homebrewApp: App {
                         }
                     }
                     Section {
-                        NavigationLink(destination: Calculators()) {
-                            Label("Calculators", systemImage: "function")
+//                        NavigationLink(destination: Calculators()) {
+//                            Label("Calculators", systemImage: "function")
+//                        }
+                        NavigationLink(destination: ABVCalculator()) {
+                            Label("Alcohol by volume", systemImage: "percent")
+                        }
+                        NavigationLink(destination: SGCalculator()) {
+                            Label("Gravity Estimator", systemImage: "function")
                         }
                     }
                     Section {
