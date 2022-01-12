@@ -17,7 +17,7 @@ struct Brews: View {
             sortDescriptors: [NSSortDescriptor(keyPath: \Brew.startDate, ascending: false)],
             animation: .default)
     private var brews: FetchedResults<Brew>
-
+    @State var category: BrewCategory = .ALL
     @State var refreshId = UUID()
 
     var body: some View {
@@ -25,7 +25,7 @@ struct Brews: View {
             EmptyList().navigationTitle("Brews")
         } else {
             List {
-                ForEach(brews) { brew in
+                ForEach(filterBrewList(brews, by: category)) { brew in
                     NavigationLink(destination: BrewDetail(brew: brew)) {
                         VStack {
                             HStack {
@@ -35,7 +35,7 @@ struct Brews: View {
                                 Text("\(brew.startDate!, formatter: brewDateFormatter)")
                             }
                             if let category = brew.category {
-                                category.count > 0 ? InfoLabel(label: "Category", value: category): nil
+                                category.count > 0 ? InfoLabel(label: "Category", value: category) : nil
                             }
                         }
                     }
@@ -46,10 +46,14 @@ struct Brews: View {
                 })
             }
                     .toolbar {
-                        NavigationLink(destination: NewBrewForm()) {
-                            HStack{
+                        HStack {
+                            NavigationLink(destination: NewBrewForm()) {
                                 Image(systemName: "plus")
-                                Text("New Brew")
+                            }
+                            if UserDefaults.standard.bool(forKey: StoreManager.productKey) {
+                                NavigationLink(destination: BrewCategoryFilter(filterCategory: $category)) {
+                                    Image(systemName: "line.3.horizontal.decrease")
+                                }
                             }
                         }
                     }
