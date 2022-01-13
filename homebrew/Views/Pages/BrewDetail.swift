@@ -17,8 +17,10 @@ struct BrewDetail: View {
 
     var body: some View {
         List {
-            if let category = brew.category {
-                category.count > 0 ? Text("Category").badge(category): nil
+            if UserDefaults.standard.bool(forKey: StoreManager.productKey) {
+                NavigationLink(destination: BrewCategoryEditor(onSave: updateCategory, currentCategory: BrewCategory(rawValue: brew.category!) ?? .ALL)) {
+                    Text("Category").badge(brew.category ?? "None")
+                }
             }
             Section {
                 HStack {
@@ -111,9 +113,7 @@ struct BrewDetail: View {
                     }.buttonStyle(.plain)
                 }
             }
-        }.onAppear {
-                    print(brew.category ?? "")
-                }
+        }
                 .navigationTitle(brew.name ?? "Missing name")
                 .id(refreshID)
 
@@ -121,6 +121,16 @@ struct BrewDetail: View {
 
     private func updateNotes(notes: String) {
         brew.notes = notes
+        do {
+            try brew.managedObjectContext?.save()
+        } catch {
+            let nsError = error as NSError
+            fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
+        }
+    }
+
+    private func updateCategory(category: BrewCategory) {
+        brew.category = category.rawValue
         do {
             try brew.managedObjectContext?.save()
         } catch {

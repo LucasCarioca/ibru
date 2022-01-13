@@ -46,8 +46,10 @@ struct UpdateBrewForm: View {
         }.onAppear() {
             self.name = brew.name!
             self.comment = brew.comment ?? ""
-            if let category = brew.category {
-                self.category = category
+            if category == "" {
+                if let category = brew.category {
+                    self.category = category
+                }
             }
             self.gravity = "\(brew.originalGravity)"
             self.date = brew.startDate!
@@ -70,7 +72,6 @@ struct UpdateBrewForm: View {
             brew.name = name
             brew.comment = comment
             brew.category = category
-            print(category)
             brew.originalGravity = Double(gravity) ?? 1.000
             do {
                 try brew.managedObjectContext!.save()
