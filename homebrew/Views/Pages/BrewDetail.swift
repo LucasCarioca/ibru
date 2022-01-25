@@ -18,7 +18,7 @@ struct BrewDetail: View {
     var body: some View {
         List {
             if UserDefaults.standard.bool(forKey: StoreManager.productKey) {
-                NavigationLink(destination: BrewCategoryEditor(onSave: updateCategory, currentCategory: BrewCategory(rawValue: brew.category!) ?? .ALL)) {
+                NavigationLink(destination: BrewCategoryEditor(onSave: updateCategory, currentCategory: BrewCategory(rawValue: brew.category ?? "ALL") ?? .ALL )) {
                     Text("Category").badge(brew.category ?? "None")
                 }
             }

@@ -14,15 +14,9 @@ struct Collection: View {
             HomebrewCollectionList().tabItem {
                         Label("Homebrew", systemImage: "house")
                     }
-                    .onTapGesture {
-                        selected = 1
-                    }
                     .tag(1)
             PurchasedCollectionList().tabItem {
                         Label("Purchased", systemImage: "dollarsign.circle.fill")
-                    }
-                    .onTapGesture {
-                        selected = 2
                     }
                     .tag(2)
         }
