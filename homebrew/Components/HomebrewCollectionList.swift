@@ -8,7 +8,7 @@
 import SwiftUI
 import CoreData
 
-struct CollectionList: View {
+struct HomebrewCollectionList: View {
     @Environment(\.managedObjectContext) private var viewContext
 
     @FetchRequest(

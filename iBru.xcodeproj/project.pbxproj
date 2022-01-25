@@ -44,7 +44,7 @@
 		DFB0BD5926EBF1E2008FDD3A /* BrewDateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFB0BD5826EBF1E2008FDD3A /* BrewDateFormatter.swift */; };
 		DFB0BD5E26EC0850008FDD3A /* InfoLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFB0BD5D26EC0850008FDD3A /* InfoLabel.swift */; };
 		DFB0BD6026EC0AC8008FDD3A /* Collection.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFB0BD5F26EC0AC8008FDD3A /* Collection.swift */; };
-		DFB0BD6226EC0BC0008FDD3A /* CollectionList.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFB0BD6126EC0BC0008FDD3A /* CollectionList.swift */; };
+		DFB0BD6226EC0BC0008FDD3A /* HomebrewCollectionList.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFB0BD6126EC0BC0008FDD3A /* HomebrewCollectionList.swift */; };
 		DFB0BD6426EC0C2C008FDD3A /* CollectionTile.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFB0BD6326EC0C2C008FDD3A /* CollectionTile.swift */; };
 		DFB0BD6626ED1200008FDD3A /* UpdateBottleRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFB0BD6526ED1200008FDD3A /* UpdateBottleRecord.swift */; };
 		DFC79B71274820C600D4214E /* Readings.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFC79B70274820C600D4214E /* Readings.swift */; };
@@ -61,7 +61,10 @@
 		DFDE433425C33CA10085D2BB /* ABVCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFDE433325C33CA10085D2BB /* ABVCalculator.swift */; };
 		F8C4D012208CDA6F5C03ED3C /* BrewCategoryFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8C4D981C73DBC36CC818165 /* BrewCategoryFilter.swift */; };
 		F8C4D300AE0350BABFAD11ED /* RequestReview.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8C4D9FF84FA14A6D3765283 /* RequestReview.swift */; };
+		F8C4D5321BC4289EC47B7EAE /* PurchasedCollectionList.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8C4D33BCBD81740D4F4937F /* PurchasedCollectionList.swift */; };
 		F8C4D8D5DC0E898F2666141E /* UpdateSecondaryRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8C4D058E7CDAA282F0F4E3C /* UpdateSecondaryRecord.swift */; };
+		F8C4D8D6DD4221D3DF68D611 /* NewCollectionBrewForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8C4D45D2C5321AF42045C07 /* NewCollectionBrewForm.swift */; };
+		F8C4DC8AE3CC74733008C892 /* CollectionBrewTile.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8C4D2F926F6FEEC4C3DA675 /* CollectionBrewTile.swift */; };
 		F8C4DCE71977E164EEB0D078 /* About.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8C4D239619E2D1B87A44D7E /* About.swift */; };
 		F8C4DE81B9C8C950BD9F5004 /* BrewTextEditor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8C4DE9333A4637831ADC633 /* BrewTextEditor.swift */; };
 		F8C4DEE93D79AF69FDFC1A10 /* BrewCategoryEditor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8C4D57690BCD51A5E8D5373 /* BrewCategoryEditor.swift */; };
@@ -134,7 +137,7 @@
 		DFB0BD5826EBF1E2008FDD3A /* BrewDateFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrewDateFormatter.swift; sourceTree = "<group>"; };
 		DFB0BD5D26EC0850008FDD3A /* InfoLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoLabel.swift; sourceTree = "<group>"; };
 		DFB0BD5F26EC0AC8008FDD3A /* Collection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Collection.swift; sourceTree = "<group>"; };
-		DFB0BD6126EC0BC0008FDD3A /* CollectionList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionList.swift; sourceTree = "<group>"; };
+		DFB0BD6126EC0BC0008FDD3A /* HomebrewCollectionList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomebrewCollectionList.swift; sourceTree = "<group>"; };
 		DFB0BD6326EC0C2C008FDD3A /* CollectionTile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionTile.swift; sourceTree = "<group>"; };
 		DFB0BD6526ED1200008FDD3A /* UpdateBottleRecord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateBottleRecord.swift; sourceTree = "<group>"; };
 		DFC79B70274820C600D4214E /* Readings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Readings.swift; sourceTree = "<group>"; };
@@ -154,6 +157,9 @@
 		DFDE433325C33CA10085D2BB /* ABVCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ABVCalculator.swift; sourceTree = "<group>"; };
 		F8C4D058E7CDAA282F0F4E3C /* UpdateSecondaryRecord.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UpdateSecondaryRecord.swift; sourceTree = "<group>"; };
 		F8C4D239619E2D1B87A44D7E /* About.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = About.swift; sourceTree = "<group>"; };
+		F8C4D2F926F6FEEC4C3DA675 /* CollectionBrewTile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionBrewTile.swift; sourceTree = "<group>"; };
+		F8C4D33BCBD81740D4F4937F /* PurchasedCollectionList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PurchasedCollectionList.swift; sourceTree = "<group>"; };
+		F8C4D45D2C5321AF42045C07 /* NewCollectionBrewForm.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewCollectionBrewForm.swift; sourceTree = "<group>"; };
 		F8C4D57690BCD51A5E8D5373 /* BrewCategoryEditor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BrewCategoryEditor.swift; sourceTree = "<group>"; };
 		F8C4D981C73DBC36CC818165 /* BrewCategoryFilter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BrewCategoryFilter.swift; sourceTree = "<group>"; };
 		F8C4D9FF84FA14A6D3765283 /* RequestReview.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestReview.swift; sourceTree = "<group>"; };
@@ -278,9 +284,11 @@
 				DFB0BD6326EC0C2C008FDD3A /* CollectionTile.swift */,
 				DFB0BD5126EBA465008FDD3A /* NewBrewButtonModifier.swift */,
 				DFB0BD5D26EC0850008FDD3A /* InfoLabel.swift */,
-				DFB0BD6126EC0BC0008FDD3A /* CollectionList.swift */,
+				DFB0BD6126EC0BC0008FDD3A /* HomebrewCollectionList.swift */,
 				DFD2080A26F7A5590065FB98 /* LottieView.swift */,
 				F8C4D981C73DBC36CC818165 /* BrewCategoryFilter.swift */,
+				F8C4D33BCBD81740D4F4937F /* PurchasedCollectionList.swift */,
+				F8C4D2F926F6FEEC4C3DA675 /* CollectionBrewTile.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -340,6 +348,7 @@
 				F8C4DE9333A4637831ADC633 /* BrewTextEditor.swift */,
 				F8C4D058E7CDAA282F0F4E3C /* UpdateSecondaryRecord.swift */,
 				F8C4D57690BCD51A5E8D5373 /* BrewCategoryEditor.swift */,
+				F8C4D45D2C5321AF42045C07 /* NewCollectionBrewForm.swift */,
 			);
 			path = Forms;
 			sourceTree = "<group>";
@@ -605,7 +614,7 @@
 				DFB0BD4026EAFF98008FDD3A /* Dashboard.swift in Sources */,
 				DFD2080B26F7A5590065FB98 /* LottieView.swift in Sources */,
 				DFB0BD4C26EB09FA008FDD3A /* BrewTile.swift in Sources */,
-				DFB0BD6226EC0BC0008FDD3A /* CollectionList.swift in Sources */,
+				DFB0BD6226EC0BC0008FDD3A /* HomebrewCollectionList.swift in Sources */,
 				F8C4DF486A097609074ED5DA /* BrewBuilder.swift in Sources */,
 				F8C4DE81B9C8C950BD9F5004 /* BrewTextEditor.swift in Sources */,
 				F8C4D8D5DC0E898F2666141E /* UpdateSecondaryRecord.swift in Sources */,
@@ -613,6 +622,9 @@
 				F8C4DCE71977E164EEB0D078 /* About.swift in Sources */,
 				F8C4D012208CDA6F5C03ED3C /* BrewCategoryFilter.swift in Sources */,
 				F8C4DEE93D79AF69FDFC1A10 /* BrewCategoryEditor.swift in Sources */,
+				F8C4D8D6DD4221D3DF68D611 /* NewCollectionBrewForm.swift in Sources */,
+				F8C4D5321BC4289EC47B7EAE /* PurchasedCollectionList.swift in Sources */,
+				F8C4DC8AE3CC74733008C892 /* CollectionBrewTile.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -787,7 +799,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = homebrew/homebrew.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 11;
+				CURRENT_PROJECT_VERSION = 12;
 				DEVELOPMENT_ASSET_PATHS = "\"homebrew/Preview Content\"";
 				DEVELOPMENT_TEAM = Y259ZT3SQK;
 				ENABLE_PREVIEWS = YES;
@@ -815,7 +827,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = homebrew/homebrew.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 11;
+				CURRENT_PROJECT_VERSION = 12;
 				DEVELOPMENT_ASSET_PATHS = "\"homebrew/Preview Content\"";
 				DEVELOPMENT_TEAM = Y259ZT3SQK;
 				ENABLE_PREVIEWS = YES;

@@ -31,20 +31,14 @@ struct BrewDetail: View {
                         VStack {
                             Text("Primary Fermentation").bold().font(.title3)
                                     .frame(maxWidth: .infinity, alignment: .leading)
-                            Text("OG: \(String(format: "%.3f", brew.originalGravity))")
-                                    .font(.callout)
-                                    .frame(maxWidth: .infinity, alignment: .leading)
-                            Text("Potential ABV: \(String(format: "%.2f", (brew.originalGravity - 1) * 131.25))%")
-                                    .font(.callout)
-                                    .frame(maxWidth: .infinity, alignment: .leading)
-                            Text("Start date: \(brew.startDate ?? Date(), formatter: brewDateFormatter)")
-                                    .font(.callout)
-                                    .frame(maxWidth: .infinity, alignment: .leading)
+                            InfoLabel(label: "Original Gravity", value: String(format: "%.3f", brew.originalGravity))
+                            InfoLabel(label: "Potential ABV", value: "\(String(format: "%.2f", (brew.originalGravity - 1) * 131.25))%")
+                            InfoLabel(label: "Start date", value: brewDateFormatter.string(from: brew.startDate ?? Date()))
                             showAge().font(.callout)
                                     .frame(maxWidth: .infinity, alignment: .leading)
                         }
                     }
-                }
+                }.padding(.vertical)
                 if UserDefaults.standard.bool(forKey: StoreManager.productKey) {
                     showSecondaryInfo().padding(.vertical)
                 }
@@ -165,30 +159,18 @@ struct BrewDetail: View {
                     destination: UpdateBottleRecord(bottle: bottle).onDisappear(perform: refresh),
                     isActive: $showEditBottlesView) {
                 HStack {
-
                     Image("bottle").padding().frame(width: 50)
                     VStack {
                         Text("Bottled").bold().font(.title3)
                                 .frame(maxWidth: .infinity, alignment: .leading)
                         if UserDefaults.standard.bool(forKey: StoreManager.productKey) {
-                            Text("Bottle Count: \(bottle.count)")
-                                    .font(.callout)
-                                    .frame(maxWidth: .infinity, alignment: .leading)
+                            InfoLabel(label: "Bottle count", value: "\(bottle.count)")
                         }
-                        Text("Final gravity: \(String(format: "%.3f", bottle.finalGravity))")
-                                .font(.callout)
-                                .frame(maxWidth: .infinity, alignment: .leading)
-                        Text("Final ABV: \(String(format: "%.2f", (brew.originalGravity - bottle.finalGravity) * 131.25))%")
-                                .font(.callout)
-                                .frame(maxWidth: .infinity, alignment: .leading)
-                        Text("End Date: \(bottle.date ?? Date(), formatter: brewDateFormatter)")
-                                .font(.callout)
-                                .frame(maxWidth: .infinity, alignment: .leading)
+                        InfoLabel(label: "Final gravity", value: String(format: "%.3f", bottle.finalGravity))
+                        InfoLabel(label: "End date", value: brewDateFormatter.string(from: bottle.date ?? Date()))
                         showAge(fromBottlingDate: true).font(.callout)
                                 .frame(maxWidth: .infinity, alignment: .leading)
                     }
-
-
                 }
             })
         }
@@ -211,15 +193,9 @@ struct BrewDetail: View {
                     VStack {
                         Text("Secondary Fermentation").bold().font(.title3)
                                 .frame(maxWidth: .infinity, alignment: .leading)
-                        Text("Current gravity: \(String(format: "%.3f", secondary.gravity))")
-                                .font(.callout)
-                                .frame(maxWidth: .infinity, alignment: .leading)
-                        Text("Current ABV: \(String(format: "%.2f", (brew.originalGravity - secondary.gravity) * 131.25))%")
-                                .font(.callout)
-                                .frame(maxWidth: .infinity, alignment: .leading)
-                        Text("Start date: \(secondary.date ?? Date(), formatter: brewDateFormatter)")
-                                .font(.callout)
-                                .frame(maxWidth: .infinity, alignment: .leading)
+                        InfoLabel(label: "Gravity", value: String(format: "%.3f", secondary.gravity))
+                        InfoLabel(label: "ABV", value: "\(String(format: "%.2f", (brew.originalGravity - secondary.gravity) * 131.25))%")
+                        InfoLabel(label: "Start date", value: brewDateFormatter.string(from: secondary.date ?? Date()))
                         showAge(fromSecondary: true).font(.callout)
                                 .frame(maxWidth: .infinity, alignment: .leading)
                     }
