@@ -18,9 +18,8 @@ struct CollectionTile: View {
                     Text(brew.name ?? "missing name")
                             .font(.title2)
                             .fontWeight(.heavy)
-
                     Spacer()
-                }.padding()
+                }
                 getBottleCount()
                 InfoLabel(label: "Age", value: getTimeText())
                 getProgressBar()

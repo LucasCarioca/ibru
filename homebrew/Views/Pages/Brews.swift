@@ -24,40 +24,43 @@ struct Brews: View {
         if brews.count <= 0 {
             EmptyList().navigationTitle("Brews")
         } else {
-            List {
-                ForEach(filterBrewList(brews, by: category)) { brew in
-                    NavigationLink(destination: BrewDetail(brew: brew)) {
-                        VStack {
-                            HStack {
-                                Text(brew.name ?? "Name missing")
-                                        .fontWeight(.heavy)
-                                Spacer()
-                                Text("\(brew.startDate!, formatter: brewDateFormatter)")
-                            }
-                            if let category = brew.category {
-                                category.count > 0 ? InfoLabel(label: "Category", value: category) : nil
-                            }
-                        }
-                    }
-                }.onDelete(perform: { offsets in
-                    withAnimation {
-                        deleteBrew(offsets: offsets, brews: brews, context: viewContext)
-                    }
-                })
-            }
-                    .toolbar {
-                        HStack {
-                            NavigationLink(destination: NewBrewForm()) {
-                                Image(systemName: "plus")
-                            }
-                            if UserDefaults.standard.bool(forKey: StoreManager.productKey) {
-                                NavigationLink(destination: BrewCategoryFilter(filterCategory: $category)) {
-                                    Image(systemName: "line.3.horizontal.decrease")
+            NavigationView {
+                List {
+                    ForEach(filterBrewList(brews, by: category)) { brew in
+                        NavigationLink(destination: BrewDetail(brew: brew)) {
+                            VStack {
+                                HStack {
+                                    Text(brew.name ?? "Name missing")
+                                            .fontWeight(.heavy)
+                                    Spacer()
+                                    Text("\(brew.startDate!, formatter: brewDateFormatter)")
+                                }
+                                if let category = brew.category {
+                                    category.count > 0 ? InfoLabel(label: "Category", value: category) : nil
                                 }
                             }
                         }
                     }
-                    .navigationTitle("Brews")
+                            .onDelete(perform: { offsets in
+                                withAnimation {
+                                    deleteBrew(offsets: offsets, brews: brews, context: viewContext)
+                                }
+                            })
+                }
+                        .toolbar {
+                            HStack {
+                                NavigationLink(destination: NewBrewForm()) {
+                                    Image(systemName: "plus")
+                                }
+                                if UserDefaults.standard.bool(forKey: StoreManager.productKey) {
+                                    NavigationLink(destination: BrewCategoryFilter(filterCategory: $category)) {
+                                        Image(systemName: "line.3.horizontal.decrease")
+                                    }
+                                }
+                            }
+                        }
+                        .navigationTitle("Brews")
+            }
         }
     }
 }

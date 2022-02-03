@@ -18,10 +18,8 @@ struct CollectionBrewTile: View {
                     Text(brew.name ?? "missing name")
                             .font(.title2)
                             .fontWeight(.heavy)
-
                     Spacer()
                 }
-                        .padding()
                 InfoLabel(label: "Bottle Count", value: "\(brew.count)")
                 InfoLabel(label: "Year", value: brew.year ?? "unknown")
             }

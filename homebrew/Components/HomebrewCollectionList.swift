@@ -36,12 +36,13 @@ struct HomebrewCollectionList: View {
                             }
                         }
                     }.onDelete(perform: { offsets in
-                        withAnimation {
-                            deleteBrew(offsets: offsets, brews: brews, context: viewContext)
-                        }
-                    })
+                                withAnimation {
+                                    deleteBrew(offsets: offsets, brews: brews, context: viewContext)
+                                }
+                            })
                 }
             }.id(refreshID)
+                    .navigationBarTitle("Homebrew")
         }
     }
 

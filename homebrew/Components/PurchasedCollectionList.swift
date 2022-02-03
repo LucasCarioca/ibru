@@ -24,10 +24,10 @@ struct PurchasedCollectionList: View {
             EmptyPurchasedCollectionList()
         } else {
             List {
-//                Section {
-//                    getBrewCount()
-//                    getTotalBottleCount()
-//                }
+                Section {
+                    getBrewCount()
+                    getTotalBottleCount()
+                }
                 Section {
 
                     ForEach(brews) { brew in
@@ -36,39 +36,44 @@ struct PurchasedCollectionList: View {
                         }
                     }
                             .onDelete(perform: { offsets in
-//                        withAnimation {
-//                            deleteBrew(offsets: offsets, brews: brews, context: viewContext)
-//                        }
+                                withAnimation {
+                                    deleteBrew(offsets: offsets, brews: brews, context: viewContext)
+                                }
                             })
                 }
             }
+                    .toolbar {
+                        NavigationLink(destination: NewCollectionBrewForm()) {
+                            Image(systemName: "plus")
+                        }
+                    }
                     .id(refreshID)
+                    .navigationBarTitle("Purchased")
         }
     }
 
-//    func getTotalBottleCount() -> AnyView {
-//        var total: Int16 = 0
-//        for brew in brews {
-//            if let bottles = brew.bottles {
-//                total = total + bottles.count
-//            }
-//        }
-//        if total > 0 {
-//            return AnyView(
-//                        Text("Total bottles").badge(Int(total))
-//            )
-//        }
-//        return AnyView(EmptyView())
-//    }
-//    func getBrewCount() -> AnyView {
-//        let total = brews.count
-//        if total > 0 {
-//            return AnyView(
-//                    Text("Brews").badge(total)
-//            )
-//        }
-//        return AnyView(EmptyView())
-//    }
+    func getTotalBottleCount() -> AnyView {
+        var total: Int16 = 0
+        for brew in brews {
+            total = total + Int16(brew.count)
+        }
+        if total > 0 {
+            return AnyView(
+                    Text("Total bottles").badge(Int(total))
+            )
+        }
+        return AnyView(EmptyView())
+    }
+
+    func getBrewCount() -> AnyView {
+        let total = brews.count
+        if total > 0 {
+            return AnyView(
+                    Text("Brews").badge(total)
+            )
+        }
+        return AnyView(EmptyView())
+    }
 }
 
 

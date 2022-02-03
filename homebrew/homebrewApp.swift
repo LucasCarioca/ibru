@@ -11,6 +11,7 @@ import StoreKit
 @main
 struct homebrewApp: App {
     let dataSource: Datasource
+    @AppStorage(StoreManager.productKey) var pro: Bool = false
     @StateObject var storeManager = StoreManager()
     @State var version = ""
     @State var build = ""
@@ -30,51 +31,28 @@ struct homebrewApp: App {
 
     var body: some Scene {
         WindowGroup {
-            NavigationView {
-                List {
-                    Section {
-                        if UserDefaults.standard.bool(forKey: StoreManager.productKey) {
-                            NavigationLink(destination: Dashboard()) {
-                                Label("Dashboard", systemImage: "chart.bar")
-                            }
-                            NavigationLink(destination: Collection()) {
-                                Label("Collection", systemImage: "square.grid.3x2")
-                            }
-                        } else {
-                            NavigationLink(destination: ProFeatures(storeManager: storeManager)) {
-                                Label("Dashboard", systemImage: "lock.fill")
-                            }
-                            NavigationLink(destination: ProFeatures(storeManager: storeManager)) {
-                                Label("Collection", systemImage: "lock.fill")
-                            }
-                        }
-                        NavigationLink(destination: Brews()) {
-                            Label("Brew List", systemImage: "list.bullet.rectangle")
-                        }
+            TabView {
+                if pro {
+                    DashboardRoot().tabItem {
+                        Label("Dash", systemImage: "chart.bar")
                     }
-                    Section {
-                        NavigationLink(destination: ABVCalculator()) {
-                            Label("Alcohol by volume", systemImage: "percent")
-                        }
-                        NavigationLink(destination: SGCalculator()) {
-                            Label("Gravity Estimator", systemImage: "function")
-                        }
+                    CollectionRoot().tabItem {
+                        Label("Collection", systemImage: "square.grid.3x2")
                     }
-                    Section {
-                        if !UserDefaults.standard.bool(forKey: StoreManager.productKey) {
-                            NavigationLink(destination: ProFeatures(storeManager: storeManager)) {
-                                Label("Upgrade to Pro", systemImage: "star.fill")
-                            }
-                        }
-                        NavigationLink(destination: About()) {
-                            Label("About", systemImage: "info.circle.fill")
-                        }
+                }
+                Brews().tabItem {
+                    Label("List", systemImage: "list.bullet.rectangle")
+                }
+                if !pro {
+                    ProFeatures(storeManager: storeManager).tabItem {
+                        Label("Pro Features", systemImage: "star.fill")
                     }
-                }.navigationTitle("Menu")
-                if UserDefaults.standard.bool(forKey: StoreManager.productKey) {
-                    Dashboard()
-                } else {
-                    Brews()
+                }
+                Calculators().tabItem {
+                    Label("Calculators", systemImage: "function")
+                }
+                About().tabItem {
+                    Label("About", systemImage: "info.circle.fill")
                 }
             }
                     .environment(\.managedObjectContext, dataSource.getContainer().viewContext)

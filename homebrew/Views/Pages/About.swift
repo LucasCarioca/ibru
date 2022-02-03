@@ -16,43 +16,45 @@ struct About: View {
     @State var devMode = false
 
     var body: some View {
-        List {
-            if devMode {
+        NavigationView {
+            List {
+                if devMode {
+                    Section {
+                        HStack {
+                            Text("Current count")
+                            Spacer()
+                            Text(String(count))
+                        }
+                        HStack {
+                            Text("Last version prompted")
+                            Spacer()
+                            Text("v\(lastVersionPrompted)")
+                        }
+                        Button(action: devModeOff) {
+                            Text("DevMode Off")
+                        }
+                        #if DEBUG
+                        NavigationLink(destination: DevTools()) {
+                            Label("Debug only tools", systemImage: "chevron.left.slash.chevron.right")
+                        }
+                        #endif
+                    }
+                }
                 Section {
                     HStack {
-                        Text("Current count")
+                        Text("Current version")
                         Spacer()
-                        Text(String(count))
+                        Text("v\(version) (\(build))").onTapGesture(perform: onTapVersion)
                     }
-                    HStack {
-                        Text("Last version prompted")
-                        Spacer()
-                        Text("v\(lastVersionPrompted)")
-                    }
-                    Button(action: devModeOff) {
-                        Text("DevMode Off")
-                    }
-                    #if DEBUG
-                    NavigationLink(destination: DevTools()) {
-                        Label("Debug only tools", systemImage: "chevron.left.slash.chevron.right")
-                    }
-                    #endif
                 }
             }
-            Section {
-                HStack {
-                    Text("Current version")
-                    Spacer()
-                    Text("v\(version) (\(build))").onTapGesture(perform: onTapVersion)
-                }
-            }
+                    .navigationBarTitle("About")
+                    .onAppear(perform: {
+                        devMode = UserDefaults.standard.bool(forKey: "DevMode")
+                        (version, build) = getVersion()
+                        (count, lastVersionPrompted) = getSessionCount()
+                    })
         }
-                .navigationBarTitle("About")
-                .onAppear(perform: {
-                    devMode =  UserDefaults.standard.bool(forKey: "DevMode")
-                    (version, build) = getVersion()
-                    (count, lastVersionPrompted) = getSessionCount()
-                })
     }
 
     func onTapVersion() {

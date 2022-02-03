@@ -9,14 +9,17 @@ import SwiftUI
 
 struct Calculators: View {
     var body: some View {
-        List {
-            NavigationLink(destination: ABVCalculator()) {
-                Text("Alcohol by volume")
+        NavigationView {
+            List {
+                NavigationLink(destination: ABVCalculator()) {
+                    Text("Alcohol by volume")
+                }
+                NavigationLink(destination: SGCalculator()) {
+                    Text("Gravity Estimator")
+                }
             }
-            NavigationLink(destination: SGCalculator()) {
-                Text("Gravity Estimator")
-            }
-        }.navigationTitle("Calculators")
+                    .navigationTitle("Calculators")
+        }
     }
 }
 

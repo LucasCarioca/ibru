@@ -60,6 +60,7 @@
 		DFDE432F25C30DD50085D2BB /* UpdateBrewForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFDE432E25C30DD50085D2BB /* UpdateBrewForm.swift */; };
 		DFDE433425C33CA10085D2BB /* ABVCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFDE433325C33CA10085D2BB /* ABVCalculator.swift */; };
 		F8C4D012208CDA6F5C03ED3C /* BrewCategoryFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8C4D981C73DBC36CC818165 /* BrewCategoryFilter.swift */; };
+		F8C4D1893F93824CE007A64E /* DashboardRoot.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8C4DBD59B3A59F9F42BB2BB /* DashboardRoot.swift */; };
 		F8C4D300AE0350BABFAD11ED /* RequestReview.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8C4D9FF84FA14A6D3765283 /* RequestReview.swift */; };
 		F8C4D5321BC4289EC47B7EAE /* PurchasedCollectionList.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8C4D33BCBD81740D4F4937F /* PurchasedCollectionList.swift */; };
 		F8C4D8D5DC0E898F2666141E /* UpdateSecondaryRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8C4D058E7CDAA282F0F4E3C /* UpdateSecondaryRecord.swift */; };
@@ -69,6 +70,7 @@
 		F8C4DE81B9C8C950BD9F5004 /* BrewTextEditor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8C4DE9333A4637831ADC633 /* BrewTextEditor.swift */; };
 		F8C4DEE93D79AF69FDFC1A10 /* BrewCategoryEditor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8C4D57690BCD51A5E8D5373 /* BrewCategoryEditor.swift */; };
 		F8C4DF486A097609074ED5DA /* BrewBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8C4DE486E0164CDBB5A2355 /* BrewBuilder.swift */; };
+		F8C4DF7EFFFD380879E8DD0E /* CollectionRoot.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8C4DEDF5CCB9AE8121E5BF1 /* CollectionRoot.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -163,8 +165,10 @@
 		F8C4D57690BCD51A5E8D5373 /* BrewCategoryEditor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BrewCategoryEditor.swift; sourceTree = "<group>"; };
 		F8C4D981C73DBC36CC818165 /* BrewCategoryFilter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BrewCategoryFilter.swift; sourceTree = "<group>"; };
 		F8C4D9FF84FA14A6D3765283 /* RequestReview.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestReview.swift; sourceTree = "<group>"; };
+		F8C4DBD59B3A59F9F42BB2BB /* DashboardRoot.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashboardRoot.swift; sourceTree = "<group>"; };
 		F8C4DE486E0164CDBB5A2355 /* BrewBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BrewBuilder.swift; sourceTree = "<group>"; };
 		F8C4DE9333A4637831ADC633 /* BrewTextEditor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BrewTextEditor.swift; sourceTree = "<group>"; };
+		F8C4DEDF5CCB9AE8121E5BF1 /* CollectionRoot.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionRoot.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -241,6 +245,8 @@
 				DF43B6B125C0695100093ED2 /* Info.plist */,
 				DF43B6AE25C0695100093ED2 /* homebrew.xcdatamodeld */,
 				DF43B6A925C0695100093ED2 /* Preview Content */,
+				F8C4DBD59B3A59F9F42BB2BB /* DashboardRoot.swift */,
+				F8C4DEDF5CCB9AE8121E5BF1 /* CollectionRoot.swift */,
 			);
 			path = homebrew;
 			sourceTree = "<group>";
@@ -625,6 +631,8 @@
 				F8C4D8D6DD4221D3DF68D611 /* NewCollectionBrewForm.swift in Sources */,
 				F8C4D5321BC4289EC47B7EAE /* PurchasedCollectionList.swift in Sources */,
 				F8C4DC8AE3CC74733008C892 /* CollectionBrewTile.swift in Sources */,
+				F8C4D1893F93824CE007A64E /* DashboardRoot.swift in Sources */,
+				F8C4DF7EFFFD380879E8DD0E /* CollectionRoot.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -799,7 +807,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = homebrew/homebrew.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 12;
+				CURRENT_PROJECT_VERSION = 1001;
 				DEVELOPMENT_ASSET_PATHS = "\"homebrew/Preview Content\"";
 				DEVELOPMENT_TEAM = Y259ZT3SQK;
 				ENABLE_PREVIEWS = YES;
@@ -827,7 +835,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = homebrew/homebrew.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 12;
+				CURRENT_PROJECT_VERSION = 1001;
 				DEVELOPMENT_ASSET_PATHS = "\"homebrew/Preview Content\"";
 				DEVELOPMENT_TEAM = Y259ZT3SQK;
 				ENABLE_PREVIEWS = YES;
