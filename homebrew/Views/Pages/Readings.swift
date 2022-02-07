@@ -19,8 +19,12 @@ struct Readings: View {
                     }
                 }.onDelete(perform: deleteItems)
             }
-            showButtons()
         }
+                .toolbar {
+                    NavigationLink(destination: NewReadingForm(brew: brew).onDisappear { refreshID = UUID() }) {
+                        Image(systemName: "plus")
+                    }
+                }
                 .navigationTitle("Readings")
                 .id(refreshID)
     }

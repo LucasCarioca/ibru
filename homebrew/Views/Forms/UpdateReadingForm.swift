@@ -14,6 +14,12 @@ struct UpdateReadingForm: View {
 
     var reading: Reading
 
+    init(reading current: Reading) {
+        reading = current
+        _gravity = State(initialValue: "\(current.gravity)")
+        _date = State(initialValue: current.date ?? Date())
+    }
+
     var body: some View {
         Form {
             TextField("Current Gravity", text: $gravity)

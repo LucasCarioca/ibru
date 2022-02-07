@@ -9,14 +9,23 @@ import SwiftUI
 
 struct UpdateBrewForm: View {
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
-    @State var name = ""
-    @State var comment = ""
+    @State var name: String
+    @State var comment: String
     @State var showDescriptionEditor = false
-    @State var gravity = ""
-    @State var category = ""
-    @State var date = Date()
+    @State var gravity: String
+    @State var category: String
+    @State var date: Date
 
     var brew: Brew
+
+    init(brew current: Brew) {
+        brew = current
+        _name = State(initialValue: current.name ?? "")
+        _comment = State(initialValue: current.comment ?? "")
+        _gravity = State(initialValue: "\(current.originalGravity)")
+        _category = State(initialValue: current.category ?? "")
+        _date = State(initialValue: current.startDate ?? Date())
+    }
 
     var body: some View {
         Form {

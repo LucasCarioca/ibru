@@ -15,6 +15,13 @@ struct UpdateBottleRecord: View {
 
     var bottle: Bottle
 
+    init(bottle current: Bottle) {
+        bottle = current
+        _gravity = State(initialValue: "\(current.finalGravity)")
+        _bottleCount = State(initialValue: "\(current.count)")
+        _date = State(initialValue: current.date ?? Date())
+    }
+
     var body: some View {
         Form {
             TextField("Final gravity", text: $gravity)

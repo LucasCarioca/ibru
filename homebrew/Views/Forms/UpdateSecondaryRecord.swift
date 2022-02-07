@@ -14,6 +14,12 @@ struct UpdateSecondaryRecord: View {
 
     var secondary: Secondary
 
+    init(secondary current: Secondary) {
+        secondary = current
+        _gravity = State(initialValue: "\(current.gravity)")
+        _date = State(initialValue: current.date ?? Date())
+    }
+
     var body: some View {
         Form {
             TextField("Current gravity", text: $gravity)
