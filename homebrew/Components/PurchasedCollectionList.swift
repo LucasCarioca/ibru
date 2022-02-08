@@ -31,9 +31,7 @@ struct PurchasedCollectionList: View {
                 Section {
 
                     ForEach(brews) { brew in
-                        CollectionBrewTile(brew: brew) {
-                            self.refreshID = UUID()
-                        }
+                        CollectionBrewTile(brew: brew)
                     }
                             .onDelete(perform: { offsets in
                                 withAnimation {

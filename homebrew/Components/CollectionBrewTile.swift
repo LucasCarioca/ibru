@@ -10,7 +10,13 @@ import QuickComponents
 
 struct CollectionBrewTile: View {
     var brew: CollectionBrew
-    var onChange: () -> Void
+    @State var count: Int16 = 0
+    init(brew: CollectionBrew) {
+        self.brew = brew
+        let count = brew.count
+        _count = State(initialValue: count)
+    }
+
     var body: some View {
         HStack {
             VStack {
@@ -20,7 +26,7 @@ struct CollectionBrewTile: View {
                             .fontWeight(.heavy)
                     Spacer()
                 }
-                InfoLabel(label: "Bottle Count", value: "\(brew.count)")
+                InfoLabel(label: "Bottle Count", value: "\(count)")
                 InfoLabel(label: "Year", value: brew.year ?? "unknown")
             }
             Spacer()
@@ -46,10 +52,10 @@ struct CollectionBrewTile: View {
         if brew.count <= 0 {
             return
         }
-        brew.count = brew.count - amount
+        count = count - amount
+        brew.count = count
         do {
             try brew.managedObjectContext!.save()
-            onChange()
         } catch {
             let nsError = error as NSError
             fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
@@ -57,10 +63,10 @@ struct CollectionBrewTile: View {
     }
 
     func addBottle(amount: Int16) {
-        brew.count = brew.count + amount
+        count = count + amount
+        brew.count = count
         do {
             try brew.managedObjectContext!.save()
-            onChange()
         } catch {
             let nsError = error as NSError
             fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
