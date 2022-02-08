@@ -31,9 +31,7 @@ struct HomebrewCollectionList: View {
                 Section {
                     ForEach(brews) { brew in
                         NavigationLink(destination: BrewDetail(brew: brew)) {
-                            CollectionTile(brew: brew) {
-                                self.refreshID = UUID()
-                            }
+                            CollectionTile(brew: brew)
                         }
                     }.onDelete(perform: { offsets in
                                 withAnimation {
