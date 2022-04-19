@@ -167,6 +167,7 @@ struct BrewDetail: View {
                             InfoLabel(label: "Bottle count", value: "\(bottle.count)")
                         }
                         InfoLabel(label: "Final gravity", value: String(format: "%.3f", bottle.finalGravity))
+                        InfoLabel(label: "Final ABV", value: "\(String(format: "%.2f", (brew.originalGravity - bottle.finalGravity) * 131.25))%")
                         InfoLabel(label: "End date", value: brewDateFormatter.string(from: bottle.date ?? Date()))
                         showAge(fromBottlingDate: true).font(.callout)
                                 .frame(maxWidth: .infinity, alignment: .leading)
