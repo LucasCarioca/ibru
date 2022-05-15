@@ -28,15 +28,7 @@ struct BrewDetail: View {
                     NavigationLink(
                             destination: UpdateBrewForm(brew: brew).onDisappear(perform: refresh),
                             isActive: $showEditView) {
-                        VStack {
-                            Text("Primary Fermentation").bold().font(.title3)
-                                    .frame(maxWidth: .infinity, alignment: .leading)
-                            InfoLabel(label: "Original Gravity", value: String(format: "%.3f", brew.originalGravity))
-                            InfoLabel(label: "Potential ABV", value: "\(String(format: "%.2f", (brew.originalGravity - 1) * 131.25))%")
-                            InfoLabel(label: "Start date", value: brewDateFormatter.string(from: brew.startDate ?? Date()))
-                            showAge().font(.callout)
-                                    .frame(maxWidth: .infinity, alignment: .leading)
-                        }
+                        PrimaryDetailView(brew: brew)
                     }
                 }.padding(.vertical)
                 if UserDefaults.standard.bool(forKey: StoreManager.productKey) {
@@ -143,16 +135,6 @@ struct BrewDetail: View {
         }
     }
 
-    private func showAge(fromBottlingDate: Bool = false, fromSecondary: Bool = false) -> AnyView {
-        var brewAge = getAge(of: brew, fromBottlingDate: fromBottlingDate, fromSecondary: fromSecondary)
-        var label = "days"
-        if brewAge >= 30 {
-            label = "months"
-            brewAge = brewAge / 30
-        }
-        return AnyView(Text("\(String(format: "%.1f", brewAge)) \(label)"))
-    }
-
     private func showBottlingInfo() -> AnyView {
         if let bottle = brew.bottles {
             return AnyView(NavigationLink(
@@ -160,18 +142,7 @@ struct BrewDetail: View {
                     isActive: $showEditBottlesView) {
                 HStack {
                     Image("bottle").padding().frame(width: 50)
-                    VStack {
-                        Text("Bottled").bold().font(.title3)
-                                .frame(maxWidth: .infinity, alignment: .leading)
-                        if UserDefaults.standard.bool(forKey: StoreManager.productKey) {
-                            InfoLabel(label: "Bottle count", value: "\(bottle.count)")
-                        }
-                        InfoLabel(label: "Final gravity", value: String(format: "%.3f", bottle.finalGravity))
-                        InfoLabel(label: "Final ABV", value: "\(String(format: "%.2f", (brew.originalGravity - bottle.finalGravity) * 131.25))%")
-                        InfoLabel(label: "End date", value: brewDateFormatter.string(from: bottle.date ?? Date()))
-                        showAge(fromBottlingDate: true).font(.callout)
-                                .frame(maxWidth: .infinity, alignment: .leading)
-                    }
+                    BottleDetailView(brew: brew)
                 }
             })
         }
@@ -191,15 +162,7 @@ struct BrewDetail: View {
             return AnyView(NavigationLink(destination: UpdateSecondaryRecord(secondary: secondary).onDisappear(perform: refresh)) {
                 HStack {
                     Image("carboy").padding().frame(width: 50)
-                    VStack {
-                        Text("Secondary Fermentation").bold().font(.title3)
-                                .frame(maxWidth: .infinity, alignment: .leading)
-                        InfoLabel(label: "Gravity", value: String(format: "%.3f", secondary.gravity))
-                        InfoLabel(label: "ABV", value: "\(String(format: "%.2f", (brew.originalGravity - secondary.gravity) * 131.25))%")
-                        InfoLabel(label: "Start date", value: brewDateFormatter.string(from: secondary.date ?? Date()))
-                        showAge(fromSecondary: true).font(.callout)
-                                .frame(maxWidth: .infinity, alignment: .leading)
-                    }
+                    SecondaryDetailView(brew: brew)
                 }
             })
         } else if let _ = brew.bottles {
